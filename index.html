@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mandatory Shield SRL — Essential SaaS Security</title>
+<meta name="description" content="Mandatory Shield SRL provides enterprise-grade Active Directory security auditing software. ADSecure analyses your AD infrastructure across 110 security controls, generating compliance-ready reports for NIS2 and ISO 27001."/>
+<meta name="keywords" content="Active Directory security, AD audit, NIS2 compliance, ISO 27001, cybersecurity SaaS, ADSecure, enterprise security software"/>
+<meta property="og:title" content="Mandatory Shield SRL — Essential SaaS Security"/>
+<meta property="og:description" content="ADSecure audits your Active Directory on 110 security controls. Zero data sent externally. NIS2 & ISO 27001 ready."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mandatoryshield.com"/>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Mandatory Shield SRL",
+      "url": "https://mandatoryshield.com",
+      "logo": "https://mandatoryshield.com/logo.png",
+      "slogan": "Essential SaaS Security",
+      "foundingDate": "2024",
+      "founders": [
+        {"@type": "Person", "name": "Pierre-Antoine Roubaud"},
+        {"@type": "Person", "name": "Raphaël Berki"}
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@mandatoryshield.com",
+        "contactType": "customer service"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ADSecure",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Windows",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "490"
+      },
+      "description": "Active Directory security auditing tool with 110 controls, NIS2/ISO 27001 mapping, and automated remediation guides."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ADSecure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ADSecure is an on-premise Active Directory security auditing software that analyses your AD infrastructure across 110 security controls and generates two distinct reports: one for management (NIS2/ISO 27001 compliance) and one for IT administrators (remediation guides)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ADSecure send data to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. ADSecure runs entirely on your local machine. Zero data is transmitted externally. Your directory data never leaves your network."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ADSecure NIS2 compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ADSecure maps every control to the relevant NIS2 article (EU Directive 2022/2555) and generates a ready-to-use Art. 21 compliance summary for auditors."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --teal: #0E7D7D;
+  --teal-light: #15A0A0;
+  --teal-dark: #095F5F;
+  --teal-muted: rgba(14,125,125,0.08);
+  --teal-border: rgba(14,125,125,0.2);
+  --cream: #F7F5F0;
+  --cream-dark: #EEE9E0;
+  --white: #FFFFFF;
+  --ink: #1A1A1A;
+  --ink-mid: #3D3D3D;
+  --ink-light: #717171;
+  --ink-faint: #A8A8A8;
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger: #DC2626;
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+p { font-size: 1rem; color: var(--ink-mid); }
+a { color: inherit; text-decoration: none; }
+code, .mono { font-family: 'DM Mono', monospace; }
+
+/* ─── LAYOUT ─── */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 100px 0; }
+.section--alt { background: var(--white); }
+.section--dark { background: var(--ink); color: var(--white); }
+.section--teal { background: var(--teal); color: var(--white); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(247,245,240,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cream-dark);
+  transition: box-shadow var(--transition);
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; padding: 0 2rem; max-width: 1180px; margin: 0 auto;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700; font-size: 1.15rem; letter-spacing: 0.03em;
+  color: var(--teal);
+}
+.nav-logo svg { width: 32px; height: 32px; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 0.875rem; font-weight: 500; color: var(--ink-mid);
+  transition: color var(--transition); letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+
+/* Language switcher */
+.lang-switcher {
+  display: flex; gap: 2px;
+  background: var(--cream-dark); border-radius: 20px; padding: 2px;
+}
+.lang-btn {
+  padding: 3px 10px; border-radius: 18px; border: none;
+  font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
+  cursor: pointer; background: transparent; color: var(--ink-light);
+  transition: all var(--transition); letter-spacing: 0.03em;
+}
+.lang-btn.active { background: var(--teal); color: var(--white); }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.65rem 1.5rem; border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; border: none; transition: all var(--transition);
+  letter-spacing: 0.01em;
+}
+.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(14,125,125,0.35); }
+.btn-outline { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+.btn-outline:hover { background: var(--teal-muted); }
+.btn-white { background: var(--white); color: var(--teal); }
+.btn-white:hover { background: var(--cream); }
+.btn-lg { padding: 0.85rem 2rem; font-size: 1rem; }
+.btn-sm { padding: 0.45rem 1rem; font-size: 0.8rem; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding-top: 68px; position: relative; overflow: hidden;
+  background: var(--cream);
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; right: -10%; width: 60%; height: 100%;
+  background: radial-gradient(ellipse at 70% 50%, rgba(14,125,125,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--cream-dark);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center; padding: 5rem 0;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 500; color: var(--teal);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 24px; height: 1.5px; background: var(--teal);
+}
+.hero h1 { margin-bottom: 1.5rem; }
+.hero h1 em { font-style: normal; color: var(--teal); }
+.hero-sub { font-size: 1.1rem; line-height: 1.7; color: var(--ink-mid); margin-bottom: 2.5rem; max-width: 480px; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.hero-note { font-size: 0.78rem; color: var(--ink-faint); margin-top: 1rem; }
+.hero-note span { color: var(--success); font-weight: 500; }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+}
+.hero-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero-card::before {
+  content: '';
+  position: absolute; top: -1px; left: 2rem; right: 2rem; height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  border-radius: 0 0 2px 2px;
+}
+.score-ring {
+  display: flex; align-items: center; gap: 1.5rem;
+  padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.score-circle {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 3px solid var(--cream-dark); position: relative;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  background: conic-gradient(var(--teal) 0% 78%, var(--cream-dark) 78% 100%);
+}
+.score-circle::after {
+  content: ''; position: absolute;
+  inset: 6px; background: var(--white); border-radius: 50%;
+}
+.score-value {
+  position: absolute; z-index: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700; color: var(--ink);
+}
+.score-info h4 { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.25rem; }
+.score-info p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--ink); }
+.score-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.72rem; font-weight: 600; background: rgba(220,38,38,0.1); color: var(--danger); }
+
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.check-list li {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.85rem; color: var(--ink-mid);
+}
+.check-list li::before {
+  content: ''; display: block; width: 16px; height: 16px; flex-shrink: 0;
+  border-radius: 50%; background: var(--teal);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8L6.5 11L12.5 5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.check-list li.fail::before { background: rgba(220,38,38,0.15); background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5L11 11M11 5L5 11' stroke='%23DC2626' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); }
+
+.floating-badge {
+  position: absolute;
+  background: var(--white); border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 0.75rem 1rem;
+  box-shadow: var(--shadow);
+  font-size: 0.78rem; font-weight: 500;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.floating-badge.top { top: -1.5rem; right: -1.5rem; }
+.floating-badge.bottom { bottom: -1.5rem; left: -1.5rem; }
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* ─── STATS BAR ─── */
+.stats-bar {
+  background: var(--white);
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 2.5rem 0;
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid var(--cream-dark); gap: 0;
+}
+.stat-item {
+  padding: 0 2rem;
+  border-right: 1px solid var(--cream-dark);
+  text-align: center;
+}
+.stat-item:first-child { border-left: 1px solid var(--cream-dark); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 700; color: var(--teal); line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-label { font-size: 0.8rem; color: var(--ink-light); font-weight: 400; }
+
+/* ─── SECTION HEADER ─── */
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.75rem; font-weight: 600; color: var(--teal);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem;
+}
+.section-label::before { content: ''; display: block; width: 20px; height: 1.5px; background: var(--teal); }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { margin-bottom: 1rem; }
+.section-header p { max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+/* ─── PRODUCT CARDS ─── */
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition);
+}
+.feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--teal-border); }
+.feature-icon {
+  width: 44px; height: 44px; border-radius: var(--radius);
+  background: var(--teal-muted); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem; font-size: 1.3rem;
+}
+.feature-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.feature-card p { font-size: 0.9rem; }
+
+/* ─── COMPARISON TABLE ─── */
+.compare-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.compare-table th {
+  padding: 1rem 1.5rem; text-align: left;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  background: var(--cream); color: var(--ink-light);
+}
+.compare-table th:last-child { background: var(--teal); color: var(--white); text-align: center; }
+.compare-table td {
+  padding: 0.9rem 1.5rem; border-top: 1px solid var(--cream-dark);
+  font-size: 0.9rem; color: var(--ink-mid);
+}
+.compare-table td:last-child { text-align: center; }
+.compare-table tr:hover td { background: var(--cream); }
+.icon-yes { color: var(--success); font-size: 1.1rem; }
+.icon-no { color: var(--danger); font-size: 1.1rem; }
+.icon-partial { color: var(--warning); font-size: 1.1rem; }
+
+/* ─── AUDIENCE CARDS ─── */
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.audience-card {
+  background: var(--white); border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 2.5rem;
+}
+.audience-card.featured {
+  background: var(--teal); color: var(--white);
+  border-color: var(--teal);
+}
+.audience-card.featured p, .audience-card.featured h3 { color: var(--white); }
+.audience-tag {
+  display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--teal-muted); color: var(--teal); margin-bottom: 1rem;
+}
+.audience-card.featured .audience-tag { background: rgba(255,255,255,0.2); color: var(--white); }
+.audience-list { list-style: none; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.audience-list li { font-size: 0.9rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+.audience-list li::before { content: '→'; font-weight: 600; flex-shrink: 0; }
+.audience-card.featured .audience-list li::before { color: rgba(255,255,255,0.7); }
+
+/* ─── COMPLIANCE BADGES ─── */
+.compliance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.compliance-badge {
+  background: var(--white); border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 2rem 1.5rem; text-align: center;
+  transition: all var(--transition);
+}
+.compliance-badge:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(14,125,125,0.1); }
+.compliance-badge h3 { font-size: 1.4rem; color: var(--teal); margin-bottom: 0.5rem; }
+.compliance-badge p { font-size: 0.82rem; }
+
+/* ─── PRICING ─── */
+.pricing-card {
+  background: var(--white); border: 2px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 3rem;
+  max-width: 480px; margin: 0 auto;
+  position: relative; overflow: hidden;
+}
+.pricing-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+}
+.pricing-badge {
+  display: inline-block; background: var(--teal); color: var(--white);
+  font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.75rem;
+  border-radius: 20px; margin-bottom: 1.5rem; letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pricing-price {
+  display: flex; align-items: baseline; gap: 0.25rem; margin: 1.5rem 0;
+}
+.pricing-price .amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 700; color: var(--ink); line-height: 1;
+}
+.pricing-price .currency { font-size: 1.5rem; color: var(--ink-mid); }
+.pricing-price .period { font-size: 0.85rem; color: var(--ink-faint); }
+.pricing-features { list-style: none; margin: 2rem 0; display: flex; flex-direction: column; gap: 0.8rem; }
+.pricing-features li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; }
+.pricing-features li .check { color: var(--success); font-weight: 700; }
+.pricing-note { font-size: 0.78rem; color: var(--ink-faint); text-align: center; margin-top: 1.25rem; }
+
+/* ─── PROCESS STEPS ─── */
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.steps-grid::after {
+  content: ''; position: absolute; top: 22px; left: 12.5%; right: 12.5%; height: 1.5px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light)); z-index: 0;
+}
+.step { text-align: center; position: relative; z-index: 1; padding: 0 1rem; }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--teal); color: var(--white);
+  font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 500;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;
+  border: 3px solid var(--cream);
+}
+.step h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+.step p { font-size: 0.85rem; }
+
+/* ─── FAQ ─── */
+.faq-item {
+  border-bottom: 1px solid var(--cream-dark); padding: 1.5rem 0;
+}
+.faq-question {
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; font-weight: 500; font-size: 1rem;
+  color: var(--ink);
+}
+.faq-question:hover { color: var(--teal); }
+.faq-toggle { color: var(--teal); font-size: 1.3rem; font-weight: 300; transition: transform var(--transition); }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer { display: none; padding-top: 1rem; font-size: 0.9rem; color: var(--ink-mid); line-height: 1.7; }
+.faq-item.open .faq-answer { display: block; }
+
+/* ─── TRUST LOGOS ─── */
+.trust-section { background: var(--cream-dark); padding: 3rem 0; }
+.trust-label { text-align: center; font-size: 0.78rem; font-weight: 500; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
+.trust-logos {
+  display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;
+}
+.trust-logo {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600;
+  color: var(--ink-faint); letter-spacing: 0.05em; opacity: 0.6;
+  transition: opacity var(--transition);
+}
+.trust-logo:hover { opacity: 1; color: var(--teal); }
+
+/* ─── MODAL ─── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(26,26,26,0.6); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity var(--transition);
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--white); border-radius: var(--radius-lg);
+  width: 100%; max-width: 440px; padding: 2.5rem;
+  transform: translateY(20px); transition: transform var(--transition);
+  position: relative; max-height: 90vh; overflow-y: auto;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-light); font-size: 1.3rem; padding: 0.25rem;
+}
+.modal h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.modal-sub { font-size: 0.875rem; color: var(--ink-light); margin-bottom: 2rem; }
+.modal-tabs { display: flex; gap: 0; margin-bottom: 2rem; border-bottom: 2px solid var(--cream-dark); }
+.modal-tab {
+  flex: 1; padding: 0.75rem; background: none; border: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  color: var(--ink-light); border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: all var(--transition);
+}
+.modal-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+.form-group { margin-bottom: 1.25rem; }
+.form-label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink-mid); margin-bottom: 0.4rem; }
+.form-input {
+  width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius); background: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--ink);
+  transition: border-color var(--transition);
+}
+.form-input:focus { outline: none; border-color: var(--teal); background: var(--white); }
+.form-error { font-size: 0.78rem; color: var(--danger); margin-top: 0.3rem; display: none; }
+
+/* ─── DASHBOARD ─── */
+.dashboard { display: none; min-height: 100vh; padding-top: 68px; }
+.dashboard.active { display: block; }
+.main-content { display: block; }
+.main-content.hidden { display: none; }
+.dash-header { background: var(--white); border-bottom: 1px solid var(--cream-dark); padding: 2rem 0; }
+.dash-body { padding: 3rem 0; }
+.dash-card {
+  background: var(--white); border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 1.75rem;
+}
+.dash-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.purchase-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem; background: var(--cream); border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+.purchase-status { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; font-weight: 600; color: var(--success); }
+.purchase-status::before { content: ''; display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--success); }
+
+/* ─── ABOUT ─── */
+.founder-card {
+  background: var(--white); border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-lg); padding: 2rem; text-align: center;
+}
+.founder-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--teal-muted); border: 2px solid var(--teal-border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem; font-size: 1.5rem; color: var(--teal);
+  font-family: 'Cormorant Garamond', serif; font-weight: 700;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink); color: rgba(255,255,255,0.7);
+  padding: 4rem 0 2rem;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand h3 { font-family: 'Cormorant Garamond', serif; color: var(--white); margin-bottom: 0.75rem; font-size: 1.3rem; }
+.footer-brand p { font-size: 0.85rem; line-height: 1.7; }
+.footer-col h4 { color: var(--white); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-col a { font-size: 0.85rem; transition: color var(--transition); }
+.footer-col a:hover { color: var(--teal-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 0.8rem; }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.8rem; transition: color var(--transition); }
+.footer-legal a:hover { color: var(--white); }
+
+/* ─── ALERTS ─── */
+.alert {
+  padding: 0.75rem 1rem; border-radius: var(--radius);
+  font-size: 0.85rem; margin-bottom: 1rem; display: none;
+}
+.alert.show { display: block; }
+.alert-success { background: rgba(22,163,74,0.1); color: var(--success); border: 1px solid rgba(22,163,74,0.2); }
+.alert-error { background: rgba(220,38,38,0.1); color: var(--danger); border: 1px solid rgba(220,38,38,0.2); }
+
+/* ─── CONTACT ─── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+.contact-info h3 { margin-bottom: 1rem; }
+.contact-detail { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; font-size: 0.9rem; }
+.contact-detail-icon { width: 36px; height: 36px; border-radius: var(--radius); background: var(--teal-muted); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+
+/* ─── MOBILE ─── */
+.mobile-menu-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  color: var(--ink); font-size: 1.5rem;
+}
+.mobile-nav { display: none; position: fixed; inset: 68px 0 0; background: var(--cream); z-index: 999; padding: 2rem; }
+.mobile-nav.open { display: flex; flex-direction: column; gap: 1rem; }
+.mobile-nav a { font-size: 1.2rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid var(--cream-dark); }
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid::after { display: none; }
+  .dash-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-actions { display: none; }
+  .mobile-menu-btn { display: block; }
+  .grid-2, .audience-grid, .contact-grid { grid-template-columns: 1fr; }
+  .grid-3, .stats-grid { grid-template-columns: 1fr; }
+  .grid-4, .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-table { font-size: 0.8rem; }
+  .compare-table th, .compare-table td { padding: 0.6rem 0.75rem; }
+  .section { padding: 60px 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── PAGE SECTIONS ─── */
+.page-section { display: none; }
+.page-section.active { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="showPage('home')">
+      <!-- SVG logo colonnes -->
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="12" r="10" stroke="#0E7D7D" stroke-width="1.5" fill="none"/>
+        <rect x="8" y="8" width="3" height="8" fill="#0E7D7D" rx="0.5"/>
+        <rect x="14.5" y="8" width="3" height="8" fill="#0E7D7D" rx="0.5"/>
+        <rect x="21" y="8" width="3" height="8" fill="#0E7D7D" rx="0.5"/>
+        <rect x="7" y="7" width="18" height="2" fill="#0E7D7D" rx="0.5"/>
+        <line x1="4" y1="28" x2="28" y2="28" stroke="#0E7D7D" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Mandatory Shield
+    </a>
+
+    <div class="nav-links">
+      <a href="#" onclick="showPage('product')" data-i18n="nav.product">Product</a>
+      <a href="#" onclick="showPage('pricing')" data-i18n="nav.pricing">Pricing</a>
+      <a href="#" onclick="showPage('about')" data-i18n="nav.about">About</a>
+      <a href="#" onclick="showPage('contact')" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('nl')">NL</button>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="openModal('login')" id="loginBtn" data-i18n="nav.login">Log in</button>
+      <button class="btn btn-primary btn-sm" onclick="showPage('pricing')" data-i18n="nav.buy">Buy ADSecure</button>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="showPage('home');closeMobileMenu()">Home</a>
+  <a href="#" onclick="showPage('product');closeMobileMenu()">Product</a>
+  <a href="#" onclick="showPage('pricing');closeMobileMenu()">Pricing</a>
+  <a href="#" onclick="showPage('about');closeMobileMenu()">About</a>
+  <a href="#" onclick="showPage('contact');closeMobileMenu()">Contact</a>
+  <button class="btn btn-primary" onclick="openModal('login')">Log in</button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     DASHBOARD (hidden by default)
+════════════════════════════════════════════ -->
+<div class="dashboard" id="dashboard">
+  <div class="dash-header">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <p style="font-size:0.8rem;color:var(--ink-faint);margin-bottom:0.2rem;" data-i18n="dash.welcome">Welcome back,</p>
+          <h2 style="font-size:1.6rem;" id="dashUsername">User</h2>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="logout()" data-i18n="dash.logout">Log out</button>
+      </div>
+    </div>
+  </div>
+  <div class="dash-body">
+    <div class="container">
+      <div class="dash-grid">
+        <!-- Sidebar -->
+        <div>
+          <div class="dash-card" style="margin-bottom:1rem;">
+            <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--ink-light);font-family:'DM Sans';font-weight:500;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;" data-i18n="dash.account">Account</h3>
+            <div id="dashEmail" style="font-size:0.9rem;color:var(--ink-mid);word-break:break-all;"></div>
+          </div>
+          <div class="dash-card" style="background:var(--teal);border-color:var(--teal);">
+            <h3 style="color:white;font-size:1rem;margin-bottom:0.5rem;" data-i18n="dash.need_help">Need help?</h3>
+            <p style="color:rgba(255,255,255,0.8);font-size:0.85rem;margin-bottom:1rem;" data-i18n="dash.support_text">Our team is available for technical support.</p>
+            <a href="#" onclick="showPage('contact')" class="btn btn-white btn-sm" data-i18n="dash.contact_us">Contact us</a>
+          </div>
+        </div>
+        <!-- Main -->
+        <div>
+          <!-- No purchase -->
+          <div class="dash-card" id="noPurchaseCard" style="display:none;">
+            <div style="text-align:center;padding:2rem;">
+              <div style="font-size:3rem;margin-bottom:1rem;">🔐</div>
+              <h3 style="margin-bottom:0.5rem;" data-i18n="dash.no_purchase_title">No licence yet</h3>
+              <p style="margin-bottom:1.5rem;" data-i18n="dash.no_purchase_text">Purchase ADSecure to get immediate access to the download.</p>
+              <button class="btn btn-primary" onclick="showPage('pricing')" data-i18n="nav.buy">Buy ADSecure</button>
+            </div>
+          </div>
+          <!-- Has purchase -->
+          <div class="dash-card" id="hasPurchaseCard" style="display:none;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+              <h3 style="font-size:1.1rem;" data-i18n="dash.my_licences">My licences</h3>
+              <span class="purchase-status" data-i18n="dash.active">Active</span>
+            </div>
+            <div class="purchase-item">
+              <div>
+                <div style="font-weight:600;margin-bottom:0.2rem;">ADSecure</div>
+                <div style="font-size:0.78rem;color:var(--ink-faint);" data-i18n="dash.one_time">One-time licence · v1.0</div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="simulateDownload()" data-i18n="dash.download">⬇ Download</button>
+            </div>
+            <div style="background:var(--cream);border-radius:var(--radius);padding:1rem;margin-top:1rem;">
+              <p style="font-size:0.82rem;color:var(--ink-light);" data-i18n="dash.download_note">📋 Your licence key will be sent by email within 24h after purchase confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════ -->
+<div class="main-content" id="mainContent">
+
+<!-- ─── HOME ─── -->
+<div class="page-section active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow" data-i18n="hero.eyebrow">Essential SaaS Security</div>
+          <h1 data-i18n="hero.title">Your Active Directory.<br/><em>No blind spots.</em></h1>
+          <p class="hero-sub" data-i18n="hero.sub">ADSecure audits your Windows infrastructure across 110 security controls. Instant NIS2 & ISO 27001 reports. Zero data leaves your network.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="showPage('pricing')" data-i18n="hero.cta_buy">Get ADSecure →</button>
+            <button class="btn btn-outline btn-lg" onclick="showPage('product')" data-i18n="hero.cta_learn">Learn more</button>
+          </div>
+          <p class="hero-note"><span>✓</span> <span data-i18n="hero.note">One-time purchase · No subscription · 100% on-premise</span></p>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="score-ring">
+              <div class="score-circle"><span class="score-value">78</span></div>
+              <div class="score-info">
+                <h4>Security Score</h4>
+                <p>High Risk <span class="score-badge">CRITICAL</span></p>
+              </div>
+            </div>
+            <ul class="check-list">
+              <li>LAPS deployed on all workstations</li>
+              <li>NTLMv2 enforced domain-wide</li>
+              <li class="fail">SMBv1 still enabled on 3 DCs</li>
+              <li class="fail">Kerberoastable accounts detected (7)</li>
+              <li>Audit policies correctly configured</li>
+            </ul>
+          </div>
+          <div class="floating-badge top">
+            <div class="badge-dot"></div>
+            <span>Scan complete — 110 controls</span>
+          </div>
+          <div class="floating-badge bottom">
+            <span>🔒</span>
+            <span>Zero data transmitted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">110</div><div class="stat-label" data-i18n="stats.controls">Security controls</div></div>
+        <div class="stat-item"><div class="stat-num">9</div><div class="stat-label" data-i18n="stats.domains">AD domains analysed</div></div>
+        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label" data-i18n="stats.reports">Reports generated</div></div>
+        <div class="stat-item"><div class="stat-num">0</div><div class="stat-label" data-i18n="stats.data">Data transmitted externally</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust -->
+  <div class="trust-section">
+    <div class="container">
+      <p class="trust-label" data-i18n="trust.label">They trust us</p>
+      <div class="trust-logos">
+        <div class="trust-logo">Meridian Group</div>
+        <div class="trust-logo">Axeltech GmbH</div>
+        <div class="trust-logo">Novacore BV</div>
+        <div class="trust-logo">Stiftung Digitale</div>
+        <div class="trust-logo">Belnet</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label" data-i18n="problem.label">The problem</div>
+        <h2 data-i18n="problem.title">Other tools detect.<br/>ADSecure fixes.</h2>
+        <p data-i18n="problem.sub">Active Directory is the #1 target for modern ransomware. WannaCry, NotPetya, LockBit — all exploit AD vulnerabilities to spread and take full control of your network.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">⚠️</div>
+          <h3 data-i18n="problem.card1_title">Alerts without solutions</h3>
+          <p data-i18n="problem.card1_text">Existing tools produce raw lists of vulnerabilities. No explanation. No remediation guide. Just more anxiety for your IT team.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📊</div>
+          <h3 data-i18n="problem.card2_title">Reports no one understands</h3>
+          <p data-i18n="problem.card2_text">Your CISO or CEO receives a 100% technical document. No translation into business risk or financial impact. Useless at board level.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <div class="feature-icon">☁️</div>
+          <h3 data-i18n="problem.card3_title">Data sent to the cloud</h3>
+          <p data-i18n="problem.card3_text">Most SaaS solutions transfer your AD data to their servers. Immediate GDPR risk. ADSecure runs 100% locally — nothing leaves your network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label" data-i18n="features.label">What we analyse</div>
+        <h2 data-i18n="features.title">110 controls across<br/>9 critical AD domains</h2>
+      </div>
+      <div class="grid-4 fade-in">
+        <div class="feature-card"><div class="feature-icon">👤</div><h3 data-i18n="feat.accounts">Accounts & Privileges</h3><p data-i18n="feat.accounts_text">Privileged groups, accumulated rights drift, stale accounts.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔑</div><h3 data-i18n="feat.passwords">Password Policies</h3><p data-i18n="feat.passwords_text">Complexity, expiry, history, lockout rules across the domain.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔗</div><h3 data-i18n="feat.acl">Delegations & ACLs</h3><p data-i18n="feat.acl_text">Dangerous delegations and excessive rights on sensitive objects.</p></div>
+        <div class="feature-card"><div class="feature-icon">⚙️</div><h3 data-i18n="feat.config">AD Configuration</h3><p data-i18n="feat.config_text">At-risk protocols and services on domain controllers.</p></div>
+        <div class="feature-card"><div class="feature-icon">📋</div><h3 data-i18n="feat.gpo">Group Policy Objects</h3><p data-i18n="feat.gpo_text">GPO consistency, status and security in your environment.</p></div>
+        <div class="feature-card"><div class="feature-icon">📁</div><h3 data-i18n="feat.audit">Logging & Audit</h3><p data-i18n="feat.audit_text">Event log sizing and advanced audit policy activation.</p></div>
+        <div class="feature-card"><div class="feature-icon">🖥️</div><h3 data-i18n="feat.dc">DC Security</h3><p data-i18n="feat.dc_text">Firewall, credential isolation and secure boot on DCs.</p></div>
+        <div class="feature-card"><div class="feature-icon">⚖️</div><h3 data-i18n="feat.gdpr">GDPR & NIS2</h3><p data-i18n="feat.gdpr_text">Documentary checklist for regulatory obligations and governance.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:3rem;">
+        <button class="btn btn-primary btn-lg" onclick="showPage('product')" data-i18n="features.cta">View all 110 controls →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="section section--teal">
+    <div class="container" style="text-align:center;">
+      <div class="fade-in">
+        <h2 style="color:white;margin-bottom:1rem;" data-i18n="cta.title">Ready to audit your Active Directory?</h2>
+        <p style="color:rgba(255,255,255,0.8);max-width:500px;margin:0 auto 2rem;" data-i18n="cta.sub">One-time purchase. No subscription. No data leaves your network. Deployed in under 5 minutes.</p>
+        <button class="btn btn-white btn-lg" onclick="showPage('pricing')" data-i18n="cta.btn">Get ADSecure now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">FAQ</div>
+        <h2 data-i18n="faq.title">Frequently asked questions</h2>
+      </div>
+      <div style="max-width:720px;margin:0 auto;" class="fade-in">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)"><span data-i18n="faq.q1">What is ADSecure?</span><span class="faq-toggle">+</span></div>
+          <div class="faq-answer" data-i18n="faq.a1">ADSecure is an on-premise Active Directory security auditing software. It analyses your AD infrastructure across 110 security controls and generates two reports: one for management (NIS2/ISO 27001 compliance) and one for IT administrators (step-by-step remediation guides). Everything runs locally — no data leaves your network.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)"><span data-i18n="faq.q2">Does ADSecure send data to the cloud?</span><span class="faq-toggle">+</span></div>
+          <div class="faq-answer" data-i18n="faq.a2">No. ADSecure runs entirely on your local machine or a domain-joined Windows workstation. Zero data is transmitted externally. Your directory data never leaves your network. This makes it fully GDPR-compliant by design.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)"><span data-i18n="faq.q3">What are the technical requirements?</span><span class="faq-toggle">+</span></div>
+          <div class="faq-answer" data-i18n="faq.a3">Windows 10/11 or Windows Server 2016+, PowerShell 5.1 or later, RSAT Active Directory module installed, a domain member account (read-only AD access is sufficient), and local administrator rights (recommended for registry controls). No internet connection required.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)"><span data-i18n="faq.q4">Is ADSecure NIS2 and ISO 27001 compliant?</span><span class="faq-toggle">+</span></div>
+          <div class="faq-answer" data-i18n="faq.a4">Each of ADSecure's 110 controls is mapped to the relevant NIS2 article (EU Directive 2022/2555, mandatory since October 2024) and to ISO 27001:2022 Annexes A.8, A.9, A.12, A.18. The management report automatically generates an Art. 21 compliance summary ready for auditors.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)"><span data-i18n="faq.q5">Is it a one-time purchase or a subscription?</span><span class="faq-toggle">+</span></div>
+          <div class="faq-answer" data-i18n="faq.a5">ADSecure is a one-time purchase. No monthly fees, no subscription, no cloud costs. You buy a licence once and use it on your infrastructure. Updates are included for 12 months from the purchase date.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+<!-- ─── PRODUCT PAGE ─── -->
+<div class="page-section" id="page-product">
+  <div style="padding-top:68px;">
+    <div style="background:var(--ink);padding:5rem 0;">
+      <div class="container">
+        <div class="hero-eyebrow" style="color:var(--teal-light);" data-i18n="product.eyebrow">The product</div>
+        <h1 style="color:white;margin-bottom:1rem;" data-i18n="product.title">ADSecure</h1>
+        <p style="color:rgba(255,255,255,0.7);max-width:580px;font-size:1.1rem;" data-i18n="product.sub">The European Active Directory security auditing tool that not only detects — it explains, corrects, and documents for your next audit.</p>
+      </div>
+    </div>
+
+    <!-- Audience -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="audience.label">For who</div>
+          <h2 data-i18n="audience.title">Two audiences.<br/>Two distinct reports.</h2>
+        </div>
+        <div class="audience-grid fade-in">
+          <div class="audience-card featured">
+            <div class="audience-tag">🏢 Management</div>
+            <h3 data-i18n="aud.mgmt_title">CEO, CISO & Auditors</h3>
+            <p data-i18n="aud.mgmt_sub">CEO · CISO · Board · NIS2/ISO 27001 Auditor · DPO</p>
+            <ul class="audience-list">
+              <li data-i18n="aud.mgmt_1">Understand global risk level without technical expertise</li>
+              <li data-i18n="aud.mgmt_2">Visualise financial impact of a potential incident (in €)</li>
+              <li data-i18n="aud.mgmt_3">Know your NIS2, ISO 27001 and GDPR compliance status</li>
+              <li data-i18n="aud.mgmt_4">Ready-to-validate remediation planning and budget</li>
+              <li data-i18n="aud.mgmt_5">Present at board meetings or external audits</li>
+            </ul>
+          </div>
+          <div class="audience-card">
+            <div class="audience-tag">🔧 IT Team</div>
+            <h3 data-i18n="aud.it_title">IT Manager & Sysadmin</h3>
+            <p data-i18n="aud.it_sub">IT Manager · Sysadmin · Windows Infrastructure Engineer</p>
+            <ul class="audience-list">
+              <li data-i18n="aud.it_1">Exhaustive list of all controls with their status</li>
+              <li data-i18n="aud.it_2">Precise explanation of why each vulnerability is dangerous</li>
+              <li data-i18n="aud.it_3">Complete remediation guide for each non-compliant point</li>
+              <li data-i18n="aud.it_4">Prioritise by severity and recommended timelines</li>
+              <li data-i18n="aud.it_5">Answer auditors with precise technical data</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="comply.label">Standards</div>
+          <h2 data-i18n="comply.title">Aligned with European<br/>regulatory obligations</h2>
+        </div>
+        <div class="compliance-grid fade-in">
+          <div class="compliance-badge"><h3>NIS2</h3><p data-i18n="comply.nis2">EU Directive 2022/2555 — mandatory since October 2024. Each control mapped to the relevant NIS2 article. Art. 21 summary auto-generated.</p></div>
+          <div class="compliance-badge"><h3>ISO 27001</h3><p data-i18n="comply.iso">2022 standard. Covers Annexes A.8, A.9, A.12, A.18 — assets, access control, logging, compliance.</p></div>
+          <div class="compliance-badge"><h3>CIS v8</h3><p data-i18n="comply.cis">CIS Critical Security Controls v8. Each control references the corresponding CIS benchmark (L1/L2) and ANSSI recommendations.</p></div>
+          <div class="compliance-badge"><h3>GDPR</h3><p data-i18n="comply.gdpr">Articles 5, 25, 30, 32, 33. Domain 09 checklist guides teams on registers, data minimisation and incident notification.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="compare.label">Competitive analysis</div>
+          <h2 data-i18n="compare.title">What other tools don't do.</h2>
+        </div>
+        <div class="fade-in">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th data-i18n="compare.feature">Feature</th>
+                <th data-i18n="compare.market">Market tools</th>
+                <th>ADSecure</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-i18n="comp.r1">Clear remediation guide for each vulnerability</td><td><span class="icon-no">✗</span> Raw alert list</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r2">Non-technical management report (CEO/CISO)</td><td><span class="icon-no">✗</span> 100% technical</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r3">Two separate reports by audience</td><td><span class="icon-partial">~</span> One generic report</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r4">Estimated ransomware financial impact</td><td><span class="icon-no">✗</span> Not available</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r5">NIS2 article-by-article mapping</td><td><span class="icon-no">✗</span> Manual or absent</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r6">Integrated GDPR documentary checklist</td><td><span class="icon-no">✗</span> Not covered</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r7">Directory data stays on your network</td><td><span class="icon-no">✗</span> Sent to cloud servers</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r8">No infrastructure to install</td><td><span class="icon-no">✗</span> Agent/server required</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r9">3-phase prioritisation of vulnerabilities</td><td><span class="icon-partial">~</span> Flat list</td><td><span class="icon-yes">✓</span></td></tr>
+              <tr><td data-i18n="comp.r10">CIS Controls reference per control</td><td><span class="icon-partial">~</span> Partial / separate module</td><td><span class="icon-yes">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="how.label">How it works</div>
+          <h2 data-i18n="how.title">Deploy. Scan. Report.<br/>In minutes.</h2>
+        </div>
+        <div class="steps-grid fade-in">
+          <div class="step"><div class="step-num">01</div><h3 data-i18n="how.s1">Deploy</h3><p data-i18n="how.s1_text">Copy the ADSecure folder to any domain-joined Windows machine. Launch ADSecure-START.bat. RSAT module required.</p></div>
+          <div class="step"><div class="step-num">02</div><h3 data-i18n="how.s2">Scan</h3><p data-i18n="how.s2_text">Click "Start scan". ADSecure queries AD and local system. Estimated duration: 5–15 minutes depending on domain size.</p></div>
+          <div class="step"><div class="step-num">03</div><h3 data-i18n="how.s3">Analyse</h3><p data-i18n="how.s3_text">110 controls execute in sequence. A live progress bar and real-time logs let you track the scan.</p></div>
+          <div class="step"><div class="step-num">04</div><h3 data-i18n="how.s4">Report</h3><p data-i18n="how.s4_text">Two buttons appear: Management Report and IT Report. One click opens them in your browser. Print to PDF instantly.</p></div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-lg);padding:2rem;margin-top:3rem;max-width:640px;margin-left:auto;margin-right:auto;" class="fade-in">
+          <h3 style="font-size:1rem;margin-bottom:1rem;font-family:'DM Sans';font-weight:600;" data-i18n="how.prereq">Technical requirements</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--teal);">▸</span> Windows 10/11 or Windows Server 2016+</li>
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--teal);">▸</span> PowerShell 5.1 or later</li>
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--teal);">▸</span> RSAT Active Directory module installed</li>
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--teal);">▸</span> Domain member account (read-only AD access sufficient)</li>
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--teal);">▸</span> Local administrator rights (recommended for registry controls)</li>
+            <li style="font-size:0.875rem;display:flex;gap:0.5rem;"><span style="color:var(--success);">▸</span> <strong>No internet connection required</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div><!-- /page-product -->
+
+<!-- ─── PRICING PAGE ─── -->
+<div class="page-section" id="page-pricing">
+  <div style="padding-top:68px;">
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="pricing.label">Pricing</div>
+          <h2 data-i18n="pricing.title">Simple, transparent pricing.</h2>
+          <p data-i18n="pricing.sub">One licence. One payment. No hidden fees, no subscription, no cloud costs.</p>
+        </div>
+
+        <div class="pricing-card fade-in">
+          <div class="pricing-badge" data-i18n="pricing.badge">ADSecure · One-time licence</div>
+          <h3 style="font-size:1.1rem;" data-i18n="pricing.name">ADSecure</h3>
+          <p style="font-size:0.9rem;color:var(--ink-light);" data-i18n="pricing.desc">Full Active Directory security audit — 110 controls, 2 reports, NIS2 & ISO 27001 compliance ready.</p>
+          <div class="pricing-price">
+            <span class="currency">€</span>
+            <span class="amount">490</span>
+            <span class="period" data-i18n="pricing.per">/ licence</span>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <span data-i18n="pf.f1">110 security controls across 9 AD domains</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f2">Management report — business risk & financial impact</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f3">IT report — step-by-step remediation guides</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f4">NIS2 Art. 21 compliance summary (auto-generated)</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f5">ISO 27001, CIS v8 & GDPR mapping</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f6">100% on-premise — zero data transmitted</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f7">12 months of updates included</span></li>
+            <li><span class="check">✓</span> <span data-i18n="pf.f8">Email technical support</span></li>
+          </ul>
+          <button class="btn btn-primary btn-lg" style="width:100%;" onclick="handlePurchase()" data-i18n="pricing.cta">Purchase now — €490</button>
+          <p class="pricing-note" data-i18n="pricing.note">Secure payment via Stripe · Invoice provided · Licence delivered within 24h</p>
+        </div>
+
+        <!-- Enterprise -->
+        <div style="max-width:480px;margin:2rem auto 0;background:var(--cream-dark);border-radius:var(--radius-lg);padding:2rem;text-align:center;" class="fade-in">
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-i18n="pricing.ent_title">Enterprise / Multi-licence</h3>
+          <p style="font-size:0.9rem;margin-bottom:1rem;" data-i18n="pricing.ent_text">Need multiple licences or a custom deployment? Contact us for a tailored quote.</p>
+          <button class="btn btn-outline" onclick="showPage('contact')" data-i18n="pricing.ent_cta">Contact sales →</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><!-- /page-pricing -->
+
+<!-- ─── ABOUT PAGE ─── -->
+<div class="page-section" id="page-about">
+  <div style="padding-top:68px;">
+    <div style="background:var(--ink);padding:5rem 0;">
+      <div class="container">
+        <div class="hero-eyebrow" style="color:var(--teal-light);" data-i18n="about.eyebrow">About us</div>
+        <h1 style="color:white;margin-bottom:1rem;" data-i18n="about.title">Mandatory Shield SRL</h1>
+        <p style="color:rgba(255,255,255,0.7);max-width:580px;font-size:1.1rem;" data-i18n="about.tagline">Essential SaaS Security — built by engineers, for engineers.</p>
+      </div>
+    </div>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="grid-2 fade-in">
+          <div>
+            <div class="section-label" data-i18n="about.mission_label">Our mission</div>
+            <h2 data-i18n="about.mission_title">Making enterprise security accessible.</h2>
+            <p style="margin-top:1rem;margin-bottom:1rem;" data-i18n="about.mission_text1">Mandatory Shield SRL was founded with a simple but important conviction: security tools that only detect problems without explaining how to fix them are not security tools — they are anxiety generators.</p>
+            <p data-i18n="about.mission_text2">We build SaaS solutions that combine rigorous technical depth with human-readable output — bridging the gap between IT teams and executive leadership, and making regulatory compliance achievable without a dedicated army of consultants.</p>
+          </div>
+          <div>
+            <div class="section-label" data-i18n="about.values_label">Our values</div>
+            <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:1rem;">
+              <div style="display:flex;gap:1rem;">
+                <div style="width:40px;height:40px;border-radius:var(--radius);background:var(--teal-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🔒</div>
+                <div><h3 style="font-size:1rem;margin-bottom:0.25rem;" data-i18n="about.v1">Privacy by design</h3><p style="font-size:0.875rem;" data-i18n="about.v1_text">Zero data leaves your infrastructure. Ever.</p></div>
+              </div>
+              <div style="display:flex;gap:1rem;">
+                <div style="width:40px;height:40px;border-radius:var(--radius);background:var(--teal-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">💡</div>
+                <div><h3 style="font-size:1rem;margin-bottom:0.25rem;" data-i18n="about.v2">Clarity over complexity</h3><p style="font-size:0.875rem;" data-i18n="about.v2_text">Technical depth, human-readable output. Always both.</p></div>
+              </div>
+              <div style="display:flex;gap:1rem;">
+                <div style="width:40px;height:40px;border-radius:var(--radius);background:var(--teal-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;">🇪🇺</div>
+                <div><h3 style="font-size:1rem;margin-bottom:0.25rem;" data-i18n="about.v3">European standards</h3><p style="font-size:0.875rem;" data-i18n="about.v3_text">Built from day one for NIS2, GDPR, and European enterprise needs.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="founders.label">The team</div>
+          <h2 data-i18n="founders.title">The founders</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:720px;margin:0 auto;" class="fade-in">
+          <div class="founder-card">
+            <div class="founder-avatar">PR</div>
+            <h3 style="font-size:1.1rem;margin-bottom:0.2rem;">Pierre-Antoine Roubaud</h3>
+            <p style="font-size:0.8rem;color:var(--teal);font-weight:500;margin-bottom:0.75rem;" data-i18n="founder.co">Co-founder</p>
+            <p style="font-size:0.875rem;" data-i18n="founder.pa_bio">Windows infrastructure specialist with deep expertise in Active Directory architecture and enterprise security.</p>
+          </div>
+          <div class="founder-card">
+            <div class="founder-avatar">RB</div>
+            <h3 style="font-size:1.1rem;margin-bottom:0.2rem;">Raphaël Berki</h3>
+            <p style="font-size:0.8rem;color:var(--teal);font-weight:500;margin-bottom:0.75rem;" data-i18n="founder.co">Co-founder</p>
+            <p style="font-size:0.875rem;" data-i18n="founder.rb_bio">System administrator focused on cybersecurity, compliance automation and building security tools that actually help IT teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><!-- /page-about -->
+
+<!-- ─── CONTACT PAGE ─── -->
+<div class="page-section" id="page-contact">
+  <div style="padding-top:68px;">
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label" data-i18n="contact.label">Contact</div>
+          <h2 data-i18n="contact.title">Get in touch</h2>
+          <p data-i18n="contact.sub">A question about ADSecure? Want a demo on your environment? Contact us.</p>
+        </div>
+
+        <div class="contact-grid fade-in">
+          <div class="contact-info">
+            <h3 data-i18n="contact.info_title">Mandatory Shield SRL</h3>
+            <p style="margin-bottom:1.5rem;" data-i18n="contact.info_text">We respond to all inquiries within 24 business hours. For demos and enterprise quotes, please use the contact form.</p>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">✉️</div>
+              <div><strong>Email</strong><br/><a href="mailto:contact@mandatoryshield.com" style="color:var(--teal);">contact@mandatoryshield.com</a></div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">🌐</div>
+              <div><strong>Website</strong><br/>mandatoryshield.com</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">🛡️</div>
+              <div><strong data-i18n="contact.product">Product</strong><br/>ADSecure v1.0</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="dash-card">
+              <div class="alert alert-success" id="contactSuccess" data-i18n="contact.success">Your message has been sent. We will reply within 24 hours.</div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.f_name">Full name</label>
+                <input class="form-input" type="text" placeholder="John Smith" id="contactName"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.f_email">Professional email</label>
+                <input class="form-input" type="email" placeholder="you@company.com" id="contactEmail"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.f_company">Company</label>
+                <input class="form-input" type="text" placeholder="ACME Corp" id="contactCompany"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.f_subject">Subject</label>
+                <select class="form-input" id="contactSubject">
+                  <option data-i18n="contact.s1">Demo request</option>
+                  <option data-i18n="contact.s2">Technical question</option>
+                  <option data-i18n="contact.s3">Enterprise licence</option>
+                  <option data-i18n="contact.s4">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.f_message">Message</label>
+                <textarea class="form-input" rows="4" id="contactMessage" style="resize:vertical;" placeholder="Describe your environment or your question..."></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg" style="width:100%;" onclick="submitContact()" data-i18n="contact.send">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div><!-- /page-contact -->
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Mandatory Shield SRL</h3>
+        <p data-i18n="footer.tagline">Essential SaaS Security — Building enterprise-grade security tools that detect, explain, and remediate. Built for European compliance.</p>
+        <div style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">mandatoryshield.com</div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.product">Product</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('product')" data-i18n="footer.adsecure">ADSecure</a></li>
+          <li><a href="#" onclick="showPage('product')" data-i18n="footer.features">Features</a></li>
+          <li><a href="#" onclick="showPage('pricing')" data-i18n="footer.pricing">Pricing</a></li>
+          <li><a href="#" onclick="showPage('product')" data-i18n="footer.compliance">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.company">Company</h4>
+        <ul>
+          <li><a href="#" onclick="showPage('about')" data-i18n="footer.about">About</a></li>
+          <li><a href="#" onclick="showPage('contact')" data-i18n="footer.contact">Contact</a></li>
+          <li><a href="#" onclick="showPage('contact')" data-i18n="footer.demo">Request a demo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.legal">Legal</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer.privacy">Privacy policy</a></li>
+          <li><a href="#" data-i18n="footer.terms">Terms of service</a></li>
+          <li><a href="#" data-i18n="footer.cgv">General conditions</a></li>
+          <li><a href="#" data-i18n="footer.mentions">Legal notices</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Mandatory Shield SRL. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#" data-i18n="footer.privacy">Privacy</a>
+        <a href="#" data-i18n="footer.terms">Terms</a>
+        <a href="#" data-i18n="footer.cgv">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /main-content -->
+
+<!-- ═══════════════════════════════════════════
+     MODAL AUTH
+════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h2 data-i18n="modal.title">Welcome</h2>
+    <p class="modal-sub" data-i18n="modal.sub">Access your ADSecure licence and downloads.</p>
+
+    <div class="modal-tabs">
+      <button class="modal-tab active" onclick="switchTab('login')" id="tab-login" data-i18n="modal.login">Log in</button>
+      <button class="modal-tab" onclick="switchTab('register')" id="tab-register" data-i18n="modal.register">Create account</button>
+    </div>
+
+    <!-- Login form -->
+    <div id="form-login">
+      <div class="alert alert-error" id="loginError" data-i18n="auth.login_error">Invalid email or password.</div>
+      <div class="alert alert-success" id="loginSuccess"></div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.email">Email address</label>
+        <input class="form-input" type="email" id="loginEmail" placeholder="you@company.com"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.password">Password</label>
+        <input class="form-input" type="password" id="loginPassword" placeholder="••••••••"/>
+      </div>
+      <button class="btn btn-primary btn-lg" style="width:100%;margin-top:0.5rem;" onclick="doLogin()" data-i18n="auth.login_btn">Log in</button>
+      <p style="text-align:center;font-size:0.8rem;color:var(--ink-faint);margin-top:1rem;" data-i18n="auth.no_account">Don't have an account? <a href="#" onclick="switchTab('register')" style="color:var(--teal);">Sign up</a></p>
+    </div>
+
+    <!-- Register form -->
+    <div id="form-register" style="display:none;">
+      <div class="alert alert-error" id="registerError"></div>
+      <div class="alert alert-success" id="registerSuccess" data-i18n="auth.register_success">Account created! You can now log in.</div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.fullname">Full name</label>
+        <input class="form-input" type="text" id="regName" placeholder="John Smith"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.email">Email address</label>
+        <input class="form-input" type="email" id="regEmail" placeholder="you@company.com"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.password">Password</label>
+        <input class="form-input" type="password" id="regPassword" placeholder="Min. 8 characters"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-i18n="auth.company">Company</label>
+        <input class="form-input" type="text" id="regCompany" placeholder="ACME Corp"/>
+      </div>
+      <button class="btn btn-primary btn-lg" style="width:100%;margin-top:0.5rem;" onclick="doRegister()" data-i18n="auth.register_btn">Create account</button>
+      <p style="text-align:center;font-size:0.78rem;color:var(--ink-faint);margin-top:1rem;" data-i18n="auth.terms_agree">By creating an account, you agree to our <a href="#" style="color:var(--teal);">Terms of Service</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+// ─── TRANSLATIONS ───────────────────────────────────────────────────────────
+const T = {
+  en: {
+    "nav.product": "Product", "nav.pricing": "Pricing", "nav.about": "About", "nav.contact": "Contact",
+    "nav.login": "Log in", "nav.buy": "Buy ADSecure",
+    "hero.eyebrow": "Essential SaaS Security",
+    "hero.title": "Your Active Directory.<br/><em>No blind spots.</em>",
+    "hero.sub": "ADSecure audits your Windows infrastructure across 110 security controls. Instant NIS2 & ISO 27001 reports. Zero data leaves your network.",
+    "hero.cta_buy": "Get ADSecure →", "hero.cta_learn": "Learn more",
+    "hero.note": "One-time purchase · No subscription · 100% on-premise",
+    "stats.controls": "Security controls", "stats.domains": "AD domains analysed", "stats.reports": "Reports generated", "stats.data": "Data transmitted externally",
+    "trust.label": "They trust us",
+    "problem.label": "The problem", "problem.title": "Other tools detect.<br/>ADSecure fixes.",
+    "problem.sub": "Active Directory is the #1 target for modern ransomware. WannaCry, NotPetya, LockBit — all exploit AD vulnerabilities to spread and take full control of your network.",
+    "problem.card1_title": "Alerts without solutions", "problem.card1_text": "Existing tools produce raw lists of vulnerabilities. No explanation. No remediation guide. Just more anxiety for your IT team.",
+    "problem.card2_title": "Reports no one understands", "problem.card2_text": "Your CISO or CEO receives a 100% technical document. No translation into business risk or financial impact. Useless at board level.",
+    "problem.card3_title": "Data sent to the cloud", "problem.card3_text": "Most SaaS solutions transfer your AD data to their servers. Immediate GDPR risk. ADSecure runs 100% locally — nothing leaves your network.",
+    "features.label": "What we analyse", "features.title": "110 controls across<br/>9 critical AD domains", "features.cta": "View all 110 controls →",
+    "feat.accounts": "Accounts & Privileges", "feat.accounts_text": "Privileged groups, accumulated rights drift, stale accounts.",
+    "feat.passwords": "Password Policies", "feat.passwords_text": "Complexity, expiry, history, lockout rules across the domain.",
+    "feat.acl": "Delegations & ACLs", "feat.acl_text": "Dangerous delegations and excessive rights on sensitive objects.",
+    "feat.config": "AD Configuration", "feat.config_text": "At-risk protocols and services on domain controllers.",
+    "feat.gpo": "Group Policy Objects", "feat.gpo_text": "GPO consistency, status and security in your environment.",
+    "feat.audit": "Logging & Audit", "feat.audit_text": "Event log sizing and advanced audit policy activation.",
+    "feat.dc": "DC Security", "feat.dc_text": "Firewall, credential isolation and secure boot on DCs.",
+    "feat.gdpr": "GDPR & NIS2", "feat.gdpr_text": "Documentary checklist for regulatory obligations and governance.",
+    "cta.title": "Ready to audit your Active Directory?", "cta.sub": "One-time purchase. No subscription. No data leaves your network. Deployed in under 5 minutes.", "cta.btn": "Get ADSecure now",
+    "faq.title": "Frequently asked questions",
+    "faq.q1": "What is ADSecure?", "faq.a1": "ADSecure is an on-premise Active Directory security auditing software. It analyses your AD infrastructure across 110 security controls and generates two reports: one for management (NIS2/ISO 27001 compliance) and one for IT administrators (step-by-step remediation guides). Everything runs locally — no data leaves your network.",
+    "faq.q2": "Does ADSecure send data to the cloud?", "faq.a2": "No. ADSecure runs entirely on your local machine or a domain-joined Windows workstation. Zero data is transmitted externally. Your directory data never leaves your network. This makes it fully GDPR-compliant by design.",
+    "faq.q3": "What are the technical requirements?", "faq.a3": "Windows 10/11 or Windows Server 2016+, PowerShell 5.1 or later, RSAT Active Directory module installed, a domain member account (read-only AD access is sufficient), and local administrator rights (recommended for registry controls). No internet connection required.",
+    "faq.q4": "Is ADSecure NIS2 and ISO 27001 compliant?", "faq.a4": "Each of ADSecure's 110 controls is mapped to the relevant NIS2 article (EU Directive 2022/2555, mandatory since October 2024) and to ISO 27001:2022 Annexes A.8, A.9, A.12, A.18. The management report automatically generates an Art. 21 compliance summary ready for auditors.",
+    "faq.q5": "Is it a one-time purchase or a subscription?", "faq.a5": "ADSecure is a one-time purchase. No monthly fees, no subscription, no cloud costs. You buy a licence once and use it on your infrastructure. Updates are included for 12 months from the purchase date.",
+    "product.eyebrow": "The product", "product.title": "ADSecure", "product.sub": "The European Active Directory security auditing tool that not only detects — it explains, corrects, and documents for your next audit.",
+    "audience.label": "For who", "audience.title": "Two audiences.<br/>Two distinct reports.",
+    "aud.mgmt_title": "CEO, CISO & Auditors", "aud.mgmt_sub": "CEO · CISO · Board · NIS2/ISO 27001 Auditor · DPO",
+    "aud.mgmt_1": "Understand global risk level without technical expertise", "aud.mgmt_2": "Visualise financial impact of a potential incident (in €)",
+    "aud.mgmt_3": "Know your NIS2, ISO 27001 and GDPR compliance status", "aud.mgmt_4": "Ready-to-validate remediation planning and budget",
+    "aud.mgmt_5": "Present at board meetings or external audits",
+    "aud.it_title": "IT Manager & Sysadmin", "aud.it_sub": "IT Manager · Sysadmin · Windows Infrastructure Engineer",
+    "aud.it_1": "Exhaustive list of all controls with their status", "aud.it_2": "Precise explanation of why each vulnerability is dangerous",
+    "aud.it_3": "Complete remediation guide for each non-compliant point", "aud.it_4": "Prioritise by severity and recommended timelines",
+    "aud.it_5": "Answer auditors with precise technical data",
+    "comply.label": "Standards", "comply.title": "Aligned with European<br/>regulatory obligations",
+    "comply.nis2": "EU Directive 2022/2555 — mandatory since October 2024. Each control mapped to the relevant NIS2 article. Art. 21 summary auto-generated.",
+    "comply.iso": "2022 standard. Covers Annexes A.8, A.9, A.12, A.18 — assets, access control, logging, compliance.",
+    "comply.cis": "CIS Critical Security Controls v8. Each control references the corresponding CIS benchmark (L1/L2) and ANSSI recommendations.",
+    "comply.gdpr": "Articles 5, 25, 30, 32, 33. Domain 09 checklist guides teams on registers, data minimisation and incident notification.",
+    "compare.label": "Competitive analysis", "compare.title": "What other tools don't do.",
+    "compare.feature": "Feature", "compare.market": "Market tools",
+    "comp.r1": "Clear remediation guide for each vulnerability", "comp.r2": "Non-technical management report (CEO/CISO)",
+    "comp.r3": "Two separate reports by audience", "comp.r4": "Estimated ransomware financial impact",
+    "comp.r5": "NIS2 article-by-article mapping", "comp.r6": "Integrated GDPR documentary checklist",
+    "comp.r7": "Directory data stays on your network", "comp.r8": "No infrastructure to install",
+    "comp.r9": "3-phase prioritisation of vulnerabilities", "comp.r10": "CIS Controls reference per control",
+    "how.label": "How it works", "how.title": "Deploy. Scan. Report.<br/>In minutes.",
+    "how.s1": "Deploy", "how.s1_text": "Copy the ADSecure folder to any domain-joined Windows machine. Launch ADSecure-START.bat. RSAT module required.",
+    "how.s2": "Scan", "how.s2_text": "Click \"Start scan\". ADSecure queries AD and local system. Estimated duration: 5–15 minutes depending on domain size.",
+    "how.s3": "Analyse", "how.s3_text": "110 controls execute in sequence. A live progress bar and real-time logs let you track the scan.",
+    "how.s4": "Report", "how.s4_text": "Two buttons appear: Management Report and IT Report. One click opens them in your browser. Print to PDF instantly.",
+    "how.prereq": "Technical requirements",
+    "pricing.label": "Pricing", "pricing.title": "Simple, transparent pricing.", "pricing.sub": "One licence. One payment. No hidden fees, no subscription, no cloud costs.",
+    "pricing.badge": "ADSecure · One-time licence", "pricing.name": "ADSecure",
+    "pricing.desc": "Full Active Directory security audit — 110 controls, 2 reports, NIS2 & ISO 27001 compliance ready.",
+    "pricing.per": "/ licence", "pricing.cta": "Purchase now — €490",
+    "pricing.note": "Secure payment via Stripe · Invoice provided · Licence delivered within 24h",
+    "pf.f1": "110 security controls across 9 AD domains", "pf.f2": "Management report — business risk & financial impact",
+    "pf.f3": "IT report — step-by-step remediation guides", "pf.f4": "NIS2 Art. 21 compliance summary (auto-generated)",
+    "pf.f5": "ISO 27001, CIS v8 & GDPR mapping", "pf.f6": "100% on-premise — zero data transmitted",
+    "pf.f7": "12 months of updates included", "pf.f8": "Email technical support",
+    "pricing.ent_title": "Enterprise / Multi-licence", "pricing.ent_text": "Need multiple licences or a custom deployment? Contact us for a tailored quote.", "pricing.ent_cta": "Contact sales →",
+    "about.eyebrow": "About us", "about.title": "Mandatory Shield SRL", "about.tagline": "Essential SaaS Security — built by engineers, for engineers.",
+    "about.mission_label": "Our mission", "about.mission_title": "Making enterprise security accessible.",
+    "about.mission_text1": "Mandatory Shield SRL was founded with a simple but important conviction: security tools that only detect problems without explaining how to fix them are not security tools — they are anxiety generators.",
+    "about.mission_text2": "We build SaaS solutions that combine rigorous technical depth with human-readable output — bridging the gap between IT teams and executive leadership, and making regulatory compliance achievable without a dedicated army of consultants.",
+    "about.values_label": "Our values",
+    "about.v1": "Privacy by design", "about.v1_text": "Zero data leaves your infrastructure. Ever.",
+    "about.v2": "Clarity over complexity", "about.v2_text": "Technical depth, human-readable output. Always both.",
+    "about.v3": "European standards", "about.v3_text": "Built from day one for NIS2, GDPR, and European enterprise needs.",
+    "founders.label": "The team", "founders.title": "The founders",
+    "founder.co": "Co-founder",
+    "founder.pa_bio": "Windows infrastructure specialist with deep expertise in Active Directory architecture and enterprise security.",
+    "founder.rb_bio": "System administrator focused on cybersecurity, compliance automation and building security tools that actually help IT teams.",
+    "contact.label": "Contact", "contact.title": "Get in touch", "contact.sub": "A question about ADSecure? Want a demo on your environment? Contact us.",
+    "contact.info_title": "Mandatory Shield SRL", "contact.info_text": "We respond to all inquiries within 24 business hours. For demos and enterprise quotes, please use the contact form.",
+    "contact.product": "Product",
+    "contact.f_name": "Full name", "contact.f_email": "Professional email", "contact.f_company": "Company",
+    "contact.f_subject": "Subject", "contact.f_message": "Message", "contact.send": "Send message",
+    "contact.s1": "Demo request", "contact.s2": "Technical question", "contact.s3": "Enterprise licence", "contact.s4": "Other",
+    "contact.success": "Your message has been sent. We will reply within 24 hours.",
+    "dash.welcome": "Welcome back,", "dash.logout": "Log out", "dash.account": "Account",
+    "dash.need_help": "Need help?", "dash.support_text": "Our team is available for technical support.",
+    "dash.contact_us": "Contact us",
+    "dash.no_purchase_title": "No licence yet", "dash.no_purchase_text": "Purchase ADSecure to get immediate access to the download.",
+    "dash.my_licences": "My licences", "dash.active": "Active", "dash.one_time": "One-time licence · v1.0", "dash.download": "⬇ Download",
+    "dash.download_note": "📋 Your licence key will be sent by email within 24h after purchase confirmation.",
+    "modal.title": "Welcome", "modal.sub": "Access your ADSecure licence and downloads.",
+    "modal.login": "Log in", "modal.register": "Create account",
+    "auth.email": "Email address", "auth.password": "Password", "auth.fullname": "Full name", "auth.company": "Company",
+    "auth.login_btn": "Log in", "auth.register_btn": "Create account",
+    "auth.login_error": "Invalid email or password.",
+    "auth.register_success": "Account created! You can now log in.",
+    "auth.no_account": "Don't have an account?",
+    "auth.terms_agree": "By creating an account, you agree to our Terms of Service.",
+    "footer.tagline": "Essential SaaS Security — Building enterprise-grade security tools that detect, explain, and remediate. Built for European compliance.",
+    "footer.product": "Product", "footer.adsecure": "ADSecure", "footer.features": "Features", "footer.pricing": "Pricing", "footer.compliance": "Compliance",
+    "footer.company": "Company", "footer.about": "About", "footer.contact": "Contact", "footer.demo": "Request a demo",
+    "footer.legal": "Legal", "footer.privacy": "Privacy policy", "footer.terms": "Terms of service", "footer.cgv": "General conditions", "footer.mentions": "Legal notices",
+  },
+  fr: {
+    "nav.product": "Produit", "nav.pricing": "Tarifs", "nav.about": "À propos", "nav.contact": "Contact",
+    "nav.login": "Se connecter", "nav.buy": "Acheter ADSecure",
+    "hero.eyebrow": "Sécurité SaaS Essentielle",
+    "hero.title": "Votre Active Directory.<br/><em>Sans angles morts.</em>",
+    "hero.sub": "ADSecure audite votre infrastructure Windows sur 110 points de contrôle. Rapports NIS2 & ISO 27001 instantanés. Aucune donnée ne quitte votre réseau.",
+    "hero.cta_buy": "Obtenir ADSecure →", "hero.cta_learn": "En savoir plus",
+    "hero.note": "Achat unique · Sans abonnement · 100 % on-premise",
+    "stats.controls": "Contrôles de sécurité", "stats.domains": "Domaines AD analysés", "stats.reports": "Rapports générés", "stats.data": "Donnée transmise à l'extérieur",
+    "trust.label": "Ils nous font confiance",
+    "problem.label": "Le problème", "problem.title": "Les autres outils signalent.<br/>ADSecure corrige.",
+    "problem.sub": "L'Active Directory est la cible numéro un des ransomwares modernes. WannaCry, NotPetya, LockBit — tous exploitent des failles AD pour se propager et prendre le contrôle total du réseau.",
+    "problem.card1_title": "Alertes sans solutions", "problem.card1_text": "Les outils existants produisent des listes brutes de vulnérabilités. Pas d'explication. Pas de guide de remédiation. Juste plus d'anxiété pour votre équipe IT.",
+    "problem.card2_title": "Rapports incompréhensibles", "problem.card2_text": "Votre RSSI ou CEO reçoit un document 100 % technique. Aucune traduction en risque business ou impact financier. Inutilisable en comité de direction.",
+    "problem.card3_title": "Données envoyées dans le cloud", "problem.card3_text": "La plupart des solutions SaaS transfèrent vos données AD vers leurs serveurs. Risque RGPD immédiat. ADSecure fonctionne 100 % localement.",
+    "features.label": "Ce qu'on analyse", "features.title": "110 contrôles sur<br/>9 domaines AD critiques", "features.cta": "Voir les 110 contrôles →",
+    "feat.accounts": "Comptes & Privilèges", "feat.accounts_text": "Groupes à hauts privilèges, dérives de droits, comptes obsolètes.",
+    "feat.passwords": "Politiques de mots de passe", "feat.passwords_text": "Complexité, expiration, historique, règles de verrouillage sur le domaine.",
+    "feat.acl": "Délégations & ACL", "feat.acl_text": "Délégations dangereuses et droits excessifs sur les objets sensibles.",
+    "feat.config": "Configuration AD", "feat.config_text": "Protocoles et services à risque sur les contrôleurs de domaine.",
+    "feat.gpo": "Group Policy Objects", "feat.gpo_text": "Cohérence, état et sécurité des GPO dans votre environnement.",
+    "feat.audit": "Journalisation & Audit", "feat.audit_text": "Dimensionnement des journaux et activation des politiques d'audit avancé.",
+    "feat.dc": "Sécurité des DC", "feat.dc_text": "Pare-feu, isolation des credentials et démarrage sécurisé sur les DC.",
+    "feat.gdpr": "RGPD & NIS2", "feat.gdpr_text": "Checklist documentaire pour les obligations réglementaires et la gouvernance.",
+    "cta.title": "Prêt à auditer votre Active Directory ?", "cta.sub": "Achat unique. Sans abonnement. Aucune donnée ne quitte votre réseau. Déployé en moins de 5 minutes.", "cta.btn": "Obtenir ADSecure maintenant",
+    "faq.title": "Questions fréquentes",
+    "faq.q1": "Qu'est-ce qu'ADSecure ?", "faq.a1": "ADSecure est un logiciel d'audit de sécurité Active Directory on-premise. Il analyse votre infrastructure sur 110 points de contrôle et génère deux rapports : un pour la direction (conformité NIS2/ISO 27001) et un pour les administrateurs IT (guides de remédiation étape par étape). Tout s'exécute localement.",
+    "faq.q2": "ADSecure envoie-t-il des données dans le cloud ?", "faq.a2": "Non. ADSecure fonctionne entièrement sur votre poste local ou un serveur Windows membre du domaine. Aucune donnée n'est transmise à l'extérieur. Vos données d'annuaire ne quittent jamais votre réseau.",
+    "faq.q3": "Quels sont les prérequis techniques ?", "faq.a3": "Windows 10/11 ou Windows Server 2016+, PowerShell 5.1 ou supérieur, module RSAT Active Directory installé, compte membre du domaine (lecture AD suffisante), droits administrateur local recommandés. Aucune connexion internet requise.",
+    "faq.q4": "ADSecure est-il conforme NIS2 et ISO 27001 ?", "faq.a4": "Chacun des 110 contrôles est mappé à l'article NIS2 concerné (directive UE 2022/2555, obligatoire depuis octobre 2024) et aux Annexes ISO 27001:2022 A.8, A.9, A.12, A.18. Le rapport direction génère automatiquement une synthèse Art. 21 prête pour les auditeurs.",
+    "faq.q5": "Est-ce un achat unique ou un abonnement ?", "faq.a5": "ADSecure est un achat unique. Pas de frais mensuels, pas d'abonnement, pas de coûts cloud. Vous achetez une licence une fois et l'utilisez sur votre infrastructure. Les mises à jour sont incluses pendant 12 mois.",
+    "product.eyebrow": "Le produit", "product.title": "ADSecure", "product.sub": "L'outil européen d'audit de sécurité Active Directory qui ne se contente pas de détecter — il explique, corrige et documente pour votre prochain audit.",
+    "audience.label": "Pour qui", "audience.title": "Deux audiences.<br/>Deux rapports distincts.",
+    "aud.mgmt_title": "CEO, RSSI & Auditeurs", "aud.mgmt_sub": "CEO · RSSI · Conseil · Auditeur NIS2/ISO 27001 · DPO",
+    "aud.mgmt_1": "Comprendre le niveau de risque global sans compétences techniques", "aud.mgmt_2": "Visualiser l'impact financier potentiel d'un incident (en €)",
+    "aud.mgmt_3": "Connaître l'état de conformité NIS2, ISO 27001 et RGPD", "aud.mgmt_4": "Planning de remédiation prêt à valider et budgéter",
+    "aud.mgmt_5": "Présenter en comité de direction ou lors d'un audit externe",
+    "aud.it_title": "IT Manager & Sysadmin", "aud.it_sub": "IT Manager · Sysadmin · Ingénieur infrastructure Windows",
+    "aud.it_1": "Liste exhaustive de tous les contrôles avec leur statut", "aud.it_2": "Explication précise de pourquoi chaque faille est dangereuse",
+    "aud.it_3": "Guide de remédiation complet pour chaque point non conforme", "aud.it_4": "Priorisation par sévérité et délais recommandés",
+    "aud.it_5": "Répondre aux auditeurs avec des données techniques précises",
+    "comply.label": "Standards", "comply.title": "Aligné sur les obligations<br/>réglementaires européennes",
+    "comply.nis2": "Directive UE 2022/2555 — obligatoire depuis octobre 2024. Chaque contrôle mappé à l'article NIS2 concerné. Synthèse Art. 21 générée automatiquement.",
+    "comply.iso": "Norme 2022. Couvre les Annexes A.8, A.9, A.12, A.18 — actifs, contrôle des accès, journalisation, conformité.",
+    "comply.cis": "CIS Critical Security Controls v8. Chaque contrôle référence le benchmark CIS correspondant (L1/L2) et les recommandations ANSSI.",
+    "comply.gdpr": "Articles 5, 25, 30, 32, 33. La checklist du Domaine 09 guide les équipes sur les registres, minimisation des données et notification d'incident.",
+    "compare.label": "Analyse concurrentielle", "compare.title": "Ce que les autres outils ne font pas.",
+    "compare.feature": "Fonctionnalité", "compare.market": "Outils du marché",
+    "comp.r1": "Guide de remédiation clair pour chaque faille", "comp.r2": "Rapport direction non-technique (CEO/RSSI)",
+    "comp.r3": "Deux rapports distincts par audience", "comp.r4": "Impact financier ransomware estimé",
+    "comp.r5": "Mapping NIS2 article par article", "comp.r6": "Checklist documentaire RGPD intégrée",
+    "comp.r7": "Données d'annuaire restent sur votre réseau", "comp.r8": "Aucune infrastructure à installer",
+    "comp.r9": "Priorisation des failles en 3 phases", "comp.r10": "Référence CIS Controls par contrôle",
+    "how.label": "Fonctionnement", "how.title": "Lancez. Analysez.<br/>Rapportez. En quelques minutes.",
+    "how.s1": "Déployer", "how.s1_text": "Copier le dossier ADSecure sur un poste Windows membre du domaine. Lancer ADSecure-START.bat. Module RSAT requis.",
+    "how.s2": "Scanner", "how.s2_text": "Cliquer sur \"Lancer le scan\". ADSecure interroge l'AD et le système local. Durée estimée : 5 à 15 minutes.",
+    "how.s3": "Analyser", "how.s3_text": "110 contrôles s'exécutent en séquence. Une barre de progression et des logs en temps réel permettent de suivre l'avancement.",
+    "how.s4": "Rapporter", "how.s4_text": "Deux boutons apparaissent : Rapport Direction et Rapport IT. Ouverts en un clic dans le navigateur. Imprimables en PDF.",
+    "how.prereq": "Prérequis techniques",
+    "pricing.label": "Tarifs", "pricing.title": "Tarification simple et transparente.", "pricing.sub": "Une licence. Un paiement. Sans frais cachés, sans abonnement, sans coûts cloud.",
+    "pricing.badge": "ADSecure · Licence unique", "pricing.name": "ADSecure",
+    "pricing.desc": "Audit de sécurité Active Directory complet — 110 contrôles, 2 rapports, conformité NIS2 & ISO 27001.",
+    "pricing.per": "/ licence", "pricing.cta": "Acheter maintenant — 490 €",
+    "pricing.note": "Paiement sécurisé via Stripe · Facture fournie · Licence livrée sous 24h",
+    "pf.f1": "110 contrôles de sécurité sur 9 domaines AD", "pf.f2": "Rapport direction — risque business & impact financier",
+    "pf.f3": "Rapport IT — guides de remédiation étape par étape", "pf.f4": "Synthèse conformité NIS2 Art. 21 (générée automatiquement)",
+    "pf.f5": "Mapping ISO 27001, CIS v8 & RGPD", "pf.f6": "100 % on-premise — zéro transmission externe",
+    "pf.f7": "12 mois de mises à jour inclus", "pf.f8": "Support technique par email",
+    "pricing.ent_title": "Entreprise / Multi-licences", "pricing.ent_text": "Besoin de plusieurs licences ou d'un déploiement personnalisé ? Contactez-nous pour un devis sur mesure.", "pricing.ent_cta": "Contacter les ventes →",
+    "about.eyebrow": "À propos", "about.title": "Mandatory Shield SRL", "about.tagline": "Sécurité SaaS Essentielle — conçue par des ingénieurs, pour des ingénieurs.",
+    "about.mission_label": "Notre mission", "about.mission_title": "Rendre la sécurité entreprise accessible.",
+    "about.mission_text1": "Mandatory Shield SRL a été fondée avec une conviction simple mais importante : un outil de sécurité qui ne détecte les problèmes sans expliquer comment les corriger n'est pas un outil de sécurité — c'est un générateur d'anxiété.",
+    "about.mission_text2": "Nous construisons des solutions SaaS qui combinent rigueur technique et lisibilité humaine — comblant le fossé entre les équipes IT et la direction, et rendant la conformité réglementaire accessible sans armée de consultants.",
+    "about.values_label": "Nos valeurs",
+    "about.v1": "Privacy by design", "about.v1_text": "Aucune donnée ne quitte votre infrastructure. Jamais.",
+    "about.v2": "Clarté sur complexité", "about.v2_text": "Profondeur technique, output lisible. Toujours les deux.",
+    "about.v3": "Standards européens", "about.v3_text": "Conçu dès le départ pour NIS2, RGPD et les besoins des entreprises européennes.",
+    "founders.label": "L'équipe", "founders.title": "Les fondateurs",
+    "founder.co": "Co-fondateur",
+    "founder.pa_bio": "Spécialiste infrastructure Windows avec une expertise approfondie en architecture Active Directory et sécurité entreprise.",
+    "founder.rb_bio": "Administrateur système spécialisé en cybersécurité, automatisation de la conformité et création d'outils de sécurité utiles aux équipes IT.",
+    "contact.label": "Contact", "contact.title": "Prenez contact", "contact.sub": "Une question sur ADSecure ? Vous souhaitez une démonstration sur votre environnement ? Contactez-nous.",
+    "contact.info_title": "Mandatory Shield SRL", "contact.info_text": "Nous répondons à toutes les demandes dans les 24 heures ouvrables. Pour les démos et devis entreprise, utilisez le formulaire de contact.",
+    "contact.product": "Produit",
+    "contact.f_name": "Nom complet", "contact.f_email": "Email professionnel", "contact.f_company": "Entreprise",
+    "contact.f_subject": "Sujet", "contact.f_message": "Message", "contact.send": "Envoyer le message",
+    "contact.s1": "Demande de démo", "contact.s2": "Question technique", "contact.s3": "Licence entreprise", "contact.s4": "Autre",
+    "contact.success": "Votre message a été envoyé. Nous vous répondrons sous 24 heures.",
+    "dash.welcome": "Bienvenue,", "dash.logout": "Se déconnecter", "dash.account": "Compte",
+    "dash.need_help": "Besoin d'aide ?", "dash.support_text": "Notre équipe est disponible pour le support technique.",
+    "dash.contact_us": "Nous contacter",
+    "dash.no_purchase_title": "Aucune licence", "dash.no_purchase_text": "Achetez ADSecure pour accéder immédiatement au téléchargement.",
+    "dash.my_licences": "Mes licences", "dash.active": "Actif", "dash.one_time": "Licence unique · v1.0", "dash.download": "⬇ Télécharger",
+    "dash.download_note": "📋 Votre clé de licence sera envoyée par email sous 24h après confirmation du paiement.",
+    "modal.title": "Bienvenue", "modal.sub": "Accédez à votre licence ADSecure et aux téléchargements.",
+    "modal.login": "Se connecter", "modal.register": "Créer un compte",
+    "auth.email": "Adresse email", "auth.password": "Mot de passe", "auth.fullname": "Nom complet", "auth.company": "Entreprise",
+    "auth.login_btn": "Se connecter", "auth.register_btn": "Créer un compte",
+    "auth.login_error": "Email ou mot de passe invalide.",
+    "auth.register_success": "Compte créé ! Vous pouvez maintenant vous connecter.",
+    "auth.no_account": "Pas encore de compte ?",
+    "auth.terms_agree": "En créant un compte, vous acceptez nos Conditions d'utilisation.",
+    "footer.tagline": "Sécurité SaaS Essentielle — Création d'outils de sécurité entreprise qui détectent, expliquent et corrigent. Conçu pour la conformité européenne.",
+    "footer.product": "Produit", "footer.adsecure": "ADSecure", "footer.features": "Fonctionnalités", "footer.pricing": "Tarifs", "footer.compliance": "Conformité",
+    "footer.company": "Entreprise", "footer.about": "À propos", "footer.contact": "Contact", "footer.demo": "Demander une démo",
+    "footer.legal": "Légal", "footer.privacy": "Politique de confidentialité", "footer.terms": "CGU", "footer.cgv": "CGV", "footer.mentions": "Mentions légales",
+  },
+  de: {
+    "nav.product": "Produkt", "nav.pricing": "Preise", "nav.about": "Über uns", "nav.contact": "Kontakt",
+    "nav.login": "Anmelden", "nav.buy": "ADSecure kaufen",
+    "hero.eyebrow": "Wesentliche SaaS-Sicherheit",
+    "hero.title": "Ihr Active Directory.<br/><em>Keine blinden Flecken.</em>",
+    "hero.sub": "ADSecure prüft Ihre Windows-Infrastruktur in 110 Sicherheitskontrollen. Sofortige NIS2- & ISO-27001-Berichte. Keine Daten verlassen Ihr Netzwerk.",
+    "hero.cta_buy": "ADSecure holen →", "hero.cta_learn": "Mehr erfahren",
+    "hero.note": "Einmalige Zahlung · Kein Abonnement · 100 % On-Premise",
+    "stats.controls": "Sicherheitskontrollen", "stats.domains": "AD-Domänen analysiert", "stats.reports": "Berichte erstellt", "stats.data": "Daten nach außen übertragen",
+    "trust.label": "Sie vertrauen uns",
+    "problem.label": "Das Problem", "problem.title": "Andere Tools erkennen.<br/>ADSecure behebt.",
+    "problem.sub": "Active Directory ist das Hauptziel moderner Ransomware. WannaCry, NotPetya, LockBit — alle nutzen AD-Schwachstellen aus, um sich zu verbreiten und die vollständige Kontrolle zu übernehmen.",
+    "problem.card1_title": "Warnungen ohne Lösungen", "problem.card1_text": "Vorhandene Tools erzeugen rohe Schwachstellenlisten. Keine Erklärung. Kein Behebungsleitfaden. Nur mehr Stress für Ihr IT-Team.",
+    "problem.card2_title": "Unverständliche Berichte", "problem.card2_text": "Ihr CISO oder CEO erhält ein 100% technisches Dokument. Keine Übersetzung in Geschäftsrisiken. Im Vorstand nutzlos.",
+    "problem.card3_title": "Daten in die Cloud gesendet", "problem.card3_text": "Die meisten SaaS-Lösungen übertragen Ihre AD-Daten auf ihre Server. Sofortiges DSGVO-Risiko. ADSecure läuft 100% lokal.",
+    "features.label": "Was wir analysieren", "features.title": "110 Kontrollen über<br/>9 kritische AD-Domänen", "features.cta": "Alle 110 Kontrollen ansehen →",
+    "feat.accounts": "Konten & Berechtigungen", "feat.accounts_text": "Privilegierte Gruppen, angehäufte Rechtedrift, veraltete Konten.",
+    "feat.passwords": "Kennwortrichtlinien", "feat.passwords_text": "Komplexität, Ablauf, Verlauf, Sperrregeln domänenweit.",
+    "feat.acl": "Delegierungen & ACLs", "feat.acl_text": "Gefährliche Delegierungen und übermäßige Rechte auf sensiblen Objekten.",
+    "feat.config": "AD-Konfiguration", "feat.config_text": "Risikobehaftete Protokolle und Dienste auf Domänencontrollern.",
+    "feat.gpo": "Gruppenrichtlinien", "feat.gpo_text": "GPO-Konsistenz, Status und Sicherheit in Ihrer Umgebung.",
+    "feat.audit": "Protokollierung & Audit", "feat.audit_text": "Ereignisprotokolldimensionierung und erweiterte Audit-Richtlinienaktivierung.",
+    "feat.dc": "DC-Sicherheit", "feat.dc_text": "Firewall, Credential-Isolation und sicherer Start auf DCs.",
+    "feat.gdpr": "DSGVO & NIS2", "feat.gdpr_text": "Dokumentar-Checkliste für regulatorische Verpflichtungen und Governance.",
+    "cta.title": "Bereit, Ihr Active Directory zu prüfen?", "cta.sub": "Einmaliger Kauf. Kein Abonnement. Keine Daten verlassen Ihr Netzwerk. In unter 5 Minuten bereitgestellt.", "cta.btn": "ADSecure jetzt holen",
+    "faq.title": "Häufig gestellte Fragen",
+    "faq.q1": "Was ist ADSecure?", "faq.a1": "ADSecure ist eine On-Premise-Software zur Sicherheitsprüfung von Active Directory. Sie analysiert Ihre AD-Infrastruktur in 110 Sicherheitskontrollen und erstellt zwei Berichte: einen für das Management (NIS2/ISO-27001-Konformität) und einen für IT-Administratoren (schrittweise Behebungsleitfäden).",
+    "faq.q2": "Sendet ADSecure Daten in die Cloud?", "faq.a2": "Nein. ADSecure läuft vollständig auf Ihrem lokalen Rechner oder einem domänenmitglieds-Windows-Server. Keine Daten werden extern übertragen. Ihre Verzeichnisdaten verlassen niemals Ihr Netzwerk.",
+    "faq.q3": "Was sind die technischen Anforderungen?", "faq.a3": "Windows 10/11 oder Windows Server 2016+, PowerShell 5.1 oder höher, RSAT Active Directory-Modul installiert, Domänenmitgliedskonto (schreibgeschützter AD-Zugriff ausreichend), lokale Administratorrechte empfohlen. Keine Internetverbindung erforderlich.",
+    "faq.q4": "Ist ADSecure NIS2- und ISO-27001-konform?", "faq.a4": "Jede der 110 Kontrollen ist dem relevanten NIS2-Artikel (EU-Richtlinie 2022/2555, seit Oktober 2024 verpflichtend) und den ISO-27001:2022-Anhängen A.8, A.9, A.12, A.18 zugeordnet. Der Managementbericht erstellt automatisch eine Art.-21-Konformitätszusammenfassung.",
+    "faq.q5": "Einmaliger Kauf oder Abonnement?", "faq.a5": "ADSecure ist ein einmaliger Kauf. Keine monatlichen Gebühren, kein Abonnement, keine Cloud-Kosten. Sie kaufen eine Lizenz einmal und nutzen sie in Ihrer Infrastruktur. Updates sind 12 Monate ab Kaufdatum enthalten.",
+    "product.eyebrow": "Das Produkt", "product.title": "ADSecure", "product.sub": "Das europäische Active-Directory-Sicherheitsaudit-Tool, das nicht nur erkennt — es erklärt, korrigiert und dokumentiert für Ihr nächstes Audit.",
+    "audience.label": "Für wen", "audience.title": "Zwei Zielgruppen.<br/>Zwei separate Berichte.",
+    "aud.mgmt_title": "CEO, CISO & Prüfer", "aud.mgmt_sub": "CEO · CISO · Vorstand · NIS2/ISO-27001-Prüfer · DSB",
+    "aud.mgmt_1": "Globales Risikoniveau ohne technisches Know-how verstehen", "aud.mgmt_2": "Finanzielle Auswirkungen eines Vorfalls visualisieren (in €)",
+    "aud.mgmt_3": "NIS2-, ISO-27001- und DSGVO-Konformitätsstatus kennen", "aud.mgmt_4": "Behebungsplan zur Validierung und Budgetierung bereit",
+    "aud.mgmt_5": "Präsentation im Vorstand oder bei externen Audits",
+    "aud.it_title": "IT-Manager & Sysadmin", "aud.it_sub": "IT-Manager · Sysadmin · Windows-Infrastrukturingenieur",
+    "aud.it_1": "Vollständige Liste aller Kontrollen mit Status", "aud.it_2": "Genaue Erklärung, warum jede Schwachstelle gefährlich ist",
+    "aud.it_3": "Vollständiger Behebungsleitfaden für jeden nicht konformen Punkt", "aud.it_4": "Priorisierung nach Schweregrad und empfohlenen Fristen",
+    "aud.it_5": "Prüfern mit präzisen technischen Daten antworten",
+    "comply.label": "Standards", "comply.title": "Ausgerichtet auf europäische<br/>regulatorische Verpflichtungen",
+    "comply.nis2": "EU-Richtlinie 2022/2555 — seit Oktober 2024 verpflichtend. Jede Kontrolle dem relevanten NIS2-Artikel zugeordnet. Art.-21-Zusammenfassung automatisch generiert.",
+    "comply.iso": "Norm 2022. Abdeckung der Anhänge A.8, A.9, A.12, A.18 — Vermögenswerte, Zugangskontrolle, Protokollierung, Konformität.",
+    "comply.cis": "CIS Critical Security Controls v8. Jede Kontrolle verweist auf den entsprechenden CIS-Benchmark (L1/L2) und BSI-Empfehlungen.",
+    "comply.gdpr": "Artikel 5, 25, 30, 32, 33. Die Domäne-09-Checkliste leitet Teams bei Registern, Datensparsamkeit und Vorfallsmeldung.",
+    "compare.label": "Wettbewerbsanalyse", "compare.title": "Was andere Tools nicht können.",
+    "compare.feature": "Funktion", "compare.market": "Markt-Tools",
+    "comp.r1": "Klarer Behebungsleitfaden für jede Schwachstelle", "comp.r2": "Nicht-technischer Managementbericht (CEO/CISO)",
+    "comp.r3": "Zwei separate Berichte nach Zielgruppe", "comp.r4": "Geschätzter finanzieller Ransomware-Schaden",
+    "comp.r5": "NIS2-Artikel-für-Artikel-Zuordnung", "comp.r6": "Integrierte DSGVO-Dokumentarcheckliste",
+    "comp.r7": "Verzeichnisdaten bleiben in Ihrem Netzwerk", "comp.r8": "Keine Infrastruktur zu installieren",
+    "comp.r9": "3-phasige Schwachstellenpriorisierung", "comp.r10": "CIS-Controls-Referenz pro Kontrolle",
+    "how.label": "Funktionsweise", "how.title": "Bereitstellen. Scannen. Berichten.<br/>In Minuten.",
+    "how.s1": "Bereitstellen", "how.s1_text": "ADSecure-Ordner auf einen domänengebundenen Windows-Computer kopieren. ADSecure-START.bat starten. RSAT-Modul erforderlich.",
+    "how.s2": "Scannen", "how.s2_text": "Auf \"Scan starten\" klicken. ADSecure fragt AD und lokales System ab. Geschätzte Dauer: 5–15 Minuten.",
+    "how.s3": "Analysieren", "how.s3_text": "110 Kontrollen werden sequenziell ausgeführt. Ein Fortschrittsbalken und Echtzeit-Protokolle ermöglichen die Verfolgung.",
+    "how.s4": "Berichten", "how.s4_text": "Zwei Schaltflächen erscheinen: Management-Bericht und IT-Bericht. Mit einem Klick im Browser geöffnet. Als PDF druckbar.",
+    "how.prereq": "Technische Anforderungen",
+    "pricing.label": "Preise", "pricing.title": "Einfache, transparente Preisgestaltung.", "pricing.sub": "Eine Lizenz. Eine Zahlung. Keine versteckten Gebühren, kein Abonnement, keine Cloud-Kosten.",
+    "pricing.badge": "ADSecure · Einmallizenz", "pricing.name": "ADSecure",
+    "pricing.desc": "Vollständiges Active-Directory-Sicherheitsaudit — 110 Kontrollen, 2 Berichte, NIS2 & ISO-27001-konform.",
+    "pricing.per": "/ Lizenz", "pricing.cta": "Jetzt kaufen — 490 €",
+    "pricing.note": "Sichere Zahlung per Stripe · Rechnung inklusive · Lizenz innerhalb von 24 Std. geliefert",
+    "pf.f1": "110 Sicherheitskontrollen über 9 AD-Domänen", "pf.f2": "Management-Bericht — Geschäftsrisiko & finanzielle Auswirkung",
+    "pf.f3": "IT-Bericht — schrittweise Behebungsleitfäden", "pf.f4": "NIS2-Art.-21-Konformitätszusammenfassung (automatisch)",
+    "pf.f5": "ISO-27001-, CIS-v8- & DSGVO-Zuordnung", "pf.f6": "100 % On-Premise — keine Datenübertragung",
+    "pf.f7": "12 Monate Updates inklusive", "pf.f8": "E-Mail-technischer Support",
+    "pricing.ent_title": "Unternehmen / Mehrfachlizenz", "pricing.ent_text": "Benötigen Sie mehrere Lizenzen oder ein benutzerdefiniertes Deployment? Kontaktieren Sie uns für ein maßgeschneidertes Angebot.", "pricing.ent_cta": "Vertrieb kontaktieren →",
+    "about.eyebrow": "Über uns", "about.title": "Mandatory Shield SRL", "about.tagline": "Wesentliche SaaS-Sicherheit — von Ingenieuren für Ingenieure.",
+    "about.mission_label": "Unsere Mission", "about.mission_title": "Unternehmenssicherheit zugänglich machen.",
+    "about.mission_text1": "Mandatory Shield SRL wurde mit einer einfachen, aber wichtigen Überzeugung gegründet: Sicherheitstools, die Probleme nur erkennen, ohne zu erklären, wie man sie behebt, sind keine Sicherheitstools — sie sind Angstgeneratoren.",
+    "about.mission_text2": "Wir entwickeln SaaS-Lösungen, die technische Tiefe mit menschenlesbarem Output verbinden — die Lücke zwischen IT-Teams und Führungsebene schließen und regulatorische Konformität ohne ein Heer von Beratern erreichbar machen.",
+    "about.values_label": "Unsere Werte",
+    "about.v1": "Privacy by Design", "about.v1_text": "Keine Daten verlassen Ihre Infrastruktur. Niemals.",
+    "about.v2": "Klarheit über Komplexität", "about.v2_text": "Technische Tiefe, menschenlesbarer Output. Immer beides.",
+    "about.v3": "Europäische Standards", "about.v3_text": "Von Anfang an für NIS2, DSGVO und europäische Unternehmensanforderungen entwickelt.",
+    "founders.label": "Das Team", "founders.title": "Die Gründer",
+    "founder.co": "Mitgründer",
+    "founder.pa_bio": "Windows-Infrastrukturspezialist mit tiefem Fachwissen in Active-Directory-Architektur und Unternehmenssicherheit.",
+    "founder.rb_bio": "Systemadministrator mit Schwerpunkt Cybersicherheit, Compliance-Automatisierung und Entwicklung von Sicherheitstools, die IT-Teams wirklich helfen.",
+    "contact.label": "Kontakt", "contact.title": "Nehmen Sie Kontakt auf", "contact.sub": "Fragen zu ADSecure? Demo in Ihrer Umgebung? Kontaktieren Sie uns.",
+    "contact.info_title": "Mandatory Shield SRL", "contact.info_text": "Wir antworten auf alle Anfragen innerhalb von 24 Geschäftsstunden.",
+    "contact.product": "Produkt",
+    "contact.f_name": "Vollständiger Name", "contact.f_email": "Geschäftliche E-Mail", "contact.f_company": "Unternehmen",
+    "contact.f_subject": "Betreff", "contact.f_message": "Nachricht", "contact.send": "Nachricht senden",
+    "contact.s1": "Demo-Anfrage", "contact.s2": "Technische Frage", "contact.s3": "Unternehmenslizenz", "contact.s4": "Sonstiges",
+    "contact.success": "Ihre Nachricht wurde gesendet. Wir antworten innerhalb von 24 Stunden.",
+    "dash.welcome": "Willkommen zurück,", "dash.logout": "Abmelden", "dash.account": "Konto",
+    "dash.need_help": "Hilfe benötigt?", "dash.support_text": "Unser Team steht für technischen Support zur Verfügung.",
+    "dash.contact_us": "Kontaktieren Sie uns",
+    "dash.no_purchase_title": "Keine Lizenz", "dash.no_purchase_text": "Kaufen Sie ADSecure für sofortigen Download-Zugang.",
+    "dash.my_licences": "Meine Lizenzen", "dash.active": "Aktiv", "dash.one_time": "Einmallizenz · v1.0", "dash.download": "⬇ Herunterladen",
+    "dash.download_note": "📋 Ihr Lizenzschlüssel wird innerhalb von 24 Std. nach Zahlungsbestätigung per E-Mail zugestellt.",
+    "modal.title": "Willkommen", "modal.sub": "Zugang zu Ihrer ADSecure-Lizenz und Downloads.",
+    "modal.login": "Anmelden", "modal.register": "Konto erstellen",
+    "auth.email": "E-Mail-Adresse", "auth.password": "Passwort", "auth.fullname": "Vollständiger Name", "auth.company": "Unternehmen",
+    "auth.login_btn": "Anmelden", "auth.register_btn": "Konto erstellen",
+    "auth.login_error": "Ungültige E-Mail oder Passwort.",
+    "auth.register_success": "Konto erstellt! Sie können sich jetzt anmelden.",
+    "auth.no_account": "Noch kein Konto?",
+    "auth.terms_agree": "Durch das Erstellen eines Kontos stimmen Sie unseren Nutzungsbedingungen zu.",
+    "footer.tagline": "Wesentliche SaaS-Sicherheit — Enterprise-Sicherheitstools, die erkennen, erklären und beheben. Für europäische Compliance entwickelt.",
+    "footer.product": "Produkt", "footer.adsecure": "ADSecure", "footer.features": "Funktionen", "footer.pricing": "Preise", "footer.compliance": "Konformität",
+    "footer.company": "Unternehmen", "footer.about": "Über uns", "footer.contact": "Kontakt", "footer.demo": "Demo anfragen",
+    "footer.legal": "Rechtliches", "footer.privacy": "Datenschutzerklärung", "footer.terms": "Nutzungsbedingungen", "footer.cgv": "AGB", "footer.mentions": "Impressum",
+  },
+  nl: {
+    "nav.product": "Product", "nav.pricing": "Prijzen", "nav.about": "Over ons", "nav.contact": "Contact",
+    "nav.login": "Inloggen", "nav.buy": "ADSecure kopen",
+    "hero.eyebrow": "Essentiële SaaS-beveiliging",
+    "hero.title": "Uw Active Directory.<br/><em>Geen blinde vlekken.</em>",
+    "hero.sub": "ADSecure controleert uw Windows-infrastructuur op 110 beveiligingscontroles. Directe NIS2- & ISO-27001-rapporten. Geen data verlaat uw netwerk.",
+    "hero.cta_buy": "ADSecure aanschaffen →", "hero.cta_learn": "Meer informatie",
+    "hero.note": "Eenmalige aankoop · Geen abonnement · 100% on-premise",
+    "stats.controls": "Beveiligingscontroles", "stats.domains": "AD-domeinen geanalyseerd", "stats.reports": "Rapporten gegenereerd", "stats.data": "Data extern verzonden",
+    "trust.label": "Zij vertrouwen op ons",
+    "problem.label": "Het probleem", "problem.title": "Andere tools signaleren.<br/>ADSecure lost op.",
+    "problem.sub": "Active Directory is het primaire doelwit van moderne ransomware. WannaCry, NotPetya, LockBit — allemaal misbruiken ze AD-kwetsbaarheden om zich te verspreiden en volledige controle over het netwerk te krijgen.",
+    "problem.card1_title": "Waarschuwingen zonder oplossingen", "problem.card1_text": "Bestaande tools produceren ruwe lijsten met kwetsbaarheden. Geen uitleg. Geen herstelgids. Alleen meer stress voor uw IT-team.",
+    "problem.card2_title": "Onbegrijpelijke rapporten", "problem.card2_text": "Uw CISO of CEO ontvangt een 100% technisch document. Geen vertaling naar bedrijfsrisico's. Nutteloos op bestuursniveau.",
+    "problem.card3_title": "Data naar de cloud gestuurd", "problem.card3_text": "De meeste SaaS-oplossingen sturen uw AD-data naar hun servers. Direct AVG-risico. ADSecure draait 100% lokaal — niets verlaat uw netwerk.",
+    "features.label": "Wat we analyseren", "features.title": "110 controles over<br/>9 kritieke AD-domeinen", "features.cta": "Alle 110 controles bekijken →",
+    "feat.accounts": "Accounts & Privileges", "feat.accounts_text": "Geprivilegieerde groepen, rechtenopbouw, verouderde accounts.",
+    "feat.passwords": "Wachtwoordbeleid", "feat.passwords_text": "Complexiteit, verloopdatum, geschiedenis, vergrendelingsregels domeinbreed.",
+    "feat.acl": "Delegaties & ACL's", "feat.acl_text": "Gevaarlijke delegaties en buitensporige rechten op gevoelige objecten.",
+    "feat.config": "AD-configuratie", "feat.config_text": "Risicovolle protocollen en diensten op domeincontrollers.",
+    "feat.gpo": "Groepsbeleidsobjecten", "feat.gpo_text": "GPO-consistentie, status en beveiliging in uw omgeving.",
+    "feat.audit": "Logging & Audit", "feat.audit_text": "Gebeurtenislogdimensionering en activering van geavanceerd auditbeleid.",
+    "feat.dc": "DC-beveiliging", "feat.dc_text": "Firewall, referentie-isolatie en veilig opstarten op DC's.",
+    "feat.gdpr": "AVG & NIS2", "feat.gdpr_text": "Documentaire checklist voor regelgevingsverplichtingen en governance.",
+    "cta.title": "Klaar om uw Active Directory te auditen?", "cta.sub": "Eenmalige aankoop. Geen abonnement. Geen data verlaat uw netwerk. In minder dan 5 minuten ingezet.", "cta.btn": "ADSecure nu aanschaffen",
+    "faq.title": "Veelgestelde vragen",
+    "faq.q1": "Wat is ADSecure?", "faq.a1": "ADSecure is een on-premise beveiligingsauditsoftware voor Active Directory. Het analyseert uw AD-infrastructuur op 110 beveiligingscontroles en genereert twee rapporten: één voor het management (NIS2/ISO-27001-naleving) en één voor IT-beheerders (stapsgewijze herstelgidsen).",
+    "faq.q2": "Stuurt ADSecure data naar de cloud?", "faq.a2": "Nee. ADSecure draait volledig op uw lokale machine of een domein-gekoppelde Windows-werkstation. Er worden geen gegevens extern verzonden. Uw directorygegevens verlaten nooit uw netwerk.",
+    "faq.q3": "Wat zijn de technische vereisten?", "faq.a3": "Windows 10/11 of Windows Server 2016+, PowerShell 5.1 of hoger, RSAT Active Directory-module geïnstalleerd, domeinlidmaatschapsaccount (alleen-lezen AD-toegang voldoende), lokale beheerdersrechten aanbevolen. Geen internetverbinding vereist.",
+    "faq.q4": "Is ADSecure NIS2- en ISO-27001-conform?", "faq.a4": "Elk van de 110 controles is toegewezen aan het relevante NIS2-artikel (EU-richtlijn 2022/2555, verplicht sinds oktober 2024) en aan ISO 27001:2022-bijlagen A.8, A.9, A.12, A.18. Het managementrapport genereert automatisch een Art.-21-nalevingssamenvatting.",
+    "faq.q5": "Eenmalige aankoop of abonnement?", "faq.a5": "ADSecure is een eenmalige aankoop. Geen maandelijkse kosten, geen abonnement, geen cloudkosten. U koopt één keer een licentie en gebruikt deze in uw infrastructuur. Updates zijn 12 maanden na aankoopdatum inbegrepen.",
+    "product.eyebrow": "Het product", "product.title": "ADSecure", "product.sub": "De Europese Active Directory-beveiligingsaudittool die niet alleen detecteert — maar ook uitlegt, corrigeert en documenteert voor uw volgende audit.",
+    "audience.label": "Voor wie", "audience.title": "Twee doelgroepen.<br/>Twee afzonderlijke rapporten.",
+    "aud.mgmt_title": "CEO, CISO & Auditors", "aud.mgmt_sub": "CEO · CISO · Bestuur · NIS2/ISO-27001-Auditor · FG",
+    "aud.mgmt_1": "Globaal risiconiveau begrijpen zonder technische expertise", "aud.mgmt_2": "Financiële impact van een potentieel incident visualiseren (in €)",
+    "aud.mgmt_3": "NIS2-, ISO-27001- en AVG-nalevingsstatus kennen", "aud.mgmt_4": "Herstelplan klaar voor validatie en budgettering",
+    "aud.mgmt_5": "Presentatie op bestuursvergadering of externe audit",
+    "aud.it_title": "IT-manager & Sysadmin", "aud.it_sub": "IT-manager · Sysadmin · Windows-infrastructuuringenieur",
+    "aud.it_1": "Uitputtende lijst van alle controles met hun status", "aud.it_2": "Precieze uitleg waarom elke kwetsbaarheid gevaarlijk is",
+    "aud.it_3": "Volledig herstelgids voor elk niet-conform punt", "aud.it_4": "Prioriteren op ernst en aanbevolen tijdlijnen",
+    "aud.it_5": "Auditors beantwoorden met precieze technische gegevens",
+    "comply.label": "Standaarden", "comply.title": "Afgestemd op Europese<br/>regelgevingsverplichtingen",
+    "comply.nis2": "EU-richtlijn 2022/2555 — verplicht sinds oktober 2024. Elke controle toegewezen aan het relevante NIS2-artikel. Art.-21-samenvatting automatisch gegenereerd.",
+    "comply.iso": "Norm 2022. Dekt bijlagen A.8, A.9, A.12, A.18 — activa, toegangscontrole, logging, naleving.",
+    "comply.cis": "CIS Critical Security Controls v8. Elke controle verwijst naar de corresponderende CIS-benchmark (L1/L2) en ANSSI-aanbevelingen.",
+    "comply.gdpr": "Artikelen 5, 25, 30, 32, 33. De domein-09-checklist begeleidt teams bij registers, dataminimalisatie en incidentmelding.",
+    "compare.label": "Concurrentieanalyse", "compare.title": "Wat andere tools niet doen.",
+    "compare.feature": "Functie", "compare.market": "Markttools",
+    "comp.r1": "Duidelijk herstelgids voor elke kwetsbaarheid", "comp.r2": "Niet-technisch managementrapport (CEO/CISO)",
+    "comp.r3": "Twee afzonderlijke rapporten per doelgroep", "comp.r4": "Geschatte financiële ransomware-impact",
+    "comp.r5": "NIS2-artikel-voor-artikel-toewijzing", "comp.r6": "Geïntegreerde AVG-documentaire checklist",
+    "comp.r7": "Directorygegevens blijven in uw netwerk", "comp.r8": "Geen infrastructuur te installeren",
+    "comp.r9": "3-fasige prioritering van kwetsbaarheden", "comp.r10": "CIS Controls-referentie per controle",
+    "how.label": "Werking", "how.title": "Inzetten. Scannen. Rapporteren.<br/>In minuten.",
+    "how.s1": "Inzetten", "how.s1_text": "ADSecure-map kopiëren naar een domein-gekoppelde Windows-machine. ADSecure-START.bat starten. RSAT-module vereist.",
+    "how.s2": "Scannen", "how.s2_text": "Klik op \"Scan starten\". ADSecure bevraagt AD en lokaal systeem. Geschatte duur: 5–15 minuten.",
+    "how.s3": "Analyseren", "how.s3_text": "110 controles worden sequentieel uitgevoerd. Een voortgangsbalk en realtime-logs laten u de scan volgen.",
+    "how.s4": "Rapporteren", "how.s4_text": "Twee knoppen verschijnen: Managementrapport en IT-rapport. Met één klik geopend in uw browser. Afdrukbaar als PDF.",
+    "how.prereq": "Technische vereisten",
+    "pricing.label": "Prijzen", "pricing.title": "Eenvoudige, transparante prijsstelling.", "pricing.sub": "Één licentie. Één betaling. Geen verborgen kosten, geen abonnement, geen cloudkosten.",
+    "pricing.badge": "ADSecure · Eenmalige licentie", "pricing.name": "ADSecure",
+    "pricing.desc": "Volledig Active Directory-beveiligingsaudit — 110 controles, 2 rapporten, NIS2 & ISO-27001-conform.",
+    "pricing.per": "/ licentie", "pricing.cta": "Nu kopen — €490",
+    "pricing.note": "Veilige betaling via Stripe · Factuur inbegrepen · Licentie geleverd binnen 24 uur",
+    "pf.f1": "110 beveiligingscontroles over 9 AD-domeinen", "pf.f2": "Managementrapport — bedrijfsrisico & financiële impact",
+    "pf.f3": "IT-rapport — stapsgewijze herstelgidsen", "pf.f4": "NIS2-Art.-21-nalevingssamenvatting (automatisch)",
+    "pf.f5": "ISO-27001-, CIS-v8- & AVG-toewijzing", "pf.f6": "100% on-premise — geen datatransmissie",
+    "pf.f7": "12 maanden updates inbegrepen", "pf.f8": "E-mail technische ondersteuning",
+    "pricing.ent_title": "Enterprise / Multi-licentie", "pricing.ent_text": "Meerdere licenties of aangepaste implementatie nodig? Neem contact met ons op voor een offerte op maat.", "pricing.ent_cta": "Verkoop contacteren →",
+    "about.eyebrow": "Over ons", "about.title": "Mandatory Shield SRL", "about.tagline": "Essentiële SaaS-beveiliging — gebouwd door ingenieurs, voor ingenieurs.",
+    "about.mission_label": "Onze missie", "about.mission_title": "Bedrijfsbeveiliging toegankelijk maken.",
+    "about.mission_text1": "Mandatory Shield SRL werd opgericht met een eenvoudige maar belangrijke overtuiging: beveiligingstools die alleen problemen detecteren zonder uit te leggen hoe ze te verhelpen, zijn geen beveiligingstools — het zijn angstzaaiers.",
+    "about.mission_text2": "We bouwen SaaS-oplossingen die technische diepgang combineren met voor mensen leesbare output — de kloof tussen IT-teams en directie overbruggen en regelgevingsnaleving bereikbaar maken zonder een leger van consultants.",
+    "about.values_label": "Onze waarden",
+    "about.v1": "Privacy by design", "about.v1_text": "Geen data verlaat uw infrastructuur. Ooit.",
+    "about.v2": "Duidelijkheid boven complexiteit", "about.v2_text": "Technische diepgang, voor mensen leesbare output. Altijd allebei.",
+    "about.v3": "Europese standaarden", "about.v3_text": "Vanaf dag één gebouwd voor NIS2, AVG en Europese bedrijfsbehoeften.",
+    "founders.label": "Het team", "founders.title": "De oprichters",
+    "founder.co": "Medeoprichter",
+    "founder.pa_bio": "Windows-infrastructuurspecialist met diepgaande expertise in Active Directory-architectuur en bedrijfsbeveiliging.",
+    "founder.rb_bio": "Systeembeheerder gericht op cybersecurity, compliance-automatisering en het bouwen van beveiligingstools die IT-teams echt helpen.",
+    "contact.label": "Contact", "contact.title": "Neem contact op", "contact.sub": "Een vraag over ADSecure? Wilt u een demo in uw omgeving? Neem contact met ons op.",
+    "contact.info_title": "Mandatory Shield SRL", "contact.info_text": "We beantwoorden alle vragen binnen 24 werkuren.",
+    "contact.product": "Product",
+    "contact.f_name": "Volledige naam", "contact.f_email": "Zakelijk e-mailadres", "contact.f_company": "Bedrijf",
+    "contact.f_subject": "Onderwerp", "contact.f_message": "Bericht", "contact.send": "Bericht versturen",
+    "contact.s1": "Demoverzoek", "contact.s2": "Technische vraag", "contact.s3": "Bedrijfslicentie", "contact.s4": "Overige",
+    "contact.success": "Uw bericht is verzonden. We antwoorden binnen 24 uur.",
+    "dash.welcome": "Welkom terug,", "dash.logout": "Uitloggen", "dash.account": "Account",
+    "dash.need_help": "Hulp nodig?", "dash.support_text": "Ons team staat klaar voor technische ondersteuning.",
+    "dash.contact_us": "Contact opnemen",
+    "dash.no_purchase_title": "Geen licentie", "dash.no_purchase_text": "Koop ADSecure voor directe toegang tot de download.",
+    "dash.my_licences": "Mijn licenties", "dash.active": "Actief", "dash.one_time": "Eenmalige licentie · v1.0", "dash.download": "⬇ Downloaden",
+    "dash.download_note": "📋 Uw licentiesleutel wordt binnen 24 uur na betalingsbevestiging per e-mail verzonden.",
+    "modal.title": "Welkom", "modal.sub": "Toegang tot uw ADSecure-licentie en downloads.",
+    "modal.login": "Inloggen", "modal.register": "Account aanmaken",
+    "auth.email": "E-mailadres", "auth.password": "Wachtwoord", "auth.fullname": "Volledige naam", "auth.company": "Bedrijf",
+    "auth.login_btn": "Inloggen", "auth.register_btn": "Account aanmaken",
+    "auth.login_error": "Ongeldig e-mailadres of wachtwoord.",
+    "auth.register_success": "Account aangemaakt! U kunt nu inloggen.",
+    "auth.no_account": "Nog geen account?",
+    "auth.terms_agree": "Door een account aan te maken, gaat u akkoord met onze Gebruiksvoorwaarden.",
+    "footer.tagline": "Essentiële SaaS-beveiliging — Enterprise-beveiligingstools bouwen die detecteren, uitleggen en herstellen. Gebouwd voor Europese compliance.",
+    "footer.product": "Product", "footer.adsecure": "ADSecure", "footer.features": "Functies", "footer.pricing": "Prijzen", "footer.compliance": "Naleving",
+    "footer.company": "Bedrijf", "footer.about": "Over ons", "footer.contact": "Contact", "footer.demo": "Demo aanvragen",
+    "footer.legal": "Juridisch", "footer.privacy": "Privacybeleid", "footer.terms": "Gebruiksvoorwaarden", "footer.cgv": "Algemene voorwaarden", "footer.mentions": "Juridische vermeldingen",
+  }
+};
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+let currentUser = null; // { email, name, hasPurchase }
+
+// ─── I18N ────────────────────────────────────────────────────────────────────
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = T[lang]?.[key];
+    if (val) el.innerHTML = val;
+  });
+  document.documentElement.lang = lang;
+}
+
+// ─── PAGE NAVIGATION ─────────────────────────────────────────────────────────
+function showPage(page) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) { target.classList.add('active'); window.scrollTo(0, 0); }
+  // Refresh animations
+  setTimeout(initAnimations, 100);
+}
+
+// ─── NAVBAR SCROLL ───────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ─── ANIMATIONS ──────────────────────────────────────────────────────────────
+function initAnimations() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => { el.classList.remove('visible'); observer.observe(el); });
+}
+document.addEventListener('DOMContentLoaded', initAnimations);
+
+// ─── MOBILE MENU ─────────────────────────────────────────────────────────────
+function toggleMobileMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+function closeMobileMenu() { document.getElementById('mobileNav').classList.remove('open'); }
+
+// ─── MODAL ───────────────────────────────────────────────────────────────────
+function openModal(tab = 'login') {
+  document.getElementById('modalOverlay').classList.add('open');
+  switchTab(tab);
+}
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
+
+function switchTab(tab) {
+  document.getElementById('form-login').style.display = tab === 'login' ? 'block' : 'none';
+  document.getElementById('form-register').style.display = tab === 'register' ? 'block' : 'none';
+  document.getElementById('tab-login').classList.toggle('active', tab === 'login');
+  document.getElementById('tab-register').classList.toggle('active', tab === 'register');
+  hideAlerts();
+}
+
+function hideAlerts() {
+  ['loginError','loginSuccess','registerError','registerSuccess'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('show');
+  });
+}
+
+// ─── AUTH (SIMULATION) ───────────────────────────────────────────────────────
+// En production réel, ces fonctions feront des appels API vers votre backend
+// Ici on simule avec un "faux" utilisateur stocké en mémoire JS
+const mockUsers = [
+  { email: 'demo@mandatoryshield.com', password: 'demo1234', name: 'Demo User', hasPurchase: true },
+];
+
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pw = document.getElementById('loginPassword').value;
+  hideAlerts();
+
+  const user = mockUsers.find(u => u.email === email && u.password === pw);
+  if (!user) {
+    document.getElementById('loginError').classList.add('show');
+    return;
+  }
+  currentUser = user;
+  closeModal();
+  showDashboard();
+}
+
+function doRegister() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const pw = document.getElementById('regPassword').value;
+  const company = document.getElementById('regCompany').value.trim();
+  hideAlerts();
+
+  if (!name || !email || pw.length < 8) {
+    const el = document.getElementById('registerError');
+    el.textContent = 'Please fill all fields. Password must be at least 8 characters.';
+    el.classList.add('show');
+    return;
+  }
+  // Simulation : on enregistre l'utilisateur en mémoire
+  const newUser = { email, password: pw, name, company, hasPurchase: false };
+  mockUsers.push(newUser);
+  document.getElementById('registerSuccess').classList.add('show');
+  setTimeout(() => switchTab('login'), 2000);
+}
+
+// ─── DASHBOARD ───────────────────────────────────────────────────────────────
+function showDashboard() {
+  document.getElementById('mainContent').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('active');
+  document.getElementById('dashUsername').textContent = currentUser.name;
+  document.getElementById('dashEmail').textContent = currentUser.email;
+  document.getElementById('loginBtn').style.display = 'none';
+
+  if (currentUser.hasPurchase) {
+    document.getElementById('noPurchaseCard').style.display = 'none';
+    document.getElementById('hasPurchaseCard').style.display = 'block';
+  } else {
+    document.getElementById('noPurchaseCard').style.display = 'block';
+    document.getElementById('hasPurchaseCard').style.display = 'none';
+  }
+  window.scrollTo(0, 0);
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById('mainContent').classList.remove('hidden');
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('loginBtn').style.display = '';
+  showPage('home');
+}
+
+function simulateDownload() {
+  alert('✅ Download started!\n\nIn production, this will trigger a secure signed download URL from your Scaleway backend.\n\nFile: ADSecure_v1.0.zip');
+}
+
+// ─── PURCHASE ────────────────────────────────────────────────────────────────
+function handlePurchase() {
+  if (!currentUser) {
+    openModal('login');
+    // Petit message
+    const sub = document.querySelector('.modal-sub');
+    if (sub) sub.textContent = 'Please log in or create an account to purchase ADSecure.';
+    return;
+  }
+  // En production : redirection vers Stripe Checkout
+  // window.location.href = '/api/create-checkout-session';
+  alert('🔒 Stripe Checkout\n\nIn production, you will be redirected to a secure Stripe payment page.\n\nAmount: €490 (one-time) · ADSecure licence');
+}
+
+// ─── FAQ ─────────────────────────────────────────────────────────────────────
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ─── CONTACT ─────────────────────────────────────────────────────────────────
+function submitContact() {
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const msg = document.getElementById('contactMessage').value.trim();
+  if (!name || !email || !msg) { alert('Please fill all required fields.'); return; }
+  const success = document.getElementById('contactSuccess');
+  success.classList.add('show');
+  ['contactName','contactEmail','contactCompany','contactMessage'].forEach(id => document.getElementById(id).value = '');
+  setTimeout(() => success.classList.remove('show'), 5000);
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+setLang('en');
+</script>
+</body>
+</html>
