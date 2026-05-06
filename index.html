@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSecure Report™ | Mandatory Shield - Audit Sécurité Active Directory</title>
+    <meta name="description" content="Plateforme européenne d'audit Active Directory. 164 contrôles, 7 rapports distincts, conformité NIS2 & ISO 27001. Intervention sur site incluse.">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), usb=(), payment=()">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="network-bg"></canvas>
+
+    <header>
+        <div class="container nav-flex">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Mandatory Shield" loading="lazy">
+                <span>MANDATORY <span class="text-gradient">SHIELD</span></span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#product">Produit</a></li>
+                <li><a href="#conformite">Conformité</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#entreprise">Entreprise</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="nl">NL</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+            </div>
+            
+            <button class="mobile-toggle" aria-label="Menu"><i class="ri-menu-line"></i></button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content animate">
+                <h1>Votre Active Directory.<br><span class="text-gradient">Aucun angle mort.</span></h1>
+                <p>ADSecure Report™ est la première plateforme européenne d'audit Active Directory qui produit 7 rapports réglementaires distincts en un seul scan. 164 contrôles de sécurité conformes NIS2, ISO 27001 et RGPD.</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Intervention sur site systématique</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Validation SHA-256 en présence du DSI</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Zéro donnée transmise - 100% on-premise</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Attestation vérifiable par QR Code</span></div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg">Prendre rendez-vous <i class="ri-arrow-right-line"></i></a>
+                    <a href="#product" class="btn btn-outline btn-lg">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual animate">
+                <div class="hero-card">
+                    <div class="score-display">
+                        <div class="score-circle"><div class="score-value">78</div></div>
+                        <div class="score-label">Score de Sécurité Global</div>
+                    </div>
+                    
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-shield-check-line c-success"></i> LAPS déployé</div>
+                        <span class="status-badge success">OK</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-shield-line c-danger"></i> SMBv1 activé</div>
+                        <span class="status-badge critical">CRITIQUE</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-user-line c-warning"></i> Comptes Kerberoastables</div>
+                        <span class="status-badge warning">7 trouvés</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-file-list-3-line c-success"></i> Politiques d'audit</div>
+                        <span class="status-badge success">CONFIGURÉES</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item"><div class="stat-num">164</div><div class="stat-label">Points de contrôle</div></div>
+            <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Rapports distincts</div></div>
+            <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Domaines analysés</div></div>
+            <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Made in Belgium</div></div>
+        </div>
+    </div>
+
+    <section id="product" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi choisir <span class="text-gradient">ADSecure</span> ?</h2>
+                <p>La seule plateforme qui combine remédiation guidée, vision métier et conformité multi-référentiels</p>
+            </div>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon"><i class="ri-shield-check-line"></i></div>
+                    <h3>Audit Complet de l'AD</h3>
+                    <p>Analyse exhaustive des comptes, GPO, délégations, Kerberos, DNS, PKI, relations de confiance. Rapport structuré immédiatement exploitable.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-guide-line"></i></div>
+                    <h3>Remédiation Guidée</h3>
+                    <p>Chaque vulnérabilité est accompagnée d'instructions pas-à-pas pour l'administrateur système, avec niveau de risque et priorisation intelligente.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-bar-chart-grouped-line"></i></div>
+                    <h3>Scoring Intelligent</h3>
+                    <p>Score par identité, par serveur, par service métier. Pas 1000 alertes : les 10 actions vraiment critiques pour votre sécurité.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-dashboard-line"></i></div>
+                    <h3>Mode Direction/RSSI</h3>
+                    <p>Dashboard non-technique avec risques business, conformité et indicateurs clés pour décideurs et auditeurs.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-file-text-line"></i></div>
+                    <h3>7 Rapports Distincts</h3>
+                    <p>Direction Générale, IT Manager, DPO, guide de remédiation, scoring de conformité, rapport Azure AD, et attestation QR Code vérifiable.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-lock-line"></i></div>
+                    <h3>Sécurité & Confidentialité</h3>
+                    <p>Traitement local des données, chiffrement bout-en-bout, aucune donnée transmise sans consentement explicite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conformite" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conformité <span class="text-gradient">Réglementaire</span></h2>
+                <p>ADSecure aligne votre sécurité AD sur les standards européens et internationaux</p>
+            </div>
+            
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">NIS2</div><div class="compliance-rate">87%</div></div>
+                    <div class="compliance-desc">Directive européenne - Octobre 2024</div>
+                    <div class="compliance-explanation">La directive NIS2 impose aux entités essentielles et importantes de l'UE des mesures robustes de gestion des risques cyber et de notification des incidents (72h). Elle concerne les secteurs critiques : énergie, santé, transports, finances, administrations publiques.</div>
+                    <ul class="compliance-features"><li>Gestion des accès privilégiés</li><li>Détection et notification (72h)</li><li>Gestion des vulnérabilités</li><li>Continuité d'activité</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">ISO 27001</div><div class="compliance-rate">79%</div></div>
+                    <div class="compliance-desc">Standard international SMSI</div>
+                    <div class="compliance-explanation">L'ISO/IEC 27001 est le standard international de référence pour les Systèmes de Management de la Sécurité de l'Information (SMSI). Il définit les exigences pour établir, mettre en œuvre et maintenir un SMSI reconnu mondialement.</div>
+                    <ul class="compliance-features"><li>Contrôle d'accès (A.9)</li><li>Cryptographie (A.10)</li><li>Sécurité des opérations (A.12)</li><li>Gestion des incidents (A.16)</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">CIS Controls</div><div class="compliance-rate">91%</div></div>
+                    <div class="compliance-desc">Référentiel technique v8</div>
+                    <div class="compliance-explanation">Les CIS Controls (v8) définissent 18 contrôles prioritaires pour réduire drastiquement la surface d'attaque. Très orientés technique, ils sont utilisés par les équipes IT et les auditeurs comme guide de mise en œuvre pratique.</div>
+                    <ul class="compliance-features"><li>Gestion des comptes (CIS 05)</li><li>Gestion des accès (CIS 06)</li><li>Gestion des logs d'audit (CIS 08)</li><li>Sécurité applicative (CIS 16)</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">RGPD</div><div class="compliance-rate">72%</div></div>
+                    <div class="compliance-desc">Règlement UE 2016/679</div>
+                    <div class="compliance-explanation">Le RGPD (UE 2016/679) encadre la collecte, le traitement et la protection des données personnelles dans l'Union Européenne. Pour l'AD, il implique la traçabilité des accès, la gestion des habilitations et la minimisation des droits.</div>
+                    <ul class="compliance-features"><li>Traçabilité des accès</li><li>Gestion du cycle de vie</li><li>Moindre privilège</li><li>Journalisation des logs</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">Cyfun</div><div class="compliance-rate">83%</div></div>
+                    <div class="compliance-desc">Cadre belge CCB</div>
+                    <div class="compliance-explanation">CyFun est le cadre de cybersécurité belge développé par le Centre for Cybersecurity Belgium (CCB). Basé sur le NIST CSF et adapté au contexte belge, il classe les organisations en 4 niveaux de maturité (Basic, Important, Essential, Critical).</div>
+                    <ul class="compliance-features"><li>Identification des actifs</li><li>Protection authentification</li><li>Détection d'anomalies</li><li>Réponse aux incidents</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">DORA</div><div class="compliance-rate">68%</div></div>
+                    <div class="compliance-desc">Secteur financier - 2025</div>
+                    <div class="compliance-explanation">DORA (UE 2022/2554) s'applique depuis janvier 2025 aux entités financières européennes (banques, assurances, prestataires ICT). Il exige une résilience opérationnelle numérique robuste, incluant la gestion des accès et les tests de résilience.</div>
+                    <ul class="compliance-features"><li>Gestion des risques TIC</li><li>Tests de résilience</li><li>Gestion des incidents</li><li>Surveillance des tiers</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tarification <span class="text-gradient">Transparente</span></h2>
+                <p>Des offres adaptées à chaque organisation — Sans surprise, sans engagement caché</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header"><h3>ESSENTIAL</h3><p>Idéal PME</p></div>
+                    <div class="price">6 900 €<span>/an</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span>4 audits AD par an</span></li>
+                        <li><i class="ri-check-line"></i><span>Rapports complets par audit</span></li>
+                        <li><i class="ri-check-line"></i><span>Scoring de sécurité par domaine</span></li>
+                        <li><i class="ri-check-line"></i><span>Remédiation guidée pas-à-pas</span></li>
+                        <li><i class="ri-check-line"></i><span>Tableau de bord NIS2/CIS</span></li>
+                        <li><i class="ri-check-line"></i><span>Support email inclus</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Prendre rendez-vous</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">RECOMMANDÉ</div>
+                    <div class="pricing-header"><h3>PROFESSIONAL</h3><p>Sécurité complète AD + Cloud</p></div>
+                    <div class="price">14 900 €<span>/an</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span><strong>Tout l'offre Essential</strong></span></li>
+                        <li><i class="ri-check-line"></i><span>Module Azure AD & hybride</span></li>
+                        <li><i class="ri-check-line"></i><span>Audits illimités</span></li>
+                        <li><i class="ri-check-line"></i><span>Tableau de bord multi-sites</span></li>
+                        <li><i class="ri-check-line"></i><span>Conformité ISO 27001/RGPD/DORA</span></li>
+                        <li><i class="ri-check-line"></i><span>Rapports exécutifs Direction/RSSI</span></li>
+                        <li><i class="ri-check-line"></i><span>Support prioritaire téléphone+email</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-lg btn-full">Prendre rendez-vous</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header"><h3>ENTERPRISE</h3><p>Sur mesure</p></div>
+                    <div class="price">Sur<span>devis</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span><strong>Tout l'offre Professional</strong></span></li>
+                        <li><i class="ri-check-line"></i><span>Monitoring continu 24/7</span></li>
+                        <li><i class="ri-check-line"></i><span>Sandbox de simulation d'attaques</span></li>
+                        <li><i class="ri-check-line"></i><span>Intégration SIEM/SOC</span></li>
+                        <li><i class="ri-check-line"></i><span>Account manager dédié</span></li>
+                        <li><i class="ri-check-line"></i><span>SLA garantis contractuellement</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Nous contacter</a>
+                </div>
+            </div>
+            
+            <div class="pricing-info">
+                <p class="pricing-info-title"><i class="ri-information-line c-primary"></i> <strong>Informations commerciales :</strong></p>
+                <p class="pricing-info-text">
+                    ✓ Tous les tarifs sont HT — TVA applicable selon législation en vigueur<br>
+                    ✓ Abonnement annuel — facturation à la signature<br>
+                    ✓ Renouvellement tacite avec préavis de 30 jours<br>
+                    ✓ Rendez-vous personnalisé disponible sur demande<br>
+                    ✓ Devis Enterprise personnalisé sous 48h<br>
+                    ✓ Conditions spéciales pour secteur public et associations
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Questions <span class="text-gradient">Fréquentes</span></h2>
+                <p>Trouvez rapidement les réponses aux questions les plus courantes</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Qu'est-ce qu'ADSecure Report™ ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>ADSecure Report™ est une plateforme d'audit Active Directory qui produit, à partir d'un seul scan, sept rapports réglementaires distincts : un rapport pour la direction générale, un pour l'IT Manager, un pour le DPO, un guide de remédiation, un scoring de conformité, un rapport Azure AD / Entra ID, et une attestation vérifiable par QR Code. 164 points de contrôle couvrent 20 domaines distincts de votre infrastructure AD.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>ADSecure transmet-il des données dans le cloud ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Non. Le scan s'exécute en lecture seule, sans installation, sans modification de l'infrastructure. Les données ne quittent pas l'environnement du client. L'agent PowerShell autoporteur fonctionne sur n'importe quel environnement Windows à partir de la version Server 2016. Aucune donnée Active Directory ne transite vers nos serveurs : cela est garanti architecturalement, pas contractuellement.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Pourquoi l'intervention on-site est-elle systématique ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>La présence on-site n'est pas une option dans notre modèle : c'est un principe. Déployer un outil de sécurité sur un contrôleur de domaine sans être physiquement présent pour en valider l'intégrité et en accompagner la restitution, c'est manquer l'essentiel de ce que signifie un audit. La validation SHA-256 de l'exécutable, effectuée en direct à la présence du DSI avant le lancement, est le fondement de la confiance.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Quels sont les prérequis techniques pour utiliser ADSecure ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>ADSecure nécessite Windows Server 2016 ou version ultérieure, PowerShell 5.1 ou supérieur, et le module RSAT Active Directory installé. Un compte membre du domaine avec accès en lecture seule à l'AD est suffisant. Des droits administrateur local sont recommandés pour les contrôles de registre avancés. Aucune connexion Internet n'est requise pour l'exécution du scan.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>ADSecure est-il conforme NIS2 et ISO 27001 ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Oui. Chacun des 164 contrôles d'ADSecure est mappé à l'article NIS2 pertinent (Directive UE 2022/2555, obligatoire depuis octobre 2024) et aux Annexes A.8, A.9, A.12, A.18 d'ISO 27001:2022. Le rapport de direction génère automatiquement un résumé de conformité Art. 21 prêt pour les auditeurs. Nous couvrons également CIS Controls v8, RGPD, Cyfun (Belgique) et DORA (secteur financier).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Quelle est la différence entre les offres Essential et Professional ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>L'offre Essential (6 900 €/an) comprend 4 audits AD par an, idéale pour les PME. L'offre Professional (14 900 €/an) inclut tout l'Essential plus le module Azure AD/hybride, des audits illimités, un tableau de bord multi-sites, la conformité ISO 27001/RGPD/DORA complète, des rapports exécutifs Direction/RSSI, et un support prioritaire téléphone+email.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Comment fonctionne l'attestation vérifiable par QR Code ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>L'attestation QR Code d'ADSecure est un document opposable, horodaté, infalsifiable. Elle est vérifiable en temps réel sur verify.mandatoryshield.com et constitue une preuve de diligence recevable dans un contexte d'audit, de sinistre ou de contrôle réglementaire. C'est une innovation unique sur le marché qui donne une valeur juridique à vos audits de sécurité.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Proposez-vous des démos ou des essais gratuits ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Nous ne proposons pas d'essai gratuit en raison de la nature sensible des audits Active Directory et de notre approche on-site systématique. Cependant, nous organisons des rendez-vous personnalisés pour présenter la plateforme, répondre à vos questions spécifiques et évaluer vos besoins. Contactez-nous à contact@mandatoryshield.com pour planifier un échange avec nos experts.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Quel est le délai de livraison après achat ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Après signature du contrat et facturation, nous planifions l'intervention on-site sous 5 à 10 jours ouvrés selon votre localisation. Le premier audit et la remise des rapports interviennent lors de cette mission. Les audits suivants sont planifiés selon la fréquence de votre offre (trimestrielle pour Essential, illimitée pour Professional).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>ADSecure fonctionne-t-il avec Azure AD / Microsoft Entra ID ?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Oui, mais uniquement avec l'offre Professional et Enterprise. Le module Azure AD / Cloud hybride analyse votre environnement Microsoft cloud, les synchronisations Azure AD Connect, les configurations de fédération, et produit un rapport spécifique. L'offre Essential est limitée à l'Active Directory on-premise uniquement.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="entreprise" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Qui sommes-<span class="text-gradient">nous ?</span></h2>
+                <p>Mandatory Shield Company — Protéger l'identité numérique des organisations européennes</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">PR</div>
+                    <div class="team-name">Pierre-Antoine Rouhaud</div>
+                    <div class="team-role">Co-Fondateur & CEO</div>
+                    <div class="team-bio">Expert en sécurisation des infrastructures Windows et Active Directory. Pierre-Antoine apporte une vision stratégique alliée à une maîtrise technique approfondie. Il pilote la direction produit et la stratégie commerciale d'ADSecure.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">RB</div>
+                    <div class="team-name">Raphaël Berki</div>
+                    <div class="team-role">Co-Fondateur & CTO</div>
+                    <div class="team-bio">Architecte logiciel et spécialiste en cybersécurité, Raphaël conçoit l'architecture technique d'ADSecure. Son expertise couvre l'analyse comportementale, la simulation d'attaques et les moteurs de scoring intelligents.</div>
+                </div>
+            </div>
+            
+            <div class="mission-wrapper">
+                <h3 class="mission-title">Notre Mission</h3>
+                <p class="mission-body">Permettre à toute organisation européenne de maîtriser la sécurité de son Active Directory, quelle que soit sa taille, avec des outils à la fois puissants, accessibles et conformes.</p>
+                <div class="mission-grid">
+                    <div class="mission-item">
+                        <i class="ri-flag-line mission-icon"></i>
+                        <h4>Conçu en Belgique</h4>
+                        <p>Développé à Bruxelles. RGPD natif. Souveraineté européenne.</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="ri-lightbulb-line mission-icon"></i>
+                        <h4>Innovation</h4>
+                        <p>R&amp;D continue pour anticiper les menaces de demain.</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="ri-hand-heart-line mission-icon"></i>
+                        <h4>Confiance</h4>
+                        <p>Transparence, accompagnement et support expert.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Prendre <span class="text-gradient">Rendez-vous</span></h2>
+                <p>Discutons de vos besoins en sécurité Active Directory</p>
+            </div>
+            
+            <div class="contact-box">
+                <div class="contact-header">
+                    <i class="ri-calendar-line contact-icon-lg"></i>
+                    <h3 class="contact-h3">Planifions un échange</h3>
+                    <p class="contact-sub">Nos experts vous contacteront sous 24h pour convenir d'un rendez-vous.</p>
+                </div>
+
+                <div class="contact-links-list">
+                    <p class="contact-row">
+                        <i class="ri-mail-line"></i>
+                        <a href="mailto:contact@mandatoryshield.com" rel="noopener noreferrer">contact@mandatoryshield.com</a>
+                    </p>
+                    <p class="contact-row">
+                        <i class="ri-global-line"></i>
+                        <a href="https://www.mandatoryshield.com" rel="noopener noreferrer" target="_blank">www.mandatoryshield.com</a>
+                    </p>
+                </div>
+
+                <div class="contact-location">
+                    <p><i class="ri-map-pin-line"></i>Bruxelles, Belgique (Union Européenne)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Mandatory Shield Company</div>
+                    <p class="footer-desc">Essential SaaS Security — La première plateforme européenne d'audit Active Directory conçue pour la conformité NIS2, ISO 27001 et RGPD.</p>
+                    <p class="footer-address">
+                        <i class="ri-map-pin-line"></i> Bruxelles, Belgique<br>
+                        <i class="ri-mail-line"></i> contact@mandatoryshield.com<br>
+                        <i class="ri-global-line"></i> www.mandatoryshield.com
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Produit</h4>
+                    <ul><li><a href="#product">Fonctionnalités</a></li><li><a href="#conformite">Conformité</a></li><li><a href="#pricing">Tarifs</a></li><li><a href="#faq">FAQ</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul><li><a href="#entreprise">À propos</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Carrières</a></li><li><a href="#">Partenaires</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Légal</h4>
+                    <ul><li><a href="#">Politique de confidentialité</a></li><li><a href="#">Conditions d'utilisation</a></li><li><a href="#">CGV</a></li><li><a href="#">Mentions légales</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Mandatory Shield Company. Tous droits réservés. · Conçu en Belgique 🇧🇪</p></div>
+        </div>
+    </footer>
+
+    <div class="chatbot-container">
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Assistant ADSecure</h3>
+                <button class="chatbot-close" data-chat-close>×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot">
+                    <div class="chatbot-avatar">MS</div>
+                    <div class="chatbot-bubble">Bonjour ! Je suis l'assistant virtuel ADSecure. Comment puis-je vous aider aujourd'hui ?</div>
+                </div>
+            </div>
+            <div class="chatbot-suggestions">
+                <button class="chatbot-suggestion" data-suggestion="Quel est le prix d ADSecure ?">Prix</button>
+                <button class="chatbot-suggestion" data-suggestion="ADSecure est-il conforme NIS2 ?">Conformité NIS2</button>
+                <button class="chatbot-suggestion" data-suggestion="Les données partent-elles dans le cloud ?">Sécurité des données</button>
+                <button class="chatbot-suggestion" data-suggestion="Proposez-vous des démos ?">Démo</button>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Posez votre question..." autocomplete="off">
+                <button class="chatbot-send" data-chat-send><i class="ri-send-plane-fill"></i></button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" data-chat-toggle><i class="ri-chat-3-line"></i></button>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
