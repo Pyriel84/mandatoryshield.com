@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADSecure Report™ | Mandatory Shield - Active Directory Security Audit</title>
+  <meta name="description" content="European Active Directory audit platform. 164 controls, 7 distinct reports, NIS2 & ISO 27001 compliance. On-site intervention included." />
+  <meta name="keywords" content="Active Directory security, NIS2 compliance, ISO 27001, cybersecurity SaaS, AD audit, GDPR, CIS Controls, enterprise IT security" />
+  <meta property="og:title" content="ADSecure Report™ | Mandatory Shield" />
+  <meta property="og:description" content="The first European Active Directory audit platform. 164 security controls, 7 regulatory reports, NIS2 & ISO 27001 compliant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mandatoryshield.com/en" />
+  <link rel="canonical" href="https://www.mandatoryshield.com/en" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ADSecure Report™",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Windows",
+    "description": "Active Directory security audit platform with 164 controls, NIS2 and ISO 27001 compliance, 7 distinct reports.",
+    "offers": [
+      { "@type": "Offer", "name": "Essential", "price": "6900", "priceCurrency": "EUR" },
+      { "@type": "Offer", "name": "Professional", "price": "14900", "priceCurrency": "EUR" }
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Mandatory Shield Company",
+      "url": "https://www.mandatoryshield.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Brussels", "addressCountry": "BE" },
+      "email": "contact@mandatoryshield.com"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is ADSecure Report™?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports: one for senior management, one for the IT Manager, one for the DPO, a remediation guide, a compliance scoring report, an Azure AD report, and a QR Code verifiable certificate." } },
+      { "@type": "Question", "name": "Does ADSecure send data to the cloud?", "acceptedAnswer": { "@type": "Answer", "text": "No. The scan runs in read-only mode, without installation, without modifying the infrastructure. Data does not leave the client's environment. This is guaranteed architecturally, not just contractually." } },
+      { "@type": "Question", "name": "What are the technical prerequisites for ADSecure?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure requires Windows Server 2016 or later, PowerShell 5.1 or higher, and the RSAT Active Directory module installed. A domain member account with read-only access to AD is sufficient. No internet connection is required." } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f9f8f5;
+      --white: #ffffff;
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-light: #ccfbf1;
+      --teal-subtle: #f0fdfa;
+      --navy: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --red: #ef4444;
+      --green: #22c55e;
+      --yellow: #f59e0b;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(13,148,136,0.08);
+      --shadow-lg: 0 8px 40px rgba(13,148,136,0.14);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(249,248,245,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 14px; }
+    .nav-logo-text { font-weight: 700; font-size: 1rem; color: var(--navy); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .lang-switcher { display: flex; gap: 6px; }
+    .lang-switcher a { padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all .2s; }
+    .lang-switcher a.active, .lang-switcher a:hover { background: var(--teal); color: white; border-color: var(--teal); }
+    .btn-nav { background: var(--teal); color: white; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: background .2s; }
+    .btn-nav:hover { background: var(--teal-dark); }
+
+    /* HERO */
+    .hero { padding: 6rem 2rem 5rem; text-align: center; background: linear-gradient(160deg, var(--teal-subtle) 0%, var(--bg) 60%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--teal-light); color: var(--teal-dark); padding: 6px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; }
+    .hero h1 span { color: var(--teal); }
+    .hero p { max-width: 680px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.1rem; line-height: 1.75; }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary { background: var(--teal); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all .2s; box-shadow: 0 4px 14px rgba(13,148,136,0.35); }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+    .btn-secondary { background: white; color: var(--teal); padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 2px solid var(--teal); transition: all .2s; }
+    .btn-secondary:hover { background: var(--teal-subtle); }
+    .hero-pills { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    .hero-pill { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.85rem; font-weight: 500; }
+    .hero-pill svg { width: 16px; height: 16px; color: var(--teal); }
+
+    /* STATS */
+    .stats { background: var(--navy); padding: 3rem 2rem; }
+    .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+    .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--teal); }
+    .stat-label { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
+
+    /* DASHBOARD PREVIEW */
+    .dashboard-preview { max-width: 860px; margin: 3rem auto 0; background: white; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); padding: 1.5rem; }
+    .dash-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .dash-score { font-size: 2.5rem; font-weight: 800; color: var(--teal); }
+    .dash-label { color: var(--muted); font-size: 0.85rem; }
+    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+    .dash-card { background: var(--bg); border-radius: 10px; padding: 1rem; border: 1px solid var(--border); }
+    .dash-card-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+    .dash-card-val { font-weight: 700; font-size: 0.95rem; }
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-ok { background: #dcfce7; color: #166534; }
+    .badge-crit { background: #fee2e2; color: #991b1b; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag { color: var(--teal); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 1rem; }
+    h2 span { color: var(--teal); }
+    .section-intro { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin-bottom: 3rem; }
+
+    /* FEATURES */
+    #product { background: white; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .feature-card { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); transition: all .25s; }
+    .feature-card:hover { border-color: var(--teal); box-shadow: var(--shadow); transform: translateY(-2px); }
+    .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
+    .feature-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* COMPLIANCE */
+    #conformite { background: var(--bg); }
+    .compliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .compliance-card { background: white; border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); }
+    .compliance-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .compliance-name { font-weight: 800; font-size: 1.1rem; color: var(--navy); }
+    .compliance-score { font-weight: 800; font-size: 1.3rem; color: var(--teal); }
+    .progress-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
+    .progress-fill { height: 100%; background: var(--teal); border-radius: 999px; }
+    .compliance-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: .75rem; }
+    .compliance-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .compliance-items li { font-size: 0.85rem; color: var(--text); display: flex; align-items: center; gap: 8px; }
+    .compliance-items li::before { content: '✓'; color: var(--teal); font-weight: 700; }
+
+    /* PRICING */
+    #pricing { background: white; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+    .pricing-card { background: var(--bg); border-radius: var(--radius); padding: 2rem; border: 2px solid var(--border); position: relative; transition: all .25s; }
+    .pricing-card.featured { border-color: var(--teal); background: white; box-shadow: var(--shadow-lg); }
+    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal); color: white; padding: 4px 18px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .pricing-name { font-weight: 800; font-size: 1.1rem; color: var(--navy); margin-bottom: .25rem; }
+    .pricing-desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.25rem; }
+    .pricing-price { font-size: 2.2rem; font-weight: 800; color: var(--navy); margin-bottom: 1.5rem; }
+    .pricing-price span { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
+    .pricing-features li { font-size: 0.9rem; color: var(--text); display: flex; align-items: flex-start; gap: 10px; }
+    .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .btn-pricing { display: block; text-align: center; background: var(--teal); color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all .2s; }
+    .btn-pricing:hover { background: var(--teal-dark); }
+    .btn-pricing.outline { background: transparent; border: 2px solid var(--teal); color: var(--teal); }
+    .btn-pricing.outline:hover { background: var(--teal); color: white; }
+    .pricing-note { max-width: 700px; margin: 2.5rem auto 0; background: var(--teal-subtle); border: 1px solid rgba(13,148,136,0.2); border-radius: 10px; padding: 1.25rem 1.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
+
+    /* FAQ */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { background: white; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; font-size: 1rem; font-weight: 600; color: var(--navy); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q span { transition: transform .3s; font-size: 1.2rem; color: var(--teal); }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-item.open .faq-a { max-height: 400px; }
+    .faq-a-inner { padding: 0 1.5rem 1.25rem; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
+
+    /* ABOUT */
+    #entreprise { background: white; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .team-card { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); text-align: center; }
+    .team-avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--teal); color: white; font-size: 1.25rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .team-name { font-weight: 700; color: var(--navy); margin-bottom: .25rem; }
+    .team-role { color: var(--teal); font-size: 0.85rem; font-weight: 600; margin-bottom: .75rem; }
+    .team-bio { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .mission-card { background: var(--teal-subtle); border-radius: 10px; padding: 1.25rem; border: 1px solid rgba(13,148,136,0.2); text-align: center; }
+    .mission-card h4 { color: var(--teal-dark); font-weight: 700; margin-bottom: .5rem; }
+    .mission-card p { color: var(--muted); font-size: 0.85rem; }
+
+    /* CONTACT */
+    #contact { background: var(--navy); color: white; }
+    #contact h2 { color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
+    .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; color: #94a3b8; font-size: 0.9rem; }
+    .contact-detail strong { color: white; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { color: #94a3b8; font-size: 0.85rem; font-weight: 500; }
+    .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 14px; color: white; font-size: 0.9rem; outline: none; transition: border-color .2s; font-family: inherit; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--navy); }
+    .btn-submit { background: var(--teal); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--teal-dark); }
+
+    /* CHATBOT */
+    .chatbot-toggle { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(13,148,136,0.4); z-index: 1000; border: none; color: white; font-size: 1.4rem; transition: transform .2s; }
+    .chatbot-toggle:hover { transform: scale(1.08); }
+    .chatbot-window { position: fixed; bottom: 5.5rem; right: 2rem; width: 340px; max-height: 480px; background: white; border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); z-index: 999; display: none; flex-direction: column; overflow: hidden; }
+    .chatbot-window.open { display: flex; }
+    .chatbot-header { background: var(--teal); color: white; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    .chatbot-header h4 { font-weight: 700; font-size: 0.95rem; }
+    .chatbot-close { background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem; }
+    .chatbot-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; }
+    .msg { max-width: 85%; padding: 10px 14px; border-radius: 10px; font-size: 0.88rem; line-height: 1.5; }
+    .msg.bot { background: var(--bg); color: var(--text); align-self: flex-start; border-bottom-left-radius: 2px; }
+    .msg.user { background: var(--teal); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+    .chatbot-quick { padding: .75rem 1rem; display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--border); }
+    .quick-btn { background: var(--teal-subtle); color: var(--teal-dark); border: 1px solid rgba(13,148,136,0.2); border-radius: 999px; padding: 4px 12px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+    .quick-btn:hover { background: var(--teal); color: white; }
+    .chatbot-input { display: flex; border-top: 1px solid var(--border); }
+    .chatbot-input input { flex: 1; padding: 10px 14px; border: none; outline: none; font-size: 0.88rem; font-family: inherit; }
+    .chatbot-input button { background: var(--teal); color: white; border: none; padding: 10px 16px; cursor: pointer; font-size: 1rem; }
+
+    /* FOOTER */
+    footer { background: #020617; color: #64748b; padding: 3rem 2rem 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: .75rem; max-width: 280px; }
+    .footer-col h4 { color: white; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { color: #64748b; text-decoration: none; font-size: 0.85rem; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--teal); }
+    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">MS</div>
+      <span class="nav-logo-text">MANDATORY SHIELD</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#product">Product</a></li>
+      <li><a href="#conformite">Compliance</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#entreprise">Company</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <a href="index.html">FR</a>
+        <a href="index-nl.html">NL</a>
+        <a href="index-en.html" class="active">EN</a>
+      </div>
+      <a href="#contact" class="btn-nav">Book a meeting</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🇧🇪 Made in Belgium — 100% European</div>
+  <h1>Your Active Directory.<br /><span>No blind spots.</span></h1>
+  <p>ADSecure Report™ is the first European Active Directory audit platform that produces 7 distinct regulatory reports in a single scan. 164 security controls compliant with NIS2, ISO 27001 and GDPR.</p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">Book a meeting</a>
+    <a href="#product" class="btn-secondary">Learn more</a>
+  </div>
+  <div class="hero-pills">
+    <span class="hero-pill">✓ On-site intervention included</span>
+    <span class="hero-pill">✓ SHA-256 validation in presence of CISO</span>
+    <span class="hero-pill">✓ Zero data transmitted – 100% on-premise</span>
+    <span class="hero-pill">✓ QR Code verifiable attestation</span>
+  </div>
+
+  <div class="dashboard-preview">
+    <div class="dash-header">
+      <div>
+        <div class="dash-label">Global Security Score</div>
+        <div class="dash-score">78</div>
+      </div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+        <span class="badge badge-ok">LAPS deployed</span>
+        <span class="badge badge-crit">SMBv1 active</span>
+      </div>
+    </div>
+    <div class="dash-grid">
+      <div class="dash-card"><div class="dash-card-label">Kerberoastable accounts</div><div class="dash-card-val" style="color:var(--red)">7 found</div></div>
+      <div class="dash-card"><div class="dash-card-label">Audit policies</div><div class="dash-card-val" style="color:var(--green)">Configured</div></div>
+      <div class="dash-card"><div class="dash-card-label">Controls</div><div class="dash-card-val" style="color:var(--teal)">164</div></div>
+      <div class="dash-card"><div class="dash-card-label">Reports generated</div><div class="dash-card-val" style="color:var(--teal)">7</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-val">164</div><div class="stat-label">Security controls</div></div>
+    <div><div class="stat-val">7</div><div class="stat-label">Distinct reports</div></div>
+    <div><div class="stat-val">20+</div><div class="stat-label">Domains analyzed</div></div>
+    <div><div class="stat-val">100%</div><div class="stat-label">Made in Belgium</div></div>
+  </div>
+</div>
+
+<!-- PRODUCT -->
+<section id="product">
+  <div class="container">
+    <div class="section-tag">Platform</div>
+    <h2>Why choose <span>ADSecure</span>?</h2>
+    <p class="section-intro">The only platform combining guided remediation, business visibility and multi-framework compliance.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🔍</div><h3>Complete AD Audit</h3><p>Exhaustive analysis of accounts, GPOs, delegations, Kerberos, DNS, PKI, trust relationships. Structured report immediately actionable.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔧</div><h3>Guided Remediation</h3><p>Each vulnerability comes with step-by-step instructions for the system administrator, with risk level and intelligent prioritization.</p></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><h3>Smart Scoring</h3><p>Score by identity, by server, by business service. Not 1,000 alerts: the 10 actions that are truly critical for your security.</p></div>
+      <div class="feature-card"><div class="feature-icon">🏢</div><h3>Executive Mode</h3><p>Non-technical dashboard with business risks, compliance and key indicators for decision-makers and auditors.</p></div>
+      <div class="feature-card"><div class="feature-icon">📋</div><h3>7 Distinct Reports</h3><p>Senior Management, IT Manager, DPO, remediation guide, compliance scoring, Azure AD report, and QR Code verifiable attestation.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Security & Privacy</h3><p>Local data processing, end-to-end encryption, no data transmitted without explicit consent.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section id="conformite">
+  <div class="container">
+    <div class="section-tag">Regulatory</div>
+    <h2>Regulatory <span>Compliance</span></h2>
+    <p class="section-intro">ADSecure aligns your AD security with European and international standards.</p>
+    <div class="compliance-grid">
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">NIS2</span><span class="compliance-score">87%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:87%"></div></div>
+        <div class="compliance-sub">European Directive – October 2024</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">NIS2 requires essential and important EU entities to implement robust cyber risk management measures and incident notification (72h). It covers critical sectors: energy, health, transport, finance, public administration.</p>
+        <ul class="compliance-items"><li>Privileged access management</li><li>Detection and notification (72h)</li><li>Vulnerability management</li><li>Business continuity</li></ul>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">ISO 27001</span><span class="compliance-score">79%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:79%"></div></div>
+        <div class="compliance-sub">International ISMS Standard</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">ISO/IEC 27001 is the international reference standard for Information Security Management Systems (ISMS). It defines requirements for establishing, implementing and maintaining a globally recognized ISMS.</p>
+        <ul class="compliance-items"><li>Access control (A.9)</li><li>Cryptography (A.10)</li><li>Operations security (A.12)</li><li>Incident management (A.16)</li></ul>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">CIS Controls</span><span class="compliance-score">91%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:91%"></div></div>
+        <div class="compliance-sub">Technical framework v8</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">CIS Controls (v8) define 18 priority controls to drastically reduce the attack surface. Highly technical in nature, they are used by IT teams and auditors as a practical implementation guide.</p>
+        <ul class="compliance-items"><li>Account management (CIS 05)</li><li>Access management (CIS 06)</li><li>Audit log management (CIS 08)</li><li>Application security (CIS 16)</li></ul>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">GDPR</span><span class="compliance-score">72%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+        <div class="compliance-sub">EU Regulation 2016/679</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">GDPR (EU 2016/679) governs the collection, processing and protection of personal data in the European Union. For AD, it involves access traceability, authorization management and rights minimization.</p>
+        <ul class="compliance-items"><li>Access traceability</li><li>Lifecycle management</li><li>Least privilege</li><li>Log management</li></ul>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">Cyfun</span><span class="compliance-score">83%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:83%"></div></div>
+        <div class="compliance-sub">Belgian CCB Framework</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">CyFun is the Belgian cybersecurity framework developed by the Centre for Cybersecurity Belgium (CCB). Based on NIST CSF and adapted to the Belgian context, it classifies organizations into 4 maturity levels.</p>
+        <ul class="compliance-items"><li>Asset identification</li><li>Authentication protection</li><li>Anomaly detection</li><li>Incident response</li></ul>
+      </div>
+
+      <div class="compliance-card">
+        <div class="compliance-header"><span class="compliance-name">DORA</span><span class="compliance-score">68%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+        <div class="compliance-sub">Financial sector – 2025</div>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">DORA (EU 2022/2554) applies since January 2025 to European financial entities (banks, insurance companies, ICT providers). It requires robust digital operational resilience, including access management and resilience testing.</p>
+        <ul class="compliance-items"><li>ICT risk management</li><li>Resilience testing</li><li>Incident management</li><li>Third-party oversight</li></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-tag">Pricing</div>
+    <h2>Transparent <span>Pricing</span></h2>
+    <p class="section-intro">Plans tailored to every organization — No surprises, no hidden commitments.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">ESSENTIAL</div>
+        <div class="pricing-desc">Ideal for SMEs</div>
+        <div class="pricing-price">€6,900<span>/year</span></div>
+        <ul class="pricing-features">
+          <li>4 AD audits per year</li>
+          <li>Complete reports per audit</li>
+          <li>Security scoring per domain</li>
+          <li>Step-by-step guided remediation</li>
+          <li>NIS2/CIS dashboard</li>
+          <li>Email support included</li>
+        </ul>
+        <a href="#contact" class="btn-pricing outline">Book a meeting</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">RECOMMENDED</div>
+        <div class="pricing-name">PROFESSIONAL</div>
+        <div class="pricing-desc">Complete AD + Cloud security</div>
+        <div class="pricing-price">€14,900<span>/year</span></div>
+        <ul class="pricing-features">
+          <li><strong>Everything in Essential</strong></li>
+          <li>Azure AD & hybrid module</li>
+          <li>Unlimited audits</li>
+          <li>Multi-site dashboard</li>
+          <li>ISO 27001/GDPR/DORA compliance</li>
+          <li>Executive reports (Management/CISO)</li>
+          <li>Priority phone+email support</li>
+        </ul>
+        <a href="#contact" class="btn-pricing">Book a meeting</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">ENTERPRISE</div>
+        <div class="pricing-desc">Custom</div>
+        <div class="pricing-price">On quote</div>
+        <ul class="pricing-features">
+          <li><strong>Everything in Professional</strong></li>
+          <li>24/7 continuous monitoring</li>
+          <li>Attack simulation sandbox</li>
+          <li>SIEM/SOC integration</li>
+          <li>Dedicated account manager</li>
+          <li>Contractual SLA guarantees</li>
+        </ul>
+        <a href="#contact" class="btn-pricing outline">Contact us</a>
+      </div>
+    </div>
+    <div class="pricing-note">
+      ✓ All prices are ex-VAT — VAT applies as per applicable legislation &nbsp;·&nbsp;
+      ✓ Annual subscription — invoiced upon signing &nbsp;·&nbsp;
+      ✓ Auto-renewal with 30-day notice &nbsp;·&nbsp;
+      ✓ Personalized appointment available on request &nbsp;·&nbsp;
+      ✓ Enterprise custom quote within 48h &nbsp;·&nbsp;
+      ✓ Special conditions for public sector and associations
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-tag">Support</div>
+    <h2>Frequently Asked <span>Questions</span></h2>
+    <p class="section-intro">Find quick answers to the most common questions.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What is ADSecure Report™?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports: one for senior management, one for the IT Manager, one for the DPO, a remediation guide, a compliance scoring report, an Azure AD / Entra ID report, and a QR Code verifiable attestation. 164 control points cover 20 distinct domains of your AD infrastructure.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does ADSecure transmit data to the cloud?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">No. The scan runs in read-only mode, without installation, without modifying the infrastructure. Data does not leave the client's environment. The self-contained PowerShell agent runs on any Windows environment from Server 2016 onwards. No Active Directory data transits to our servers: this is guaranteed architecturally, not contractually.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why is on-site intervention systematic?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">On-site presence is not an option in our model: it's a principle. Deploying a security tool on a domain controller without being physically present to validate its integrity and accompany the report delivery means missing the essence of what an audit means. The SHA-256 validation of the executable, performed live in the presence of the CISO before launch, is the foundation of trust.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What are the technical prerequisites for ADSecure?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">ADSecure requires Windows Server 2016 or later, PowerShell 5.1 or higher, and the RSAT Active Directory module installed. A domain member account with read-only access to AD is sufficient. Local administrator rights are recommended for advanced registry controls. No internet connection is required to run the scan.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is ADSecure NIS2 and ISO 27001 compliant?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Each of ADSecure's 164 controls is mapped to the relevant NIS2 article (EU Directive 2022/2555, mandatory since October 2024) and to Annexes A.8, A.9, A.12, A.18 of ISO 27001:2022. The management report automatically generates an Art. 21 compliance summary ready for auditors. We also cover CIS Controls v8, GDPR, Cyfun (Belgium) and DORA (financial sector).</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does the QR Code verifiable attestation work?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">ADSecure's QR Code attestation is an enforceable, timestamped, tamper-proof document. It is verifiable in real time at verify.mandatoryshield.com and constitutes admissible due-diligence evidence in the context of an audit, a claim or a regulatory inspection. It's a unique market innovation that gives legal value to your security audits.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer demos or free trials?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We do not offer free trials due to the sensitive nature of Active Directory audits and our systematic on-site approach. However, we organize personalized appointments to present the platform, answer your specific questions and assess your needs. Contact us at contact@mandatoryshield.com to schedule a discussion with our experts.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does ADSecure work with Azure AD / Microsoft Entra ID?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes, but only with the Professional and Enterprise plans. The Azure AD / Cloud Hybrid module analyzes your Microsoft cloud environment, Azure AD Connect synchronizations, federation configurations, and produces a specific report. The Essential plan is limited to on-premise Active Directory only.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="entreprise">
+  <div class="container">
+    <div class="section-tag">Company</div>
+    <h2>Who <span>we are</span></h2>
+    <p class="section-intro">Mandatory Shield Company — Protecting the digital identity of European organizations.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">PR</div>
+        <div class="team-name">Pierre-Antoine Rouhaud</div>
+        <div class="team-role">Co-Founder & CEO</div>
+        <div class="team-bio">Expert in securing Windows infrastructures and Active Directory. Pierre-Antoine brings a strategic vision combined with deep technical mastery. He leads product direction and ADSecure's commercial strategy.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">RB</div>
+        <div class="team-name">Raphaël Berki</div>
+        <div class="team-role">Co-Founder & CTO</div>
+        <div class="team-bio">Software architect and cybersecurity specialist, Raphaël designs ADSecure's technical architecture. His expertise covers behavioral analysis, attack simulation and intelligent scoring engines.</div>
+      </div>
+    </div>
+    <h3 style="font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem;">Our Mission</h3>
+    <p style="color:var(--muted);max-width:620px;margin-bottom:2rem;line-height:1.75;">Enable every European organization to master the security of its Active Directory, regardless of its size, with tools that are both powerful, accessible and compliant.</p>
+    <div class="mission-grid">
+      <div class="mission-card"><h4>🇧🇪 Built in Belgium</h4><p>Developed in Brussels. GDPR native. European sovereignty.</p></div>
+      <div class="mission-card"><h4>💡 Innovation</h4><p>Continuous R&D to anticipate tomorrow's threats.</p></div>
+      <div class="mission-card"><h4>🤝 Trust</h4><p>Transparency, guidance and expert support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-tag" style="color:var(--teal-light)">Contact</div>
+    <h2>Book a <span style="color:var(--teal-light)">Meeting</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Let's discuss your Active Directory security needs. Our experts will contact you within 24 hours to arrange an appointment.</p>
+        <div class="contact-detail"><span>✉️</span><span><strong>Email</strong><br/>contact@mandatoryshield.com</span></div>
+        <div class="contact-detail"><span>🌐</span><span><strong>Website</strong><br/>www.mandatoryshield.com</span></div>
+        <div class="contact-detail"><span>📍</span><span><strong>Location</strong><br/>Brussels, Belgium (European Union)</span></div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group"><label>Full name</label><input type="text" placeholder="John Smith" /></div>
+        <div class="form-group"><label>Professional email</label><input type="email" placeholder="john@company.com" /></div>
+        <div class="form-group"><label>Company</label><input type="text" placeholder="Your company" /></div>
+        <div class="form-group">
+          <label>Area of interest</label>
+          <select>
+            <option>Platform demonstration</option>
+            <option>Essential offer</option>
+            <option>Professional offer</option>
+            <option>Enterprise offer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your needs..."></textarea></div>
+        <button class="btn-submit">Send request →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem;">
+          <div style="width:32px;height:32px;background:var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:12px;">MS</div>
+          <span style="color:white;font-weight:700;">MANDATORY SHIELD</span>
+        </div>
+        <p>Essential SaaS Security — The first European Active Directory audit platform designed for NIS2, ISO 27001 and GDPR compliance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#product">Features</a></li>
+          <li><a href="#conformite">Compliance</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#entreprise">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">GTC</a></li>
+          <li><a href="#">Legal notice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Mandatory Shield Company. All rights reserved. · Built in Belgium 🇧🇪</span>
+      <span>Brussels, Belgium · contact@mandatoryshield.com</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chatbot-toggle" onclick="document.querySelector('.chatbot-window').classList.toggle('open')">💬</button>
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <h4>ADSecure Assistant</h4>
+    <button class="chatbot-close" onclick="document.querySelector('.chatbot-window').classList.remove('open')">×</button>
+  </div>
+  <div class="chatbot-messages" id="chat-msgs">
+    <div class="msg bot">Hello! I'm the ADSecure virtual assistant. How can I help you today?</div>
+  </div>
+  <div class="chatbot-quick">
+    <button class="quick-btn" onclick="sendQuick('Pricing')">Pricing</button>
+    <button class="quick-btn" onclick="sendQuick('NIS2 Compliance')">NIS2</button>
+    <button class="quick-btn" onclick="sendQuick('Data security')">Data security</button>
+    <button class="quick-btn" onclick="sendQuick('Request a demo')">Demo</button>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Ask a question..." onkeydown="if(event.key==='Enter')sendMsg()" />
+    <button onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Chatbot
+  const answers = {
+    'pricing': 'Our plans start at €6,900/year for Essential (4 audits/year). The Professional plan at €14,900/year includes unlimited audits and the Azure AD module. Enterprise is available on quote. Contact us at contact@mandatoryshield.com!',
+    'nis2': 'ADSecure maps all 164 controls to NIS2 (EU Directive 2022/2555, mandatory since October 2024). Each control references its NIS2 article and the management report automatically generates an Art. 21 compliance summary.',
+    'data security': 'Zero data transmitted. The scan runs 100% on-premise, in read-only mode. No Active Directory data transits to our servers. This is guaranteed architecturally, not contractually.',
+    'demo': 'We do not offer free trials, but we organize personalized demonstrations on your environment. Contact us at contact@mandatoryshield.com or fill out the contact form!',
+    'default': 'Thank you for your question! For more information, contact us at contact@mandatoryshield.com or fill out the contact form. Our experts will respond within 24 hours.'
+  };
+
+  function sendMsg() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+    addMsg(msg, 'user');
+    input.value = '';
+    const key = Object.keys(answers).find(k => msg.toLowerCase().includes(k)) || 'default';
+    setTimeout(() => addMsg(answers[key], 'bot'), 600);
+  }
+
+  function sendQuick(q) { document.getElementById('chat-input').value = q; sendMsg(); }
+
+  function addMsg(text, type) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + type;
+    div.textContent = text;
+    const msgs = document.getElementById('chat-msgs');
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+</script>
+</body>
+</html>
