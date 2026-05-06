@@ -6,15 +6,14 @@
     <title>ADSecure Report™ | Mandatory Shield - Audit Sécurité Active Directory</title>
     <meta name="description" content="Plateforme européenne d'audit Active Directory. 164 contrôles, 7 rapports distincts, conformité NIS2 & ISO 27001. Intervention sur site incluse.">
     
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests;">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), usb=(), payment=()">
     
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,9 +37,9 @@
             
             <div class="nav-right">
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="fr">FR</button>
-                    <button class="lang-btn" data-lang="nl">NL</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn active" data-lang="fr" onclick="applyLang('fr')">FR</button>
+                    <button class="lang-btn" data-lang="nl" onclick="applyLang('nl')">NL</button>
+                    <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
                 </div>
                 <script src="i18n.js"></script>
                 <script>
