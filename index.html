@@ -41,15 +41,8 @@
                     <button class="lang-btn" data-lang="nl">NL</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
-                <script src="i18n.js"></script>
-                <script src="init.js"></script>
-                <script>
-    // Charge la langue sauvegardée au démarrage
-    const savedLang = localStorage.getItem('ms_lang') || 'fr';
-    applyLang(savedLang);
-</script>
-                <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
-            </div>
+<script src="init.js"></script>
+<a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
             
             <button class="mobile-toggle" aria-label="Menu"><i class="ri-menu-line"></i></button>
         </div>
@@ -452,6 +445,8 @@
         </div>
         <button class="chatbot-toggle" data-chat-toggle><i class="ri-chat-3-line"></i></button>
     </div>
+    <script src="i18n.js"></script>
+    <script src="init.js"></script>
     <script src="app.js" defer></script>
 </body>
 </html>
