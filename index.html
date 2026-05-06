@@ -42,6 +42,12 @@
                     <button class="lang-btn" data-lang="nl">NL</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
+                <script src="i18n.js"></script>
+                <script>
+    // Charge la langue sauvegardée au démarrage
+    const savedLang = localStorage.getItem('ms_lang') || 'fr';
+    applyLang(savedLang);
+</script>
                 <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
             </div>
             
