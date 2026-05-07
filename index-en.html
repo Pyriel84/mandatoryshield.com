@@ -256,7 +256,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">MS</div>
+      <img src="images/logo.png" alt="Mandatory Shield" loading="lazy" style="height:36px;width:auto;">
       <span class="nav-logo-text">MANDATORY SHIELD</span>
     </a>
     <ul class="nav-links">
@@ -409,14 +409,14 @@
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-name">ESSENTIAL</div>
-        <div class="pricing-desc">Ideal for SMEs</div>
+        <div class="pricing-desc">Up to 100 users</div>
         <div class="pricing-price">€6,900<span>/year</span></div>
         <ul class="pricing-features">
-          <li>4 AD audits per year</li>
+          <li>Azure AD & hybrid cloud included</li>
+          <li>Full compliance: NIS2, CIS Controls v8, ISO 27001, GDPR, DORA</li>
           <li>Complete reports per audit</li>
           <li>Security scoring per domain</li>
           <li>Step-by-step guided remediation</li>
-          <li>NIS2/CIS dashboard</li>
           <li>Email support included</li>
         </ul>
         <a href="#contact" class="btn-pricing outline">Book a meeting</a>
@@ -424,22 +424,21 @@
       <div class="pricing-card featured">
         <div class="pricing-badge">RECOMMENDED</div>
         <div class="pricing-name">PROFESSIONAL</div>
-        <div class="pricing-desc">Complete AD + Cloud security</div>
+        <div class="pricing-desc">100 to 250 users</div>
         <div class="pricing-price">€14,900<span>/year</span></div>
         <ul class="pricing-features">
           <li><strong>Everything in Essential</strong></li>
-          <li>Azure AD & hybrid module</li>
-          <li>Unlimited audits</li>
+          <li>Multi-site Active Directory</li>
+          <li>4 AD audits per year</li>
           <li>Multi-site dashboard</li>
-          <li>ISO 27001/GDPR/DORA compliance</li>
           <li>Executive reports (Management/CISO)</li>
-          <li>Priority phone+email support</li>
+          <li>Priority phone + email support</li>
         </ul>
         <a href="#contact" class="btn-pricing">Book a meeting</a>
       </div>
       <div class="pricing-card">
         <div class="pricing-name">ENTERPRISE</div>
-        <div class="pricing-desc">Custom</div>
+        <div class="pricing-desc">250+ users</div>
         <div class="pricing-price">On quote</div>
         <ul class="pricing-features">
           <li><strong>Everything in Professional</strong></li>
@@ -495,12 +494,16 @@
         <div class="faq-a"><div class="faq-a-inner">ADSecure's QR Code attestation is an enforceable, timestamped, tamper-proof document. It is verifiable in real time at verify.mandatoryshield.com and constitutes admissible due-diligence evidence in the context of an audit, a claim or a regulatory inspection. It's a unique market innovation that gives legal value to your security audits.</div></div>
       </div>
       <div class="faq-item">
+        <button class="faq-q">Which plan is right for my organization?<span>+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Our plans are segmented by number of users. <strong>Essential</strong> (€6,900/year) is designed for organizations up to 100 users: Azure AD & hybrid cloud included, full compliance (NIS2, CIS Controls v8, ISO 27001, GDPR, DORA), complete reports and guided remediation. <strong>Professional</strong> (€14,900/year) targets organizations with 100 to 250 users, adding multi-site Active Directory, 4 AD audits per year and executive reports (Management/CISO). <strong>Enterprise</strong> (on quote) is for organizations with more than 250 users, with 24/7 monitoring, SIEM/SOC integration and a dedicated account manager.</div></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-q">Do you offer demos or free trials?<span>+</span></button>
         <div class="faq-a"><div class="faq-a-inner">We do not offer free trials due to the sensitive nature of Active Directory audits and our systematic on-site approach. However, we organize personalized appointments to present the platform, answer your specific questions and assess your needs. Contact us at contact@mandatoryshield.com to schedule a discussion with our experts.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Does ADSecure work with Azure AD / Microsoft Entra ID?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Yes, but only with the Professional and Enterprise plans. The Azure AD / Cloud Hybrid module analyzes your Microsoft cloud environment, Azure AD Connect synchronizations, federation configurations, and produces a specific report. The Essential plan is limited to on-premise Active Directory only.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, included from the Essential plan. The Azure AD & hybrid cloud module is included in all plans at no extra cost. It analyzes your Microsoft cloud environment, Azure AD Connect synchronizations and federation configurations, and produces a dedicated report alongside the on-premise AD audit.</div></div>
       </div>
     </div>
   </div>
@@ -510,6 +513,7 @@
 <section id="entreprise">
   <div class="container">
     <div class="section-tag">Company</div>
+    <img src="images/logo.png" alt="Mandatory Shield" style="height:72px;width:auto;display:block;margin:1.25rem 0 1.5rem;">
     <h2>Who <span>we are</span></h2>
     <p class="section-intro">Mandatory Shield Company — Protecting the digital identity of European organizations.</p>
     <div class="team-grid">
@@ -601,10 +605,10 @@
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#">Privacy policy</a></li>
-          <li><a href="#">Terms of use</a></li>
-          <li><a href="#">GTC</a></li>
-          <li><a href="#">Legal notice</a></li>
+          <li><a href="legal.html#privacy">Privacy policy</a></li>
+          <li><a href="legal.html#cgu">Terms of use</a></li>
+          <li><a href="legal.html#cgv">GTC</a></li>
+          <li><a href="legal.html#mentions">Legal notice</a></li>
         </ul>
       </div>
     </div>
@@ -616,67 +620,27 @@
 </footer>
 
 <!-- CHATBOT -->
-<button class="chatbot-toggle" onclick="document.querySelector('.chatbot-window').classList.toggle('open')">💬</button>
+<button class="chatbot-toggle">💬</button>
 <div class="chatbot-window">
   <div class="chatbot-header">
     <h4>ADSecure Assistant</h4>
-    <button class="chatbot-close" onclick="document.querySelector('.chatbot-window').classList.remove('open')">×</button>
+    <button class="chatbot-close">×</button>
   </div>
   <div class="chatbot-messages" id="chat-msgs">
-    <div class="msg bot">Hello! I'm the ADSecure virtual assistant. How can I help you today?</div>
+    <div class="msg bot" style="display:flex;align-items:flex-start;gap:8px;"><img src="images/logo.png" alt="Mandatory Shield" style="width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:50%;background:white;border:1px solid #e2e8f0;padding:3px;"><span>Hello! I'm the ADSecure virtual assistant. How can I help you today?</span></div>
   </div>
   <div class="chatbot-quick">
-    <button class="quick-btn" onclick="sendQuick('Pricing')">Pricing</button>
-    <button class="quick-btn" onclick="sendQuick('NIS2 Compliance')">NIS2</button>
-    <button class="quick-btn" onclick="sendQuick('Data security')">Data security</button>
-    <button class="quick-btn" onclick="sendQuick('Request a demo')">Demo</button>
+    <button class="quick-btn" data-quick="Pricing">Pricing</button>
+    <button class="quick-btn" data-quick="NIS2 Compliance">NIS2</button>
+    <button class="quick-btn" data-quick="Data security">Data security</button>
+    <button class="quick-btn" data-quick="Request a demo">Demo</button>
   </div>
   <div class="chatbot-input">
-    <input type="text" id="chat-input" placeholder="Ask a question..." onkeydown="if(event.key==='Enter')sendMsg()" />
-    <button onclick="sendMsg()">➤</button>
+    <input type="text" id="chat-input" placeholder="Ask a question..." />
+    <button class="chat-send-btn">➤</button>
   </div>
 </div>
 
-<script>
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  // Chatbot
-  const answers = {
-    'pricing': 'Our plans start at €6,900/year for Essential (4 audits/year). The Professional plan at €14,900/year includes unlimited audits and the Azure AD module. Enterprise is available on quote. Contact us at contact@mandatoryshield.com!',
-    'nis2': 'ADSecure maps all 164 controls to NIS2 (EU Directive 2022/2555, mandatory since October 2024). Each control references its NIS2 article and the management report automatically generates an Art. 21 compliance summary.',
-    'data security': 'Zero data transmitted. The scan runs 100% on-premise, in read-only mode. No Active Directory data transits to our servers. This is guaranteed architecturally, not contractually.',
-    'demo': 'We do not offer free trials, but we organize personalized demonstrations on your environment. Contact us at contact@mandatoryshield.com or fill out the contact form!',
-    'default': 'Thank you for your question! For more information, contact us at contact@mandatoryshield.com or fill out the contact form. Our experts will respond within 24 hours.'
-  };
-
-  function sendMsg() {
-    const input = document.getElementById('chat-input');
-    const msg = input.value.trim();
-    if (!msg) return;
-    addMsg(msg, 'user');
-    input.value = '';
-    const key = Object.keys(answers).find(k => msg.toLowerCase().includes(k)) || 'default';
-    setTimeout(() => addMsg(answers[key], 'bot'), 600);
-  }
-
-  function sendQuick(q) { document.getElementById('chat-input').value = q; sendMsg(); }
-
-  function addMsg(text, type) {
-    const div = document.createElement('div');
-    div.className = 'msg ' + type;
-    div.textContent = text;
-    const msgs = document.getElementById('chat-msgs');
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
-  }
-</script>
+<script src="app-en.js"></script>
 </body>
 </html>

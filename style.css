@@ -282,7 +282,9 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
 .chatbot-message { margin-bottom: 16px; display: flex; align-items: flex-start; gap: 12px; }
 .chatbot-message.bot  { flex-direction: row; }
 .chatbot-message.user { flex-direction: row-reverse; }
-.chatbot-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.9rem; }
+.chatbot-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 0.9rem; overflow: hidden; }
+.chatbot-message.bot  .chatbot-avatar { background: white; border: 1px solid var(--border); padding: 4px; }
+.chatbot-avatar img { width: 100%; height: 100%; object-fit: contain; }
 .chatbot-message.user .chatbot-avatar { background: var(--success); }
 .chatbot-bubble { max-width: 80%; padding: 12px 16px; border-radius: 12px; font-size: 0.95rem; line-height: 1.5; }
 .chatbot-message.bot  .chatbot-bubble { background: white; border: 1px solid var(--border); color: var(--text-secondary); border-bottom-left-radius: 4px; }
@@ -313,18 +315,26 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
 .mission-item p  { font-size: 0.95rem; color: var(--text-secondary); }
 
 /* Section contact */
-.contact-box        { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
-.contact-header     { text-align: center; margin-bottom: 32px; }
-.contact-icon-lg    { font-size: 3rem; color: var(--primary); margin-bottom: 16px; display: block; }
-.contact-h3         { font-size: 1.5rem; margin-bottom: 8px; }
-.contact-sub        { color: var(--text-secondary); }
-.contact-links-list { margin-bottom: 24px; }
-.contact-row        { color: var(--text-secondary); margin-bottom: 16px; text-align: center; }
-.contact-row i      { color: var(--primary); margin-right: 8px; }
-.contact-row a      { color: var(--primary); text-decoration: none; font-weight: 600; }
-.contact-location   { padding: 20px; background: var(--bg-secondary); border-radius: 8px; margin-top: 24px; }
-.contact-location p { color: var(--text-secondary); font-size: 0.9rem; text-align: center; }
-.contact-location i { color: var(--primary); margin-right: 8px; }
+#contact { background: var(--text-primary); }
+#contact h2 { color: white; }
+.contact-tag    { color: var(--bg-tertiary); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+.contact-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.contact-info p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+.contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem; }
+.contact-detail strong { color: white; display: block; }
+.contact-form-list { display: flex; flex-direction: column; gap: 1rem; }
+.contact-field  { display: flex; flex-direction: column; gap: 6px; }
+.contact-field label { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
+.contact-field input,
+.contact-field select,
+.contact-field textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 14px; color: white; font-size: 0.9rem; outline: none; transition: border-color .2s; font-family: var(--font-main); width: 100%; }
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus { border-color: var(--primary); }
+.contact-field textarea  { resize: vertical; min-height: 100px; }
+.contact-field select option { background: var(--text-primary); }
+.btn-contact-submit { background: var(--primary); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background .2s; width: 100%; font-family: var(--font-main); }
+.btn-contact-submit:hover { background: var(--primary-dark); }
 
 /* Animations */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -357,4 +367,5 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     .language-switcher { display: none; }
     .chatbot-window { width: calc(100vw - 40px); right: 0; max-height: 80vh; }
     .mission-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
 }

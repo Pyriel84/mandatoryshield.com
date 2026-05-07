@@ -157,7 +157,14 @@ function addMessage(text, sender) {
 
     const avatar = document.createElement('div');
     avatar.className = 'chatbot-avatar';
-    avatar.textContent = sender === 'bot' ? 'MS' : 'VO';
+    if (sender === 'bot') {
+        const img = document.createElement('img');
+        img.src = 'images/logo.png';
+        img.alt = 'Mandatory Shield';
+        avatar.appendChild(img);
+    } else {
+        avatar.textContent = 'VO';
+    }
 
     const bubble = document.createElement('div');
     bubble.className = 'chatbot-bubble';

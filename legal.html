@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents Légaux | Mandatory Shield Company</title>
+  <meta name="description" content="Politique de confidentialité, conditions d'utilisation, CGV et mentions légales de Mandatory Shield Company SRL, Bruxelles, Belgique." />
+  <meta name="robots" content="noindex, follow" />
+  <style>
+    :root {
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-subtle: #f0fdfa;
+      --teal-light: #ccfbf1;
+      --navy: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f9f8f5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* NAV */
+    nav { background: rgba(249,248,245,0.97); border-bottom: 1px solid var(--border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: var(--teal); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 12px; }
+    .nav-logo-text { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    .nav-back { color: var(--muted); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--teal); }
+
+    /* TABS */
+    .tabs-wrapper { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 99; }
+    .tabs { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; gap: 0; padding: 0 2rem; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { padding: 1rem 1.5rem; border: none; background: none; cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; transition: all .2s; font-family: inherit; }
+    .tab-btn:hover { color: var(--teal); }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+    /* CONTENT */
+    .content-wrapper { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .doc-section { display: none; }
+    .doc-section.active { display: block; }
+
+    .doc-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--teal-light); }
+    .doc-header h1 { font-size: 1.9rem; font-weight: 800; color: var(--navy); margin-bottom: .5rem; }
+    .doc-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+    .doc-meta-item { font-size: 0.82rem; color: var(--muted); }
+    .doc-meta-item strong { color: var(--text); }
+
+    .doc-toc { background: var(--teal-subtle); border: 1px solid var(--teal-light); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+    .doc-toc h3 { font-size: 0.88rem; font-weight: 700; color: var(--teal-dark); margin-bottom: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+    .doc-toc ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 5px; }
+    .doc-toc ol li a { color: var(--teal-dark); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    .doc-toc ol li a:hover { text-decoration: underline; }
+
+    h2.legal-h2 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 2.25rem 0 .75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    h2.legal-h2:first-of-type { border-top: none; margin-top: 0; }
+    h3.legal-h3 { font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin: 1.25rem 0 .5rem; }
+    p.legal-p { color: var(--text); font-size: 0.93rem; margin-bottom: .85rem; }
+    ul.legal-ul, ol.legal-ol { padding-left: 1.5rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 5px; }
+    ul.legal-ul li, ol.legal-ol li { font-size: 0.9rem; color: var(--text); }
+    .legal-highlight { background: var(--teal-subtle); border-left: 4px solid var(--teal); padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.9rem; }
+    .legal-warning { background: #fef9ec; border-left: 4px solid #f59e0b; padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.9rem; color: #78350f; }
+    table.legal-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    table.legal-table th { background: var(--teal); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+    table.legal-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    table.legal-table tr:nth-child(even) td { background: var(--bg); }
+    .legal-date-box { display: inline-block; background: var(--teal-light); color: var(--teal-dark); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+
+    /* FOOTER */
+    .legal-footer { background: var(--navy); color: #64748b; text-align: center; padding: 2rem; font-size: 0.82rem; margin-top: 4rem; }
+    .legal-footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">MS</div>
+      <span class="nav-logo-text">MANDATORY SHIELD</span>
+    </a>
+    <a href="index.html" class="nav-back" id="back-link">← Retour au site</a>
+  </div>
+</nav>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="privacy">🔒 Politique de confidentialité</button>
+    <button class="tab-btn" data-tab="cgu">📄 Conditions d'utilisation</button>
+    <button class="tab-btn" data-tab="cgv">🛒 CGV</button>
+    <button class="tab-btn" data-tab="mentions">🏢 Mentions légales</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- ===================== POLITIQUE DE CONFIDENTIALITÉ ===================== -->
+  <div id="privacy" class="doc-section active">
+    <div class="doc-header">
+      <div class="legal-date-box">Dernière mise à jour : 1er mai 2025</div>
+      <h1>Politique de confidentialité</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — conforme au RGPD (UE 2016/679)</p>
+      <div class="doc-meta">
+        <div class="doc-meta-item"><strong>Responsable du traitement :</strong> Mandatory Shield Company SRL</div>
+        <div class="doc-meta-item"><strong>DPO :</strong> contact@mandatoryshield.com</div>
+        <div class="doc-meta-item"><strong>Version :</strong> 1.0</div>
+      </div>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#p1">Identité du responsable du traitement</a></li>
+        <li><a href="#p2">Données collectées et finalités</a></li>
+        <li><a href="#p3">Base juridique des traitements</a></li>
+        <li><a href="#p4">Durée de conservation</a></li>
+        <li><a href="#p5">Destinataires des données</a></li>
+        <li><a href="#p6">Transferts hors UE</a></li>
+        <li><a href="#p7">Vos droits</a></li>
+        <li><a href="#p8">Sécurité des données</a></li>
+        <li><a href="#p9">Cookies</a></li>
+        <li><a href="#p10">Contact et réclamations</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="p1">1. Identité du responsable du traitement</h2>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL</strong><br/>
+    Siège social : Bruxelles, Belgique (Union Européenne)<br/>
+    Numéro d'entreprise BCE : <em>en cours d'attribution (société en constitution)</em><br/>
+    Numéro de TVA : <em>en cours d'attribution</em><br/>
+    E-mail : contact@mandatoryshield.com<br/>
+    Site web : www.mandatoryshield.com</p>
+
+    <h2 class="legal-h2" id="p2">2. Données collectées et finalités</h2>
+
+    <h3 class="legal-h3">2.1 Données collectées via le site web</h3>
+    <table class="legal-table">
+      <tr><th>Catégorie de données</th><th>Données concernées</th><th>Finalité</th><th>Base juridique</th></tr>
+      <tr><td>Données d'identification</td><td>Nom, prénom, dénomination sociale</td><td>Gestion de la relation client, émission de contrats et factures</td><td>Exécution du contrat (art. 6.1.b RGPD)</td></tr>
+      <tr><td>Données de contact</td><td>Adresse e-mail professionnelle, numéro de téléphone</td><td>Communication commerciale, support, notifications réglementaires</td><td>Intérêt légitime (art. 6.1.f RGPD)</td></tr>
+      <tr><td>Données de navigation</td><td>Adresse IP, pages visitées, durée de session, navigateur</td><td>Analyse d'audience, amélioration du site, sécurité</td><td>Consentement (art. 6.1.a RGPD) via bannière cookies</td></tr>
+      <tr><td>Données de formulaire de contact</td><td>Message, intérêt exprimé, entreprise</td><td>Traitement des demandes commerciales et support</td><td>Mesures précontractuelles (art. 6.1.b RGPD)</td></tr>
+    </table>
+
+    <h3 class="legal-h3">2.2 Données traitées dans le cadre du service ADSecure Report™</h3>
+    <div class="legal-highlight">
+      <strong>Principe fondamental — Zéro donnée personnelle transmise :</strong> ADSecure Report™ fonctionne exclusivement en mode <em>on-premise</em>. Le scan interroge uniquement des <strong>données techniques de configuration Active Directory</strong> (paramètres GPO, attributs de sécurité des objets, configuration des protocoles, politiques d'audit…). Ces données sont de nature purement technique et ne constituent pas des données personnelles au sens du RGPD dans leur usage par ADSecure. <strong>Aucune donnée n'est transmise aux serveurs de Mandatory Shield Company.</strong> Cette garantie est architecturale et non seulement contractuelle.
+    </div>
+    <p class="legal-p">ADSecure Report™ <strong>ne collecte pas, ne stocke pas et ne traite pas</strong> les données à caractère personnel des utilisateurs finaux présents dans l'annuaire (noms, prénoms, adresses e-mail, etc.). L'outil analyse des attributs de sécurité agrégés (comptes à privilèges excessifs, politiques de mots de passe, délégations…) sans jamais extraire ni journaliser d'identifiants individuels nominatifs.</p>
+    <p class="legal-p">Les rapports générés (fichiers HTML) restent en totalité dans l'environnement informatique du client. Mandatory Shield Company n'a aucun accès à leur contenu, sauf si le client choisit de les transmettre volontairement dans le cadre d'une demande de support technique.</p>
+    <p class="legal-p">Dans le cadre de la prestation sur site, les consultants Mandatory Shield Company peuvent visualiser temporairement des paramètres de configuration AD à l'écran. Ces informations sont couvertes par l'accord de non-divulgation (NDA) systématiquement signé avant toute intervention, et ne font l'objet d'aucune extraction, copie ou conservation externe.</p>
+    <div class="legal-warning">
+      <strong>Qualification RGPD :</strong> Au regard de la nature exclusivement technique des données analysées par ADSecure Report™, Mandatory Shield Company SRL n'est qualifiable ni de « responsable du traitement » ni de « sous-traitant » au sens des articles 4(7) et 4(8) du RGPD pour ce qui concerne l'exécution du scan. Le Client reste seul responsable du traitement des données personnelles éventuellement présentes dans son Active Directory.
+    </div>
+
+    <h2 class="legal-h2" id="p3">3. Base juridique des traitements</h2>
+    <ul class="legal-ul">
+      <li><strong>Art. 6.1.a RGPD (Consentement) :</strong> cookies analytiques, communications marketing opt-in.</li>
+      <li><strong>Art. 6.1.b RGPD (Exécution du contrat) :</strong> traitement des commandes, gestion des licences, facturation, accès à la plateforme.</li>
+      <li><strong>Art. 6.1.c RGPD (Obligation légale) :</strong> conservation des pièces comptables (art. III.86 Code de droit économique belge), obligations fiscales TVA.</li>
+      <li><strong>Art. 6.1.f RGPD (Intérêt légitime) :</strong> sécurité du site, prévention des fraudes, prospection B2B auprès de contacts professionnels existants.</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p4">4. Durée de conservation</h2>
+    <table class="legal-table">
+      <tr><th>Catégorie</th><th>Durée</th><th>Fondement</th></tr>
+      <tr><td>Données clients actifs (contrats, licences)</td><td>Durée du contrat + 5 ans</td><td>Prescription contractuelle belge (art. 2262bis Code civil)</td></tr>
+      <tr><td>Données comptables et factures</td><td>7 ans</td><td>Art. III.86 Code de droit économique belge</td></tr>
+      <tr><td>Données de prospects (sans achat)</td><td>3 ans à compter du dernier contact</td><td>Recommandation CNIL / APD belge</td></tr>
+      <tr><td>Données de navigation (cookies analytiques)</td><td>13 mois maximum</td><td>Recommandation APD belge</td></tr>
+      <tr><td>Logs de sécurité</td><td>12 mois</td><td>Intérêt légitime</td></tr>
+      <tr><td>Candidatures (recrutement)</td><td>2 ans</td><td>Recommandation APD belge</td></tr>
+    </table>
+
+    <h2 class="legal-h2" id="p5">5. Destinataires des données</h2>
+    <p class="legal-p">Mandatory Shield Company ne vend ni ne loue vos données personnelles à des tiers. Les données peuvent être partagées avec les catégories de sous-traitants suivantes, liés par des contrats de traitement conformes à l'art. 28 RGPD :</p>
+    <ul class="legal-ul">
+      <li><strong>Hébergeur web :</strong> Scaleway SAS (France, UE) — hébergement du site mandatoryshield.com</li>
+      <li><strong>Outil de messagerie professionnelle :</strong> prestataire interne à l'UE</li>
+      <li><strong>Comptabilité et facturation :</strong> prestataire comptable belge agréé</li>
+      <li><strong>Autorités publiques :</strong> uniquement sur réquisition légale (OCLSSF, parquet, APD)</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p6">6. Transferts hors Union Européenne</h2>
+    <p class="legal-p">Mandatory Shield Company s'engage à ne pas transférer vos données personnelles en dehors de l'Espace Économique Européen (EEE) sans garanties appropriées. Si un transfert devait être nécessaire, il serait encadré par des Clauses Contractuelles Types (CCT) approuvées par la Commission européenne ou une décision d'adéquation.</p>
+    <div class="legal-highlight">Notre infrastructure d'hébergement est intégralement localisée dans l'Union Européenne (Scaleway, France).</div>
+
+    <h2 class="legal-h2" id="p7">7. Vos droits</h2>
+    <p class="legal-p">Conformément au RGPD et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel, vous disposez des droits suivants :</p>
+    <table class="legal-table">
+      <tr><th>Droit</th><th>Description</th></tr>
+      <tr><td><strong>Droit d'accès</strong> (art. 15 RGPD)</td><td>Obtenir confirmation du traitement et une copie de vos données</td></tr>
+      <tr><td><strong>Droit de rectification</strong> (art. 16 RGPD)</td><td>Faire corriger des données inexactes ou incomplètes</td></tr>
+      <tr><td><strong>Droit à l'effacement</strong> (art. 17 RGPD)</td><td>Demander la suppression de vos données sous certaines conditions</td></tr>
+      <tr><td><strong>Droit à la limitation</strong> (art. 18 RGPD)</td><td>Demander la suspension temporaire d'un traitement</td></tr>
+      <tr><td><strong>Droit à la portabilité</strong> (art. 20 RGPD)</td><td>Recevoir vos données dans un format structuré et lisible par machine</td></tr>
+      <tr><td><strong>Droit d'opposition</strong> (art. 21 RGPD)</td><td>Vous opposer à un traitement basé sur l'intérêt légitime ou à des fins de prospection</td></tr>
+      <tr><td><strong>Retrait du consentement</strong> (art. 7 RGPD)</td><td>Retirer votre consentement à tout moment sans effet rétroactif</td></tr>
+    </table>
+    <p class="legal-p"><strong>Pour exercer vos droits :</strong> Envoyez votre demande écrite à <a href="mailto:contact@mandatoryshield.com" style="color:var(--teal)">contact@mandatoryshield.com</a> en précisant votre identité. Nous répondrons dans un délai d'un mois (prolongeable de deux mois pour les demandes complexes).</p>
+    <p class="legal-p"><strong>Droit de réclamation :</strong> Vous pouvez introduire une réclamation auprès de l'<strong>Autorité de Protection des Données (APD) belge</strong> : Rue de la Presse 35, 1000 Bruxelles — <a href="https://www.autoriteprotectiondonnees.be" style="color:var(--teal)" target="_blank" rel="noopener">www.autoriteprotectiondonnees.be</a></p>
+
+    <h2 class="legal-h2" id="p8">8. Sécurité des données</h2>
+    <p class="legal-p">Mandatory Shield Company met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles, notamment :</p>
+    <ul class="legal-ul">
+      <li>Chiffrement des communications par TLS 1.2 minimum (HTTPS obligatoire)</li>
+      <li>Chiffrement des données stockées au repos</li>
+      <li>Accès aux données restreint au personnel autorisé selon le principe du moindre privilège</li>
+      <li>Authentification multifacteur (MFA) sur tous les systèmes internes</li>
+      <li>Procédure de notification des violations de données (art. 33-34 RGPD) : notification à l'APD sous 72 heures, information des personnes concernées si risque élevé</li>
+      <li>Tests de pénétration et audits de sécurité réguliers</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p9">9. Cookies</h2>
+    <h3 class="legal-h3">9.1 Cookies strictement nécessaires</h3>
+    <p class="legal-p">Ces cookies sont indispensables au fonctionnement du site et ne peuvent pas être désactivés. Ils ne nécessitent pas votre consentement.</p>
+    <table class="legal-table">
+      <tr><th>Cookie</th><th>Durée</th><th>Finalité</th></tr>
+      <tr><td>session_id</td><td>Session</td><td>Maintien de la session utilisateur</td></tr>
+      <tr><td>csrf_token</td><td>Session</td><td>Protection contre les attaques CSRF</td></tr>
+      <tr><td>cookie_consent</td><td>12 mois</td><td>Mémorisation de votre choix de consentement</td></tr>
+    </table>
+    <h3 class="legal-h3">9.2 Cookies analytiques (soumis à consentement)</h3>
+    <p class="legal-p">Ces cookies nous permettent de mesurer l'audience et d'améliorer notre site. Ils ne sont activés qu'après votre consentement explicite via notre bannière de cookies.</p>
+    <p class="legal-p">Vous pouvez gérer ou retirer votre consentement à tout moment via les paramètres de cookies accessibles en pied de page.</p>
+
+    <h2 class="legal-h2" id="p10">10. Contact et réclamations</h2>
+    <p class="legal-p">Pour toute question relative à la présente politique ou pour exercer vos droits :</p>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL — Délégué à la Protection des Données</strong><br/>
+    E-mail : <a href="mailto:contact@mandatoryshield.com" style="color:var(--teal)">contact@mandatoryshield.com</a><br/>
+    Objet du message : [RGPD] – Sujet de votre demande</p>
+    <p class="legal-p">La présente politique peut être mise à jour. Toute modification substantielle fera l'objet d'une information préalable par e-mail aux clients actifs. La date de dernière mise à jour figure en haut de ce document.</p>
+  </div>
+
+
+  <!-- ===================== CONDITIONS D'UTILISATION ===================== -->
+  <div id="cgu" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Version 1.0 — En vigueur depuis le 1er mai 2025</div>
+      <h1>Conditions Générales d'Utilisation (CGU)</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — Site web mandatoryshield.com et plateforme ADSecure Report™</p>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#u1">Objet et champ d'application</a></li>
+        <li><a href="#u2">Acceptation des conditions</a></li>
+        <li><a href="#u3">Accès au site et à la plateforme</a></li>
+        <li><a href="#u4">Propriété intellectuelle</a></li>
+        <li><a href="#u5">Obligations de l'utilisateur</a></li>
+        <li><a href="#u6">Responsabilité</a></li>
+        <li><a href="#u7">Liens hypertextes</a></li>
+        <li><a href="#u8">Droit applicable et juridiction</a></li>
+        <li><a href="#u9">Modification des CGU</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="u1">1. Objet et champ d'application</h2>
+    <p class="legal-p">Les présentes Conditions Générales d'Utilisation (ci-après « CGU ») régissent l'accès et l'utilisation du site web <strong>www.mandatoryshield.com</strong> (ci-après « le Site ») édité par <strong>Mandatory Shield Company SRL</strong>, société de droit belge dont le siège social est établi à Bruxelles, Belgique, actuellement en cours d'immatriculation auprès de la Banque-Carrefour des Entreprises.</p>
+    <p class="legal-p">Ces CGU s'appliquent à tout visiteur ou utilisateur du Site. Elles sont distinctes des Conditions Générales de Vente (CGV) qui régissent les relations contractuelles commerciales et de la licence d'utilisation du logiciel ADSecure Report™.</p>
+
+    <h2 class="legal-h2" id="u2">2. Acceptation des conditions</h2>
+    <p class="legal-p">L'accès et l'utilisation du Site impliquent l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas ces conditions, vous devez cesser immédiatement d'utiliser le Site.</p>
+    <p class="legal-p">En cas de contradiction entre les présentes CGU et des conditions particulières applicables à certains services, ces dernières prévaudront.</p>
+
+    <h2 class="legal-h2" id="u3">3. Accès au site et à la plateforme</h2>
+    <h3 class="legal-h3">3.1 Disponibilité</h3>
+    <p class="legal-p">Mandatory Shield Company s'efforce d'assurer la disponibilité du Site 24h/24 et 7j/7. Toutefois, Mandatory Shield Company se réserve le droit d'interrompre temporairement l'accès au Site pour des raisons de maintenance, de mise à jour ou de force majeure, sans que cela puisse engager sa responsabilité.</p>
+    <h3 class="legal-h3">3.2 Création de compte</h3>
+    <p class="legal-p">Certains services nécessitent la création d'un compte utilisateur. L'utilisateur s'engage à fournir des informations exactes, complètes et à jour, à maintenir la confidentialité de ses identifiants et à notifier immédiatement Mandatory Shield Company de tout accès non autorisé à son compte.</p>
+    <p class="legal-p">Mandatory Shield Company se réserve le droit de suspendre ou de résilier tout compte en cas de violation des présentes CGU.</p>
+    <h3 class="legal-h3">3.3 Configuration technique requise</h3>
+    <p class="legal-p">L'utilisateur est responsable de la configuration de son équipement informatique pour accéder au Site. Mandatory Shield Company ne saurait être tenu responsable des problèmes d'accès liés à la configuration de l'équipement de l'utilisateur ou de son fournisseur d'accès à internet.</p>
+
+    <h2 class="legal-h2" id="u4">4. Propriété intellectuelle</h2>
+    <p class="legal-p">L'ensemble des éléments du Site et de la plateforme ADSecure Report™ — notamment les textes, graphiques, logotypes, icônes, images, captures d'écran, code source, algorithmes de scoring, moteurs d'analyse, bases de règles de sécurité, rapports générés, noms commerciaux et marques — sont la propriété exclusive de <strong>Mandatory Shield Company SRL</strong> ou de ses concédants de licence.</p>
+    <p class="legal-p">Ces éléments sont protégés par le droit belge et européen de la propriété intellectuelle, notamment le <em>Code de droit économique belge</em> (Livre XI), la directive 2001/29/CE sur le droit d'auteur dans la société de l'information et la directive 2009/24/CE sur la protection juridique des programmes d'ordinateur.</p>
+    <div class="legal-warning">
+      <strong>Interdictions :</strong> Toute reproduction, représentation, modification, distribution, décompilation, ingénierie inverse (reverse engineering), extraction d'algorithmes ou création d'œuvres dérivées basées sur ADSecure Report™ est strictement interdite sans autorisation écrite préalable de Mandatory Shield Company SRL.
+    </div>
+    <p class="legal-p">Une licence d'utilisation personnelle, non exclusive, non transférable et révocable est accordée à l'utilisateur pour les seuls besoins de consultation du Site.</p>
+
+    <h2 class="legal-h2" id="u5">5. Obligations de l'utilisateur</h2>
+    <p class="legal-p">L'utilisateur s'engage à :</p>
+    <ul class="legal-ul">
+      <li>Utiliser le Site et la plateforme conformément aux présentes CGU et aux lois belges et européennes applicables</li>
+      <li>Ne pas porter atteinte aux droits de propriété intellectuelle de Mandatory Shield Company</li>
+      <li>Ne pas tenter de contourner les mesures de sécurité du Site</li>
+      <li>Ne pas utiliser le Site à des fins illicites, frauduleuses ou préjudiciables à des tiers</li>
+      <li>Ne pas transmettre de virus, code malveillant ou tout contenu susceptible de nuire au fonctionnement du Site</li>
+      <li>Ne pas procéder à de la rétro-ingénierie, décompilation ou désassemblage du logiciel ADSecure Report™</li>
+      <li>Ne pas utiliser des robots, scrapers ou tout moyen automatisé pour collecter des données depuis le Site sans autorisation écrite préalable</li>
+    </ul>
+    <p class="legal-p">En cas de violation de ces obligations, Mandatory Shield Company se réserve le droit de suspendre immédiatement l'accès au Site et aux services, et d'engager toute procédure judiciaire appropriée.</p>
+
+    <h2 class="legal-h2" id="u6">6. Responsabilité</h2>
+    <h3 class="legal-h3">6.1 Limitation de responsabilité de Mandatory Shield Company</h3>
+    <p class="legal-p">Les informations publiées sur le Site sont fournies à titre indicatif. Mandatory Shield Company ne garantit pas l'exactitude, l'exhaustivité ou l'actualité des informations diffusées. L'utilisation des informations du Site se fait sous la seule responsabilité de l'utilisateur.</p>
+    <p class="legal-p">ADSecure Report™ est un outil d'audit et d'aide à la décision. Les résultats fournis ne constituent pas une garantie absolue de sécurité. Mandatory Shield Company ne saurait être tenu responsable d'incidents de sécurité survenant malgré l'utilisation du logiciel, de pertes de données, d'interruptions d'activité ou de tout dommage indirect résultant de l'utilisation ou de l'impossibilité d'utiliser la plateforme.</p>
+    <p class="legal-p">La responsabilité contractuelle de Mandatory Shield Company est en tout état de cause limitée au montant hors taxe payé par le client au titre du contrat en cours, conformément aux CGV.</p>
+    <h3 class="legal-h3">6.2 Force majeure</h3>
+    <p class="legal-p">Mandatory Shield Company ne saurait être tenu responsable de tout manquement à ses obligations résultant d'un cas de force majeure au sens de l'article 5.225 du Code civil belge (nouveau), incluant notamment les cyberattaques d'envergure nationale, les pannes d'infrastructures internet, les catastrophes naturelles ou les décisions gouvernementales.</p>
+
+    <h2 class="legal-h2" id="u7">7. Liens hypertextes</h2>
+    <p class="legal-p">Le Site peut contenir des liens vers des sites tiers. Ces liens sont fournis à titre informatif uniquement. Mandatory Shield Company n'exerce aucun contrôle sur le contenu de ces sites et décline toute responsabilité quant à leur contenu, leur politique de confidentialité ou leurs pratiques.</p>
+    <p class="legal-p">La création de liens hypertextes pointant vers le Site est autorisée à condition que le lien ne crée pas de confusion sur l'identité ou les activités de Mandatory Shield Company, et qu'il ne soit pas utilisé dans un contexte portant atteinte à l'image de la société.</p>
+
+    <h2 class="legal-h2" id="u8">8. Droit applicable et juridiction</h2>
+    <p class="legal-p">Les présentes CGU sont régies par le <strong>droit belge</strong>, à l'exclusion de ses règles de conflits de lois, et interprétées conformément à celui-ci.</p>
+    <p class="legal-p">En cas de litige relatif à l'interprétation, la validité ou l'exécution des présentes CGU, et à défaut de résolution amiable dans un délai de 30 jours à compter de la notification du différend, les parties attribuent compétence exclusive aux <strong>tribunaux compétents de l'arrondissement judiciaire de Bruxelles</strong> (Belgique).</p>
+    <p class="legal-p">Pour les consommateurs résidant dans l'UE : conformément au règlement (UE) n°524/2013, vous pouvez recourir à la plateforme de règlement en ligne des litiges (RLL) : <a href="https://ec.europa.eu/consumers/odr" style="color:var(--teal)" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Mandatory Shield Company propose des services exclusivement aux professionnels (B2B).</p>
+
+    <h2 class="legal-h2" id="u9">9. Modification des CGU</h2>
+    <p class="legal-p">Mandatory Shield Company se réserve le droit de modifier les présentes CGU à tout moment. Les modifications entrent en vigueur dès leur publication sur le Site. Les utilisateurs disposant d'un compte seront informés par e-mail de toute modification substantielle au moins 30 jours avant son entrée en vigueur.</p>
+    <p class="legal-p">La poursuite de l'utilisation du Site après modification des CGU vaut acceptation des nouvelles conditions.</p>
+  </div>
+
+
+  <!-- ===================== CGV ===================== -->
+  <div id="cgv" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Version 1.0 — En vigueur depuis le 1er mai 2025</div>
+      <h1>Conditions Générales de Vente (CGV)</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — Ventes B2B exclusivement — Droit belge applicable</p>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Sommaire</h3>
+      <ol>
+        <li><a href="#v1">Identification du vendeur et champ d'application</a></li>
+        <li><a href="#v2">Formation du contrat</a></li>
+        <li><a href="#v3">Description des offres et services</a></li>
+        <li><a href="#v4">Prix, TVA et facturation</a></li>
+        <li><a href="#v5">Modalités de paiement</a></li>
+        <li><a href="#v6">Livraison et intervention sur site</a></li>
+        <li><a href="#v7">Licence d'utilisation du logiciel</a></li>
+        <li><a href="#v8">Durée, renouvellement et résiliation</a></li>
+        <li><a href="#v9">Garanties et support</a></li>
+        <li><a href="#v10">Responsabilité et limitation</a></li>
+        <li><a href="#v11">Confidentialité</a></li>
+        <li><a href="#v12">Droit applicable et litiges</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="v1">1. Identification du vendeur et champ d'application</h2>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL</strong><br/>
+    Siège social : Bruxelles, Belgique (Union Européenne)<br/>
+    Numéro BCE : <em>en cours d'attribution</em> | TVA : <em>en cours d'attribution</em><br/>
+    E-mail commercial : contact@mandatoryshield.com</p>
+    <p class="legal-p">Les présentes Conditions Générales de Vente (ci-après « CGV ») s'appliquent exclusivement aux ventes et prestations de services conclues entre Mandatory Shield Company SRL (ci-après « le Prestataire ») et tout acheteur professionnel (ci-après « le Client »), personne morale ou personne physique agissant dans le cadre de son activité professionnelle.</p>
+    <div class="legal-warning"><strong>Les présentes CGV s'appliquent exclusivement dans un contexte B2B.</strong> Elles ne s'appliquent pas aux consommateurs au sens du droit belge de la consommation (livre VI du Code de droit économique).</div>
+    <p class="legal-p">Toute commande implique l'acceptation pleine et entière des présentes CGV, qui prévalent sur les conditions générales d'achat du Client, sauf accord écrit contraire signé par un représentant légal de Mandatory Shield Company SRL.</p>
+
+    <h2 class="legal-h2" id="v2">2. Formation du contrat</h2>
+    <p class="legal-p">Le contrat est formé selon les étapes suivantes :</p>
+    <ol class="legal-ol">
+      <li><strong>Demande :</strong> Le Client adresse une demande via le site web ou par e-mail.</li>
+      <li><strong>Devis :</strong> Mandatory Shield Company émet un devis écrit personnalisé dans un délai de 48 heures ouvrables.</li>
+      <li><strong>Acceptation :</strong> Le Client signe et retourne le devis, accompagné d'une commande (bon de commande ou acceptation formelle par e-mail).</li>
+      <li><strong>Confirmation :</strong> Mandatory Shield Company confirme la réception et programme la prestation.</li>
+    </ol>
+    <p class="legal-p">Le devis est valable 30 jours calendriers à compter de sa date d'émission, sauf mention contraire expressément indiquée.</p>
+
+    <h2 class="legal-h2" id="v3">3. Description des offres et services</h2>
+    <table class="legal-table">
+      <tr><th>Offre</th><th>Contenu principal</th><th>Prix indicatif HT/an</th></tr>
+      <tr><td><strong>ESSENTIAL</strong></td><td>4 audits AD/an, rapports complets, scoring, remédiation guidée, support e-mail, intervention sur site</td><td>6 900 €</td></tr>
+      <tr><td><strong>PROFESSIONAL</strong></td><td>Tout Essential + module Azure AD/hybride, audits illimités, tableau de bord multi-sites, conformité ISO/RGPD/DORA, support prioritaire</td><td>14 900 €</td></tr>
+      <tr><td><strong>ENTERPRISE</strong></td><td>Tout Professional + monitoring 24/7, sandbox d'attaques, intégration SIEM/SOC, account manager dédié, SLA contractuels</td><td>Sur devis</td></tr>
+    </table>
+    <p class="legal-p">Chaque prestation inclut systématiquement une intervention sur site d'un consultant Mandatory Shield Company, conformément à la philosophie d'audit de la société. Les frais de déplacement pour les interventions hors de la Région de Bruxelles-Capitale sont facturés selon le barème en vigueur communiqué avec le devis.</p>
+
+    <h2 class="legal-h2" id="v4">4. Prix, TVA et facturation</h2>
+    <p class="legal-p">Tous les prix sont exprimés en euros (<strong>€</strong>), <strong>hors taxes (HT)</strong>. La TVA applicable est celle en vigueur en Belgique au taux légal applicable à la date de facturation (actuellement 21 % sur les services informatiques B2B en Belgique, sous réserve d'application du mécanisme d'autoliquidation pour les assujettis TVA intracommunautaires).</p>
+    <p class="legal-p">La facture est émise à la signature du contrat ou du bon de commande. Pour les contrats annuels, la totalité du montant est facturée à la commande. Aucune facturation au prorata temporis n'est appliquée en cas de résiliation anticipée, sauf disposition contraire expressément stipulée au contrat.</p>
+    <h3 class="legal-h3">Révision tarifaire</h3>
+    <p class="legal-p">Les tarifs peuvent être révisés annuellement, au plus tôt à l'échéance du contrat, avec un préavis écrit de 60 jours. La révision est plafonnée à l'indice des prix à la consommation (IPC) belge publié par Statbel pour l'année écoulée, sauf évolution substantielle du produit.</p>
+
+    <h2 class="legal-h2" id="v5">5. Modalités de paiement</h2>
+    <p class="legal-p"><strong>Délai de paiement :</strong> Les factures sont payables à <strong>30 jours nets</strong> à compter de la date d'émission, par virement bancaire sur le compte de Mandatory Shield Company SRL dont les coordonnées figurent sur la facture.</p>
+    <p class="legal-p"><strong>Retard de paiement :</strong> Conformément à la loi belge du 2 août 2002 concernant la lutte contre le retard de paiement dans les transactions commerciales (transposant la directive 2011/7/UE), tout retard de paiement entraîne automatiquement et sans mise en demeure préalable :</p>
+    <ul class="legal-ul">
+      <li>Des intérêts de retard au taux de référence de la BCE majoré de 8 points de pourcentage</li>
+      <li>Une indemnité forfaitaire de recouvrement de <strong>40 €</strong> par facture impayée</li>
+      <li>Le droit de suspendre l'accès aux services après mise en demeure restée sans effet pendant 15 jours</li>
+    </ul>
+    <p class="legal-p"><strong>Clause de réserve de propriété :</strong> Le logiciel ADSecure Report™ et les licences accordées demeurent la propriété exclusive de Mandatory Shield Company SRL jusqu'au paiement intégral de l'ensemble des sommes dues.</p>
+
+    <h2 class="legal-h2" id="v6">6. Livraison et intervention sur site</h2>
+    <p class="legal-p">Après réception du paiement et signature du contrat, l'intervention sur site est planifiée dans un délai de <strong>5 à 10 jours ouvrables</strong> selon la localisation du Client et les disponibilités des consultants.</p>
+    <p class="legal-p">Le Client s'engage à :</p>
+    <ul class="legal-ul">
+      <li>Mettre à disposition un poste Windows répondant aux prérequis techniques (Windows Server 2016+, PowerShell 5.1+, module RSAT AD)</li>
+      <li>Désigner un interlocuteur technique (administrateur système) et un représentant de la direction (DSI ou équivalent) présents lors de l'intervention</li>
+      <li>Fournir un accès réseau sécurisé au domaine Active Directory concerné</li>
+      <li>Valider le hash SHA-256 de l'exécutable ADSecure en présence du consultant avant lancement</li>
+    </ul>
+    <p class="legal-p">En cas d'impossibilité d'accès imputable au Client (absence de l'interlocuteur, environnement non préparé), les frais de déplacement de la journée perdue sont facturés au Client à hauteur de 500 € HT.</p>
+
+    <h2 class="legal-h2" id="v7">7. Licence d'utilisation du logiciel</h2>
+    <p class="legal-p">Mandatory Shield Company accorde au Client, pour la durée du contrat, une licence d'utilisation non exclusive, non transférable, limitée aux domaines Active Directory du Client désignés dans le contrat.</p>
+    <p class="legal-p"><strong>Usages autorisés :</strong> Exécution du logiciel sur les systèmes du Client, génération de rapports d'audit pour usage interne et présentation à des auditeurs externes dans le cadre de démarches de conformité.</p>
+    <p class="legal-p"><strong>Usages interdits :</strong></p>
+    <ul class="legal-ul">
+      <li>Sous-licencier, revendre, louer ou prêter le logiciel à des tiers</li>
+      <li>Utiliser le logiciel pour auditer des infrastructures n'appartenant pas au Client (prestation de service tiers)</li>
+      <li>Procéder à de la rétro-ingénierie, décompilation, désassemblage ou extraction des règles de sécurité</li>
+      <li>Modifier, adapter ou créer des œuvres dérivées basées sur le logiciel</li>
+    </ul>
+
+    <h2 class="legal-h2" id="v8">8. Durée, renouvellement et résiliation</h2>
+    <p class="legal-p"><strong>Durée :</strong> Les contrats sont conclus pour une durée initiale d'un (1) an à compter de la date de signature.</p>
+    <p class="legal-p"><strong>Renouvellement :</strong> À l'échéance, le contrat est reconduit tacitement pour des périodes successives d'un an, sauf notification de non-renouvellement adressée par lettre recommandée ou e-mail avec accusé de réception au moins <strong>30 jours avant la date d'échéance</strong>.</p>
+    <p class="legal-p"><strong>Résiliation pour manquement :</strong> Chaque partie peut résilier le contrat de plein droit, après mise en demeure par lettre recommandée restée sans effet pendant 15 jours, en cas de manquement grave de l'autre partie à ses obligations contractuelles.</p>
+    <p class="legal-p"><strong>Effets de la résiliation :</strong> À la date de résiliation, les droits d'accès et de licence du Client sont immédiatement révoqués. Aucun remboursement n'est dû pour la période déjà facturée.</p>
+
+    <h2 class="legal-h2" id="v9">9. Garanties et support</h2>
+    <h3 class="legal-h3">9.1 Garantie de fonctionnement</h3>
+    <p class="legal-p">Mandatory Shield Company garantit que le logiciel ADSecure Report™ fonctionnera conformément à sa documentation pour les environnements techniques décrits dans les prérequis. En cas de dysfonctionnement avéré, Mandatory Shield Company s'engage à fournir une correction ou un contournement dans un délai raisonnable.</p>
+    <h3 class="legal-h3">9.2 Support technique</h3>
+    <table class="legal-table">
+      <tr><th>Offre</th><th>Canal</th><th>Délai de réponse garanti</th><th>Horaires</th></tr>
+      <tr><td>Essential</td><td>E-mail uniquement</td><td>48h ouvrables</td><td>Lun-Ven 9h-18h CET</td></tr>
+      <tr><td>Professional</td><td>E-mail + Téléphone</td><td>24h ouvrables</td><td>Lun-Ven 9h-18h CET</td></tr>
+      <tr><td>Enterprise</td><td>E-mail + Téléphone + Astreinte</td><td>4h (incidents critiques P1)</td><td>24/7 selon SLA contractuel</td></tr>
+    </table>
+    <h3 class="legal-h3">9.3 Mises à jour</h3>
+    <p class="legal-p">Les mises à jour correctives et les nouvelles règles de sécurité intégrées dans ADSecure Report™ sont incluses dans l'abonnement. Les nouvelles fonctionnalités majeures peuvent faire l'objet d'une mise à niveau tarifaire communiquée avec un préavis de 60 jours.</p>
+
+    <h2 class="legal-h2" id="v10">10. Responsabilité et limitation</h2>
+    <p class="legal-p">ADSecure Report™ est un outil d'audit et d'aide à la décision. Il ne remplace pas un audit de sécurité certifié par un organisme accrédité ni les obligations légales du Client en matière de cybersécurité.</p>
+    <p class="legal-p">La responsabilité de Mandatory Shield Company ne peut être engagée que pour des dommages directs, prévisibles et prouvés résultant d'une faute avérée dans l'exécution de ses obligations contractuelles.</p>
+    <p class="legal-p"><strong>En aucun cas</strong> Mandatory Shield Company ne peut être tenu responsable de :</p>
+    <ul class="legal-ul">
+      <li>Dommages indirects (perte de chiffre d'affaires, perte de données, atteinte à l'image)</li>
+      <li>Incidents de sécurité survenant dans les environnements du Client, qu'une vulnérabilité ait été signalée ou non par ADSecure</li>
+      <li>Non-conformité du Client aux réglementations NIS2, ISO 27001, RGPD ou autres après réception des rapports</li>
+      <li>Dommages résultant d'une utilisation du logiciel non conforme à la documentation</li>
+    </ul>
+    <p class="legal-p"><strong>Plafond de responsabilité :</strong> La responsabilité totale et cumulée de Mandatory Shield Company au titre du présent contrat est limitée au montant HT effectivement encaissé par Mandatory Shield Company au titre de l'année contractuelle en cours.</p>
+
+    <h2 class="legal-h2" id="v11">11. Confidentialité</h2>
+    <p class="legal-p">Les parties s'engagent mutuellement à considérer comme confidentielles toutes les informations échangées dans le cadre du contrat, notamment les données techniques de l'infrastructure Active Directory du Client, les résultats des audits et les rapports générés.</p>
+    <p class="legal-p">Un accord de non-divulgation (NDA) est systématiquement proposé et signé avant toute intervention sur site. En cas de contradiction, les stipulations du NDA signé prévalent sur les présentes CGV.</p>
+    <p class="legal-p">Ces obligations de confidentialité survivent à l'expiration ou à la résiliation du contrat pour une durée de <strong>5 ans</strong>.</p>
+
+    <h2 class="legal-h2" id="v12">12. Droit applicable et litiges</h2>
+    <p class="legal-p">Les présentes CGV sont régies par le <strong>droit belge</strong>. En cas de litige, les parties s'efforceront de trouver une solution amiable dans un délai de 30 jours. À défaut, le litige sera soumis à la compétence exclusive des <strong>tribunaux de l'arrondissement judiciaire de Bruxelles</strong>.</p>
+    <p class="legal-p">Les parties renoncent expressément à l'application de la Convention des Nations Unies sur les contrats de vente internationale de marchandises (CISG) à leurs relations contractuelles.</p>
+  </div>
+
+
+  <!-- ===================== MENTIONS LÉGALES ===================== -->
+  <div id="mentions" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Mise à jour : 1er mai 2025</div>
+      <h1>Mentions Légales</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Conformément à l'article XII.7 du Code de droit économique belge et au droit européen applicable</p>
+    </div>
+
+    <h2 class="legal-h2">1. Éditeur du site</h2>
+    <p class="legal-p">
+      <strong>Mandatory Shield Company SRL</strong><br/>
+      Forme juridique : Société à Responsabilité Limitée (SRL) de droit belge<br/>
+      Siège social : Bruxelles, Belgique (Union Européenne)<br/>
+      Numéro d'entreprise BCE : <em>en cours d'attribution (société en cours de constitution)</em><br/>
+      Numéro de TVA intracommunautaire : <em>en cours d'attribution</em><br/>
+      Capital : [À COMPLÉTER lors de l'acte constitutif]<br/>
+      <br/>
+      <strong>Co-fondateurs et dirigeants :</strong><br/>
+      Pierre-Antoine Rouhaud — Co-fondateur & CEO<br/>
+      Raphaël Berki — Co-fondateur & CTO<br/>
+      <br/>
+      <strong>Contact :</strong> contact@mandatoryshield.com<br/>
+      <strong>Site web :</strong> www.mandatoryshield.com
+    </p>
+
+    <h2 class="legal-h2">2. Hébergement</h2>
+    <p class="legal-p">
+      <strong>Scaleway SAS</strong><br/>
+      Filiale du groupe Iliad<br/>
+      8 rue de la Ville l'Évêque — 75008 Paris, France<br/>
+      RCS Paris : 433 115 904<br/>
+      Site : <a href="https://www.scaleway.com" style="color:var(--teal)" target="_blank" rel="noopener">www.scaleway.com</a><br/>
+      Infrastructure hébergée dans l'Union Européenne (France)
+    </p>
+
+    <h2 class="legal-h2">3. Propriété intellectuelle</h2>
+    <p class="legal-p">L'ensemble du contenu de ce site — textes, graphismes, logos, icônes, images, clips audio ou vidéo, téléchargements numériques, compilations de données, logiciels — est la propriété de <strong>Mandatory Shield Company SRL</strong> ou de ses concédants de licence et est protégé par le droit belge et international de la propriété intellectuelle.</p>
+    <p class="legal-p">La marque <strong>ADSecure Report™</strong>, le logo Mandatory Shield et l'ensemble des dénominations commerciales utilisées sur ce site sont des marques déposées ou en cours de dépôt. Toute reproduction ou représentation non autorisée constitue une contrefaçon sanctionnée par le Code de droit économique belge (Livre XI) et les textes européens applicables.</p>
+
+    <h2 class="legal-h2">4. Responsabilité éditoriale</h2>
+    <p class="legal-p">Directeur de la publication : <strong>Pierre-Antoine Rouhaud</strong>, Co-fondateur & CEO de Mandatory Shield Company SRL.</p>
+    <p class="legal-p">Mandatory Shield Company SRL s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, elle ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à la disposition sur ce site. En conséquence, Mandatory Shield Company décline toute responsabilité pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur ce site.</p>
+
+    <h2 class="legal-h2">5. Données personnelles et RGPD</h2>
+    <p class="legal-p">Le traitement des données personnelles collectées via ce site est effectué conformément au <strong>Règlement (UE) 2016/679 du 27 avril 2016</strong> (RGPD) et à la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.</p>
+    <p class="legal-p">Responsable du traitement : Mandatory Shield Company SRL, contact@mandatoryshield.com.</p>
+    <p class="legal-p">Pour toute question relative à la protection de vos données ou pour exercer vos droits (accès, rectification, effacement, portabilité, opposition), consultez notre <button data-show-tab="privacy" style="background:none;border:none;color:var(--teal);cursor:pointer;font-weight:600;text-decoration:underline;font-family:inherit;font-size:inherit;">Politique de confidentialité</button> ou contactez-nous à contact@mandatoryshield.com.</p>
+    <p class="legal-p">Autorité de contrôle compétente : <strong>Autorité de Protection des Données (APD)</strong> — Rue de la Presse 35, 1000 Bruxelles — <a href="https://www.autoriteprotectiondonnees.be" style="color:var(--teal)" target="_blank" rel="noopener">www.autoriteprotectiondonnees.be</a></p>
+
+    <h2 class="legal-h2">6. Cookies</h2>
+    <p class="legal-p">Ce site utilise des cookies. Pour toute information détaillée sur les cookies utilisés, leur finalité et les modalités de gestion de vos préférences, consultez notre <button data-show-tab="privacy" style="background:none;border:none;color:var(--teal);cursor:pointer;font-weight:600;text-decoration:underline;font-family:inherit;font-size:inherit;">Politique de confidentialité</button>, section 9 (Cookies).</p>
+
+    <h2 class="legal-h2">7. Droit applicable</h2>
+    <p class="legal-p">Le présent site et son contenu sont soumis au <strong>droit belge</strong>. En cas de litige concernant l'utilisation du site, les tribunaux compétents de l'arrondissement judiciaire de <strong>Bruxelles</strong> (Belgique) seront exclusivement compétents.</p>
+
+    <h2 class="legal-h2">8. Numéros d'immatriculation et registres</h2>
+    <table class="legal-table">
+      <tr><th>Registre / Organisme</th><th>Numéro / Statut</th></tr>
+      <tr><td>Banque-Carrefour des Entreprises (BCE)</td><td><em>En cours d'attribution — société en constitution</em></td></tr>
+      <tr><td>Numéro de TVA belge</td><td><em>En cours d'attribution</em></td></tr>
+      <tr><td>Tribunal de l'entreprise</td><td>Bruxelles (ressort)</td></tr>
+      <tr><td>Marque ADSecure Report™</td><td>Dépôt EUIPO en cours</td></tr>
+      <tr><td>Assurance responsabilité civile professionnelle</td><td>[À compléter avant mise en production commerciale]</td></tr>
+    </table>
+
+    <h2 class="legal-h2">9. Crédits</h2>
+    <p class="legal-p">Conception et développement du site web : Mandatory Shield Company SRL — Équipe interne.<br/>
+    Icônes : Lucide Icons (licence MIT).<br/>
+    Polices de caractères : Segoe UI / System UI (licences système).</p>
+
+    <div class="legal-highlight" style="margin-top:2rem;">
+      <strong>📋 À mettre à jour dès constitution officielle :</strong> Une fois la SRL immatriculée via un notaire ou via le guichet d'entreprises belge, remplacer les mentions <em>«&nbsp;en cours d'attribution&nbsp;»</em> par le numéro BCE définitif (format : 0XXX.XXX.XXX) et le numéro de TVA (BE + numéro BCE sans points). Ces informations sont obligatoires en vertu de l'article XII.7 §1er du Code de droit économique belge. Souscrire également une assurance RC professionnelle avant tout contrat commercial.
+    </div>
+  </div>
+
+</div>
+
+<div class="legal-footer">
+  © 2025 Mandatory Shield Company SRL — Tous droits réservés · Bruxelles, Belgique 🇧🇪<br/>
+  <a href="index.html" id="footer-back-link">Retour au site</a> · <a href="mailto:contact@mandatoryshield.com">contact@mandatoryshield.com</a>
+</div>
+
+<script src="legal.js"></script>
+</body>
+</html>
