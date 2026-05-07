@@ -315,8 +315,9 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
 .mission-item p  { font-size: 0.95rem; color: var(--text-secondary); }
 
 /* Section contact */
-#contact { background: var(--text-primary); }
+#contact { background-color: #0f172a !important; color: white; }
 #contact h2 { color: white; }
+#contact .text-gradient { background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .contact-tag    { color: var(--bg-tertiary); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
 .contact-grid   { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .contact-info p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
