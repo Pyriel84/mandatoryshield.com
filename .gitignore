@@ -1,0 +1,10 @@
+# Claude Code - paramètres locaux et mémoire
+.claude/settings.local.json
+.claude/memory/
+
+# Fichiers d'audit internes
+audit_*.md
+
+# OS
+.DS_Store
+Thumbs.db

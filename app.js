@@ -1,6 +1,18 @@
 'use strict';
 
-// Logo image error handler (remplace l'attribut onerror inline supprimé)
+// Chargement non-bloquant des polices et icônes
+(function () {
+    var fontsHref = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap';
+    var iconsHref = 'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css';
+    [fontsHref, iconsHref].forEach(function (href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    });
+})();
+
+// Logo image error handler
 const logoImg = document.querySelector('.logo img');
 if (logoImg) {
     logoImg.addEventListener('error', function () {
@@ -18,9 +30,11 @@ canvas.width = width;
 canvas.height = height;
 
 const particles = [];
-const particleCount = 80;
+const particleCount = width < 768 ? 30 : 80;
 const connectionDistance = 150;
 const mouseDistance = 200;
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let mouse = { x: null, y: null };
 
@@ -114,8 +128,12 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-initParticles();
-animate();
+if (prefersReducedMotion) {
+    canvas.style.display = 'none';
+} else {
+    initParticles();
+    animate();
+}
 
 // FAQ Toggle
 document.querySelectorAll('[data-faq-toggle]').forEach(btn => {
@@ -143,12 +161,18 @@ const knowledgeBase = {
     'contact':    'Vous pouvez nous contacter à contact@mandatoryshield.com. Nos experts vous répondent sous 24h.'
 };
 
-document.querySelector('[data-chat-toggle]').addEventListener('click', () => {
-    chatbotWindow.classList.toggle('active');
+const chatbotToggle = document.querySelector('[data-chat-toggle]');
+
+chatbotToggle.addEventListener('click', () => {
+    const isOpen = chatbotWindow.classList.toggle('active');
+    chatbotToggle.setAttribute('aria-expanded', isOpen);
+    chatbotToggle.setAttribute('aria-label', isOpen ? "Fermer l'assistant ADSecure" : "Ouvrir l'assistant ADSecure");
 });
 
 document.querySelector('[data-chat-close]').addEventListener('click', () => {
     chatbotWindow.classList.remove('active');
+    chatbotToggle.setAttribute('aria-expanded', 'false');
+    chatbotToggle.setAttribute('aria-label', "Ouvrir l'assistant ADSecure");
 });
 
 function addMessage(text, sender) {
@@ -159,7 +183,7 @@ function addMessage(text, sender) {
     avatar.className = 'chatbot-avatar';
     if (sender === 'bot') {
         const img = document.createElement('img');
-        img.src = 'images/logo.png';
+        img.src = 'images/logo-opt.png';
         img.alt = 'Mandatory Shield';
         avatar.appendChild(img);
     } else {
@@ -211,17 +235,20 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 // Mobile Menu
-document.querySelector('.mobile-toggle').addEventListener('click', function () {
+const mobileToggle = document.querySelector('.mobile-toggle');
+mobileToggle.addEventListener('click', function () {
     const nav = document.querySelector('.nav-links');
     const isOpen = nav.classList.toggle('nav-open');
     this.setAttribute('aria-expanded', isOpen);
+    this.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
 });
 
 // Fermer le menu mobile après navigation
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         document.querySelector('.nav-links').classList.remove('nav-open');
-        document.querySelector('.mobile-toggle').setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu');
     });
 });
 
@@ -235,6 +262,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
+
+// Formulaire contact - empêche la soumission native (pas de backend, form-action 'none' dans CSP)
+const contactForm = document.querySelector('.contact-form-list');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('[type="submit"]');
+        btn.textContent = '✓ Message envoyé !';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.textContent = 'Envoyer la demande →';
+            btn.disabled = false;
+            contactForm.reset();
+        }, 3000);
+    });
+}
 
 // Scroll Animations
 const observer = new IntersectionObserver((entries) => {

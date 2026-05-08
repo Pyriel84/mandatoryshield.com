@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     div.className = 'msg ' + type;
     if (type === 'bot') {
       var img  = document.createElement('img');
-      img.src  = 'images/logo.png';
+      img.src  = 'images/logo-opt.png';
       img.alt  = 'Mandatory Shield';
       img.style.cssText = 'width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:50%;background:white;border:1px solid #e2e8f0;padding:3px;';
       var span = document.createElement('span');
