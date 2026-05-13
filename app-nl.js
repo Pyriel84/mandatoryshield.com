@@ -1,3 +1,17 @@
+'use strict';
+
+// Chargement non-bloquant des polices et icônes
+(function () {
+    var fontsHref = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap';
+    var iconsHref = 'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css';
+    [fontsHref, iconsHref].forEach(function (href) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // FAQ accordion

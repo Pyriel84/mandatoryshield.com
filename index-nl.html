@@ -1,657 +1,552 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Active Directory Beveiligingsaudit | Mandatory Shield</title>
-  <meta name="description" content="Europees Active Directory auditplatform. 197 beveiligingscontroles, 7 rapporten, NIS2 & ISO 27001 conformiteit. Interventie ter plaatse systematisch inbegrepen." />
-  <meta name="keywords" content="Active Directory beveiliging, NIS2 conformiteit, ISO 27001, cybersecurity SaaS, AD audit, AVG, CIS Controls, bedrijfs-IT-beveiliging" />
-  <meta property="og:title" content="ADSecure Report™ | Mandatory Shield" />
-  <meta property="og:description" content="Het eerste Europese Active Directory auditplatform. 197 beveiligingscontroles, 7 regelgevingsrapporten, NIS2 & ISO 27001 conform." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.mandatoryshield.com/nl" />
-  <link rel="canonical" href="https://www.mandatoryshield.com/nl" />
-  <link rel="alternate" hreflang="fr" href="https://mandatoryshield.com/">
-  <link rel="alternate" hreflang="en" href="https://mandatoryshield.com/index-en.html">
-  <link rel="alternate" hreflang="nl" href="https://mandatoryshield.com/index-nl.html">
-  <link rel="alternate" hreflang="x-default" href="https://mandatoryshield.com/">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.png" type="image/png" sizes="64x64">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory Beveiligingsaudit | Mandatory Shield</title>
+    <meta name="description" content="Europees Active Directory auditplatform. 197 beveiligingscontroles, 7 afzonderlijke rapporten, NIS2 & ISO 27001 conformiteit. Interventie ter plaatse systematisch inbegrepen.">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ADSecure Report™",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Windows",
-    "description": "Active Directory beveiligingsauditplatform met 197 controles, NIS2 en ISO 27001 conformiteit, 7 afzonderlijke rapporten.",
-    "offers": [
-      { "@type": "Offer", "name": "Essential", "price": "6900", "priceCurrency": "EUR" },
-      { "@type": "Offer", "name": "Professional", "price": "14900", "priceCurrency": "EUR" }
-    ],
-    "provider": {
-      "@type": "Organization",
-      "name": "Mandatory Shield Company",
-      "url": "https://www.mandatoryshield.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "Brussel", "addressCountry": "BE" },
-      "email": "contact@mandatoryshield.com"
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), usb=(), payment=()">
+    <meta name="keywords" content="Active Directory audit, Active Directory beveiliging, AD beveiligingsaudit platform, NIS2 conformiteit, ISO 27001 Active Directory, AVG IT-beveiliging, CIS Controls v8, ANSSI, DORA conformiteit, cybersecurity België, bedrijfscybersecurity software, IT-infrastructuurbeveiliging, Windows Server beveiligingsaudit, Kerberos beveiliging, GPO audit, Azure AD beveiliging, Entra ID audit, B2B cybersecurity SaaS, AD auditsoftware prijs, KMO beveiligingsoplossing, Mandatory Shield, ADSecure">
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href="https://mandatoryshield.com/index-nl.html">
+    <link rel="alternate" hreflang="fr" href="https://mandatoryshield.com/">
+    <link rel="alternate" hreflang="en" href="https://mandatoryshield.com/index-en.html">
+    <link rel="alternate" hreflang="nl" href="https://mandatoryshield.com/index-nl.html">
+    <link rel="alternate" hreflang="x-default" href="https://mandatoryshield.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mandatoryshield.com/index-nl.html">
+    <meta property="og:title" content="Active Directory Beveiligingsaudit | Mandatory Shield">
+    <meta property="og:description" content="Europees Active Directory auditplatform. 197 beveiligingscontroles, 7 afzonderlijke rapporten, NIS2 & ISO 27001 conformiteit. Interventie ter plaatse inbegrepen.">
+    <meta property="og:image" content="https://mandatoryshield.com/images/logo-opt.png">
+    <meta property="og:site_name" content="Mandatory Shield">
+    <meta property="og:locale" content="nl_BE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADSecure Report™ | Mandatory Shield">
+    <meta name="twitter:description" content="Europees Active Directory auditplatform. 197 beveiligingscontroles, 7 afzonderlijke rapporten, NIS2 & ISO 27001 conformiteit.">
+    <meta name="twitter:image" content="https://mandatoryshield.com/images/logo-opt.png">
+
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://mandatoryshield.com/#organization",
+          "name": "Mandatory Shield Company",
+          "url": "https://mandatoryshield.com",
+          "logo": { "@type": "ImageObject", "url": "https://mandatoryshield.com/images/logo-opt.png" },
+          "email": "contact@mandatoryshield.com",
+          "address": { "@type": "PostalAddress", "addressLocality": "Brussel", "addressCountry": "BE" },
+          "sameAs": ["https://linkedin.com/company/the-mandatory-shield-company"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://mandatoryshield.com/#website",
+          "url": "https://mandatoryshield.com",
+          "name": "Mandatory Shield",
+          "publisher": { "@id": "https://mandatoryshield.com/#organization" },
+          "inLanguage": "nl-BE"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "ADSecure Report™",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": "Windows Server 2016+",
+          "description": "Europees Active Directory auditplatform. 197 beveiligingscontroles, 7 afzonderlijke regelgevingsrapporten, NIS2 & ISO 27001 conformiteit.",
+          "offers": [
+            { "@type": "Offer", "name": "Essential", "price": "6900", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1Y" } },
+            { "@type": "Offer", "name": "Professional", "price": "14900", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1Y" } }
+          ],
+          "provider": { "@id": "https://mandatoryshield.com/#organization" },
+          "url": "https://mandatoryshield.com"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Wat is ADSecure Report™?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure Report™ is een Active Directory auditplatform dat vanuit één enkele scan zeven afzonderlijke regelgevingsrapporten produceert. 197 controlepunten bestrijken 20 afzonderlijke domeinen van uw AD-infrastructuur." } },
+            { "@type": "Question", "name": "Verzendt ADSecure gegevens naar de cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. Gegevens verlaten de omgeving van de klant niet. Geen Active Directory-gegevens worden naar onze servers doorgestuurd: dit is architecturaal gegarandeerd, niet alleen contractueel." } },
+            { "@type": "Question", "name": "Wat zijn de technische vereisten voor ADSecure?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure vereist Windows Server 2016 of hoger, PowerShell 5.1 of hoger en de RSAT Active Directory-module geïnstalleerd. Er is geen internetverbinding vereist." } }
+          ]
+        }
+      ]
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "Wat is ADSecure Report™?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure Report™ is een Active Directory auditplatform dat vanuit één enkele scan zeven afzonderlijke regelgevingsrapporten produceert: één voor het topmanagement, één voor de IT-manager, één voor de DPO, een herstelgids, een conformiteitsscore, een Azure AD-rapport en een via QR-code verifieerbare attestatie." } },
-      { "@type": "Question", "name": "Verzendt ADSecure gegevens naar de cloud?", "acceptedAnswer": { "@type": "Answer", "text": "Nee. De scan draait in alleen-lezen modus, zonder installatie, zonder wijziging van de infrastructuur. Gegevens verlaten de omgeving van de klant niet. Dit is architecturaal gegarandeerd, niet alleen contractueel." } },
-      { "@type": "Question", "name": "Wat zijn de technische vereisten voor ADSecure?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure vereist Windows Server 2016 of hoger, PowerShell 5.1 of hoger en de RSAT Active Directory-module geïnstalleerd. Een domeinlidaccount met alleen-leestoegang tot AD is voldoende. Er is geen internetverbinding vereist." } }
-    ]
-  }
-  </script>
+    </script>
 
-  <style>
-    :root {
-      --bg: #f9f8f5;
-      --white: #ffffff;
-      --teal: #0d9488;
-      --teal-dark: #0f766e;
-      --teal-light: #ccfbf1;
-      --teal-subtle: #f0fdfa;
-      --navy: #0f172a;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --red: #ef4444;
-      --green: #22c55e;
-      --yellow: #f59e0b;
-      --radius: 12px;
-      --shadow: 0 4px 24px rgba(13,148,136,0.08);
-      --shadow-lg: 0 8px 40px rgba(13,148,136,0.14);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    <!-- Preconnect (fonts geladen via JS na parsing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(249,248,245,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 14px; }
-    .nav-logo-text { font-weight: 700; font-size: 1rem; color: var(--navy); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color .2s; }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-right { display: flex; align-items: center; gap: 1rem; }
-    .lang-switcher { display: flex; gap: 6px; }
-    .lang-switcher a { padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all .2s; }
-    .lang-switcher a.active, .lang-switcher a:hover { background: var(--teal); color: white; border-color: var(--teal); }
-    .btn-nav { background: var(--teal); color: white; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: background .2s; }
-    .btn-nav:hover { background: var(--teal-dark); }
-
-    .hero { padding: 6rem 2rem 5rem; text-align: center; background: linear-gradient(160deg, var(--teal-subtle) 0%, var(--bg) 60%); position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%); pointer-events: none; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--teal-light); color: var(--teal-dark); padding: 6px 16px; border-radius: 999px; font-size: 0.82rem; font-weight: 600; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; }
-    .hero h1 span { color: var(--teal); }
-    .hero p { max-width: 680px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.1rem; line-height: 1.75; }
-    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .btn-primary { background: var(--teal); color: white; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all .2s; box-shadow: 0 4px 14px rgba(13,148,136,0.35); }
-    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
-    .btn-secondary { background: white; color: var(--teal); padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 2px solid var(--teal); transition: all .2s; }
-    .btn-secondary:hover { background: var(--teal-subtle); }
-    .hero-pills { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-    .hero-pill { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.85rem; font-weight: 500; }
-
-    .stats { background: var(--navy); padding: 3rem 2rem; }
-    .stats-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
-    .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--teal); }
-    .stat-label { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
-
-    .dashboard-preview { max-width: 860px; margin: 3rem auto 0; background: white; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); padding: 1.5rem; }
-    .dash-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
-    .dash-score { font-size: 2.5rem; font-weight: 800; color: var(--teal); }
-    .dash-label { color: var(--muted); font-size: 0.85rem; }
-    .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
-    .dash-card { background: var(--bg); border-radius: 10px; padding: 1rem; border: 1px solid var(--border); }
-    .dash-card-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
-    .dash-card-val { font-weight: 700; font-size: 0.95rem; }
-    .badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
-    .badge-ok { background: #dcfce7; color: #166534; }
-    .badge-crit { background: #fee2e2; color: #991b1b; }
-
-    section { padding: 5rem 2rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-tag { color: var(--teal); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
-    h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 1rem; }
-    h2 span { color: var(--teal); }
-    .section-intro { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin-bottom: 3rem; }
-
-    #product { background: white; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .feature-card { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); transition: all .25s; }
-    .feature-card:hover { border-color: var(--teal); box-shadow: var(--shadow); transform: translateY(-2px); }
-    .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; }
-    .feature-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
-    .feature-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
-
-    #conformite { background: var(--bg); }
-    .compliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-    .compliance-card { background: white; border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); }
-    .compliance-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .compliance-name { font-weight: 800; font-size: 1.1rem; color: var(--navy); }
-    .compliance-score { font-weight: 800; font-size: 1.3rem; color: var(--teal); }
-    .progress-bar { height: 6px; background: var(--border); border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
-    .progress-fill { height: 100%; background: var(--teal); border-radius: 999px; }
-    .compliance-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: .75rem; }
-    .compliance-items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-    .compliance-items li { font-size: 0.85rem; color: var(--text); display: flex; align-items: center; gap: 8px; }
-    .compliance-items li::before { content: '✓'; color: var(--teal); font-weight: 700; }
-
-    #pricing { background: white; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
-    .pricing-card { background: var(--bg); border-radius: var(--radius); padding: 2rem; border: 2px solid var(--border); position: relative; transition: all .25s; }
-    .pricing-card.featured { border-color: var(--teal); background: white; box-shadow: var(--shadow-lg); }
-    .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--teal); color: white; padding: 4px 18px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
-    .pricing-name { font-weight: 800; font-size: 1.1rem; color: var(--navy); margin-bottom: .25rem; }
-    .pricing-desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.25rem; }
-    .pricing-price { font-size: 2.2rem; font-weight: 800; color: var(--navy); margin-bottom: 1.5rem; }
-    .pricing-price span { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
-    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 2rem; }
-    .pricing-features li { font-size: 0.9rem; color: var(--text); display: flex; align-items: flex-start; gap: 10px; }
-    .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-    .btn-pricing { display: block; text-align: center; background: var(--teal); color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all .2s; }
-    .btn-pricing:hover { background: var(--teal-dark); }
-    .btn-pricing.outline { background: transparent; border: 2px solid var(--teal); color: var(--teal); }
-    .btn-pricing.outline:hover { background: var(--teal); color: white; }
-    .pricing-note { max-width: 700px; margin: 2.5rem auto 0; background: var(--teal-subtle); border: 1px solid rgba(13,148,136,0.2); border-radius: 10px; padding: 1.25rem 1.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
-
-    #faq { background: var(--bg); }
-    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-    .faq-item { background: white; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
-    .faq-q { width: 100%; text-align: left; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; font-size: 1rem; font-weight: 600; color: var(--navy); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .faq-q span { transition: transform .3s; font-size: 1.2rem; color: var(--teal); }
-    .faq-item.open .faq-q span { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
-    .faq-item.open .faq-a { max-height: 400px; }
-    .faq-a-inner { padding: 0 1.5rem 1.25rem; color: var(--muted); font-size: 0.95rem; line-height: 1.75; }
-
-    #entreprise { background: white; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
-    .team-card { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); text-align: center; }
-    .team-avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--teal); color: white; font-size: 1.25rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
-    .team-name { font-weight: 700; color: var(--navy); margin-bottom: .25rem; }
-    .team-role { color: var(--teal); font-size: 0.85rem; font-weight: 600; margin-bottom: .75rem; }
-    .team-bio { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
-    .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-    .mission-card { background: var(--teal-subtle); border-radius: 10px; padding: 1.25rem; border: 1px solid rgba(13,148,136,0.2); text-align: center; }
-    .mission-card h4 { color: var(--teal-dark); font-weight: 700; margin-bottom: .5rem; }
-    .mission-card p { color: var(--muted); font-size: 0.85rem; }
-
-    #contact { background: var(--navy); color: white; }
-    #contact h2 { color: white; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-info p { color: #94a3b8; line-height: 1.8; margin-bottom: 1.5rem; }
-    .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; color: #94a3b8; font-size: 0.9rem; }
-    .contact-detail strong { color: white; }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-group label { color: #94a3b8; font-size: 0.85rem; font-weight: 500; }
-    .form-group input, .form-group select, .form-group textarea { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 14px; color: white; font-size: 0.9rem; outline: none; transition: border-color .2s; font-family: inherit; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group select option { background: var(--navy); }
-    .btn-submit { background: var(--teal); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background .2s; }
-    .btn-submit:hover { background: var(--teal-dark); }
-
-    .chatbot-toggle { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(13,148,136,0.4); z-index: 1000; border: none; color: white; font-size: 1.4rem; transition: transform .2s; }
-    .chatbot-toggle:hover { transform: scale(1.08); }
-    .chatbot-window { position: fixed; bottom: 5.5rem; right: 2rem; width: 340px; max-height: 480px; background: white; border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); z-index: 999; display: none; flex-direction: column; overflow: hidden; }
-    .chatbot-window.open { display: flex; }
-    .chatbot-header { background: var(--teal); color: white; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
-    .chatbot-header h4 { font-weight: 700; font-size: 0.95rem; }
-    .chatbot-close { background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem; }
-    .chatbot-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .75rem; }
-    .msg { max-width: 85%; padding: 10px 14px; border-radius: 10px; font-size: 0.88rem; line-height: 1.5; }
-    .msg.bot { background: var(--bg); color: var(--text); align-self: flex-start; border-bottom-left-radius: 2px; }
-    .msg.user { background: var(--teal); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
-    .chatbot-quick { padding: .75rem 1rem; display: flex; flex-wrap: wrap; gap: 6px; border-top: 1px solid var(--border); }
-    .quick-btn { background: var(--teal-subtle); color: var(--teal-dark); border: 1px solid rgba(13,148,136,0.2); border-radius: 999px; padding: 4px 12px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all .2s; }
-    .quick-btn:hover { background: var(--teal); color: white; }
-    .chatbot-input { display: flex; border-top: 1px solid var(--border); }
-    .chatbot-input input { flex: 1; padding: 10px 14px; border: none; outline: none; font-size: 0.88rem; font-family: inherit; }
-    .chatbot-input button { background: var(--teal); color: white; border: none; padding: 10px 16px; cursor: pointer; font-size: 1rem; }
-
-    footer { background: #020617; color: #64748b; padding: 3rem 2rem 2rem; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-    .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: .75rem; max-width: 280px; }
-    .footer-col h4 { color: white; font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .footer-col ul li a { color: #64748b; text-decoration: none; font-size: 0.85rem; transition: color .2s; }
-    .footer-col ul li a:hover { color: var(--teal); }
-    .footer-linkedin { color: #64748b; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color .2s; }
-    .footer-linkedin:hover { color: var(--teal); }
-    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem; }
-
-    .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--navy); padding: 8px; }
-    .badge-covered   { background: #dcfce7; color: #15803d; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-    .badge-aligned   { background: #dbeafe; color: #1d4ed8; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-    .badge-integrated{ background: #ede9fe; color: #6d28d9; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-    .badge-compliant { background: #fef3c7; color: #92400e; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-
-    .mobile-nav-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(255,255,255,0.98); flex-direction:column; justify-content:center; align-items:center; gap:1.5rem; z-index:9999; }
-    .mobile-nav-overlay.open { display:flex; }
-    .mobile-nav-overlay a { font-size:1.2rem; font-weight:600; color:var(--navy); text-decoration:none; padding:0.5rem 1rem; }
-    .mobile-nav-overlay a:hover { color:var(--teal); }
-    .mobile-nav-overlay .mobile-lang-switcher { display:flex; gap:0.75rem; margin-top:0.5rem; }
-    .mobile-nav-overlay .mobile-lang-switcher a { font-size:0.9rem; padding:6px 16px; border-radius:6px; border:1px solid var(--border); background:white; color:var(--muted); }
-    .mobile-nav-overlay .mobile-lang-switcher a.active, .mobile-nav-overlay .mobile-lang-switcher a:hover { background:var(--teal); color:white; border-color:var(--teal); }
-    .mobile-close-btn { position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; font-size:2rem; cursor:pointer; color:var(--teal); line-height:1; }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-right .lang-switcher { display: none; }
-      .nav-right .btn-nav { display: none; }
-      .mobile-toggle { display: flex; z-index: 200; }
-      .hero { padding: 4rem 1.5rem 3rem; }
-      section { padding: 3.5rem 1.5rem; }
-    }
-    @media (min-width: 769px) { .mobile-nav-overlay { display: none !important; } }
-  </style>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="64x64">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="#hoofdinhoud" class="skip-link">Naar hoofdinhoud</a>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo-opt.png" alt="Logo Mandatory Shield" width="66" height="36" fetchpriority="high" style="height:36px;width:auto;"></picture>
-      <span class="nav-logo-text">MANDATORY SHIELD</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#product">Product</a></li>
-      <li><a href="#conformite">Conformiteit</a></li>
-      <li><a href="#pricing">Tarieven</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#entreprise">Bedrijf</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-switcher">
-        <a href="index.html">FR</a>
-        <a href="index-nl.html" class="active">NL</a>
-        <a href="index-en.html">EN</a>
-      </div>
-      <a href="#contact" class="btn-nav">Afspraak maken</a>
-    </div>
-    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
-  </div>
-</nav>
+    <canvas id="network-bg"></canvas>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">🇧🇪 Made in Belgium — 100% Europees</div>
-  <h1>Uw Active Directory.<br /><span>Geen blinde vlekken.</span></h1>
-  <p>ADSecure Report™ is het eerste Europese Active Directory auditplatform dat 7 afzonderlijke regelgevingsrapporten produceert vanuit één enkele scan. 197 beveiligingscontroles conform NIS2, ISO 27001 en AVG.</p>
-  <div class="hero-ctas">
-    <a href="#contact" class="btn-primary">Afspraak maken</a>
-    <a href="#product" class="btn-secondary">Meer informatie</a>
-  </div>
-  <div class="hero-pills">
-    <span class="hero-pill">✓ Interventie ter plaatse inbegrepen</span>
-    <span class="hero-pill">✓ SHA-256 validatie in aanwezigheid van de CIO</span>
-    <span class="hero-pill">✓ Nul gegevensoverdracht – 100% on-premise</span>
-    <span class="hero-pill">✓ Via QR-code verifieerbare attestatie</span>
-  </div>
+    <header>
+        <nav role="navigation" aria-label="Hoofdnavigatie">
+        <div class="container nav-flex">
+            <a href="#" class="logo" aria-label="Mandatory Shield - Startpagina">
+                <picture>
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <img src="images/logo-opt.png" alt="Logo Mandatory Shield" width="88" height="48" fetchpriority="high">
+                </picture>
+                <span>MANDATORY <span class="text-gradient">SHIELD</span></span>
+            </a>
 
-  <div class="dashboard-preview">
-    <div class="dash-header">
-      <div>
-        <div class="dash-label">Globale beveiligingsscore</div>
-        <div class="dash-score">78</div>
-      </div>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-        <span class="badge badge-ok">LAPS geïmplementeerd</span>
-        <span class="badge badge-crit">SMBv1 actief</span>
-      </div>
-    </div>
-    <div class="dash-grid">
-      <div class="dash-card"><div class="dash-card-label">Kerberoastbare accounts</div><div class="dash-card-val" style="color:var(--red)">7 gevonden</div></div>
-      <div class="dash-card"><div class="dash-card-label">Auditbeleid</div><div class="dash-card-val" style="color:var(--green)">Geconfigureerd</div></div>
-      <div class="dash-card"><div class="dash-card-label">Controles</div><div class="dash-card-val" style="color:var(--teal)">197</div></div>
-      <div class="dash-card"><div class="dash-card-label">Gegenereerde rapporten</div><div class="dash-card-val" style="color:var(--teal)">7</div></div>
-    </div>
-  </div>
-</section>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#product">Product</a></li>
+                <li><a href="#conformite">Conformiteit</a></li>
+                <li><a href="#pricing">Tarieven</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#entreprise">Bedrijf</a></li>
+            </ul>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-grid">
-    <div><div class="stat-val">197</div><div class="stat-label">Beveiligingscontroles</div></div>
-    <div><div class="stat-val">7</div><div class="stat-label">Afzonderlijke rapporten</div></div>
-    <div><div class="stat-val">20+</div><div class="stat-label">Geanalyseerde domeinen</div></div>
-    <div><div class="stat-val">100%</div><div class="stat-label">Made in Belgium</div></div>
-  </div>
-</div>
-
-<!-- PRODUCT -->
-<section id="product">
-  <div class="container">
-    <div class="section-tag">Platform</div>
-    <h2>Waarom kiezen voor <span>ADSecure</span>?</h2>
-    <p class="section-intro">Het enige platform dat begeleide herstelmaatregelen, zakelijk overzicht en multi-framework conformiteit combineert.</p>
-    <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">🔍</div><h3>Volledige AD-audit</h3><p>Uitgebreide analyse van accounts, GPO's, delegaties, Kerberos, DNS, PKI, vertrouwensrelaties. Gestructureerd rapport onmiddellijk bruikbaar.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔧</div><h3>Begeleide herstelmaatregelen</h3><p>Elke kwetsbaarheid wordt vergezeld van stapsgewijze instructies voor de systeembeheerder, met risiconiveau en intelligente prioritering.</p></div>
-      <div class="feature-card"><div class="feature-icon">📊</div><h3>Intelligente scoring</h3><p>Score per identiteit, per server, per bedrijfsservice. Niet 1.000 meldingen: de 10 acties die echt kritisch zijn voor uw beveiliging.</p></div>
-      <div class="feature-card"><div class="feature-icon">🏢</div><h3>Directiemodus</h3><p>Niet-technisch dashboard met zakelijke risico's, conformiteit en kernindicatoren voor beslissers en auditors.</p></div>
-      <div class="feature-card"><div class="feature-icon">📋</div><h3>7 Afzonderlijke rapporten</h3><p>Directie, IT-manager, DPO, herstelgids, conformiteitsscore, Azure AD-rapport en via QR-code verifieerbare attestatie.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔒</div><h3>Beveiliging & Privacy</h3><p>Lokale gegevensverwerking, end-to-end versleuteling, geen gegevensoverdracht zonder uitdrukkelijke toestemming.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPLIANCE -->
-<section id="conformite">
-  <div class="container">
-    <div class="section-tag">Regelgeving</div>
-    <h2>Regelgevende <span>conformiteit</span></h2>
-    <p class="section-intro">ADSecure brengt uw AD-beveiliging in lijn met Europese en internationale normen.</p>
-    <div class="compliance-grid">
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">NIS2</span><span class="compliance-score badge-covered">Gedekt</span></div>
-        <div class="compliance-sub">Europese richtlijn – Oktober 2024</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">NIS2 verplicht essentiële en belangrijke EU-entiteiten robuuste cyberbeveiligingsmaatregelen te treffen en incidenten te melden (72u). Het heeft betrekking op kritieke sectoren: energie, gezondheid, transport, financiën, overheid.</p>
-        <ul class="compliance-items"><li>Beheer van bevoorrechte toegang</li><li>Detectie en melding (72u)</li><li>Kwetsbaarheidsbeheer</li><li>Bedrijfscontinuïteit</li></ul>
-      </div>
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">ISO 27001</span><span class="compliance-score badge-aligned">Afgestemd</span></div>
-        <div class="compliance-sub">Internationale ISMS-norm</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">ISO/IEC 27001 is de internationale referentienorm voor Informatiebeveiligingsbeheersystemen (ISMS). Het definieert vereisten voor het opzetten, implementeren en onderhouden van een wereldwijd erkend ISMS.</p>
-        <ul class="compliance-items"><li>Toegangscontrole (A.9)</li><li>Cryptografie (A.10)</li><li>Beveiligingsoperaties (A.12)</li><li>Incidentbeheer (A.16)</li></ul>
-      </div>
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">CIS Controls</span><span class="compliance-score badge-integrated">Geïntegreerd</span></div>
-        <div class="compliance-sub">Technisch raamwerk v8</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">CIS Controls (v8) definiëren 18 prioritaire controles om het aanvalsoppervlak drastisch te verkleinen. Sterk technisch gericht, worden ze gebruikt door IT-teams en auditors als praktische implementatiegids.</p>
-        <ul class="compliance-items"><li>Accountbeheer (CIS 05)</li><li>Toegangsbeheer (CIS 06)</li><li>Auditlogbeheer (CIS 08)</li><li>Applicatiebeveiliging (CIS 16)</li></ul>
-      </div>
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">AVG</span><span class="compliance-score badge-compliant">Conform</span></div>
-        <div class="compliance-sub">EU-verordening 2016/679</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">De AVG (EU 2016/679) regelt de verzameling, verwerking en bescherming van persoonsgegevens in de Europese Unie. Voor AD betreft dit de traceerbaarheid van toegang, het beheer van autorisaties en de minimalisering van rechten.</p>
-        <ul class="compliance-items"><li>Traceerbaarheid van toegang</li><li>Levenscyclusbeheer</li><li>Minimale rechten</li><li>Logbeheer</li></ul>
-      </div>
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">Cyfun</span><span class="compliance-score badge-aligned">Afgestemd</span></div>
-        <div class="compliance-sub">Belgisch CCB-raamwerk</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">CyFun is het Belgische cyberbeveiligingsraamwerk ontwikkeld door het Centre for Cybersecurity Belgium (CCB). Gebaseerd op NIST CSF en aangepast aan de Belgische context, classificeert het organisaties in 4 volwassenheidsniveaus.</p>
-        <ul class="compliance-items"><li>Identificatie van activa</li><li>Authenticatiebeveiliging</li><li>Anomaliedetectie</li><li>Incidentrespons</li></ul>
-      </div>
-
-      <div class="compliance-card">
-        <div class="compliance-header"><span class="compliance-name">DORA</span><span class="compliance-score badge-covered">Gedekt</span></div>
-        <div class="compliance-sub">Financiële sector – 2025</div>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;">DORA (EU 2022/2554) is van toepassing vanaf januari 2025 op Europese financiële entiteiten (banken, verzekeraars, ICT-aanbieders). Het vereist robuuste digitale operationele veerkracht, inclusief toegangsbeheer en veerkrachttests.</p>
-        <ul class="compliance-items"><li>ICT-risicobeheer</li><li>Veerkrachttests</li><li>Incidentbeheer</li><li>Toezicht op derden</li></ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-tag">Tarieven</div>
-    <h2>Transparante <span>tarieven</span></h2>
-    <p class="section-intro">Formules afgestemd op elke organisatie — Geen verrassingen, geen verborgen verplichtingen.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-name">ESSENTIAL</div>
-        <div class="pricing-desc">Tot 100 gebruikers</div>
-        <div class="pricing-price">€6.900<span>/jaar</span></div>
-        <ul class="pricing-features">
-          <li>Azure AD & hybride cloud inbegrepen</li>
-          <li>Volledige conformiteit: NIS2, CIS Controls v8, ISO 27001, AVG, DORA</li>
-          <li>Volledige rapporten per audit</li>
-          <li>Beveiligingsscore per domein</li>
-          <li>Stapsgewijze begeleide herstelmaatregelen</li>
-          <li>E-mailondersteuning inbegrepen</li>
-        </ul>
-        <a href="#contact" class="btn-pricing outline">Afspraak maken</a>
-      </div>
-      <div class="pricing-card featured">
-        <div class="pricing-badge">AANBEVOLEN</div>
-        <div class="pricing-name">PROFESSIONAL</div>
-        <div class="pricing-desc">100 tot 250 gebruikers</div>
-        <div class="pricing-price">€14.900<span>/jaar</span></div>
-        <ul class="pricing-features">
-          <li><strong>Alles uit Essential</strong></li>
-          <li>Multi-site Active Directory</li>
-          <li>4 AD-audits per jaar</li>
-          <li>Multi-site dashboard</li>
-          <li>Directierapporten (Directie/CISO)</li>
-          <li>Prioritaire telefoon + e-mail ondersteuning</li>
-        </ul>
-        <a href="#contact" class="btn-pricing">Afspraak maken</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-name">ENTERPRISE</div>
-        <div class="pricing-desc">Meer dan 250 gebruikers</div>
-        <div class="pricing-price">Op offerte</div>
-        <ul class="pricing-features">
-          <li><strong>Alles uit Professional</strong></li>
-          <li>24/7 continue monitoring</li>
-          <li>Sandbox voor aanvalssimulaties</li>
-          <li>SIEM/SOC integratie</li>
-          <li>Toegewijde accountmanager</li>
-          <li>Contractuele SLA-garanties</li>
-        </ul>
-        <a href="#contact" class="btn-pricing outline">Contacteer ons</a>
-      </div>
-    </div>
-    <div class="pricing-note">
-      ✓ Alle tarieven zijn exclusief btw — btw van toepassing conform geldende wetgeving &nbsp;·&nbsp;
-      ✓ Jaarlijks abonnement — facturatie bij ondertekening &nbsp;·&nbsp;
-      ✓ Stilzwijgende verlenging met opzegtermijn van 30 dagen &nbsp;·&nbsp;
-      ✓ Gepersonaliseerde afspraak beschikbaar op aanvraag &nbsp;·&nbsp;
-      ✓ Enterprise-offerte op maat binnen 48u &nbsp;·&nbsp;
-      ✓ Speciale voorwaarden voor publieke sector en verenigingen
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-tag">Ondersteuning</div>
-    <h2>Veelgestelde <span>vragen</span></h2>
-    <p class="section-intro">Vind snel antwoorden op de meest gestelde vragen.</p>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">Wat is ADSecure Report™?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">ADSecure Report™ is een Active Directory auditplatform dat vanuit één enkele scan zeven afzonderlijke regelgevingsrapporten produceert: één voor het topmanagement, één voor de IT-manager, één voor de DPO, een herstelgids, een conformiteitsscore, een Azure AD / Entra ID-rapport en een via QR-code verifieerbare attestatie. 197 controlepunten bestrijken 20 afzonderlijke domeinen van uw AD-infrastructuur.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Verzendt ADSecure gegevens naar de cloud?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Nee. De scan draait in alleen-lezen modus, zonder installatie, zonder wijziging van de infrastructuur. Gegevens verlaten de omgeving van de klant niet. De zelfstandige PowerShell-agent werkt op elke Windows-omgeving vanaf Server 2016. Geen Active Directory-gegevens worden naar onze servers doorgestuurd: dit is architecturaal gegarandeerd, niet alleen contractueel.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Waarom is interventie ter plaatse systematisch?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Aanwezigheid ter plaatse is geen optie in ons model: het is een principe. Een beveiligingstool op een domeincontroller implementeren zonder fysiek aanwezig te zijn om de integriteit te valideren en de rapportaflevering te begeleiden, betekent het essentiële van een audit missen. De SHA-256-validatie van het uitvoerbaar bestand, live uitgevoerd in aanwezigheid van de CIO vóór de lancering, is de basis van vertrouwen.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Wat zijn de technische vereisten voor ADSecure?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">ADSecure vereist Windows Server 2016 of hoger, PowerShell 5.1 of hoger en de RSAT Active Directory-module geïnstalleerd. Een domeinlidaccount met alleen-leestoegang tot AD is voldoende. Lokale beheerdersrechten zijn aanbevolen voor geavanceerde registercontroles. Er is geen internetverbinding vereist voor het uitvoeren van de scan.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Is ADSecure conform NIS2 en ISO 27001?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Ja. Elk van de 197 ADSecure-controles is gekoppeld aan het relevante NIS2-artikel (EU-richtlijn 2022/2555, verplicht sinds oktober 2024) en aan de bijlagen A.8, A.9, A.12, A.18 van ISO 27001:2022. Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors. We dekken ook CIS Controls v8, AVG, Cyfun (België) en DORA (financiële sector).</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Hoe werkt de via QR-code verifieerbare attestatie?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">De QR-code attestatie van ADSecure is een afdwingbaar, tijdgestempeld en fraudebestendig document. Het is real-time verifieerbaar op verify.mandatoryshield.com en vormt toelaatbaar due-diligence bewijs bij een audit, schadegeval of regelgevende inspectie. Dit is een unieke marktinnovatie die juridische waarde geeft aan uw beveiligingsaudits.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Welke formule past bij mijn organisatie?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Onze formules zijn gesegmenteerd op basis van het aantal gebruikers. <strong>Essential</strong> (€6.900/jaar) is bedoeld voor organisaties tot 100 gebruikers: Azure AD & hybride cloud inbegrepen, volledige conformiteit (NIS2, CIS Controls v8, ISO 27001, AVG, DORA), volledige rapporten en begeleide herstelmaatregelen. <strong>Professional</strong> (€14.900/jaar) is gericht op organisaties van 100 tot 250 gebruikers, met multi-site Active Directory, 4 AD-audits per jaar en directierapporten. <strong>Enterprise</strong> (op offerte) is voor organisaties met meer dan 250 gebruikers, met 24/7 monitoring, SIEM/SOC integratie en een toegewijde accountmanager.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Biedt u demo's of gratis proefversies aan?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">We bieden geen gratis proefversies aan vanwege de gevoelige aard van Active Directory-audits en onze systematische aanpak ter plaatse. We organiseren echter gepersonaliseerde afspraken om het platform voor te stellen, uw specifieke vragen te beantwoorden en uw behoeften te beoordelen. Contacteer ons op contact@mandatoryshield.com om een gesprek met onze experts te plannen.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Werkt ADSecure met Azure AD / Microsoft Entra ID?<span>+</span></button>
-        <div class="faq-a"><div class="faq-a-inner">Ja, en dit al vanaf de Essential-formule. De Azure AD & hybride cloud-module is inbegrepen in alle formules zonder meerprijs. De module analyseert uw Microsoft cloud-omgeving, Azure AD Connect synchronisaties en federatieconfiguraties, en produceert een specifiek rapport naast de on-premise AD-audit.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="entreprise">
-  <div class="container">
-    <div class="section-tag">Bedrijf</div>
-    <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo-opt.png" alt="Logo Mandatory Shield" width="132" height="72" loading="lazy" style="height:72px;width:auto;display:block;margin:1.25rem 0 1.5rem;"></picture>
-    <h2>Wie <span>wij zijn</span></h2>
-    <p class="section-intro">Mandatory Shield Company — De digitale identiteit van Europese organisaties beschermen.</p>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar">PR</div>
-        <div class="team-name">Pierre-Antoine Rouhaud</div>
-        <div class="team-role">Medeoprichter & CEO</div>
-        <div class="team-bio">Expert in het beveiligen van Windows-infrastructuren en Active Directory. Pierre-Antoine brengt een strategische visie gecombineerd met diepgaande technische kennis. Hij leidt de productstrategie en commerciële strategie van ADSecure.</div>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar">RB</div>
-        <div class="team-name">Raphaël Berki</div>
-        <div class="team-role">Medeoprichter & CTO</div>
-        <div class="team-bio">Software-architect en cyberbeveiligingsspecialist, Raphaël ontwerpt de technische architectuur van ADSecure. Zijn expertise omvat gedragsanalyse, aanvalssimulatie en intelligente scoring-engines.</div>
-      </div>
-    </div>
-    <h3 style="font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem;">Onze Missie</h3>
-    <p style="color:var(--muted);max-width:620px;margin-bottom:2rem;line-height:1.75;">Elke Europese organisatie in staat stellen de beveiliging van haar Active Directory te beheersen, ongeacht de grootte, met tools die zowel krachtig, toegankelijk als conform zijn.</p>
-    <div class="mission-grid">
-      <div class="mission-card"><h4>🇧🇪 Gemaakt in België</h4><p>Ontwikkeld in Brussel. AVG-native. Europese soevereiniteit.</p></div>
-      <div class="mission-card"><h4>💡 Innovatie</h4><p>Continue O&O om de bedreigingen van morgen voor te zijn.</p></div>
-      <div class="mission-card"><h4>🤝 Vertrouwen</h4><p>Transparantie, begeleiding en deskundige ondersteuning.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-tag" style="color:var(--teal-light)">Contact</div>
-    <h2>Een afspraak <span style="color:var(--teal-light)">plannen</span></h2>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p>Laten we uw behoeften op het gebied van Active Directory beveiliging bespreken. Onze experts nemen binnen 24 uur contact met u op om een afspraak te maken.</p>
-        <div class="contact-detail"><span>✉️</span><span><strong>E-mail</strong><br/>contact@mandatoryshield.com</span></div>
-        <div class="contact-detail"><span>🌐</span><span><strong>Website</strong><br/>www.mandatoryshield.com</span></div>
-        <div class="contact-detail"><span>📍</span><span><strong>Locatie</strong><br/>Brussel, België (Europese Unie)</span></div>
-      </div>
-      <div class="contact-form">
-        <div class="form-group"><label>Volledige naam</label><input type="text" placeholder="Jan Janssen" /></div>
-        <div class="form-group"><label>Professioneel e-mailadres</label><input type="email" placeholder="jan@bedrijf.be" /></div>
-        <div class="form-group"><label>Bedrijf</label><input type="text" placeholder="Uw bedrijf" /></div>
-        <div class="form-group">
-          <label>Interesse</label>
-          <select>
-            <option>Platformdemonstratie</option>
-            <option>Essential-formule</option>
-            <option>Professional-formule</option>
-            <option>Enterprise-formule</option>
-            <option>Andere</option>
-          </select>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <a href="index.html" class="lang-btn">FR</a>
+                    <a href="index-nl.html" class="lang-btn active">NL</a>
+                    <a href="index-en.html" class="lang-btn">EN</a>
+                </div>
+                <a href="#contact" class="btn btn-primary">Afspraak maken</a>
+            </div>
+            <button class="mobile-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links"><i class="ri-menu-line" aria-hidden="true"></i></button>
         </div>
-        <div class="form-group"><label>Bericht</label><textarea placeholder="Vertel ons over uw behoeften..."></textarea></div>
-        <button class="btn-submit">Aanvraag verzenden →</button>
-      </div>
-    </div>
-  </div>
-</section>
+        </nav>
+    </header>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem;">
-          <div style="width:32px;height:32px;background:var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:12px;">MS</div>
-          <span style="color:white;font-weight:700;">MANDATORY SHIELD</span>
+    <main id="hoofdinhoud">
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content animate">
+                <h1>Uw Active Directory.<br><span class="text-gradient">Geen blinde vlekken.</span></h1>
+                <p>ADSecure Report™ is het eerste Europese Active Directory auditplatform dat 7 afzonderlijke regelgevingsrapporten produceert vanuit één enkele scan. 197 beveiligingscontroles conform NIS2, ISO 27001 en AVG.</p>
+
+                <div class="hero-features">
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Interventie ter plaatse systematisch inbegrepen</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>SHA-256 validatie in aanwezigheid van de CIO</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Nul gegevensoverdracht — 100% on-premise</span></div>
+                    <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>Via QR-code verifieerbare attestatie</span></div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg">Afspraak maken <i class="ri-arrow-right-line"></i></a>
+                    <a href="#product" class="btn btn-outline btn-lg">Meer informatie</a>
+                </div>
+            </div>
+
+            <div class="hero-visual animate">
+                <div class="hero-card">
+                    <div class="score-display">
+                        <div class="score-circle"><div class="score-value">78</div></div>
+                        <div class="score-label">Globale Beveiligingsscore</div>
+                    </div>
+
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-shield-check-line c-success"></i> LAPS geïmplementeerd</div>
+                        <span class="status-badge success">OK</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-shield-line c-danger"></i> SMBv1 actief</div>
+                        <span class="status-badge critical">KRITIEK</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-user-line c-warning"></i> Kerberoastbare accounts</div>
+                        <span class="status-badge warning">7 gevonden</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-label"><i class="ri-file-list-3-line c-success"></i> Auditbeleid</div>
+                        <span class="status-badge success">GECONFIGUREERD</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>Essential SaaS Security — Het eerste Europese Active Directory auditplatform voor NIS2, ISO 27001 en AVG conformiteit.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="#product">Functies</a></li>
-          <li><a href="#conformite">Conformiteit</a></li>
-          <li><a href="#pricing">Tarieven</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Bedrijf</h4>
-        <ul>
-          <li><a href="#entreprise">Over ons</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Vacatures</a></li>
-          <li><a href="#">Partners</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Juridisch</h4>
-        <ul>
-          <li><a href="legal.html#privacy">Privacybeleid</a></li>
-          <li><a href="legal.html#cgu">Gebruiksvoorwaarden</a></li>
-          <li><a href="legal.html#cgv">AVW</a></li>
-          <li><a href="legal.html#mentions">Wettelijke vermeldingen</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Mandatory Shield Company. Alle rechten voorbehouden. · Gemaakt in België 🇧🇪</span>
-      <span>Brussel, België · contact@mandatoryshield.com</span>
-      <a href="https://linkedin.com/company/the-mandatory-shield-company" target="_blank" rel="noopener" class="footer-linkedin">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</footer>
+    </section>
 
-<!-- CHATBOT -->
-<button class="chatbot-toggle">💬</button>
-<div class="chatbot-window">
-  <div class="chatbot-header">
-    <h4>ADSecure Assistent</h4>
-    <button class="chatbot-close">×</button>
-  </div>
-  <div class="chatbot-messages" id="chat-msgs">
-    <div class="msg bot" style="display:flex;align-items:flex-start;gap:8px;"><picture style="flex-shrink:0"><source srcset="images/logo.webp" type="image/webp"><img src="images/logo-opt.png" alt="" aria-hidden="true" style="width:28px;height:28px;object-fit:contain;border-radius:50%;background:white;border:1px solid #e2e8f0;padding:3px;"></picture><span>Hallo! Ik ben de virtuele assistent van ADSecure. Hoe kan ik u vandaag helpen?</span></div>
-  </div>
-  <div class="chatbot-quick">
-    <button class="quick-btn" data-quick="Tarieven">Tarieven</button>
-    <button class="quick-btn" data-quick="NIS2 conformiteit">NIS2</button>
-    <button class="quick-btn" data-quick="Gegevensbeveiliging">Gegevens</button>
-    <button class="quick-btn" data-quick="Demo aanvragen">Demo</button>
-  </div>
-  <div class="chatbot-input">
-    <input type="text" id="chat-input" placeholder="Stel een vraag..." />
-    <button class="chat-send-btn">➤</button>
-  </div>
-</div>
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item"><div class="stat-num">197</div><div class="stat-label">Beveiligingscontroles</div></div>
+            <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Afzonderlijke rapporten</div></div>
+            <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Geanalyseerde domeinen</div></div>
+            <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Made in Belgium</div></div>
+        </div>
+    </div>
 
-<script src="app-nl.js"></script>
+    <section id="product" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Waarom kiezen voor <span class="text-gradient">ADSecure</span>?</h2>
+                <p>Het enige platform dat begeleide herstelmaatregelen, zakelijk overzicht en multi-framework conformiteit combineert</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon"><i class="ri-shield-check-line"></i></div>
+                    <h3>Volledige AD-audit</h3>
+                    <p>Uitgebreide analyse van accounts, GPO's, delegaties, Kerberos, DNS, PKI, vertrouwensrelaties. Gestructureerd rapport onmiddellijk bruikbaar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-guide-line"></i></div>
+                    <h3>Begeleide Herstelmaatregelen</h3>
+                    <p>Elke kwetsbaarheid wordt vergezeld van stapsgewijze instructies voor de systeembeheerder, met risiconiveau en intelligente prioritering.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-bar-chart-grouped-line"></i></div>
+                    <h3>Intelligente Scoring</h3>
+                    <p>Score per identiteit, per server, per bedrijfsservice. Niet 1.000 meldingen: de 10 acties die echt kritisch zijn voor uw beveiliging.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-dashboard-line"></i></div>
+                    <h3>Directiemodus</h3>
+                    <p>Niet-technisch dashboard met zakelijke risico's, conformiteit en kernindicatoren voor beslissers en auditors.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-file-text-line"></i></div>
+                    <h3>7 Afzonderlijke Rapporten</h3>
+                    <p>Directie, IT-manager, DPO, herstelgids, conformiteitsscore, Azure AD-rapport en via QR-code verifieerbare attestatie.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="ri-lock-line"></i></div>
+                    <h3>Beveiliging &amp; Privacy</h3>
+                    <p>Lokale gegevensverwerking, end-to-end versleuteling, geen gegevensoverdracht zonder uitdrukkelijke toestemming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conformite" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Regelgevende <span class="text-gradient">Conformiteit</span></h2>
+                <p>ADSecure brengt uw AD-beveiliging in lijn met Europese en internationale normen</p>
+            </div>
+
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">NIS2</div><div class="compliance-rate badge-covered">Gedekt</div></div>
+                    <div class="compliance-desc">Europese richtlijn — Oktober 2024</div>
+                    <div class="compliance-explanation">NIS2 verplicht essentiële en belangrijke EU-entiteiten robuuste cyberbeveiligingsmaatregelen te treffen en incidenten te melden (72u). Het heeft betrekking op kritieke sectoren: energie, gezondheid, transport, financiën, overheid.</div>
+                    <ul class="compliance-features"><li>Beheer van bevoorrechte toegang</li><li>Detectie en melding (72u)</li><li>Kwetsbaarheidsbeheer</li><li>Bedrijfscontinuïteit</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">ISO 27001</div><div class="compliance-rate badge-aligned">Afgestemd</div></div>
+                    <div class="compliance-desc">Internationale ISMS-norm</div>
+                    <div class="compliance-explanation">ISO/IEC 27001 is de internationale referentienorm voor Informatiebeveiligingsbeheersystemen (ISMS). Het definieert vereisten voor het opzetten, implementeren en onderhouden van een wereldwijd erkend ISMS.</div>
+                    <ul class="compliance-features"><li>Toegangscontrole (A.9)</li><li>Cryptografie (A.10)</li><li>Beveiligingsoperaties (A.12)</li><li>Incidentbeheer (A.16)</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">CIS Controls</div><div class="compliance-rate badge-integrated">Geïntegreerd</div></div>
+                    <div class="compliance-desc">Technisch raamwerk v8</div>
+                    <div class="compliance-explanation">CIS Controls (v8) definiëren 18 prioritaire controles om het aanvalsoppervlak drastisch te verkleinen. Sterk technisch gericht, worden ze gebruikt door IT-teams en auditors als praktische implementatiegids.</div>
+                    <ul class="compliance-features"><li>Accountbeheer (CIS 05)</li><li>Toegangsbeheer (CIS 06)</li><li>Auditlogbeheer (CIS 08)</li><li>Applicatiebeveiliging (CIS 16)</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">AVG</div><div class="compliance-rate badge-compliant">Conform</div></div>
+                    <div class="compliance-desc">EU-verordening 2016/679</div>
+                    <div class="compliance-explanation">De AVG (EU 2016/679) regelt de verzameling, verwerking en bescherming van persoonsgegevens in de Europese Unie. Voor AD betreft dit de traceerbaarheid van toegang, het beheer van autorisaties en de minimalisering van rechten.</div>
+                    <ul class="compliance-features"><li>Traceerbaarheid van toegang</li><li>Levenscyclusbeheer</li><li>Minimale rechten</li><li>Logbeheer</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">Cyfun</div><div class="compliance-rate badge-aligned">Afgestemd</div></div>
+                    <div class="compliance-desc">Belgisch CCB-raamwerk</div>
+                    <div class="compliance-explanation">CyFun is het Belgische cyberbeveiligingsraamwerk ontwikkeld door het Centre for Cybersecurity Belgium (CCB). Gebaseerd op NIST CSF en aangepast aan de Belgische context, classificeert het organisaties in 4 volwassenheidsniveaus (Basic, Important, Essential, Critical).</div>
+                    <ul class="compliance-features"><li>Identificatie van activa</li><li>Authenticatiebeveiliging</li><li>Anomaliedetectie</li><li>Incidentrespons</li></ul>
+                </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">DORA</div><div class="compliance-rate badge-covered">Gedekt</div></div>
+                    <div class="compliance-desc">Financiële sector — 2025</div>
+                    <div class="compliance-explanation">DORA (EU 2022/2554) is van toepassing vanaf januari 2025 op Europese financiële entiteiten (banken, verzekeraars, ICT-aanbieders). Het vereist robuuste digitale operationele veerkracht, inclusief toegangsbeheer en veerkrachttests.</div>
+                    <ul class="compliance-features"><li>ICT-risicobeheer</li><li>Veerkrachttests</li><li>Incidentbeheer</li><li>Toezicht op derden</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transparante <span class="text-gradient">Tarieven</span></h2>
+                <p>Formules afgestemd op elke organisatie — Geen verrassingen, geen verborgen verplichtingen</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header"><h3>ESSENTIAL</h3><p>Tot 100 gebruikers</p></div>
+                    <div class="price">€ 6.900<span>/jaar</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span>Azure AD &amp; hybride cloud inbegrepen</span></li>
+                        <li><i class="ri-check-line"></i><span>Volledige conformiteit: NIS2, CIS Controls v8, ISO 27001, AVG, DORA</span></li>
+                        <li><i class="ri-check-line"></i><span>Volledige rapporten per audit</span></li>
+                        <li><i class="ri-check-line"></i><span>Beveiligingsscore per domein</span></li>
+                        <li><i class="ri-check-line"></i><span>Stapsgewijze begeleide herstelmaatregelen</span></li>
+                        <li><i class="ri-check-line"></i><span>E-mailondersteuning inbegrepen</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Afspraak maken</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">AANBEVOLEN</div>
+                    <div class="pricing-header"><h3>PROFESSIONAL</h3><p>100 tot 250 gebruikers</p></div>
+                    <div class="price">€ 14.900<span>/jaar</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span><strong>Alles uit Essential</strong></span></li>
+                        <li><i class="ri-check-line"></i><span>Multi-site Active Directory</span></li>
+                        <li><i class="ri-check-line"></i><span>4 AD-audits per jaar</span></li>
+                        <li><i class="ri-check-line"></i><span>Multi-site dashboard</span></li>
+                        <li><i class="ri-check-line"></i><span>Directierapporten (Directie/CISO)</span></li>
+                        <li><i class="ri-check-line"></i><span>Prioritaire telefoon + e-mail ondersteuning</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-lg btn-full">Afspraak maken</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header"><h3>ENTERPRISE</h3><p>Meer dan 250 gebruikers</p></div>
+                    <div class="price">Op<span>offerte</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span><strong>Alles uit Professional</strong></span></li>
+                        <li><i class="ri-check-line"></i><span>24/7 continue monitoring</span></li>
+                        <li><i class="ri-check-line"></i><span>Sandbox voor aanvalssimulaties</span></li>
+                        <li><i class="ri-check-line"></i><span>SIEM/SOC integratie</span></li>
+                        <li><i class="ri-check-line"></i><span>Toegewijde accountmanager</span></li>
+                        <li><i class="ri-check-line"></i><span>Contractuele SLA-garanties</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Contacteer ons</a>
+                </div>
+            </div>
+
+            <div class="pricing-info">
+                <p class="pricing-info-title"><i class="ri-information-line c-primary"></i> <strong>Commerciële informatie:</strong></p>
+                <p class="pricing-info-text">
+                    ✓ Alle tarieven zijn exclusief btw — btw van toepassing conform geldende wetgeving<br>
+                    ✓ Jaarlijks abonnement — facturatie bij ondertekening<br>
+                    ✓ Stilzwijgende verlenging met opzegtermijn van 30 dagen<br>
+                    ✓ Gepersonaliseerde afspraak beschikbaar op aanvraag<br>
+                    ✓ Enterprise-offerte op maat binnen 48u<br>
+                    ✓ Speciale voorwaarden voor publieke sector en verenigingen
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Veelgestelde <span class="text-gradient">Vragen</span></h2>
+                <p>Vind snel antwoorden op de meest gestelde vragen</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Wat is ADSecure Report™?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>ADSecure Report™ is een Active Directory auditplatform dat vanuit één enkele scan zeven afzonderlijke regelgevingsrapporten produceert: één voor het topmanagement, één voor de IT-manager, één voor de DPO, een herstelgids, een conformiteitsscore, een Azure AD / Entra ID-rapport en een via QR-code verifieerbare attestatie. 197 controlepunten bestrijken 20 afzonderlijke domeinen van uw AD-infrastructuur.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Verzendt ADSecure gegevens naar de cloud?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Nee. De scan draait in alleen-lezen modus, zonder installatie, zonder wijziging van de infrastructuur. Gegevens verlaten de omgeving van de klant niet. De zelfstandige PowerShell-agent werkt op elke Windows-omgeving vanaf Server 2016. Geen Active Directory-gegevens worden naar onze servers doorgestuurd: dit is architecturaal gegarandeerd, niet alleen contractueel.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Waarom is interventie ter plaatse systematisch?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Aanwezigheid ter plaatse is geen optie in ons model: het is een principe. Een beveiligingstool op een domeincontroller implementeren zonder fysiek aanwezig te zijn om de integriteit te valideren en de rapportaflevering te begeleiden, betekent het essentiële van een audit missen. De SHA-256-validatie van het uitvoerbaar bestand, live uitgevoerd in aanwezigheid van de CIO vóór de lancering, is de basis van vertrouwen.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Wat zijn de technische vereisten voor ADSecure?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>ADSecure vereist Windows Server 2016 of hoger, PowerShell 5.1 of hoger en de RSAT Active Directory-module geïnstalleerd. Een domeinlidaccount met alleen-leestoegang tot AD is voldoende. Lokale beheerdersrechten zijn aanbevolen voor geavanceerde registercontroles. Er is geen internetverbinding vereist voor het uitvoeren van de scan.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Is ADSecure conform NIS2 en ISO 27001?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Ja. Elk van de 197 ADSecure-controles is gekoppeld aan het relevante NIS2-artikel (EU-richtlijn 2022/2555, verplicht sinds oktober 2024) en aan de bijlagen A.8, A.9, A.12, A.18 van ISO 27001:2022. Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors. We dekken ook CIS Controls v8, AVG, Cyfun (België) en DORA (financiële sector).</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Hoe werkt de via QR-code verifieerbare attestatie?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>De QR-code attestatie van ADSecure is een afdwingbaar, tijdgestempeld en fraudebestendig document. Het is real-time verifieerbaar op verify.mandatoryshield.com en vormt toelaatbaar due-diligence bewijs bij een audit, schadegeval of regelgevende inspectie. Dit is een unieke marktinnovatie die juridische waarde geeft aan uw beveiligingsaudits.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Welke formule past bij mijn organisatie?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Onze formules zijn gesegmenteerd op basis van het aantal gebruikers. De formule <strong>Essential</strong> (€6.900/jaar) is bedoeld voor organisaties tot 100 gebruikers: Azure AD &amp; hybride cloud inbegrepen, volledige conformiteit (NIS2, CIS Controls v8, ISO 27001, AVG, DORA), volledige rapporten en begeleide herstelmaatregelen. De formule <strong>Professional</strong> (€14.900/jaar) is gericht op organisaties van 100 tot 250 gebruikers, met multi-site Active Directory, 4 AD-audits per jaar en directierapporten. <strong>Enterprise</strong> (op offerte) is voor organisaties met meer dan 250 gebruikers, met 24/7 monitoring, SIEM/SOC integratie en een toegewijde accountmanager.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Biedt u demo's of gratis proefversies aan?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>We bieden geen gratis proefversies aan vanwege de gevoelige aard van Active Directory-audits en onze systematische aanpak ter plaatse. We organiseren echter gepersonaliseerde afspraken om het platform voor te stellen, uw specifieke vragen te beantwoorden en uw behoeften te beoordelen. Contacteer ons op contact@mandatoryshield.com om een gesprek met onze experts te plannen.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Wat is de levertijd na aankoop?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Na ondertekening van het contract en facturatie plannen wij de interventie ter plaatse binnen 5 tot 10 werkdagen naargelang uw locatie. De eerste audit en de overhandiging van de rapporten vinden plaats tijdens deze missie. Volgende audits worden gepland volgens uw formule: 4 audits per jaar voor Professional, op aanvraag voor Enterprise.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Werkt ADSecure met Azure AD / Microsoft Entra ID?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Ja, en dit al vanaf de Essential-formule. De Azure AD &amp; hybride cloud-module is inbegrepen in alle formules zonder meerprijs. De module analyseert uw Microsoft cloud-omgeving, Azure AD Connect synchronisaties en federatieconfiguraties, en produceert een specifiek rapport naast de on-premise AD-audit.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="entreprise" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <picture>
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <img src="images/logo-opt.png" alt="Logo Mandatory Shield" width="132" height="72" loading="lazy" style="height:72px;width:auto;display:block;margin:0 auto 1.5rem;">
+                </picture>
+                <h2>Wie zijn <span class="text-gradient">wij?</span></h2>
+                <p>Mandatory Shield Company — De digitale identiteit van Europese organisaties beschermen</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">PR</div>
+                    <div class="team-name">Pierre-Antoine Rouhaud</div>
+                    <div class="team-role">Medeoprichter &amp; CEO</div>
+                    <div class="team-bio">Expert in het beveiligen van Windows-infrastructuren en Active Directory. Pierre-Antoine brengt een strategische visie gecombineerd met diepgaande technische kennis. Hij leidt de productstrategie en commerciële strategie van ADSecure.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">RB</div>
+                    <div class="team-name">Raphaël Berki</div>
+                    <div class="team-role">Medeoprichter &amp; CTO</div>
+                    <div class="team-bio">Software-architect en cyberbeveiligingsspecialist, Raphaël ontwerpt de technische architectuur van ADSecure. Zijn expertise omvat gedragsanalyse, aanvalssimulatie en intelligente scoring-engines.</div>
+                </div>
+            </div>
+
+            <div class="mission-wrapper">
+                <h3 class="mission-title">Onze Missie</h3>
+                <p class="mission-body">Elke Europese organisatie in staat stellen de beveiliging van haar Active Directory te beheersen, ongeacht de grootte, met tools die zowel krachtig, toegankelijk als conform zijn.</p>
+                <div class="mission-grid">
+                    <div class="mission-item">
+                        <i class="ri-flag-line mission-icon"></i>
+                        <h4>Gemaakt in België</h4>
+                        <p>Ontwikkeld in Brussel. AVG-native. Europese soevereiniteit.</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="ri-lightbulb-line mission-icon"></i>
+                        <h4>Innovatie</h4>
+                        <p>Continue O&amp;O om de bedreigingen van morgen voor te zijn.</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="ri-hand-heart-line mission-icon"></i>
+                        <h4>Vertrouwen</h4>
+                        <p>Transparantie, begeleiding en deskundige ondersteuning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <p class="contact-tag">Contact</p>
+            <h2>Afspraak <span class="text-gradient">Maken</span></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>Laten we uw behoeften op het gebied van Active Directory beveiliging bespreken. Onze experts nemen binnen 24 uur contact met u op om een afspraak te maken.</p>
+                    <div class="contact-detail"><span>✉️</span><span><strong>E-mail</strong><br>contact@mandatoryshield.com</span></div>
+                    <div class="contact-detail"><span>🌐</span><span><strong>Website</strong><br>www.mandatoryshield.com</span></div>
+                    <div class="contact-detail"><span>📍</span><span><strong>Locatie</strong><br>Brussel, België (Europese Unie)</span></div>
+                </div>
+                <form class="contact-form-list" aria-label="Contactformulier" novalidate>
+                    <div class="contact-field">
+                        <label for="contact-name">Volledige naam</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Jan Janssen" autocomplete="name" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-email">Professioneel e-mailadres</label>
+                        <input type="email" id="contact-email" name="email" placeholder="jan@bedrijf.be" autocomplete="email" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-company">Bedrijf</label>
+                        <input type="text" id="contact-company" name="company" placeholder="Uw bedrijf" autocomplete="organization">
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-subject">Interesse</label>
+                        <select id="contact-subject" name="subject">
+                            <option>Platformdemonstratie</option>
+                            <option>Essential-formule</option>
+                            <option>Professional-formule</option>
+                            <option>Enterprise-formule</option>
+                            <option>Andere</option>
+                        </select>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-message">Bericht</label>
+                        <textarea id="contact-message" name="message" placeholder="Vertel ons over uw behoeften..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-contact-submit">Aanvraag verzenden →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">Mandatory Shield Company</div>
+                    <p class="footer-desc">Essential SaaS Security — Het eerste Europese Active Directory auditplatform voor NIS2, ISO 27001 en AVG conformiteit.</p>
+                    <p class="footer-address">
+                        <i class="ri-map-pin-line"></i> Brussel, België<br>
+                        <i class="ri-mail-line"></i> contact@mandatoryshield.com<br>
+                        <i class="ri-global-line"></i> www.mandatoryshield.com<br>
+                        <i class="ri-linkedin-box-fill"></i> <a href="https://linkedin.com/company/the-mandatory-shield-company" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul><li><a href="#product">Functies</a></li><li><a href="#conformite">Conformiteit</a></li><li><a href="#pricing">Tarieven</a></li><li><a href="#faq">FAQ</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Bedrijf</h4>
+                    <ul><li><a href="#entreprise">Over ons</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Vacatures</a></li><li><a href="#">Partners</a></li></ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Juridisch</h4>
+                    <ul><li><a href="legal.html#privacy">Privacybeleid</a></li><li><a href="legal.html#cgu">Gebruiksvoorwaarden</a></li><li><a href="legal.html#cgv">AVW</a></li><li><a href="legal.html#mentions">Wettelijke vermeldingen</a></li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Mandatory Shield Company. Alle rechten voorbehouden. · Gemaakt in België 🇧🇪</p></div>
+        </div>
+    </footer>
+
+    <div class="chatbot-container" role="complementary" aria-label="Virtuele assistent">
+        <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="ADSecure Assistent" aria-modal="false">
+            <div class="chatbot-header">
+                <h3 id="chatbot-title">ADSecure Assistent</h3>
+                <button class="chatbot-close" data-chat-close aria-label="Assistent sluiten">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Berichten">
+                <div class="chatbot-message bot">
+                    <div class="chatbot-avatar">
+                        <picture>
+                            <source srcset="images/logo.webp" type="image/webp">
+                            <img src="images/logo-opt.png" alt="" aria-hidden="true" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="chatbot-bubble">Hallo! Ik ben de virtuele assistent van ADSecure. Hoe kan ik u vandaag helpen?</div>
+                </div>
+            </div>
+            <div class="chatbot-suggestions" role="group" aria-label="Veelgestelde vragen">
+                <button class="chatbot-suggestion" data-suggestion="Wat zijn de tarieven van ADSecure?">Tarieven</button>
+                <button class="chatbot-suggestion" data-suggestion="Is ADSecure conform NIS2?">NIS2 conformiteit</button>
+                <button class="chatbot-suggestion" data-suggestion="Verlaten de gegevens de cloud?">Gegevensbeveiliging</button>
+                <button class="chatbot-suggestion" data-suggestion="Biedt u demo's aan?">Demo</button>
+            </div>
+            <div class="chatbot-input-container">
+                <label for="chatbotInput" class="visually-hidden">Uw bericht</label>
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Stel een vraag..." autocomplete="off" aria-label="Uw bericht">
+                <button class="chatbot-send" data-chat-send aria-label="Bericht verzenden"><i class="ri-send-plane-fill" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" data-chat-toggle aria-label="ADSecure assistent openen" aria-expanded="false"><i class="ri-chat-3-line" aria-hidden="true"></i></button>
+    </div>
+    <script src="app-nl.js" defer></script>
 </body>
 </html>

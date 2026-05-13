@@ -203,14 +203,15 @@ ADSecure Report™ est la **première plateforme européenne d'audit Active Dire
 | 6 | Rapport Azure AD / Entra ID | Environnements hybrides |
 | 7 | Attestation vérifiable QR Code | Certification externe |
 
-### 164 contrôles de sécurité couvrant 20+ domaines AD
-- Comptes et privilèges (Kerberoastable, délégations, comptes dormants)
-- GPO et politiques d'audit
-- DNS, PKI, relations d'approbation
-- LAPS, SMBv1, protocoles legacy
-- Azure AD / Entra ID (hybride)
-- Politiques de mots de passe, groupes protégés
-- Accès distants, sessions interactives
+### 197 contrôles de sécurité couvrant 20+ domaines AD
+
+Comptes et privilèges (Kerberoastable, délégations, comptes dormants)
+GPO et politiques d'audit
+DNS, PKI, relations d'approbation
+LAPS, SMBv1, protocoles legacy
+Azure AD / Entra ID (hybride)
+Politiques de mots de passe, groupes protégés
+Accès distants, sessions interactives
 
 ### 6 différenciateurs clés (à afficher dans la section produit)
 1. **Remédiation guidée pas à pas** — Chaque anomalie est accompagnée d'un plan de correction détaillé avec évaluation du risque de régression en production
