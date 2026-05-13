@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Chatbot kennisbank (bijgewerkt met nieuwe tarieven)
   var answers = {
     'tarieven':           'Onze formules zijn gesegmenteerd op basis van het aantal gebruikers. Essential (€6.900/jaar) is voor organisaties tot 100 gebruikers met Azure AD & hybride cloud inbegrepen en volledige conformiteit (NIS2, CIS Controls v8, ISO 27001, AVG, DORA). Professional (€14.900/jaar) is voor 100–250 gebruikers met 4 AD-audits/jaar en multi-site AD. Enterprise (op offerte) is voor meer dan 250 gebruikers met 24/7 monitoring en SIEM/SOC integratie.',
-    'nis2':               'ADSecure koppelt alle 164 controles aan NIS2 (EU-richtlijn 2022/2555, verplicht sinds oktober 2024). Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors.',
+    'nis2':               'ADSecure koppelt alle 197 controles aan NIS2 (EU-richtlijn 2022/2555, verplicht sinds oktober 2024). Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors.',
     'gegevensbeveiliging':'Nul gegevensoverdracht. De scan draait 100% on-premise in alleen-lezen modus. Geen Active Directory-gegevens worden naar onze servers doorgestuurd. Dit is architecturaal gegarandeerd, niet alleen contractueel.',
     'demo':               'We bieden geen gratis proefversies aan, maar we organiseren gepersonaliseerde afspraken. Contacteer ons op contact@mandatoryshield.com of vul het contactformulier in!',
     'default':            'Voor meer informatie, contacteer ons op contact@mandatoryshield.com of vul het contactformulier in. Onze experts reageren binnen 24 uur.'

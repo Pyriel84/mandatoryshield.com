@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Chatbot knowledge base (updated with new pricing)
   var answers = {
     'pricing':      'Our plans are segmented by user count. Essential (€6,900/year) covers up to 100 users with Azure AD & hybrid cloud included and full compliance (NIS2, CIS Controls v8, ISO 27001, GDPR, DORA). Professional (€14,900/year) targets 100–250 users with 4 AD audits/year and multi-site AD. Enterprise (on quote) covers 250+ users with 24/7 monitoring and SIEM/SOC integration.',
-    'nis2':         'ADSecure maps all 164 controls to NIS2 (EU Directive 2022/2555, mandatory since October 2024). The management report automatically generates an Art. 21 compliance summary ready for auditors.',
+    'nis2':         'ADSecure maps all 197 controls to NIS2 (EU Directive 2022/2555, mandatory since October 2024). The management report automatically generates an Art. 21 compliance summary ready for auditors.',
     'data security':'Zero data transmitted. The scan runs 100% on-premise in read-only mode. No Active Directory data transits to our servers. This is guaranteed architecturally, not contractually.',
     'demo':         'We do not offer free trials, but we organize personalized appointments. Contact us at contact@mandatoryshield.com or fill out the contact form!',
     'default':      'For more information, contact us at contact@mandatoryshield.com or fill out the contact form. Our experts will respond within 24 hours.'
