@@ -71,36 +71,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function sendQuick(q) { input.value = q; sendMsg(); }
 
-  // Mobile Menu
-  var mobileToggle = document.querySelector('.mobile-toggle');
-  var navLinks = document.querySelector('.nav-links');
-  var langSwitcher = document.querySelector('.nav-right .lang-switcher');
+  // Mobile Menu — overlay appended to body
+  (function () {
+    var toggle = document.querySelector('.mobile-toggle');
+    if (!toggle) return;
 
-  if (mobileToggle && navLinks) {
-    if (langSwitcher && window.innerWidth <= 768) {
-      navLinks.appendChild(langSwitcher.cloneNode(true));
-    }
+    var overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
 
-    mobileToggle.addEventListener('click', function () {
-      var isOpen = navLinks.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'mobile-close-btn';
+    closeBtn.setAttribute('aria-label', 'Close menu');
+    closeBtn.textContent = '×';
+    overlay.appendChild(closeBtn);
+
+    var links = [
+      { href: '#product',    label: 'Product' },
+      { href: '#conformite', label: 'Compliance' },
+      { href: '#pricing',    label: 'Pricing' },
+      { href: '#faq',        label: 'FAQ' },
+      { href: '#entreprise', label: 'Company' },
+      { href: '#contact',    label: 'Contact' }
+    ];
+    links.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l.href; a.textContent = l.label;
+      overlay.appendChild(a);
     });
 
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    var langDiv = document.createElement('div');
+    langDiv.className = 'mobile-lang-switcher';
+    [{ href: 'index.html', label: 'FR' },
+     { href: 'index-nl.html', label: 'NL' },
+     { href: 'index-en.html', label: 'EN', active: true }].forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l.href; a.textContent = l.label;
+      if (l.active) a.className = 'active';
+      langDiv.appendChild(a);
     });
+    overlay.appendChild(langDiv);
+    document.body.appendChild(overlay);
 
-    document.addEventListener('click', function (e) {
-      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
-        navLinks.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-  }
+    function openMenu()  { overlay.classList.add('open');    toggle.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; }
+    function closeMenu() { overlay.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+
+    toggle.addEventListener('click', function (e) { e.stopPropagation(); overlay.classList.contains('open') ? closeMenu() : openMenu(); });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+  }());
 });

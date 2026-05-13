@@ -234,38 +234,77 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-// Mobile Menu
-const mobileToggle = document.querySelector('.mobile-toggle');
-const navLinks = document.querySelector('.nav-links');
-const langSwitcher = document.querySelector('.nav-right .language-switcher');
+// Mobile Menu — overlay appended to body (contourne le backdrop-filter du header)
+(function () {
+    var toggle = document.querySelector('.mobile-toggle');
+    if (!toggle) return;
 
-if (mobileToggle && navLinks) {
-    if (langSwitcher && window.innerWidth <= 768) {
-        navLinks.appendChild(langSwitcher.cloneNode(true));
+    // Construire l'overlay
+    var overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Menu de navigation');
+
+    // Bouton fermer
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'mobile-close-btn';
+    closeBtn.setAttribute('aria-label', 'Fermer le menu');
+    closeBtn.textContent = '×';
+    overlay.appendChild(closeBtn);
+
+    // Liens de navigation
+    var links = [
+        { href: '#product',    label: 'Produit' },
+        { href: '#conformite', label: 'Conformité' },
+        { href: '#pricing',    label: 'Tarifs' },
+        { href: '#faq',        label: 'FAQ' },
+        { href: '#entreprise', label: 'Entreprise' },
+        { href: '#contact',    label: 'Contact' }
+    ];
+    links.forEach(function (l) {
+        var a = document.createElement('a');
+        a.href = l.href;
+        a.textContent = l.label;
+        overlay.appendChild(a);
+    });
+
+    // Sélecteur de langue
+    var langDiv = document.createElement('div');
+    langDiv.className = 'mobile-lang-switcher';
+    [{ href: 'index.html', label: 'FR', active: true },
+     { href: 'index-nl.html', label: 'NL', active: false },
+     { href: 'index-en.html', label: 'EN', active: false }].forEach(function (l) {
+        var a = document.createElement('a');
+        a.href = l.href;
+        a.textContent = l.label;
+        if (l.active) a.className = 'active';
+        langDiv.appendChild(a);
+    });
+    overlay.appendChild(langDiv);
+
+    document.body.appendChild(overlay);
+
+    function openMenu() {
+        overlay.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        overlay.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     }
 
-    mobileToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        mobileToggle.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        overlay.classList.contains('open') ? closeMenu() : openMenu();
     });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeMenu);
     });
-
-    document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
-            navLinks.classList.remove('open');
-            mobileToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        }
-    });
-}
+}());
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

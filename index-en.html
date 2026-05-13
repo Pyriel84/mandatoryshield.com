@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Active Directory Security Audit | Mandatory Shield</title>
   <meta name="description" content="European Active Directory audit platform. 197 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance. On-site intervention included." />
-  <meta name="keywords" content="Active Directory security, NIS2 compliance, ISO 27001, cybersecurity SaaS, AD audit, GDPR, CIS Controls, enterprise IT security" />
-  <meta property="og:title" content="ADSecure Report™ | Mandatory Shield" />
+  <meta name="keywords" content="Active Directory audit, Active Directory security, AD security audit platform, NIS2 compliance, ISO 27001 Active Directory, GDPR IT security, CIS Controls v8, ANSSI, DORA compliance, cybersecurity Belgium, enterprise cybersecurity software, IT infrastructure protection, Windows Server security audit, Kerberos security, GPO audit, Azure AD security, Entra ID audit, B2B cybersecurity SaaS, AD audit software pricing, SME security solution, Mandatory Shield, ADSecure">  <meta property="og:title" content="ADSecure Report™ | Mandatory Shield" />
   <meta property="og:description" content="The first European Active Directory audit platform. 197 security controls, 7 regulatory reports, NIS2 & ISO 27001 compliant." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mandatoryshield.com/en" />
@@ -256,36 +255,25 @@
     .badge-integrated{ background: #ede9fe; color: #6d28d9; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
     .badge-compliant { background: #fef3c7; color: #92400e; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
 
+    .mobile-nav-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(255,255,255,0.98); flex-direction:column; justify-content:center; align-items:center; gap:1.5rem; z-index:9999; }
+    .mobile-nav-overlay.open { display:flex; }
+    .mobile-nav-overlay a { font-size:1.2rem; font-weight:600; color:var(--navy); text-decoration:none; padding:0.5rem 1rem; }
+    .mobile-nav-overlay a:hover { color:var(--teal); }
+    .mobile-nav-overlay .mobile-lang-switcher { display:flex; gap:0.75rem; margin-top:0.5rem; }
+    .mobile-nav-overlay .mobile-lang-switcher a { font-size:0.9rem; padding:6px 16px; border-radius:6px; border:1px solid var(--border); background:white; color:var(--muted); }
+    .mobile-nav-overlay .mobile-lang-switcher a.active, .mobile-nav-overlay .mobile-lang-switcher a:hover { background:var(--teal); color:white; border-color:var(--teal); }
+    .mobile-close-btn { position:absolute; top:1.25rem; right:1.25rem; background:none; border:none; font-size:2rem; cursor:pointer; color:var(--teal); line-height:1; }
+
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100vh;
-        background: rgba(255,255,255,0.98);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        z-index: 9999;
-        font-size: 1.25rem;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links.open::before {
-        content: '×';
-        position: absolute;
-        top: 1.5rem; right: 1.5rem;
-        font-size: 2rem; cursor: pointer;
-        color: var(--teal); pointer-events: none;
-      }
-      .lang-switcher { display: flex !important; gap: 0.75rem; margin-top: 1rem; }
-      .nav-right .lang-switcher { display: none !important; }
+      .nav-links { display: none; }
+      .nav-right .lang-switcher { display: none; }
       .nav-right .btn-nav { display: none; }
-      .mobile-toggle { display: flex; z-index: 10000; }
+      .mobile-toggle { display: flex; z-index: 200; }
       .hero { padding: 4rem 1.5rem 3rem; }
       section { padding: 3.5rem 1.5rem; }
       .contact-grid { grid-template-columns: 1fr; }
     }
+    @media (min-width: 769px) { .mobile-nav-overlay { display: none !important; } }
   </style>
 </head>
 <body>
