@@ -153,8 +153,8 @@ const chatbotMessages = document.getElementById('chatbotMessages');
 const knowledgeBase = {
     'prix':       'ADSecure propose trois offres : Essential à 6 900 €/an (4 audits/an), Professional à 14 900 €/an (audits illimités + Azure AD), et Enterprise sur devis.',
     'tarif':      'ADSecure propose trois offres : Essential à 6 900 €/an, Professional à 14 900 €/an, et Enterprise sur devis.',
-    'nis2':       'Oui, ADSecure est conforme NIS2 avec 87% de couverture. Chaque contrôle est mappé aux articles de la directive NIS2.',
-    'conformité': 'ADSecure couvre NIS2 (87%), ISO 27001 (79%), CIS Controls (91%), RGPD (72%), Cyfun (83%) et DORA (68%).',
+    'nis2':       'Oui, ADSecure est entièrement conforme NIS2. Chaque contrôle est mappé aux articles de la directive NIS2 (UE 2022/2555, obligatoire depuis octobre 2024).',
+    'conformité': 'ADSecure couvre intégralement : NIS2 (Couvert), ISO 27001 (Aligné), CIS Controls v8 (Intégré), RGPD (Conforme), Cyfun/CCB (Aligné) et DORA (Couvert).',
     'cloud':      'Non. ADSecure fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
     'données':    'Non. ADSecure fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
     'démo':       'Nous ne proposons pas d\'essai gratuit. Cependant, nous organisons des rendez-vous personnalisés. Contactez-nous à contact@mandatoryshield.com',
@@ -236,21 +236,36 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 
 // Mobile Menu
 const mobileToggle = document.querySelector('.mobile-toggle');
-mobileToggle.addEventListener('click', function () {
-    const nav = document.querySelector('.nav-links');
-    const isOpen = nav.classList.toggle('nav-open');
-    this.setAttribute('aria-expanded', isOpen);
-    this.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-});
+const navLinks = document.querySelector('.nav-links');
+const langSwitcher = document.querySelector('.nav-right .language-switcher');
 
-// Fermer le menu mobile après navigation
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.remove('nav-open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.setAttribute('aria-label', 'Ouvrir le menu');
+if (mobileToggle && navLinks) {
+    if (langSwitcher && window.innerWidth <= 768) {
+        navLinks.appendChild(langSwitcher.cloneNode(true));
+    }
+
+    mobileToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-});
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+            navLinks.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
