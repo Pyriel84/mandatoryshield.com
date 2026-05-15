@@ -317,19 +317,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Formulaire contact - empêche la soumission native (pas de backend, form-action 'none' dans CSP)
+// Formulaire contact — envoi réel via Web3Forms
 const contactForm = document.querySelector('.contact-form-list');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    let formLoadTime = Date.now();
+    contactForm.addEventListener('focusin', () => { formLoadTime = Date.now(); }, { once: true });
+
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = contactForm.querySelector('[type="submit"]');
-        btn.textContent = '✓ Message envoyé !';
+
+        // Anti-spam : honeypot rempli = bot
+        if (contactForm.querySelector('[name="botcheck"]')?.checked) return;
+        // Anti-spam : soumission trop rapide (< 3s) = bot
+        if (Date.now() - formLoadTime < 3000) return;
+
+        const originalText = btn.textContent;
+        btn.textContent = 'Envoi en cours…';
         btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = 'Envoyer la demande →';
+
+        const data = {
+            access_key: '3c274a60-edf8-408f-aa59-5589d5e22f2b',
+            subject: 'Nouveau contact — ' + (contactForm.querySelector('[name="subject"]')?.value || 'Demande'),
+            from_name: 'Mandatory Shield Website',
+            name: contactForm.querySelector('[name="name"]')?.value || '',
+            email: contactForm.querySelector('[name="email"]')?.value || '',
+            company: contactForm.querySelector('[name="company"]')?.value || '',
+            message: contactForm.querySelector('[name="message"]')?.value || ''
+        };
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const json = await res.json();
+            if (json.success) {
+                btn.textContent = '✓ Message envoyé !';
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 4000);
+            } else {
+                throw new Error(json.message || 'Erreur serveur');
+            }
+        } catch (err) {
+            btn.textContent = '✗ Erreur — réessayez';
             btn.disabled = false;
-            contactForm.reset();
-        }, 3000);
+            setTimeout(() => { btn.textContent = originalText; }, 4000);
+        }
     });
 }
 

@@ -134,3 +134,55 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
   }());
 });
+
+// Contactformulier — echte verzending via Web3Forms
+const contactForm = document.querySelector('.contact-form-list');
+if (contactForm) {
+    let formLoadTime = Date.now();
+    contactForm.addEventListener('focusin', () => { formLoadTime = Date.now(); }, { once: true });
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('[type="submit"]');
+
+        if (contactForm.querySelector('[name="botcheck"]')?.checked) return;
+        if (Date.now() - formLoadTime < 3000) return;
+
+        const originalText = btn.textContent;
+        btn.textContent = 'Verzenden…';
+        btn.disabled = true;
+
+        const data = {
+            access_key: '3c274a60-edf8-408f-aa59-5589d5e22f2b',
+            subject: 'Nieuw contact — ' + (contactForm.querySelector('[name="subject"]')?.value || 'Aanvraag'),
+            from_name: 'Mandatory Shield Website',
+            name: contactForm.querySelector('[name="name"]')?.value || '',
+            email: contactForm.querySelector('[name="email"]')?.value || '',
+            company: contactForm.querySelector('[name="company"]')?.value || '',
+            message: contactForm.querySelector('[name="message"]')?.value || ''
+        };
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const json = await res.json();
+            if (json.success) {
+                btn.textContent = '✓ Bericht verzonden!';
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 4000);
+            } else {
+                throw new Error(json.message || 'Serverfout');
+            }
+        } catch (err) {
+            btn.textContent = '✗ Fout — probeer opnieuw';
+            btn.disabled = false;
+            setTimeout(() => { btn.textContent = originalText; }, 4000);
+        }
+    });
+}
