@@ -337,7 +337,7 @@ if (contactForm) {
         btn.disabled = true;
 
         const data = {
-            access_key: '3c274a60-edf8-408f-aa59-5589d5e22f2b',
+            access_key: '7aa759a1-7d56-4c93-821e-c7d0ab4cf63e',
             subject: 'Nouveau contact — ' + (contactForm.querySelector('[name="subject"]')?.value || 'Demande'),
             from_name: 'Mandatory Shield Website',
             name: contactForm.querySelector('[name="name"]')?.value || '',
