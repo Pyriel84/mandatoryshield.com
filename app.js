@@ -128,7 +128,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-if (prefersReducedMotion) {
+if (prefersReducedMotion || window.innerWidth < 768) {
     canvas.style.display = 'none';
 } else {
     initParticles();
