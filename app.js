@@ -272,9 +272,9 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     // Sélecteur de langue
     var langDiv = document.createElement('div');
     langDiv.className = 'mobile-lang-switcher';
-    [{ href: 'index.html', label: 'FR', active: true },
+    [{ href: 'index-fr.html', label: 'FR', active: true },
      { href: 'index-nl.html', label: 'NL', active: false },
-     { href: 'index-en.html', label: 'EN', active: false }].forEach(function (l) {
+     { href: 'index.html', label: 'EN', active: false }].forEach(function (l) {
         var a = document.createElement('a');
         a.href = l.href;
         a.textContent = l.label;

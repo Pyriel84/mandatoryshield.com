@@ -115,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var langDiv = document.createElement('div');
     langDiv.className = 'mobile-lang-switcher';
-    [{ href: 'index.html', label: 'FR' },
+    [{ href: 'index-fr.html', label: 'FR' },
      { href: 'index-nl.html', label: 'NL', active: true },
-     { href: 'index-en.html', label: 'EN' }].forEach(function (l) {
+     { href: 'index.html', label: 'EN' }].forEach(function (l) {
       var a = document.createElement('a');
       a.href = l.href; a.textContent = l.label;
       if (l.active) a.className = 'active';

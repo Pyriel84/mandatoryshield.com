@@ -30,6 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var targets = ['back-link', 'footer-back-link'].map(function (id) { return document.getElementById(id); });
   var dest = 'index.html';
   if (ref.includes('index-nl.html') || ref.includes('/nl')) dest = 'index-nl.html';
-  else if (ref.includes('index-en.html') || ref.includes('/en')) dest = 'index-en.html';
+  else if (ref.includes('index-fr.html') || ref.includes('/fr')) dest = 'index-fr.html';
   targets.forEach(function (el) { if (el) el.href = dest; });
 });

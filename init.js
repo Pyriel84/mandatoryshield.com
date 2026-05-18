@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Charger la langue sauvegardée
-    const savedLang = localStorage.getItem('ms_lang') || 'fr';
+    const savedLang = localStorage.getItem('ms_lang') || 'en';
     applyLang(savedLang);
     
     // Ajouter les event listeners aux boutons de langue
