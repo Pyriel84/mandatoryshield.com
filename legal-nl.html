@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juridische Documenten | Mandatory Shield Company</title>
+  <meta name="description" content="Privacybeleid, gebruiksvoorwaarden, algemene verkoopvoorwaarden en wettelijke vermeldingen van Mandatory Shield Company SRL, Brussel, België." />
+  <meta name="robots" content="noindex, follow" />
+  <style>
+    :root {
+      --teal: #0d9488;
+      --teal-dark: #0f766e;
+      --teal-subtle: #f0fdfa;
+      --teal-light: #ccfbf1;
+      --navy: #0f172a;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f9f8f5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* NAV */
+    nav { background: rgba(249,248,245,0.97); border-bottom: 1px solid var(--border); padding: 0 2rem; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-icon { width: 32px; height: 32px; background: var(--teal); border-radius: 7px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 12px; }
+    .nav-logo-text { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    .nav-back { color: var(--muted); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: var(--teal); }
+
+    /* TABS */
+    .tabs-wrapper { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 99; }
+    .tabs { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; gap: 0; padding: 0 2rem; scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { padding: 1rem 1.5rem; border: none; background: none; cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; transition: all .2s; font-family: inherit; }
+    .tab-btn:hover { color: var(--teal); }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+    /* CONTENT */
+    .content-wrapper { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .doc-section { display: none; }
+    .doc-section.active { display: block; }
+
+    .doc-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--teal-light); }
+    .doc-header h1 { font-size: 1.9rem; font-weight: 800; color: var(--navy); margin-bottom: .5rem; }
+    .doc-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+    .doc-meta-item { font-size: 0.82rem; color: var(--muted); }
+    .doc-meta-item strong { color: var(--text); }
+
+    .doc-toc { background: var(--teal-subtle); border: 1px solid var(--teal-light); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+    .doc-toc h3 { font-size: 0.88rem; font-weight: 700; color: var(--teal-dark); margin-bottom: .75rem; text-transform: uppercase; letter-spacing: .05em; }
+    .doc-toc ol { padding-left: 1.25rem; display: flex; flex-direction: column; gap: 5px; }
+    .doc-toc ol li a { color: var(--teal-dark); text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    .doc-toc ol li a:hover { text-decoration: underline; }
+
+    h2.legal-h2 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 2.25rem 0 .75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    h2.legal-h2:first-of-type { border-top: none; margin-top: 0; }
+    h3.legal-h3 { font-size: 1rem; font-weight: 700; color: var(--teal-dark); margin: 1.25rem 0 .5rem; }
+    p.legal-p { color: var(--text); font-size: 0.93rem; margin-bottom: .85rem; }
+    ul.legal-ul, ol.legal-ol { padding-left: 1.5rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 5px; }
+    ul.legal-ul li, ol.legal-ol li { font-size: 0.9rem; color: var(--text); }
+    .legal-highlight { background: var(--teal-subtle); border-left: 4px solid var(--teal); padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.9rem; }
+    .legal-warning { background: #fef9ec; border-left: 4px solid #f59e0b; padding: .75rem 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: 0.9rem; color: #78350f; }
+    table.legal-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    table.legal-table th { background: var(--teal); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+    table.legal-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    table.legal-table tr:nth-child(even) td { background: var(--bg); }
+    .legal-date-box { display: inline-block; background: var(--teal-light); color: var(--teal-dark); padding: 4px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+
+    /* FOOTER */
+    .legal-footer { background: var(--navy); color: #64748b; text-align: center; padding: 2rem; font-size: 0.82rem; margin-top: 4rem; }
+    .legal-footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index-nl.html" class="nav-logo">
+      <div class="nav-logo-icon">MS</div>
+      <span class="nav-logo-text">MANDATORY SHIELD</span>
+    </a>
+    <a href="index-nl.html" class="nav-back" id="back-link">← Terug naar site</a>
+  </div>
+</nav>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="privacy">🔒 Privacybeleid</button>
+    <button class="tab-btn" data-tab="cgu">📄 Gebruiksvoorwaarden</button>
+    <button class="tab-btn" data-tab="cgv">🛒 Algemene Verkoopvoorwaarden</button>
+    <button class="tab-btn" data-tab="mentions">🏢 Wettelijke Vermeldingen</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+  <!-- ===================== PRIVACYBELEID ===================== -->
+  <div id="privacy" class="doc-section active">
+    <div class="doc-header">
+      <div class="legal-date-box">Laatste update: 1 mei 2025</div>
+      <h1>Privacybeleid</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — conform de AVG (EU 2016/679)</p>
+      <div class="doc-meta">
+        <div class="doc-meta-item"><strong>Verwerkingsverantwoordelijke:</strong> Mandatory Shield Company SRL</div>
+        <div class="doc-meta-item"><strong>DPO:</strong> contact@mandatoryshield.com</div>
+        <div class="doc-meta-item"><strong>Versie:</strong> 1.0</div>
+      </div>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Inhoudsopgave</h3>
+      <ol>
+        <li><a href="#p1">Identiteit van de verwerkingsverantwoordelijke</a></li>
+        <li><a href="#p2">Verzamelde gegevens en doeleinden</a></li>
+        <li><a href="#p3">Rechtsgrondslag voor verwerking</a></li>
+        <li><a href="#p4">Bewaartermijnen</a></li>
+        <li><a href="#p5">Ontvangers van gegevens</a></li>
+        <li><a href="#p6">Doorgifte buiten de EU</a></li>
+        <li><a href="#p7">Uw rechten</a></li>
+        <li><a href="#p8">Gegevensbeveiliging</a></li>
+        <li><a href="#p9">Cookies</a></li>
+        <li><a href="#p10">Contact en klachten</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="p1">1. Identiteit van de verwerkingsverantwoordelijke</h2>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL</strong><br/>
+    Maatschappelijke zetel: Brussel, België (Europese Unie)<br/>
+    KBO-ondernemingsnummer: <em>in behandeling (vennootschap in oprichting)</em><br/>
+    BTW-nummer: <em>in behandeling</em><br/>
+    E-mail: contact@mandatoryshield.com<br/>
+    Website: www.mandatoryshield.com</p>
+
+    <h2 class="legal-h2" id="p2">2. Verzamelde gegevens en doeleinden</h2>
+
+    <h3 class="legal-h3">2.1 Via de website verzamelde gegevens</h3>
+    <table class="legal-table">
+      <tr><th>Gegevenscategorie</th><th>Betrokken gegevens</th><th>Doel</th><th>Rechtsgrondslag</th></tr>
+      <tr><td>Identificatiegegevens</td><td>Voornaam, achternaam, bedrijfsnaam</td><td>Klantrelatiebeheer, opstellen van contracten en facturen</td><td>Uitvoering van overeenkomst (Art. 6.1.b AVG)</td></tr>
+      <tr><td>Contactgegevens</td><td>Professioneel e-mailadres, telefoonnummer</td><td>Commerciële communicatie, ondersteuning, regelgevende meldingen</td><td>Gerechtvaardigd belang (Art. 6.1.f AVG)</td></tr>
+      <tr><td>Browsegegevens</td><td>IP-adres, bezochte pagina's, sessieduur, browser</td><td>Publieksanalyse, verbetering van de site, beveiliging</td><td>Toestemming (Art. 6.1.a AVG) via cookiebanner</td></tr>
+      <tr><td>Contactformuliergegevens</td><td>Bericht, uitgesproken interesse, bedrijf</td><td>Verwerking van commerciële en ondersteuningsverzoeken</td><td>Precontractuele maatregelen (Art. 6.1.b AVG)</td></tr>
+    </table>
+
+    <h3 class="legal-h3">2.2 Gegevens verwerkt in het kader van de ADSecure Report™-dienst</h3>
+    <div class="legal-highlight">
+      <strong>Fundamenteel principe — Nul persoonlijke gegevens doorgestuurd:</strong> ADSecure Report™ werkt uitsluitend in <em>on-premise</em> modus. De scan bevraagt uitsluitend <strong>technische Active Directory-configuratiegegevens</strong> (GPO-instellingen, beveiligingsattributen van objecten, protocolconfiguratie, auditbeleid…). Deze gegevens zijn zuiver technisch van aard en vormen geen persoonsgegevens in de zin van de AVG bij gebruik door ADSecure. <strong>Er worden geen gegevens naar de servers van Mandatory Shield Company doorgestuurd.</strong> Deze garantie is architecturaal, niet louter contractueel.
+    </div>
+    <p class="legal-p">ADSecure Report™ <strong>verzamelt, slaat niet op en verwerkt niet</strong> de persoonsgegevens van eindgebruikers die aanwezig zijn in de directory (namen, e-mailadressen, enz.). Het hulpmiddel analyseert geaggregeerde beveiligingsattributen (accounts met buitensporige privileges, wachtwoordbeleid, delegaties…) zonder ooit individuele nominatieve identificatoren te extraheren of te loggen.</p>
+    <p class="legal-p">De gegenereerde rapporten (HTML-bestanden) blijven volledig binnen de IT-omgeving van de klant. Mandatory Shield Company heeft geen toegang tot de inhoud ervan, tenzij de klant deze vrijwillig doorzendt in het kader van een technisch ondersteuningsverzoek.</p>
+    <p class="legal-p">Bij interventies ter plaatse kunnen consultants van Mandatory Shield Company tijdelijk AD-configuratie-instellingen op het scherm bekijken. Deze informatie valt onder de geheimhoudingsovereenkomst (NDA) die systematisch voor elke interventie wordt ondertekend, en wordt niet geëxtraheerd, gekopieerd of extern bewaard.</p>
+    <div class="legal-warning">
+      <strong>AVG-kwalificatie:</strong> Gezien de uitsluitend technische aard van de gegevens die door ADSecure Report™ worden geanalyseerd, kan Mandatory Shield Company SRL niet worden gekwalificeerd als "verwerkingsverantwoordelijke" noch als "verwerker" in de zin van Artikelen 4(7) en 4(8) van de AVG met betrekking tot de uitvoering van de scan. De klant blijft als enige verantwoordelijk voor de verwerking van eventuele persoonsgegevens die aanwezig zijn in zijn Active Directory.
+    </div>
+
+    <h2 class="legal-h2" id="p3">3. Rechtsgrondslag voor verwerking</h2>
+    <ul class="legal-ul">
+      <li><strong>Art. 6.1.a AVG (Toestemming):</strong> analytische cookies, opt-in marketingcommunicatie.</li>
+      <li><strong>Art. 6.1.b AVG (Uitvoering van overeenkomst):</strong> verwerking van bestellingen, licentiebeheer, facturering, platformtoegang.</li>
+      <li><strong>Art. 6.1.c AVG (Wettelijke verplichting):</strong> bewaring van boekhoudkundige stukken (Art. III.86 Belgisch Wetboek van economisch recht), fiscale BTW-verplichtingen.</li>
+      <li><strong>Art. 6.1.f AVG (Gerechtvaardigd belang):</strong> websitebeveiliging, fraudepreventie, B2B-prospectie bij bestaande professionele contacten.</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p4">4. Bewaartermijnen</h2>
+    <table class="legal-table">
+      <tr><th>Categorie</th><th>Termijn</th><th>Grondslag</th></tr>
+      <tr><td>Actieve klantgegevens (contracten, licenties)</td><td>Duur van het contract + 5 jaar</td><td>Belgische contractuele verjaringstermijn (Art. 2262bis Burgerlijk Wetboek)</td></tr>
+      <tr><td>Boekhoudkundige gegevens en facturen</td><td>7 jaar</td><td>Art. III.86 Belgisch Wetboek van economisch recht</td></tr>
+      <tr><td>Prospectgegevens (zonder aankoop)</td><td>3 jaar na laatste contact</td><td>Aanbeveling van de Belgische GBA</td></tr>
+      <tr><td>Browsegegevens (analytische cookies)</td><td>Maximaal 13 maanden</td><td>Aanbeveling van de Belgische GBA</td></tr>
+      <tr><td>Beveiligingslogs</td><td>12 maanden</td><td>Gerechtvaardigd belang</td></tr>
+      <tr><td>Sollicitaties (rekrutering)</td><td>2 jaar</td><td>Aanbeveling van de Belgische GBA</td></tr>
+    </table>
+
+    <h2 class="legal-h2" id="p5">5. Ontvangers van gegevens</h2>
+    <p class="legal-p">Mandatory Shield Company verkoopt noch verhuurt uw persoonsgegevens aan derden. Gegevens kunnen worden gedeeld met de volgende categorieën van verwerkers, gebonden door verwerkingsovereenkomsten conform Art. 28 AVG:</p>
+    <ul class="legal-ul">
+      <li><strong>Webhostingprovider:</strong> Scaleway SAS (Frankrijk, EU) — hosting van mandatoryshield.com</li>
+      <li><strong>Professioneel berichtentool:</strong> interne EU-gebaseerde provider</li>
+      <li><strong>Boekhouding en facturering:</strong> erkend Belgisch boekhoudkantoor</li>
+      <li><strong>Overheidsinstanties:</strong> uitsluitend op wettelijke vordering</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p6">6. Doorgifte buiten de Europese Unie</h2>
+    <p class="legal-p">Mandatory Shield Company verbindt zich ertoe uw persoonsgegevens niet buiten de Europese Economische Ruimte (EER) door te geven zonder passende waarborgen. Indien een doorgifte noodzakelijk zou zijn, zou deze worden geregeld door Standaard Contractuele Bepalingen (SCB) die door de Europese Commissie zijn goedgekeurd of een adequaatheidsbesluit.</p>
+    <div class="legal-highlight">Onze hostinginfrastructuur bevindt zich volledig binnen de Europese Unie (Scaleway, Frankrijk).</div>
+
+    <h2 class="legal-h2" id="p7">7. Uw rechten</h2>
+    <p class="legal-p">Overeenkomstig de AVG en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens beschikt u over de volgende rechten:</p>
+    <table class="legal-table">
+      <tr><th>Recht</th><th>Beschrijving</th></tr>
+      <tr><td><strong>Recht op inzage</strong> (Art. 15 AVG)</td><td>Bevestiging van verwerking en een kopie van uw gegevens verkrijgen</td></tr>
+      <tr><td><strong>Recht op rectificatie</strong> (Art. 16 AVG)</td><td>Onjuiste of onvolledige gegevens laten corrigeren</td></tr>
+      <tr><td><strong>Recht op wissing</strong> (Art. 17 AVG)</td><td>Verwijdering van uw gegevens vragen onder bepaalde voorwaarden</td></tr>
+      <tr><td><strong>Recht op beperking</strong> (Art. 18 AVG)</td><td>Tijdelijke opschorting van een verwerking vragen</td></tr>
+      <tr><td><strong>Recht op overdraagbaarheid</strong> (Art. 20 AVG)</td><td>Uw gegevens ontvangen in een gestructureerd, machineleesbaar formaat</td></tr>
+      <tr><td><strong>Recht van bezwaar</strong> (Art. 21 AVG)</td><td>Bezwaar maken tegen verwerking op basis van gerechtvaardigd belang of voor direct marketing</td></tr>
+      <tr><td><strong>Intrekking van toestemming</strong> (Art. 7 AVG)</td><td>Uw toestemming te allen tijde intrekken zonder terugwerkende kracht</td></tr>
+    </table>
+    <p class="legal-p"><strong>Om uw rechten uit te oefenen:</strong> Stuur uw schriftelijk verzoek naar <a href="mailto:contact@mandatoryshield.com" style="color:var(--teal)">contact@mandatoryshield.com</a> met bewijs van identiteit. Wij antwoorden binnen één maand (verlengbaar met twee maanden voor complexe verzoeken).</p>
+    <p class="legal-p"><strong>Klachtrecht:</strong> U kunt een klacht indienen bij de <strong>Belgische Gegevensbeschermingsautoriteit (GBA)</strong>: Drukpersstraat 35, 1000 Brussel — <a href="https://www.gegevensbeschermingsautoriteit.be" style="color:var(--teal)" target="_blank" rel="noopener">www.gegevensbeschermingsautoriteit.be</a></p>
+
+    <h2 class="legal-h2" id="p8">8. Gegevensbeveiliging</h2>
+    <p class="legal-p">Mandatory Shield Company implementeert passende technische en organisatorische maatregelen om uw persoonsgegevens te beschermen, waaronder:</p>
+    <ul class="legal-ul">
+      <li>Communicaties versleuteld met minimaal TLS 1.2 (HTTPS verplicht)</li>
+      <li>Gegevens versleuteld in rust</li>
+      <li>Toegang tot gegevens beperkt tot bevoegd personeel op basis van het least-privilege-principe</li>
+      <li>Multi-factor authenticatie (MFA) op alle interne systemen</li>
+      <li>Procedure voor melding van datalekken (Art. 33-34 AVG): melding aan GBA binnen 72 uur, kennisgeving aan betrokkenen bij hoog risico</li>
+      <li>Regelmatige penetratietests en beveiligingsaudits</li>
+    </ul>
+
+    <h2 class="legal-h2" id="p9">9. Cookies</h2>
+    <h3 class="legal-h3">9.1 Strikt noodzakelijke cookies</h3>
+    <p class="legal-p">Deze cookies zijn essentieel voor de werking van de website en kunnen niet worden uitgeschakeld. Ze vereisen uw toestemming niet.</p>
+    <table class="legal-table">
+      <tr><th>Cookie</th><th>Duur</th><th>Doel</th></tr>
+      <tr><td>session_id</td><td>Sessie</td><td>Handhaving van de gebruikerssessie</td></tr>
+      <tr><td>csrf_token</td><td>Sessie</td><td>Bescherming tegen CSRF-aanvallen</td></tr>
+      <tr><td>cookie_consent</td><td>12 maanden</td><td>Onthouden van uw toestemmingskeuze</td></tr>
+    </table>
+    <h3 class="legal-h3">9.2 Analytische cookies (onderworpen aan toestemming)</h3>
+    <p class="legal-p">Deze cookies stellen ons in staat het publiek te meten en onze website te verbeteren. Ze worden alleen geactiveerd na uw uitdrukkelijke toestemming via onze cookiebanner.</p>
+    <p class="legal-p">U kunt uw toestemming te allen tijde beheren of intrekken via de cookie-instellingen die toegankelijk zijn in de voettekst.</p>
+
+    <h2 class="legal-h2" id="p10">10. Contact en klachten</h2>
+    <p class="legal-p">Voor vragen over dit beleid of om uw rechten uit te oefenen:</p>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL — Functionaris voor Gegevensbescherming</strong><br/>
+    E-mail: <a href="mailto:contact@mandatoryshield.com" style="color:var(--teal)">contact@mandatoryshield.com</a><br/>
+    Onderwerp: [AVG] – Onderwerp van uw verzoek</p>
+    <p class="legal-p">Dit beleid kan worden bijgewerkt. Elke substantiële wijziging wordt vooraf per e-mail meegedeeld aan actieve klanten. De datum van de laatste update staat bovenaan dit document.</p>
+  </div>
+
+
+  <!-- ===================== GEBRUIKSVOORWAARDEN ===================== -->
+  <div id="cgu" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Versie 1.0 — Van kracht sinds 1 mei 2025</div>
+      <h1>Gebruiksvoorwaarden</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — Website mandatoryshield.com en ADSecure Report™-platform</p>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Inhoudsopgave</h3>
+      <ol>
+        <li><a href="#u1">Doel en toepassingsgebied</a></li>
+        <li><a href="#u2">Aanvaarding van de voorwaarden</a></li>
+        <li><a href="#u3">Toegang tot de site en het platform</a></li>
+        <li><a href="#u4">Intellectuele eigendom</a></li>
+        <li><a href="#u5">Verplichtingen van de gebruiker</a></li>
+        <li><a href="#u6">Aansprakelijkheid</a></li>
+        <li><a href="#u7">Hyperlinks</a></li>
+        <li><a href="#u8">Toepasselijk recht en bevoegde rechtbank</a></li>
+        <li><a href="#u9">Wijziging van de gebruiksvoorwaarden</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="u1">1. Doel en toepassingsgebied</h2>
+    <p class="legal-p">Deze Gebruiksvoorwaarden (hierna "GV") regelen de toegang tot en het gebruik van de website <strong>www.mandatoryshield.com</strong> (hierna "de Site") gepubliceerd door <strong>Mandatory Shield Company SRL</strong>, een vennootschap naar Belgisch recht met maatschappelijke zetel te Brussel, België, momenteel in oprichting bij de Kruispuntbank van Ondernemingen.</p>
+    <p class="legal-p">Deze GV zijn van toepassing op alle bezoekers en gebruikers van de Site. Ze zijn los te zien van de Algemene Verkoopvoorwaarden (AVW) die commerciële contractuele relaties regelen, en van de softwarelicentie voor ADSecure Report™.</p>
+
+    <h2 class="legal-h2" id="u2">2. Aanvaarding van de voorwaarden</h2>
+    <p class="legal-p">Toegang tot en gebruik van de Site impliceert de volledige en onvoorwaardelijke aanvaarding van deze GV. Als u deze voorwaarden niet aanvaardt, dient u het gebruik van de Site onmiddellijk te staken.</p>
+    <p class="legal-p">In geval van tegenstrijdigheid tussen deze GV en bijzondere voorwaarden die van toepassing zijn op bepaalde diensten, prevaleren de bijzondere voorwaarden.</p>
+
+    <h2 class="legal-h2" id="u3">3. Toegang tot de site en het platform</h2>
+    <h3 class="legal-h3">3.1 Beschikbaarheid</h3>
+    <p class="legal-p">Mandatory Shield Company streeft ernaar de Site 24/7 beschikbaar te houden. Mandatory Shield Company behoudt zich echter het recht voor de toegang tijdelijk te onderbreken voor onderhoud, updates of overmacht, zonder daarvoor aansprakelijk te zijn.</p>
+    <h3 class="legal-h3">3.2 Aanmaken van een account</h3>
+    <p class="legal-p">Bepaalde diensten vereisen het aanmaken van een gebruikersaccount. De gebruiker verbindt zich ertoe nauwkeurige, volledige en actuele informatie te verstrekken, de vertrouwelijkheid van zijn inloggegevens te bewaren en Mandatory Shield Company onmiddellijk op de hoogte te stellen van elke ongeoorloofde toegang tot zijn account.</p>
+    <p class="legal-p">Mandatory Shield Company behoudt zich het recht voor elk account te schorsen of te beëindigen bij schending van deze GV.</p>
+    <h3 class="legal-h3">3.3 Vereiste technische configuratie</h3>
+    <p class="legal-p">De gebruiker is verantwoordelijk voor de configuratie van zijn computerapparatuur voor toegang tot de Site. Mandatory Shield Company kan niet aansprakelijk worden gesteld voor toegangsproblemen die verband houden met de configuratie van de apparatuur van de gebruiker of zijn internetprovider.</p>
+
+    <h2 class="legal-h2" id="u4">4. Intellectuele eigendom</h2>
+    <p class="legal-p">Alle elementen van de Site en het ADSecure Report™-platform — met name teksten, grafische elementen, logo's, pictogrammen, afbeeldingen, screenshots, broncode, scoringalgoritmen, analysemotoren, beveiligingsregelbases, gegenereerde rapporten, handelsnamen en merken — zijn het exclusieve eigendom van <strong>Mandatory Shield Company SRL</strong> of haar licentiegevers.</p>
+    <p class="legal-p">Deze elementen zijn beschermd door Belgisch en Europees intellectueel eigendomsrecht, met name het <em>Belgisch Wetboek van economisch recht</em> (Boek XI), Richtlijn 2001/29/EG betreffende auteursrecht in de informatiemaatschappij en Richtlijn 2009/24/EG betreffende de rechtsbescherming van computerprogramma's.</p>
+    <div class="legal-warning">
+      <strong>Verboden handelingen:</strong> Elke reproductie, weergave, wijziging, verspreiding, decompilatie, reverse engineering, extractie van algoritmen of creatie van afgeleide werken op basis van ADSecure Report™ is strikt verboden zonder voorafgaande schriftelijke toestemming van Mandatory Shield Company SRL.
+    </div>
+    <p class="legal-p">Een persoonlijke, niet-exclusieve, niet-overdraagbare en herroepbare licentie voor gebruik van de Site wordt aan de gebruiker verleend uitsluitend voor raadpleging van de Site.</p>
+
+    <h2 class="legal-h2" id="u5">5. Verplichtingen van de gebruiker</h2>
+    <p class="legal-p">De gebruiker verbindt zich ertoe:</p>
+    <ul class="legal-ul">
+      <li>De Site en het platform te gebruiken overeenkomstig deze GV en de toepasselijke Belgische en Europese wetten</li>
+      <li>De intellectuele eigendomsrechten van Mandatory Shield Company niet te schenden</li>
+      <li>Niet te proberen de beveiligingsmaatregelen van de Site te omzeilen</li>
+      <li>De Site niet te gebruiken voor onwettige, frauduleuze of schadelijke doeleinden</li>
+      <li>Geen virussen, kwaadaardige code of inhoud te versturen die het functioneren van de Site kan schaden</li>
+      <li>De ADSecure Report™-software niet te reverse-engineeren, decompileren of disassembleren</li>
+      <li>Geen robots, scrapers of geautomatiseerde middelen te gebruiken om gegevens van de Site te verzamelen zonder voorafgaande schriftelijke toestemming</li>
+    </ul>
+    <p class="legal-p">Bij schending van deze verplichtingen behoudt Mandatory Shield Company zich het recht voor de toegang tot de Site en diensten onmiddellijk te schorsen en passende juridische stappen te ondernemen.</p>
+
+    <h2 class="legal-h2" id="u6">6. Aansprakelijkheid</h2>
+    <h3 class="legal-h3">6.1 Beperking van aansprakelijkheid van Mandatory Shield Company</h3>
+    <p class="legal-p">Informatie gepubliceerd op de Site wordt uitsluitend ter informatie verstrekt. Mandatory Shield Company garandeert niet de nauwkeurigheid, volledigheid of actualiteit van gepubliceerde informatie. Het gebruik van Site-informatie geschiedt volledig op eigen risico van de gebruiker.</p>
+    <p class="legal-p">ADSecure Report™ is een audit- en beslissingsondersteunend hulpmiddel. De verstrekte resultaten vormen geen absolute beveiligingsgarantie. Mandatory Shield Company kan niet aansprakelijk worden gesteld voor beveiligingsincidenten ondanks gebruik van de software, gegevensverlies, bedrijfsonderbreking of indirecte schade als gevolg van het gebruik of de onmogelijkheid om het platform te gebruiken.</p>
+    <h3 class="legal-h3">6.2 Overmacht</h3>
+    <p class="legal-p">Mandatory Shield Company kan niet aansprakelijk worden gesteld voor het niet nakomen van verplichtingen als gevolg van overmacht in de zin van Artikel 5.225 van het nieuwe Belgisch Burgerlijk Wetboek, waaronder grootschalige cyberaanvallen, internetinfrastructuurstoringen, natuurrampen of overheidsbesluiten.</p>
+
+    <h2 class="legal-h2" id="u7">7. Hyperlinks</h2>
+    <p class="legal-p">De Site kan links bevatten naar websites van derden. Deze links worden uitsluitend ter informatie verstrekt. Mandatory Shield Company oefent geen controle uit over de inhoud van deze sites en aanvaardt geen aansprakelijkheid voor hun inhoud, privacybeleid of praktijken.</p>
+    <p class="legal-p">Het aanmaken van hyperlinks naar de Site is toegestaan, op voorwaarde dat de link geen verwarring schept over de identiteit of activiteiten van Mandatory Shield Company en niet wordt gebruikt in een context die het imago van de vennootschap schaadt.</p>
+
+    <h2 class="legal-h2" id="u8">8. Toepasselijk recht en bevoegde rechtbank</h2>
+    <p class="legal-p">Deze GV worden beheerst door het <strong>Belgisch recht</strong>, met uitsluiting van zijn conflictenrechtregels, en worden daarnaar uitgelegd.</p>
+    <p class="legal-p">In geval van geschil over de interpretatie, geldigheid of uitvoering van deze GV, en bij gebrek aan minnelijke schikking binnen 30 dagen na kennisgeving van het geschil, verlenen de partijen exclusieve bevoegdheid aan de <strong>bevoegde rechtbanken van het gerechtelijk arrondissement Brussel</strong> (België).</p>
+
+    <h2 class="legal-h2" id="u9">9. Wijziging van de gebruiksvoorwaarden</h2>
+    <p class="legal-p">Mandatory Shield Company behoudt zich het recht voor deze GV op elk moment te wijzigen. Wijzigingen treden in werking bij publicatie op de Site. Gebruikers met een account worden per e-mail op de hoogte gesteld van elke substantiële wijziging ten minste 30 dagen voor deze van kracht wordt.</p>
+    <p class="legal-p">Voortgezet gebruik van de Site na wijziging van de GV geldt als aanvaarding van de nieuwe voorwaarden.</p>
+  </div>
+
+
+  <!-- ===================== ALGEMENE VERKOOPVOORWAARDEN ===================== -->
+  <div id="cgv" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Versie 1.0 — Van kracht sinds 1 mei 2025</div>
+      <h1>Algemene Verkoopvoorwaarden (AVW)</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Mandatory Shield Company SRL — Uitsluitend B2B-verkoop — Belgisch recht van toepassing</p>
+    </div>
+
+    <div class="doc-toc">
+      <h3>Inhoudsopgave</h3>
+      <ol>
+        <li><a href="#v1">Identificatie van de verkoper en toepassingsgebied</a></li>
+        <li><a href="#v2">Totstandkoming van de overeenkomst</a></li>
+        <li><a href="#v3">Omschrijving van aanbiedingen en diensten</a></li>
+        <li><a href="#v4">Prijzen, BTW en facturering</a></li>
+        <li><a href="#v5">Betalingsmodaliteiten</a></li>
+        <li><a href="#v6">Levering en interventie ter plaatse</a></li>
+        <li><a href="#v7">Softwarelicentie</a></li>
+        <li><a href="#v8">Duur, verlenging en beëindiging</a></li>
+        <li><a href="#v9">Garanties en ondersteuning</a></li>
+        <li><a href="#v10">Aansprakelijkheid en beperking</a></li>
+        <li><a href="#v11">Vertrouwelijkheid</a></li>
+        <li><a href="#v12">Toepasselijk recht en geschillen</a></li>
+      </ol>
+    </div>
+
+    <h2 class="legal-h2" id="v1">1. Identificatie van de verkoper en toepassingsgebied</h2>
+    <p class="legal-p"><strong>Mandatory Shield Company SRL</strong><br/>
+    Maatschappelijke zetel: Brussel, België (Europese Unie)<br/>
+    KBO-nummer: <em>in behandeling</em> | BTW: <em>in behandeling</em><br/>
+    Commercieel e-mail: contact@mandatoryshield.com</p>
+    <p class="legal-p">Deze Algemene Verkoopvoorwaarden (hierna "AVW") zijn uitsluitend van toepassing op verkopen en dienstverleningen gesloten tussen Mandatory Shield Company SRL (hierna "de Dienstverlener") en elke professionele koper (hierna "de Klant"), rechtspersoon of natuurlijke persoon handelend in het kader van zijn beroepsactiviteit.</p>
+    <div class="legal-warning"><strong>Deze AVW zijn uitsluitend van toepassing in een B2B-context.</strong> Ze zijn niet van toepassing op consumenten in de zin van het Belgisch consumentenrecht (Boek VI van het Wetboek van economisch recht).</div>
+    <p class="legal-p">Elke bestelling impliceert de volledige en onvoorwaardelijke aanvaarding van deze AVW, die prevaleren boven de algemene inkoopvoorwaarden van de Klant, tenzij schriftelijk anders overeengekomen en ondertekend door een wettelijke vertegenwoordiger van Mandatory Shield Company SRL.</p>
+
+    <h2 class="legal-h2" id="v2">2. Totstandkoming van de overeenkomst</h2>
+    <p class="legal-p">De overeenkomst komt tot stand via de volgende stappen:</p>
+    <ol class="legal-ol">
+      <li><strong>Aanvraag:</strong> De Klant dient een aanvraag in via de website of per e-mail.</li>
+      <li><strong>Offerte:</strong> Mandatory Shield Company stelt binnen 48 werkuren een gepersonaliseerde schriftelijke offerte op.</li>
+      <li><strong>Aanvaarding:</strong> De Klant ondertekent en retourneert de offerte, vergezeld van een bestelbon of formele aanvaarding per e-mail.</li>
+      <li><strong>Bevestiging:</strong> Mandatory Shield Company bevestigt ontvangst en plant de dienstverlening.</li>
+    </ol>
+    <p class="legal-p">De offerte is geldig gedurende 30 kalenderdagen vanaf de datum van uitgifte, tenzij uitdrukkelijk anders vermeld.</p>
+
+    <h2 class="legal-h2" id="v3">3. Omschrijving van aanbiedingen en diensten</h2>
+    <table class="legal-table">
+      <tr><th>Formule</th><th>Hoofdinhoud</th><th>Indicatieve prijs excl. BTW/jaar</th></tr>
+      <tr><td><strong>ONESHOT</strong></td><td>Eenmalige MSC-interventie ter plaatse, volledige scan (286 controles), alle 7 rapporten, SHA-256 gevalideerde uitvoering, expert debrief</td><td>2.400 €</td></tr>
+      <tr><td><strong>ESSENTIAL</strong></td><td>Alles van Oneshot + trendrapport, toegang tot software-updates, e-mailondersteuning. Doel: kmo's 20–200 gebruikers</td><td>6.900 €</td></tr>
+      <tr><td><strong>PROFESSIONAL</strong></td><td>Alles van Essential + ShieldConnect (6 SIEM-connectoren, JSON/CEF), onbeperkte scans, prioritaire telefoon + e-mailondersteuning, premium updates. Doel: ETI's 200–800 gebruikers</td><td>14.900 €</td></tr>
+    </table>
+    <p class="legal-p">Elke dienstverlening omvat systematisch een interventie ter plaatse door een consultant van Mandatory Shield Company, overeenkomstig de auditfilosofie van de vennootschap. Reiskosten voor interventies buiten het Brussels Hoofdstedelijk Gewest worden gefactureerd volgens de tarieflijst meegedeeld bij de offerte.</p>
+
+    <h2 class="legal-h2" id="v4">4. Prijzen, BTW en facturering</h2>
+    <p class="legal-p">Alle prijzen zijn uitgedrukt in euro (<strong>€</strong>), <strong>exclusief BTW (excl. BTW)</strong>. De toepasselijke BTW is die welke van kracht is in België tegen het wettelijke tarief op de datum van facturering (momenteel 21% op B2B IT-diensten in België, met inachtneming van de verleggingsregeling voor intracommunautaire BTW-plichtige entiteiten).</p>
+    <p class="legal-p">De factuur wordt uitgeschreven bij ondertekening van het contract of de bestelbon. Voor Oneshot: 10% voorschot bij ondertekening, 50% bij levering van de eerste rapporten, 50% bij levering van de eindrapportenrapporten. Voor jaarabonnementen (Essential / Professional): driemaandelijks gefactureerd. Er wordt geen pro-rata terugbetaling toegepast bij vroegtijdige beëindiging, tenzij uitdrukkelijk anders bepaald in het contract.</p>
+    <h3 class="legal-h3">Tariefherziening</h3>
+    <p class="legal-p">Tarieven kunnen jaarlijks worden herzien, ten vroegste op het moment van contractverval, met 60 dagen schriftelijke opzegtermijn. De herziening is beperkt tot de Belgische consumptieprijsindex (CPI) gepubliceerd door Statbel voor het voorgaande jaar, tenzij er een substantiële evolutie van het product is.</p>
+
+    <h2 class="legal-h2" id="v5">5. Betalingsmodaliteiten</h2>
+    <p class="legal-p"><strong>Betalingstermijn:</strong> Facturen zijn betaalbaar binnen <strong>30 dagen netto einde maand</strong> vanaf de uitgifte­datum, per bankoverschrijving naar de rekening van Mandatory Shield Company SRL waarvan de gegevens op de factuur vermeld staan.</p>
+    <p class="legal-p"><strong>Betalingsachterstand:</strong> Overeenkomstig de Belgische wet van 2 augustus 2002 betreffende de bestrijding van betalingsachterstand bij handelstransacties (omzetting van Richtlijn 2011/7/EU) brengt elke betalingsachterstand automatisch en zonder voorafgaande ingebrekestelling met zich mee:</p>
+    <ul class="legal-ul">
+      <li>Verwijlintresten tegen de ECB-referentierente verhoogd met 8 procentpunten</li>
+      <li>Een forfaitaire invorderingsvergoeding van <strong>40 €</strong> per onbetaalde factuur</li>
+      <li>Het recht om de toegang tot diensten te schorsen na een ingebrekestelling die 15 dagen zonder gevolg is gebleven</li>
+    </ul>
+    <p class="legal-p"><strong>Eigendomsvoorbehoud:</strong> De ADSecure Report™-software en verleende licenties blijven het exclusieve eigendom van Mandatory Shield Company SRL totdat alle verschuldigde bedragen volledig zijn betaald.</p>
+
+    <h2 class="legal-h2" id="v6">6. Levering en interventie ter plaatse</h2>
+    <p class="legal-p">Na ontvangst van betaling en contractondertekening wordt de interventie ter plaatse gepland binnen <strong>5 tot 10 werkdagen</strong> afhankelijk van de locatie van de Klant en de beschikbaarheid van consultants.</p>
+    <p class="legal-p">De Klant verbindt zich ertoe:</p>
+    <ul class="legal-ul">
+      <li>Een Windows-werkstation te voorzien dat voldoet aan de technische vereisten (Windows Server 2016+, PowerShell 5.1+, RSAT AD-module)</li>
+      <li>Een technisch contactpersoon (systeembeheerder) en een directievertegenwoordiger (CIO of equivalent) aan te wijzen die aanwezig zijn tijdens de interventie</li>
+      <li>Beveiligde netwerktoegang te bieden tot het relevante Active Directory-domein</li>
+      <li>De SHA-256-hash van het ADSecure-uitvoerbaar bestand te valideren in aanwezigheid van de consultant vóór de lancering</li>
+    </ul>
+    <p class="legal-p">In geval van ontoegankelijkheid toe te schrijven aan de Klant (afwezigheid van contactpersoon, onvoorbereide omgeving), worden de reiskosten van de verloren dag aan de Klant gefactureerd voor 500 € excl. BTW.</p>
+
+    <h2 class="legal-h2" id="v7">7. Softwarelicentie</h2>
+    <p class="legal-p">Mandatory Shield Company verleent de Klant, voor de duur van het contract, een niet-exclusieve, niet-overdraagbare licentie voor het gebruik van de software, beperkt tot de Active Directory-domeinen van de Klant die in het contract zijn aangewezen.</p>
+    <p class="legal-p"><strong>Toegestaan gebruik:</strong> De software uitvoeren op de systemen van de Klant, auditrapporten genereren voor intern gebruik en presentatie aan externe auditors in het kader van conformiteitsprocedures.</p>
+    <p class="legal-p"><strong>Verboden gebruik:</strong></p>
+    <ul class="legal-ul">
+      <li>De software in sublicentie geven, doorverkopen, verhuren of uitlenen aan derden</li>
+      <li>De software gebruiken om infrastructuren te auditen die niet aan de Klant toebehoren (dienstenverlening aan derden)</li>
+      <li>Reverse engineering, decompilatie, disassemblage of extractie van beveiligingsregels</li>
+      <li>De software aanpassen, aanpassen of afgeleide werken creëren op basis van de software</li>
+    </ul>
+
+    <h2 class="legal-h2" id="v8">8. Duur, verlenging en beëindiging</h2>
+    <p class="legal-p"><strong>Duur:</strong> Overeenkomsten worden gesloten voor een initiële periode van één (1) jaar vanaf de ondertekeningsdatum.</p>
+    <p class="legal-p"><strong>Verlenging:</strong> Na afloop wordt de overeenkomst stilzwijgend verlengd voor opeenvolgende perioden van één jaar, tenzij een opzegging wordt verzonden per aangetekende brief of e-mail met ontvangstbevestiging ten minste <strong>30 dagen voor de vervaldatum</strong>.</p>
+    <p class="legal-p"><strong>Beëindiging wegens wanprestatie:</strong> Elke partij kan de overeenkomst van rechtswege beëindigen, na een ingebrekestelling per aangetekende brief die 15 dagen zonder gevolg is gebleven, bij een ernstige schending van contractuele verplichtingen door de andere partij.</p>
+    <p class="legal-p"><strong>Gevolgen van beëindiging:</strong> Op de datum van beëindiging worden de toegangsrechten en licenties van de Klant onmiddellijk ingetrokken. Er wordt geen terugbetaling toegekend voor de reeds gefactureerde periode.</p>
+
+    <h2 class="legal-h2" id="v9">9. Garanties en ondersteuning</h2>
+    <h3 class="legal-h3">9.1 Werkingsgarantie</h3>
+    <p class="legal-p">Mandatory Shield Company garandeert dat ADSecure Report™ zal functioneren overeenkomstig zijn documentatie voor de technische omgevingen beschreven in de vereisten. Bij een bewezen storing verbindt Mandatory Shield Company zich ertoe binnen een redelijke termijn een oplossing of tijdelijke oplossing te bieden.</p>
+    <h3 class="legal-h3">9.2 Technische ondersteuning</h3>
+    <table class="legal-table">
+      <tr><th>Formule</th><th>Kanaal</th><th>Gegarandeerde responstijd</th><th>Uren</th></tr>
+      <tr><td>Essential</td><td>Alleen e-mail</td><td>48 werkuren</td><td>Ma–Vrij 9u–18u CET</td></tr>
+      <tr><td>Professional</td><td>E-mail + Telefoon</td><td>24 werkuren</td><td>Ma–Vrij 9u–18u CET</td></tr>
+    </table>
+    <h3 class="legal-h3">9.3 Updates</h3>
+    <p class="legal-p">Corrigerende updates en nieuwe beveiligingsregels geïntegreerd in ADSecure Report™ zijn inbegrepen in het abonnement. Grote nieuwe functies kunnen onderworpen zijn aan een tariefverhoging meegedeeld met 60 dagen opzegtermijn.</p>
+
+    <h2 class="legal-h2" id="v10">10. Aansprakelijkheid en beperking</h2>
+    <p class="legal-p">ADSecure Report™ is een audit- en beslissingsondersteunend hulpmiddel. Het vervangt geen beveiligingsaudit gecertificeerd door een geaccrediteerd orgaan, noch de wettelijke verplichtingen van de Klant op het gebied van cybersecurity.</p>
+    <p class="legal-p">De aansprakelijkheid van Mandatory Shield Company kan alleen worden ingeroepen voor directe, voorzienbare en bewezen schade als gevolg van een bewezen fout in de uitvoering van haar contractuele verplichtingen.</p>
+    <p class="legal-p"><strong>In geen geval</strong> kan Mandatory Shield Company aansprakelijk worden gesteld voor:</p>
+    <ul class="legal-ul">
+      <li>Indirecte schade (omzetverlies, gegevensverlies, reputatieschade)</li>
+      <li>Beveiligingsincidenten in de omgevingen van de Klant, al dan niet door ADSecure gemarkeerd</li>
+      <li>Niet-naleving door de Klant van NIS2, ISO 27001, AVG of andere regelgeving na ontvangst van rapporten</li>
+      <li>Schade als gevolg van gebruik van de software dat niet in overeenstemming is met de documentatie</li>
+    </ul>
+    <p class="legal-p"><strong>Aansprakelijkheidslimiet:</strong> De totale en cumulatieve aansprakelijkheid van Mandatory Shield Company uit hoofde van dit contract is beperkt tot het nettobedrag dat door Mandatory Shield Company in het huidige contractjaar daadwerkelijk is ontvangen.</p>
+
+    <h2 class="legal-h2" id="v11">11. Vertrouwelijkheid</h2>
+    <p class="legal-p">De partijen verbinden zich er wederzijds toe alle informatie die in het kader van het contract wordt uitgewisseld als vertrouwelijk te beschouwen, met name de technische infrastructuurgegevens van de Active Directory van de Klant, auditresultaten en gegenereerde rapporten.</p>
+    <p class="legal-p">Een geheimhoudingsovereenkomst (NDA) wordt systematisch voorgesteld en ondertekend vóór elke interventie ter plaatse. Bij tegenstrijdigheid prevaleren de bepalingen van de ondertekende NDA boven deze AVW.</p>
+    <p class="legal-p">Deze vertrouwelijkheidsverplichtingen overleven de afloop of beëindiging van het contract gedurende een periode van <strong>5 jaar</strong>.</p>
+
+    <h2 class="legal-h2" id="v12">12. Toepasselijk recht en geschillen</h2>
+    <p class="legal-p">Deze AVW worden beheerst door het <strong>Belgisch recht</strong>. Bij een geschil zullen de partijen trachten een minnelijke schikking te bereiken binnen 30 dagen. Bij gebreke hieraan wordt het geschil voorgelegd aan de exclusieve bevoegdheid van de <strong>rechtbanken van het gerechtelijk arrondissement Brussel</strong>.</p>
+    <p class="legal-p">De partijen doen uitdrukkelijk afstand van de toepassing van het Verdrag van de Verenigde Naties inzake internationale koopovereenkomsten betreffende roerende zaken (CISG) op hun contractuele relatie.</p>
+  </div>
+
+
+  <!-- ===================== WETTELIJKE VERMELDINGEN ===================== -->
+  <div id="mentions" class="doc-section">
+    <div class="doc-header">
+      <div class="legal-date-box">Bijgewerkt: 1 mei 2025</div>
+      <h1>Wettelijke Vermeldingen</h1>
+      <p style="color:var(--muted);font-size:.9rem;">Overeenkomstig Artikel XII.7 van het Belgisch Wetboek van economisch recht en het toepasselijk Europees recht</p>
+    </div>
+
+    <h2 class="legal-h2">1. Uitgever</h2>
+    <p class="legal-p">
+      <strong>Mandatory Shield Company SRL</strong><br/>
+      Rechtsvorm: Besloten Vennootschap (BV/SRL) naar Belgisch recht<br/>
+      Maatschappelijke zetel: Brussel, België (Europese Unie)<br/>
+      KBO-ondernemingsnummer: <em>in behandeling (vennootschap in oprichting)</em><br/>
+      Intracommunautair BTW-nummer: <em>in behandeling</em><br/>
+      Kapitaal: [In te vullen bij de oprichtingsakte]<br/>
+      <br/>
+      <strong>Medeoprichters en bestuurders:</strong><br/>
+      Pierre-Antoine Rouhaud — Medeoprichter &amp; CEO<br/>
+      Raphaël Berki — Medeoprichter &amp; CTO<br/>
+      <br/>
+      <strong>Contact:</strong> contact@mandatoryshield.com<br/>
+      <strong>Website:</strong> www.mandatoryshield.com
+    </p>
+
+    <h2 class="legal-h2">2. Hosting</h2>
+    <p class="legal-p">
+      <strong>Scaleway SAS</strong><br/>
+      Dochteronderneming van de Iliad-groep<br/>
+      8 rue de la Ville l'Évêque — 75008 Parijs, Frankrijk<br/>
+      RCS Parijs: 433 115 904<br/>
+      Website: <a href="https://www.scaleway.com" style="color:var(--teal)" target="_blank" rel="noopener">www.scaleway.com</a><br/>
+      Infrastructuur gehost binnen de Europese Unie (Frankrijk)
+    </p>
+
+    <h2 class="legal-h2">3. Intellectuele eigendom</h2>
+    <p class="legal-p">Alle inhoud op deze site — teksten, grafische elementen, logo's, pictogrammen, afbeeldingen, audio- of videoclips, digitale downloads, gegevenscompilaties, software — is het eigendom van <strong>Mandatory Shield Company SRL</strong> of haar licentiegevers en is beschermd door Belgisch en internationaal intellectueel eigendomsrecht.</p>
+    <p class="legal-p">Het merk <strong>ADSecure Report™</strong>, het Mandatory Shield-logo en alle op deze site gebruikte handelsnamen zijn geregistreerde of in aanvraag zijnde merken. Elke niet-gemachtigde reproductie of weergave vormt een inbreuk gesanctioneerd door het Belgisch Wetboek van economisch recht (Boek XI) en de toepasselijke Europese teksten.</p>
+
+    <h2 class="legal-h2">4. Redactionele verantwoordelijkheid</h2>
+    <p class="legal-p">Publicatieverantwoordelijke: <strong>Pierre-Antoine Rouhaud</strong>, Medeoprichter &amp; CEO van Mandatory Shield Company SRL.</p>
+    <p class="legal-p">Mandatory Shield Company SRL streeft ernaar de nauwkeurigheid en actualiteit van op deze site gepubliceerde informatie te waarborgen. Zij kan echter niet de nauwkeurigheid, precisie of volledigheid garanderen van informatie die op deze site beschikbaar wordt gesteld. Dienovereenkomstig aanvaardt Mandatory Shield Company geen aansprakelijkheid voor eventuele onnauwkeurigheden, imprecisies of weglatingen met betrekking tot informatie beschikbaar op deze site.</p>
+
+    <h2 class="legal-h2">5. Persoonsgegevens en AVG</h2>
+    <p class="legal-p">De verwerking van via deze site verzamelde persoonsgegevens geschiedt overeenkomstig <strong>Verordening (EU) 2016/679 van 27 april 2016</strong> (AVG) en de Belgische wet van 30 juli 2018 betreffende de bescherming van natuurlijke personen met betrekking tot de verwerking van persoonsgegevens.</p>
+    <p class="legal-p">Verwerkingsverantwoordelijke: Mandatory Shield Company SRL, contact@mandatoryshield.com.</p>
+    <p class="legal-p">Voor vragen over de bescherming van uw gegevens of om uw rechten uit te oefenen (inzage, rectificatie, wissing, overdraagbaarheid, bezwaar), raadpleeg ons <button data-show-tab="privacy" style="background:none;border:none;color:var(--teal);cursor:pointer;font-weight:600;text-decoration:underline;font-family:inherit;font-size:inherit;">Privacybeleid</button> of neem contact met ons op via contact@mandatoryshield.com.</p>
+    <p class="legal-p">Toezichthoudende autoriteit: <strong>Belgische Gegevensbeschermingsautoriteit (GBA)</strong> — Drukpersstraat 35, 1000 Brussel — <a href="https://www.gegevensbeschermingsautoriteit.be" style="color:var(--teal)" target="_blank" rel="noopener">www.gegevensbeschermingsautoriteit.be</a></p>
+
+    <h2 class="legal-h2">6. Cookies</h2>
+    <p class="legal-p">Deze site gebruikt cookies. Voor gedetailleerde informatie over de gebruikte cookies, hun doel en hoe u uw voorkeuren kunt beheren, raadpleegt u ons <button data-show-tab="privacy" style="background:none;border:none;color:var(--teal);cursor:pointer;font-weight:600;text-decoration:underline;font-family:inherit;font-size:inherit;">Privacybeleid</button>, sectie 9 (Cookies).</p>
+
+    <h2 class="legal-h2">7. Toepasselijk recht</h2>
+    <p class="legal-p">Deze site en haar inhoud zijn onderworpen aan het <strong>Belgisch recht</strong>. In geval van een geschil over het gebruik van de site zijn de bevoegde rechtbanken van het gerechtelijk arrondissement <strong>Brussel</strong> (België) exclusief bevoegd.</p>
+
+    <h2 class="legal-h2">8. Inschrijvingsnummers en registers</h2>
+    <table class="legal-table">
+      <tr><th>Register / Orgaan</th><th>Nummer / Status</th></tr>
+      <tr><td>Kruispuntbank van Ondernemingen (KBO)</td><td><em>In behandeling — vennootschap in oprichting</em></td></tr>
+      <tr><td>Belgisch BTW-nummer</td><td><em>In behandeling</em></td></tr>
+      <tr><td>Ondernemingsrechtbank</td><td>Brussel (ressort)</td></tr>
+      <tr><td>Merk ADSecure Report™</td><td>EUIPO-aanvraag in behandeling</td></tr>
+      <tr><td>Beroepsaansprakelijkheidsverzekering</td><td>[In te vullen vóór commerciële productie]</td></tr>
+    </table>
+
+    <h2 class="legal-h2">9. Credits</h2>
+    <p class="legal-p">Ontwerp en ontwikkeling van de website: Mandatory Shield Company SRL — Intern team.<br/>
+    Iconen: Lucide Icons (MIT-licentie).<br/>
+    Lettertypen: Segoe UI / System UI (systeemlicenties).</p>
+
+    <div class="legal-highlight" style="margin-top:2rem;">
+      <strong>📋 Bij te werken na officiële oprichting:</strong> Zodra de BV is geregistreerd via een notaris of het Belgisch ondernemingsloket, vervangt u de <em>"in behandeling"</em>-vermeldingen door het definitieve KBO-nummer (formaat: 0XXX.XXX.XXX) en het BTW-nummer (BE + KBO-nummer zonder punten). Deze informatie is verplicht krachtens Artikel XII.7 §1 van het Belgisch Wetboek van economisch recht. Sluit ook een beroepsaansprakelijkheidsverzekering af vóór elk commercieel contract.
+    </div>
+  </div>
+
+</div>
+
+<div class="legal-footer">
+  © 2025 Mandatory Shield Company SRL — Alle rechten voorbehouden · Brussel, België 🇧🇪<br/>
+  <a href="index-nl.html" id="footer-back-link">Terug naar site</a> · <a href="mailto:contact@mandatoryshield.com">contact@mandatoryshield.com</a>
+</div>
+
+<script src="legal.js"></script>
+</body>
+</html>
