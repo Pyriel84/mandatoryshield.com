@@ -24,66 +24,80 @@ document.querySelectorAll('[data-faq-toggle]').forEach(function (btn) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Chatbot toggle / close
-  var toggle = document.querySelector('.chatbot-toggle');
-  var win    = document.querySelector('.chatbot-window');
-  var close  = document.querySelector('.chatbot-close');
-  if (toggle) toggle.addEventListener('click', function () { win.classList.toggle('open'); });
-  if (close)  close.addEventListener('click',  function () { win.classList.remove('open'); });
+  // Chatbot
+  var chatbotWindow  = document.getElementById('chatbotWindow');
+  var chatbotInput   = document.getElementById('chatbotInput');
+  var chatbotMessages = document.getElementById('chatbotMessages');
+  var chatToggle     = document.querySelector('[data-chat-toggle]');
+  var chatClose      = document.querySelector('[data-chat-close]');
+  var chatSend       = document.querySelector('[data-chat-send]');
 
-  // Quick suggestion buttons (data-quick attribute)
-  document.querySelectorAll('.quick-btn[data-quick]').forEach(function (btn) {
-    btn.addEventListener('click', function () { sendQuick(btn.getAttribute('data-quick')); });
-  });
+  if (chatToggle) {
+    chatToggle.addEventListener('click', function () {
+      var isOpen = chatbotWindow.classList.toggle('active');
+      chatToggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
+  if (chatClose) {
+    chatClose.addEventListener('click', function () {
+      chatbotWindow.classList.remove('active');
+      if (chatToggle) chatToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
 
-  // Chat input: Enter key + send button
-  var input   = document.getElementById('chat-input');
-  var sendBtn = document.querySelector('.chat-send-btn');
-  if (input)   input.addEventListener('keydown', function (e) { if (e.key === 'Enter') sendMsg(); });
-  if (sendBtn) sendBtn.addEventListener('click', sendMsg);
-
-  // Chatbot knowledge base (updated with new pricing)
-  var answers = {
-    'pricing':      'Our plans are segmented by user count. Essential (€6,900/year) covers up to 100 users with Azure AD & hybrid cloud included and full compliance (NIS2, CIS Controls v8, ISO 27001, GDPR, DORA). Professional (€14,900/year) targets 100–250 users with 4 AD audits/year and multi-site AD. Enterprise (on quote) covers 250+ users with 24/7 monitoring and SIEM/SOC integration.',
-    'nis2':         'ADSecure maps all 197 controls to NIS2 (EU Directive 2022/2555, mandatory since October 2024). The management report automatically generates an Art. 21 compliance summary ready for auditors.',
-    'data security':'Zero data transmitted. The scan runs 100% on-premise in read-only mode. No Active Directory data transits to our servers. This is guaranteed architecturally, not contractually.',
-    'demo':         'We do not offer free trials, but we organize personalized appointments. Contact us at contact@mandatoryshield.com or fill out the contact form!',
-    'default':      'For more information, contact us at contact@mandatoryshield.com or fill out the contact form. Our experts will respond within 24 hours.'
+  var kb = {
+    'price':    'Oneshot: €2,400 (one-time). Essential: €6,900/year (€575/month). Professional: €14,900/year (€1,242/month). All plans include on-site SHA-256 validated execution and 7 regulatory reports.',
+    'nis2':     'ADSecure maps all 286 controls to NIS2 (EU Directive 2022/2555, mandatory since Oct 2024). The management report generates an Art. 21 compliance summary ready for auditors.',
+    'data':     'Zero data transmitted. The scan runs 100% on-premise in read-only mode. No AD data transits to our servers — guaranteed architecturally, not contractually.',
+    'demo':     'We do not offer free trials. We organize personalized appointments. Contact us at contact@mandatoryshield.com or fill out the contact form.',
+    'default':  'Contact us at contact@mandatoryshield.com. Our experts will respond within 24 hours.'
   };
 
-  function addMsg(text, type) {
+  function addMessage(text, sender) {
     var div = document.createElement('div');
-    div.className = 'msg ' + type;
-    if (type === 'bot') {
-      var img  = document.createElement('img');
-      img.src  = 'images/logo-opt.png';
-      img.alt  = 'Mandatory Shield';
-      img.style.cssText = 'width:28px;height:28px;object-fit:contain;flex-shrink:0;border-radius:50%;background:white;border:1px solid #e2e8f0;padding:3px;';
-      var span = document.createElement('span');
-      span.textContent = text;
-      div.style.display     = 'flex';
-      div.style.alignItems  = 'flex-start';
-      div.style.gap         = '8px';
-      div.appendChild(img);
-      div.appendChild(span);
+    div.className = 'chatbot-message ' + sender;
+    var avatar = document.createElement('div');
+    avatar.className = 'chatbot-avatar';
+    if (sender === 'bot') {
+      var img = document.createElement('img');
+      img.src = 'images/logo.webp';
+      img.alt = 'Mandatory Shield';
+      avatar.appendChild(img);
     } else {
-      div.textContent = text;
+      avatar.textContent = 'You';
     }
-    var msgs = document.getElementById('chat-msgs');
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
+    var bubble = document.createElement('div');
+    bubble.className = 'chatbot-bubble';
+    bubble.textContent = text;
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    chatbotMessages.appendChild(div);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
   }
 
-  function sendMsg() {
-    var msg = input.value.trim();
-    if (!msg) return;
-    addMsg(msg, 'user');
-    input.value = '';
-    var key = Object.keys(answers).find(function (k) { return msg.toLowerCase().includes(k); }) || 'default';
-    setTimeout(function () { addMsg(answers[key], 'bot'); }, 600);
+  function findAnswer(msg) {
+    var lower = msg.toLowerCase();
+    for (var k in kb) { if (lower.includes(k)) return kb[k]; }
+    return kb['default'];
   }
 
-  function sendQuick(q) { input.value = q; sendMsg(); }
+  function sendMessage() {
+    var text = chatbotInput.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    chatbotInput.value = '';
+    setTimeout(function () { addMessage(findAnswer(text), 'bot'); }, 500);
+  }
+
+  if (chatSend) chatSend.addEventListener('click', sendMessage);
+  if (chatbotInput) chatbotInput.addEventListener('keypress', function (e) { if (e.key === 'Enter') sendMessage(); });
+
+  document.querySelectorAll('.chatbot-suggestion').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      chatbotInput.value = btn.getAttribute('data-suggestion');
+      sendMessage();
+    });
+  });
 
   // Mobile Menu — overlay appended to body
   (function () {
