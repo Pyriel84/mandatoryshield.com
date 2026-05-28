@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Active Directory Security Audit | Mandatory Shield</title>
-    <meta name="description" content="European Active Directory audit platform. 197 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance. On-site intervention included.">
+    <meta name="description" content="European Active Directory audit platform. 286 security controls, 26 domains, 7 regulatory reports. NIS2, ISO 27001, GDPR, DORA, ANSSI & Cyfun compliant. On-site intervention included.">
 
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=(), usb=(), payment=()">
-    <meta name="keywords" content="Active Directory audit, Active Directory security, AD security audit platform, NIS2 compliance, ISO 27001 Active Directory, GDPR IT security, CIS Controls v8, ANSSI, DORA compliance, cybersecurity Belgium, enterprise cybersecurity software, IT infrastructure protection, Windows Server security audit, Kerberos security, GPO audit, Azure AD security, Entra ID audit, B2B cybersecurity SaaS, AD audit software pricing, SME security solution, Mandatory Shield, ADSecure">
+    <meta name="keywords" content="Active Directory audit, Active Directory security, AD security audit platform, NIS2 compliance, ISO 27001 Active Directory, GDPR IT security, CIS Controls v8, ANSSI, ANSSI R33 R72, DORA compliance, cybersecurity Belgium, enterprise cybersecurity software, IT infrastructure protection, Windows Server security audit, Kerberos security, GPO audit, Azure AD security, Entra ID audit, B2B cybersecurity SaaS, AD audit software pricing, SME security solution, Mandatory Shield, ADSecure">
 
     <!-- Canonical & hreflang -->
     <link rel="canonical" href="https://mandatoryshield.com/">
@@ -21,13 +21,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mandatoryshield.com/">
     <meta property="og:title" content="Active Directory Security Audit | Mandatory Shield">
-    <meta property="og:description" content="European Active Directory audit platform. 197 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance. On-site intervention included.">
+    <meta property="og:description" content="European Active Directory audit platform. 286 security controls, 26 domains, 7 regulatory reports. NIS2, ISO 27001, GDPR, DORA, ANSSI & Cyfun compliant. On-site intervention included.">
     <meta property="og:image" content="https://mandatoryshield.com/images/logo-opt.png">
     <meta property="og:site_name" content="Mandatory Shield">
     <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ADSecure Report™ | Mandatory Shield">
-    <meta name="twitter:description" content="European Active Directory audit platform. 197 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance.">
+    <meta name="twitter:title" content="Active Directory Security Audit | Mandatory Shield">
+    <meta name="twitter:description" content="European Active Directory audit platform. 286 security controls, 26 domains, 7 regulatory reports. NIS2, ISO 27001, GDPR, DORA, ANSSI & Cyfun compliant.">
     <meta name="twitter:image" content="https://mandatoryshield.com/images/logo-opt.png">
 
     <!-- Structured data JSON-LD -->
@@ -58,10 +58,12 @@
           "name": "ADSecure Report™",
           "applicationCategory": "SecurityApplication",
           "operatingSystem": "Windows Server 2016+",
-          "description": "European Active Directory audit platform. 197 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance.",
+          "description": "European Active Directory audit platform. 286 security controls, 26 domains, 7 regulatory reports. NIS2, ISO 27001, GDPR, DORA, ANSSI & Cyfun compliant.",
           "offers": [
-            { "@type": "Offer", "name": "Essential", "price": "6900", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1Y" } },
-            { "@type": "Offer", "name": "Professional", "price": "14900", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1Y" } }
+            { "@type": "Offer", "name": "Oneshot" },
+            { "@type": "Offer", "name": "Essential" },
+            { "@type": "Offer", "name": "Professional" },
+            { "@type": "Offer", "name": "Auditor" }
           ],
           "provider": { "@id": "https://mandatoryshield.com/#organization" },
           "url": "https://mandatoryshield.com"
@@ -69,9 +71,9 @@
         {
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "What is ADSecure Report™?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports. 197 control points cover 20 distinct domains of your AD infrastructure." } },
+            { "@type": "Question", "name": "What is ADSecure Report™?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports. 286 control points cover 26 on-prem domains and 7 cloud groups of your AD infrastructure." } },
             { "@type": "Question", "name": "Does ADSecure send data to the cloud?", "acceptedAnswer": { "@type": "Answer", "text": "No. Data does not leave the client's environment. No Active Directory data transits to our servers: this is guaranteed architecturally, not contractually." } },
-            { "@type": "Question", "name": "What are the technical prerequisites for ADSecure?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure requires Windows Server 2016 or later, PowerShell 5.1 or higher, and the RSAT Active Directory module installed. No internet connection is required." } }
+            { "@type": "Question", "name": "What are the technical prerequisites for ADSecure?", "acceptedAnswer": { "@type": "Answer", "text": "ADSecure v3.4 requires Windows 10/11 (64-bit) or Windows Server 2016/2019/2022, Windows PowerShell 5.1 (PowerShell 7+ not supported), and the RSAT ActiveDirectory module installed. The machine must be domain-joined with network access to a domain controller (LDAP 389, Kerberos 88, RPC 135). Domain Admin rights recommended for a full scan. Run the EXE as administrator. Optional AADS cloud module requires MSAL.PS and an Azure account with read-only Graph permissions." } }
           ]
         }
       ]
@@ -133,7 +135,7 @@
         <div class="container hero-grid">
             <div class="hero-content animate">
                 <h1>Your Active Directory.<br><span class="text-gradient">No blind spots.</span></h1>
-                <p>ADSecure Report™ is the first European Active Directory audit platform that produces 7 distinct regulatory reports in a single scan. 197 security controls compliant with NIS2, ISO 27001 and GDPR.</p>
+                <p>ADSecure Report™ is the first European Active Directory audit platform that produces 7 distinct regulatory reports in a single scan. 286 security controls compliant with NIS2, ISO 27001 and GDPR.</p>
 
                 <div class="hero-features">
                     <div class="hero-feature"><i class="ri-checkbox-circle-fill"></i><span>On-site intervention systematically included</span></div>
@@ -178,9 +180,10 @@
 
     <div class="container">
         <div class="stats-bar">
-            <div class="stat-item"><div class="stat-num">197</div><div class="stat-label">Security controls</div></div>
+            <div class="stat-item"><div class="stat-num">286</div><div class="stat-label">Security controls</div></div>
             <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Distinct reports</div></div>
-            <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Domains analyzed</div></div>
+            <div class="stat-item"><div class="stat-num">26</div><div class="stat-label">On-prem domains</div></div>
+            <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">Cloud groups</div></div>
             <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Made in Belgium</div></div>
         </div>
     </div>
@@ -216,13 +219,95 @@
                 <div class="card">
                     <div class="card-icon"><i class="ri-file-text-line"></i></div>
                     <h3>7 Distinct Reports</h3>
-                    <p>Senior Management, IT Manager, DPO, remediation guide, compliance scoring, Azure AD report, and QR Code verifiable attestation.</p>
+                    <p>CEO, IT Manager, DPO/GDPR, PowerShell Remediation Guide (sysadmin), Detailed Scoring (CIS/ISO/NIS2/DORA), Trend Report (time comparison), and AD Forest Report (multi-domain, trusts, topology).</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="ri-lock-line"></i></div>
                     <h3>Security &amp; Privacy</h3>
                     <p>Local data processing, end-to-end encryption, no data transmitted without explicit consent.</p>
                 </div>
+                <div class="card card-highlight">
+                    <div class="card-icon"><i class="ri-seal-line"></i></div>
+                    <h3>Verifiable Legal Attestation</h3>
+                    <p>Every ADSecure scan generates a timestamped, tamper-proof QR Code attestation — verifiable in real time at <a href="https://verify.mandatoryshield.com" target="_blank" rel="noopener noreferrer" style="color:var(--primary)">verify.mandatoryshield.com</a>. Admissible as due-diligence evidence in audits, insurance claims, and regulatory inspections. <strong>A market first.</strong></p>
+                </div>
+            </div>
+
+            <div class="shield-modules-section">
+                <h3>Roadmap v4.0 — Add-ons <span class="coming-soon-tag">Q3–Q4 2026</span></h3>
+                <p>The following modules are planned for ADSecure v4.0 and are not yet available. <strong>ShieldConnect</strong> (SIEM export — JSON/CEF, 6 connectors) is already included in the Professional plan.</p>
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <h4>🔮 ShieldPredict</h4>
+                        <p>Simulate future attack scenarios based on your current AD profile. Prioritize by real exploitability and business impact — not just CVE scores.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>🎨 ShieldBrand</h4>
+                        <p>Deliver ADSecure reports under your own brand. Full logo, colors and company name customization for MSPs and integrators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vs-competitors" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why ADSecure instead of a <span class="text-gradient">free tool</span>?</h2>
+                <p>PingCastle and BloodHound are excellent — for technical experts. ADSecure is built for organizations.</p>
+            </div>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>Free tools<br><small>(PingCastle, BloodHound)</small></th>
+                            <th>ADSecure™</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Security controls</td>
+                            <td>~100</td>
+                            <td><strong>286 (196 on-prem + 90 cloud)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Reports for management</td>
+                            <td>Technical only</td>
+                            <td><strong>7 reports (CEO, DPO, IT Manager…)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Guided PowerShell remediation</td>
+                            <td>❌</td>
+                            <td><strong>✅ Step-by-step per control</strong></td>
+                        </tr>
+                        <tr>
+                            <td>NIS2 / ISO 27001 / DORA mapping</td>
+                            <td>Partial</td>
+                            <td><strong>✅ Every control mapped</strong></td>
+                        </tr>
+                        <tr>
+                            <td>On-site SHA-256 validated execution</td>
+                            <td>❌</td>
+                            <td><strong>✅ Chain of custody guaranteed</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Verifiable QR Code attestation</td>
+                            <td>❌</td>
+                            <td><strong>✅ Legal-grade audit evidence</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Zero data transmitted</td>
+                            <td>Varies</td>
+                            <td><strong>✅ Architectural guarantee, not contractual</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Expert-guided report walkthrough</td>
+                            <td>❌</td>
+                            <td><strong>✅ Included in all plans</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -244,7 +329,7 @@
                 <div class="compliance-card">
                     <div class="compliance-header"><div class="compliance-name">ISO 27001</div><div class="compliance-rate badge-aligned">Aligned</div></div>
                     <div class="compliance-desc">International ISMS Standard</div>
-                    <div class="compliance-explanation">ISO/IEC 27001 is the international reference standard for Information Security Management Systems (ISMS). It defines requirements for establishing, implementing and maintaining a globally recognized ISMS.</div>
+                    <div class="compliance-explanation">ISO/IEC 28601 is the international reference standard for Information Security Management Systems (ISMS). It defines requirements for establishing, implementing and maintaining a globally recognized ISMS.</div>
                     <ul class="compliance-features"><li>Access control (A.9)</li><li>Cryptography (A.10)</li><li>Operations security (A.12)</li><li>Incident management (A.16)</li></ul>
                 </div>
                 <div class="compliance-card">
@@ -271,6 +356,16 @@
                     <div class="compliance-explanation">DORA (EU 2022/2554) applies since January 2025 to European financial entities (banks, insurance companies, ICT providers). It requires robust digital operational resilience, including access management and resilience testing.</div>
                     <ul class="compliance-features"><li>ICT risk management</li><li>Resilience testing</li><li>Incident management</li><li>Third-party oversight</li></ul>
                 </div>
+                <div class="compliance-card">
+                    <div class="compliance-header"><div class="compliance-name">ANSSI</div><div class="compliance-rate badge-aligned">Aligned</div></div>
+                    <div class="compliance-desc">French National Cybersecurity Agency</div>
+                    <div class="compliance-explanation">ANSSI publishes technical recommendations for Active Directory hardening, widely adopted across French-speaking Europe. ADSecure maps directly to R33 (Server Core) and R72 (FSMO separation).</div>
+                    <ul class="compliance-features"><li>DC hardening (R33)</li><li>FSMO &amp; SPOF separation (R72)</li><li>Tiering model</li><li>PAM recommendations</li></ul>
+                </div>
+            </div>
+
+            <div class="compliance-legal-note" style="margin-top:2rem;padding:1rem 1.5rem;background:rgba(255,255,255,0.05);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;">
+                <p style="font-size:0.875rem;color:var(--text-muted);margin:0;"><strong>Legal notice:</strong> ADSecure provides evidence of technical controls and does not constitute NIS2, ISO 27001 or GDPR certification. Regulatory compliance requires additional documentary assessment by a qualified auditor. DORA (EU 2022/2554) applies exclusively to EU financial entities.</p>
             </div>
         </div>
     </section>
@@ -279,62 +374,100 @@
         <div class="container">
             <div class="section-header">
                 <h2>Transparent <span class="text-gradient">Pricing</span></h2>
-                <p>Plans tailored to every organization — No surprises, no hidden commitments</p>
+                <p>Four offers designed around how you work — not your headcount</p>
             </div>
 
             <div class="pricing-grid">
+
+                <!-- ONESHOT -->
                 <div class="pricing-card">
-                    <div class="pricing-header"><h3>ESSENTIAL</h3><p>Up to 100 users</p></div>
-                    <div class="price">€ 6,900<span>/year</span></div>
+                    <div class="pricing-badge" style="background:#475569">One-time</div>
+                    <div class="pricing-header">
+                        <h3>Oneshot</h3>
+                        <p class="plan-tagline">A single MSC-led intervention. You receive the reports, not the software.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li><i class="ri-check-line"></i><span>Azure AD &amp; hybrid cloud included</span></li>
-                        <li><i class="ri-check-line"></i><span>Full compliance: NIS2, CIS Controls v8, ISO 27001, GDPR, DORA</span></li>
-                        <li><i class="ri-check-line"></i><span>Complete reports per audit</span></li>
-                        <li><i class="ri-check-line"></i><span>Security scoring per domain</span></li>
-                        <li><i class="ri-check-line"></i><span>Step-by-step guided remediation</span></li>
-                        <li><i class="ri-check-line"></i><span>Email support included</span></li>
+                        <li><i class="ri-check-line"></i><span>Full on-prem + cloud scan (286 controls)</span></li>
+                        <li><i class="ri-check-line"></i><span>All 7 HTML reports delivered</span></li>
+                        <li><i class="ri-check-line"></i><span>On-site SHA-256 validated execution</span></li>
+                        <li><i class="ri-check-line"></i><span>Expert debrief &amp; report walkthrough</span></li>
+                        <li><i class="ri-check-line"></i><span>QR Code verifiable attestation</span></li>
                     </ul>
+                    <div class="price">€ 2,400</div>
                     <a href="#contact" class="btn btn-outline btn-lg btn-full">Book a meeting</a>
                 </div>
 
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">RECOMMENDED</div>
-                    <div class="pricing-header"><h3>PROFESSIONAL</h3><p>100 to 250 users</p></div>
-                    <div class="price">€ 14,900<span>/year</span></div>
+                <!-- ESSENTIAL -->
+                <div class="pricing-card">
+                    <div class="pricing-badge" style="background:var(--primary-dark)">Annual</div>
+                    <div class="pricing-header">
+                        <h3>Essential</h3>
+                        <p class="plan-tagline">Annual subscription with trend tracking and software updates. For SMEs with 20–200 users.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li><i class="ri-check-line"></i><span><strong>Everything in Essential</strong></span></li>
-                        <li><i class="ri-check-line"></i><span>Multi-site Active Directory</span></li>
-                        <li><i class="ri-check-line"></i><span>4 AD audits per year</span></li>
-                        <li><i class="ri-check-line"></i><span>Multi-site dashboard</span></li>
-                        <li><i class="ri-check-line"></i><span>Executive reports (Management/CISO)</span></li>
-                        <li><i class="ri-check-line"></i><span>Priority phone + email support</span></li>
+                        <li><i class="ri-check-line"></i><span>Everything in Oneshot (full scan, 7 reports, on-site SHA-256)</span></li>
+                        <li><i class="ri-check-line"></i><span>Trend report — track security evolution over time</span></li>
+                        <li><i class="ri-check-line"></i><span>Software update access included</span></li>
+                        <li><i class="ri-check-line"></i><span>Full compliance: NIS2, ISO 27001, GDPR, CIS, DORA, ANSSI</span></li>
+                        <li><i class="ri-check-line"></i><span>Email support included</span></li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary btn-lg btn-full">Book a meeting</a>
+                    <div class="price">€ 6,900<span>/year</span></div>
+                    <p class="engagement-note">Minimum commitment: 12 months — 575 €/month excl. VAT</p>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Book a meeting</a>
                 </div>
 
-                <div class="pricing-card">
-                    <div class="pricing-header"><h3>ENTERPRISE</h3><p>250+ users</p></div>
-                    <div class="price">On<span>quote</span></div>
+                <!-- PROFESSIONAL -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Recommended</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p class="plan-tagline">Annual license with unlimited scans and ShieldConnect SIEM export. For ETIs with 200–800 users and advanced SMEs.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li><i class="ri-check-line"></i><span><strong>Everything in Professional</strong></span></li>
-                        <li><i class="ri-check-line"></i><span>24/7 continuous monitoring</span></li>
-                        <li><i class="ri-check-line"></i><span>Attack simulation sandbox</span></li>
-                        <li><i class="ri-check-line"></i><span>SIEM/SOC integration</span></li>
-                        <li><i class="ri-check-line"></i><span>Dedicated account manager</span></li>
-                        <li><i class="ri-check-line"></i><span>Contractual SLA guarantees</span></li>
+                        <li><i class="ri-check-line"></i><span>Unlimited scans during subscription period</span></li>
+                        <li><i class="ri-check-line"></i><span>All 286 controls + 7 reports</span></li>
+                        <li><i class="ri-check-line"></i><span>Multi-domain Active Directory</span></li>
+                        <li><i class="ri-check-line"></i><span>SIEM connectors included — ShieldConnect (Sentinel, Splunk, Elastic, Wazuh, Graylog, QRadar, Teams, Slack)</span></li>
+                        <li><i class="ri-check-line"></i><span>Priority phone + email support + premium product updates</span></li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Contact us</a>
+                    <div class="price">€ 14,900<span>/year</span></div>
+                    <p class="engagement-note">Minimum commitment: 12 months — 1,242 €/month excl. VAT</p>
+                    <a href="#contact" class="btn btn-primary btn-lg btn-full">Book a meeting</a>
+                    <div class="shield-addons">
+                        <p>Roadmap add-ons (v4.0, Q3–Q4 2026):</p>
+                        <span class="shield-badge">ShieldPredict — Simulation</span>
+                        <span class="shield-badge">ShieldBrand — Custom branding</span>
+                    </div>
                 </div>
+
+                <!-- AUDITOR -->
+                <div class="pricing-card">
+                    <div class="pricing-badge" style="background:#64748b">Per scan</div>
+                    <div class="pricing-header">
+                        <h3>Auditor</h3>
+                        <p class="plan-tagline">For external auditors &amp; pentesters. NIS2, ISO 27001. Pay per scan pack.</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ri-check-line"></i><span>Scan packs: 5, 10 or 20 scans</span></li>
+                        <li><i class="ri-check-line"></i><span>Full scan + all 7 reports per audit</span></li>
+                        <li><i class="ri-check-line"></i><span>Multi-client use</span></li>
+                        <li><i class="ri-check-line"></i><span>QR Code verifiable attestation per client</span></li>
+                        <li><i class="ri-check-line"></i><span>Pack valid up to 18 months</span></li>
+                    </ul>
+                    <div class="price">On<span> quote</span></div>
+                    <a href="#contact" class="btn btn-outline btn-lg btn-full">Book a meeting</a>
+                </div>
+
             </div>
 
             <div class="pricing-info">
-                <p class="pricing-info-title"><i class="ri-information-line c-primary"></i> <strong>Commercial information:</strong></p>
                 <p class="pricing-info-text">
                     ✓ All prices are ex-VAT — VAT applies as per applicable legislation<br>
-                    ✓ Annual subscription — invoiced upon signing<br>
+                    ✓ One-Shot payment: 10% deposit on signing — 50% on first report delivery + 50% on final reports<br>
+                    ✓ Payment terms: 30 days end of month<br>
+                    ✓ Essential &amp; Professional subscriptions billed quarterly<br>
                     ✓ Auto-renewal with 30-day notice<br>
-                    ✓ Personalized appointment available on request<br>
-                    ✓ Enterprise custom quote within 48h<br>
+                    ✓ Custom quote within 48h<br>
                     ✓ Special conditions for public sector and associations
                 </p>
             </div>
@@ -351,7 +484,7 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>What is ADSecure Report™?<i class="ri-arrow-down-s-line"></i></button>
-                    <div class="faq-answer"><p>ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports: one for senior management, one for the IT Manager, one for the DPO, a remediation guide, a compliance scoring report, an Azure AD / Entra ID report, and a QR Code verifiable attestation. 197 control points cover 20 distinct domains of your AD infrastructure.</p></div>
+                    <div class="faq-answer"><p>ADSecure Report™ is an Active Directory audit platform that produces, from a single scan, seven distinct regulatory reports: (1) Senior Management Report (CEO), (2) IT Manager Report, (3) DPO/GDPR Report, (4) Remediation Report (step-by-step PowerShell guide for sysadmins), (5) Detailed Scoring Report (by domain, CIS/ISO/NIS2/DORA weighting), (6) Trend Report (evolution over time, comparison with previous scans), (7) Active Directory Forest Report (multi-domain, trusts, topology). 286 control points cover 26 on-prem domains and 7 cloud groups of your AD infrastructure.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>Does ADSecure transmit data to the cloud?<i class="ri-arrow-down-s-line"></i></button>
@@ -363,11 +496,19 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>What are the technical prerequisites for ADSecure?<i class="ri-arrow-down-s-line"></i></button>
-                    <div class="faq-answer"><p>ADSecure requires Windows Server 2016 or later, PowerShell 5.1 or higher, and the RSAT Active Directory module installed. A domain member account with read-only access to AD is sufficient. Local administrator rights are recommended for advanced registry controls. No internet connection is required to run the scan.</p></div>
+                    <div class="faq-answer">
+                        <p><strong>Operating system:</strong> Windows 10/11 (64-bit) or Windows Server 2016/2019/2022. The EXE is compiled as x64 — it will not run on a 32-bit system.</p>
+                        <p><strong>PowerShell:</strong> Windows PowerShell 5.1 minimum (included natively on Win10/11 and Server 2016+). PowerShell 7+ (Core) is not supported — native Windows PowerShell only.</p>
+                        <p><strong>RSAT:</strong> The ActiveDirectory PowerShell module must be installed on the machine running the scan. On Windows 10/11: Settings › Apps › Optional features › RSAT: Active Directory Domain Services and LDS Tools. On Windows Server: <code>Install-WindowsFeature RSAT-AD-PowerShell</code></p>
+                        <p><strong>Network &amp; AD rights:</strong> The machine must be a member of the domain being audited. A domain controller reachable on the network (ports LDAP 389, Kerberos 88, RPC 135). An account with Active Directory read rights — Domain Admin recommended for a full scan.</p>
+                        <p><strong>Execution rights:</strong> Run the EXE "as administrator" (the EXE automatically requests UAC elevation via the -requireAdmin flag).</p>
+                        <p><strong>Output folder:</strong> Write access to Documents\ADSecure (created automatically) — HTML reports are generated there.</p>
+                        <p><strong>Optional — AADS cloud module:</strong> Only required if scanning Entra ID / Azure AD: <code>Install-Module MSAL.PS -Scope CurrentUser</code>, .NET Framework 4.6.1+ (native on Win10/Server 2016+), an Azure account with read-only Graph permissions on the tenant (admin consent required), internet access for Microsoft Device Code Flow — no secret stored, authentication in memory only.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>Is ADSecure NIS2 and ISO 27001 compliant?<i class="ri-arrow-down-s-line"></i></button>
-                    <div class="faq-answer"><p>Yes. Each of ADSecure's 197 controls is mapped to the relevant NIS2 article (EU Directive 2022/2555, mandatory since October 2024) and to Annexes A.8, A.9, A.12, A.18 of ISO 27001:2022. The management report automatically generates an Art. 21 compliance summary ready for auditors. We also cover CIS Controls v8, GDPR, Cyfun (Belgium) and DORA (financial sector).</p></div>
+                    <div class="faq-answer"><p>Yes. Each of ADSecure's 286 controls is mapped to the relevant NIS2 article (EU Directive 2022/2555, mandatory since October 2024) and to Annexes A.8, A.9, A.12, A.18 of ISO 27001:2022. The management report automatically generates an Art. 21 compliance summary ready for auditors. We also cover CIS Controls v8, GDPR, Cyfun (Belgium), DORA (financial sector) and ANSSI R33/R72 recommendations.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>How does the QR Code verifiable attestation work?<i class="ri-arrow-down-s-line"></i></button>
@@ -375,7 +516,7 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>Which plan is right for my organization?<i class="ri-arrow-down-s-line"></i></button>
-                    <div class="faq-answer"><p>Our plans are segmented by number of users. <strong>Essential</strong> (€6,900/year) is designed for organizations up to 100 users: Azure AD &amp; hybrid cloud included, full compliance (NIS2, CIS Controls v8, ISO 27001, GDPR, DORA), complete reports and guided remediation. <strong>Professional</strong> (€14,900/year) targets organizations with 100 to 250 users, adding multi-site Active Directory, 4 AD audits per year and executive reports (Management/CISO). <strong>Enterprise</strong> (on quote) is for organizations with more than 250 users, with 24/7 monitoring, SIEM/SOC integration and a dedicated account manager.</p></div>
+                    <div class="faq-answer"><p>We offer four plans designed around how your team works:<br><br><strong>Oneshot</strong> (€2,400 ex-VAT) is a one-time MSC-led intervention — ideal for organizations that need a comprehensive security baseline or pre-certification evidence without a recurring commitment.<br><br><strong>Essential</strong> (€6,900/year — €575/month) adds trend reporting and software update access on top of the Oneshot. Designed for SMEs with 20–200 users who need to track security evolution over time.<br><br><strong>Professional</strong> (€14,900/year — €1,242/month) gives your team an annual license with unlimited scans plus ShieldConnect (6 SIEM connectors: JSON/CEF export). For ETIs with 200–800 users and advanced SMEs.<br><br><strong>Auditor</strong> is designed for external NIS2 / ISO 27001 auditors and pentesters — purchased as scan packs of 5, 10 or 20 scans, usable across multiple client environments.<br><br>Contact us to discuss which plan matches your security maturity and regulatory obligations.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>Do you offer demos or free trials?<i class="ri-arrow-down-s-line"></i></button>
@@ -383,11 +524,19 @@
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>What is the delivery timeframe after purchase?<i class="ri-arrow-down-s-line"></i></button>
-                    <div class="faq-answer"><p>After contract signing and invoicing, we schedule the on-site intervention within 5 to 10 business days depending on your location. The first audit and report delivery take place during this mission. Subsequent audits are scheduled according to your plan: 4 audits per year for Professional, on-demand for Enterprise.</p></div>
+                    <div class="faq-answer"><p>After contract signing and invoicing, we schedule the on-site intervention within 5 to 10 business days depending on your location. The first audit and report delivery take place during this mission. Subsequent audits are scheduled according to your plan: 4 audits per year for Essential, unlimited scans for Professional, or per scan pack for the Auditor plan.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question" data-faq-toggle>Does ADSecure work with Azure AD / Microsoft Entra ID?<i class="ri-arrow-down-s-line"></i></button>
                     <div class="faq-answer"><p>Yes, included from the Essential plan. The Azure AD &amp; hybrid cloud module is included in all plans at no extra cost. It analyzes your Microsoft cloud environment, Azure AD Connect synchronizations and federation configurations, and produces a dedicated report alongside the on-premise AD audit.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>What are Shield modules?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Shield modules are optional add-ons for the Professional plan, designed for security teams that need more than audit reports.<br><br><strong>ShieldConnect</strong> (available in v3.4 — Professional plan only) sends scan results directly to your SIEM (Sentinel, Splunk, Elastic, Wazuh, Graylog, QRadar) and messaging tools (Teams, Slack) in JSON or CEF format. 6 connectors included.<br><br>The following modules are planned for v4.0 (Q3–Q4 2026) and are not yet available:<br><br><strong>ShieldPredict</strong> will simulate future attack scenarios based on your current AD posture, scoring risks by real exploitability and business impact rather than generic CVE scores.<br><br><strong>ShieldBrand</strong> will allow MSPs and integrators to deliver ADSecure reports under their own brand identity.<br><br>Contact us at contact@mandatoryshield.com to discuss availability and pricing.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-faq-toggle>Is ADSecure available for external auditors?<i class="ri-arrow-down-s-line"></i></button>
+                    <div class="faq-answer"><p>Yes. The Auditor plan is specifically designed for external NIS2, ISO 27001 auditors, and pentesters who need to run AD security assessments across multiple client environments.<br><br>Instead of an annual subscription, you purchase a scan pack (5, 10 or 20 scans). Each scan includes the full 286-control analysis and all 7 regulatory reports. Packs are valid for up to 18 months and can be used across different client Active Directories.<br><br>The QR Code verifiable attestation — generated per scan and verifiable at verify.mandatoryshield.com — provides your clients with legally admissible audit evidence ready for regulatory inspections.<br><br>Contact us at contact@mandatoryshield.com to discuss Auditor pricing.</p></div>
                 </div>
             </div>
         </div>
@@ -401,7 +550,7 @@
                     <img src="images/logo-opt.png" alt="Mandatory Shield Logo" width="132" height="72" loading="lazy" style="height:72px;width:auto;display:block;margin:0 auto 1.5rem;">
                 </picture>
                 <h2>Who <span class="text-gradient">we are</span></h2>
-                <p>Mandatory Shield Company — Protecting the digital identity of European organizations</p>
+                <p>Mandatory Shield Company develops ADSecure, the first Active Directory audit solution designed for European SMEs and mid-sized companies. ADSecure produces a complete report in under 5 minutes covering 286 security controls, aligned with NIS2, ISO 27001, CIS and GDPR, including ready-to-use PowerShell remediation scripts. No data leaves the client's infrastructure — everything runs locally, in read-only mode.</p>
             </div>
 
             <div class="team-grid">
@@ -409,13 +558,13 @@
                     <div class="team-avatar">PR</div>
                     <div class="team-name">Pierre-Antoine Rouhaud</div>
                     <div class="team-role">Co-Founder &amp; CEO</div>
-                    <div class="team-bio">Expert in securing Windows infrastructures and Active Directory. Pierre-Antoine brings a strategic vision combined with deep technical mastery. He leads product direction and ADSecure's commercial strategy.</div>
+                    <div class="team-bio">Expert in securing Windows infrastructures and Active Directory environments. Pierre-Antoine combines strategic business vision with deep technical expertise in identity security. He leads ADSecure's product direction, commercial strategy, and regulatory compliance positioning across NIS2, ISO 27001 and DORA markets.</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">RB</div>
                     <div class="team-name">Raphaël Berki</div>
                     <div class="team-role">Co-Founder &amp; CTO</div>
-                    <div class="team-bio">Software architect and cybersecurity specialist, Raphaël designs ADSecure's technical architecture. His expertise covers behavioral analysis, attack simulation and intelligent scoring engines.</div>
+                    <div class="team-bio">Software architect and cybersecurity specialist, Raphaël designs ADSecure's core engine — 286 security controls covering on-prem Active Directory and Azure Entra ID. His expertise spans Kerberos attack analysis, ADCS vulnerability research (ESC1–ESC7), behavioral detection, and intelligent scoring systems aligned with CIS Controls, ANSSI and DORA frameworks.</div>
                 </div>
             </div>
 
@@ -472,9 +621,11 @@
                         <label for="contact-subject">Area of interest</label>
                         <select id="contact-subject" name="subject">
                             <option>Platform demonstration</option>
-                            <option>Essential plan</option>
-                            <option>Professional plan</option>
-                            <option>Enterprise plan</option>
+                            <option>Oneshot intervention</option>
+                            <option>Essential plan (4 audits/year)</option>
+                            <option>Professional license</option>
+                            <option>Auditor pack</option>
+                            <option>Shield modules (add-ons)</option>
                             <option>Other</option>
                         </select>
                     </div>
@@ -509,14 +660,14 @@
                 </div>
                 <div class="footer-col">
                     <h3>Company</h3>
-                    <ul><li><a href="#entreprise">About</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Careers</a></li><li><a href="#">Partners</a></li></ul>
+                    <ul><li><a href="#entreprise">About</a></li><li><a href="#contact">Contact</a></li><li><a href="#contact">Careers</a></li><li><a href="#contact">Partners</a></li></ul>
                 </div>
                 <div class="footer-col">
                     <h3>Legal</h3>
                     <ul><li><a href="legal.html#privacy">Privacy policy</a></li><li><a href="legal.html#cgu">Terms of use</a></li><li><a href="legal.html#cgv">GTC</a></li><li><a href="legal.html#mentions">Legal notice</a></li></ul>
                 </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Mandatory Shield Company. All rights reserved. · Built in Belgium 🇧🇪</p></div>
+            <div class="footer-bottom"><p>&copy; 2026 Mandatory Shield Company. All rights reserved. · Built in Belgium 🇧🇪</p></div>
         </div>
     </footer>
 
