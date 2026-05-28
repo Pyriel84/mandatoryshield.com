@@ -243,7 +243,7 @@ header {
 .comparison-table tr:last-child td { border-bottom: none; }
 .comparison-table tr:hover td { background: var(--bg-secondary); }
 
-.shield-modules-section { margin-top: 64px; padding: 40px; background: white; border: 1px solid var(--border); border-radius: 16px; }
+.shield-modules-section { margin-top: 64px; padding: 40px; background: var(--bg-secondary); border: 1px solid var(--teal-light, #99f6e4); border-radius: 16px; }
 .shield-modules-section h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
 .shield-modules-section > p { color: var(--text-secondary); margin-bottom: 32px; }
 .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }

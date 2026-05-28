@@ -12,17 +12,17 @@
     });
 })();
 
-document.addEventListener('DOMContentLoaded', function () {
-
-  // FAQ accordion
-  document.querySelectorAll('[data-faq-toggle]').forEach(function (btn) {
+// FAQ accordion — top-level (script is defer, DOM is already ready)
+document.querySelectorAll('[data-faq-toggle]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var item = btn.parentElement;
-      var isOpen = item.classList.contains('active');
-      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
-      if (!isOpen) item.classList.add('active');
+        var item = btn.parentElement;
+        var isOpen = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
+        if (!isOpen) item.classList.add('active');
     });
-  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
 
   // Chatbot toggle / close
   var toggle = document.querySelector('.chatbot-toggle');
