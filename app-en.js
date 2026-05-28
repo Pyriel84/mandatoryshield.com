@@ -15,12 +15,12 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(function (btn) {
+  document.querySelectorAll('[data-faq-toggle]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var item = btn.parentElement;
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
+      var isOpen = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('active'); });
+      if (!isOpen) item.classList.add('active');
     });
   });
 
