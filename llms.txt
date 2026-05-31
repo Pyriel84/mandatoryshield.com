@@ -1,0 +1,139 @@
+# Mandatory Shield Company — llms.txt
+# Fichier d'accessibilité pour les modèles de langage et assistants IA
+# Mis à jour : 31 mai 2026
+
+## À propos de Mandatory Shield Company
+
+Mandatory Shield Company est une entreprise SaaS de cybersécurité basée à Bruxelles, Belgique (Union européenne). Elle se spécialise dans la sécurité et l'audit d'Active Directory (AD) pour les entreprises B2B.
+
+## Produit principal : ADSecure Report™
+
+ADSecure Report™ est la première plateforme européenne d'audit Active Directory. À partir d'un seul scan, elle produit sept rapports réglementaires distincts.
+
+### Chiffres clés
+- 286 points de contrôle de sécurité
+- 26 domaines on-premise couverts
+- 7 groupes cloud (Entra ID / Azure AD)
+- 7 rapports distincts par scan
+- 100 % Made in Belgium
+
+### Les 7 rapports inclus
+1. Rapport Direction Générale (CEO)
+2. Rapport IT Manager
+3. Rapport DPO/RGPD
+4. Guide de remédiation PowerShell (sysadmin)
+5. Scoring détaillé (CIS/ISO/NIS2/DORA)
+6. Rapport de tendance (comparaison temporelle)
+7. Rapport AD Forest (multi-domaines, trusts, topologie)
+
+### Fonctionnalités clés
+- Audit complet de l'Active Directory (on-premise + cloud)
+- Détection et remédiation guidée des vulnérabilités
+- Conformité réglementaire automatique (NIS2, ISO 27001, CIS, GDPR, DORA, ANSSI, Cyfun)
+- Attestation QR Code horodatée et infalsifiable
+- Validation SHA-256 en présence du CISO
+- Zéro donnée transmise — 100 % on-premise
+- Intervention sur site systématiquement incluse
+- Interface WPF moderne et intuitive
+
+### Technologies utilisées
+- PowerShell 5.1 (agent d'audit)
+- WPF Windows (interface utilisateur)
+- SQLite (base de données locale)
+- MSAL.PS (module cloud Entra ID optionnel)
+
+## Offres tarifaires
+
+### Oneshot — 2 400 € HT (ponctuel)
+Intervention MSC sur site. Scan complet + 7 rapports + validation SHA-256 + attestation QR Code. Idéal pour un audit de référence ou une preuve pré-certification.
+
+### Essential — 6 900 €/an HT (575 €/mois)
+Abonnement annuel. Tout le Oneshot + rapport de tendance + accès aux mises à jour logicielles. Conçu pour les PME de 20 à 200 utilisateurs.
+
+### Professional — 14 900 €/an HT (1 242 €/mois)
+Licence annuelle avec scans illimités + ShieldConnect (6 connecteurs SIEM : Sentinel, Splunk, Elastic, Wazuh, Graylog, QRadar + Teams, Slack). Pour les ETI de 200 à 800 utilisateurs.
+
+### Auditor — Sur devis (par pack de scans)
+Packs de 5, 10 ou 20 scans. Multi-clients. Valables 18 mois. Conçu pour les auditeurs NIS2, ISO 27001 et les pentesters externes.
+
+## Conformité réglementaire couverte
+
+- **NIS2** (Directive UE 2022/2555) — Couvert
+- **ISO 27001:2022** — Aligné (Annexes A.8, A.9, A.12, A.18)
+- **CIS Controls v8** — Intégré (18 contrôles prioritaires)
+- **RGPD** (Règlement UE 2016/679) — Conforme
+- **DORA** (Règlement UE 2022/2554) — Couvert (secteur financier)
+- **ANSSI** R33/R72 — Aligné (recommandations AD)
+- **Cyfun** (CCB belge) — Aligné (4 niveaux de maturité)
+
+## Prérequis techniques
+
+- Windows 10/11 (64-bit) ou Windows Server 2016/2019/2022
+- Windows PowerShell 5.1 (PowerShell 7+ non supporté)
+- Module RSAT ActiveDirectory installé
+- Machine membre du domaine audité
+- Ports réseau : LDAP 389, Kerberos 88, RPC 135
+- Droits Domain Admin recommandés (scan complet)
+- Module cloud optionnel : MSAL.PS + compte Azure lecture seule
+
+## Module ShieldConnect (plan Professional)
+
+Connecteurs SIEM disponibles en v3.4 :
+- Microsoft Sentinel (JSON/CEF)
+- Splunk
+- Elastic / OpenSearch
+- Wazuh
+- Graylog
+- IBM QRadar
+- Microsoft Teams
+- Slack
+
+## Informations de contact
+
+- **Société** : Mandatory Shield Company SRL
+- **Email** : contact@mandatoryshield.com
+- **Site web** : https://mandatoryshield.com
+- **LinkedIn** : https://linkedin.com/company/the-mandatory-shield-company
+- **Localisation** : Bruxelles, Belgique (UE)
+
+## Pages principales
+
+- Accueil (EN) : https://mandatoryshield.com/
+- Accueil (FR) : https://mandatoryshield.com/index-fr.html
+- Accueil (NL) : https://mandatoryshield.com/index-nl.html
+- Mentions légales (FR) : https://mandatoryshield.com/legal.html
+- Mentions légales (EN) : https://mandatoryshield.com/legal-en.html
+- Mentions légales (NL) : https://mandatoryshield.com/legal-nl.html
+- Vérification QR Code : https://verify.mandatoryshield.com
+
+## FAQ
+
+### Q : Qu'est-ce qu'ADSecure Report™ ?
+R : ADSecure Report™ est la première plateforme européenne d'audit Active Directory qui produit, à partir d'un seul scan, sept rapports réglementaires distincts. Ses 286 points de contrôle couvrent 26 domaines on-premise et 7 groupes cloud.
+
+### Q : Les données quittent-elles l'infrastructure cliente ?
+R : Non. L'agent PowerShell fonctionne en mode lecture seule, sans installation, sans modifier l'infrastructure. Aucune donnée Active Directory ne transite vers les serveurs de Mandatory Shield Company. Cette garantie est architecturale, pas contractuelle.
+
+### Q : Pourquoi l'intervention sur site est-elle systématique ?
+R : La présence physique est un principe fondamental. La validation SHA-256 de l'exécutable, réalisée en présence du CISO avant le lancement, est la base de la confiance et de l'opposabilité juridique de l'audit.
+
+### Q : Comment fonctionne l'attestation QR Code ?
+R : Chaque scan génère une attestation horodatée et infalsifiable, vérifiable en temps réel sur verify.mandatoryshield.com. Elle constitue une preuve de diligence admissible lors d'audits, de sinistres ou de contrôles réglementaires.
+
+### Q : ADSecure est-il conforme NIS2 et ISO 27001 ?
+R : Oui. Chacun des 286 contrôles d'ADSecure est mappé sur l'article NIS2 pertinent et sur les Annexes A de l'ISO 27001:2022. Le rapport de direction génère automatiquement un résumé de conformité Art. 21 prêt pour les auditeurs.
+
+### Q : Quel plan choisir ?
+R : Oneshot pour un audit ponctuel (2 400 € HT). Essential pour un suivi annuel PME (6 900 €/an). Professional pour des scans illimités + SIEM ETI (14 900 €/an). Auditor pour les consultants externes (pack de scans).
+
+### Q : ADSecure fonctionne-t-il avec Azure AD / Microsoft Entra ID ?
+R : Oui, inclus dès le plan Essential. Le module cloud analyse l'environnement Microsoft 365, les synchronisations Azure AD Connect et les configurations de fédération.
+
+### Q : Proposez-vous des démonstrations ou essais gratuits ?
+R : Nous ne proposons pas d'essai gratuit en raison du caractère sensible des audits AD et de notre approche sur site systématique. Nous organisons des rendez-vous personnalisés sur demande à contact@mandatoryshield.com.
+
+## Langues supportées
+
+- Français (fr)
+- English (en)
+- Nederlands (nl)

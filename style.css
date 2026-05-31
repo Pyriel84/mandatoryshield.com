@@ -486,3 +486,32 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
 @media (min-width: 769px) {
     .mobile-nav-overlay { display: none !important; }
 }
+
+/* ── CSP compliance: replaces all inline style="..." attributes ────────────── */
+.link-primary { color: var(--primary); }
+
+.compliance-legal-note {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+}
+.compliance-legal-note p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.pricing-badge-slate    { background: #475569; }
+.pricing-badge-primary  { background: var(--primary-dark); }
+.pricing-badge-muted    { background: #64748b; }
+
+.section-logo {
+    height: 72px;
+    width: auto;
+    display: block;
+    margin: 0 auto 1.5rem;
+}
+
+.is-hidden { display: none; }
