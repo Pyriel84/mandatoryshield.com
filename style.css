@@ -1024,6 +1024,26 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     }
 }
 
+/* YOUTUBE EMBED IFRAME */
+.video-thumbnail iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+}
+
+.video-thumbnail.is-playing {
+    cursor: default;
+}
+
+.video-thumbnail.is-playing img,
+.video-thumbnail.is-playing .duration,
+.video-thumbnail.is-playing .play-button {
+    display: none;
+}
+
 /* PRINT */
 @media print {
     .video-card,
