@@ -809,6 +809,35 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     word-break: break-word;
 }
 
+/* VIDEO EMPTY STATE */
+.video-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 40px;
+    background: var(--bg-secondary);
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+}
+
+.video-empty-state i {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.video-empty-state h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.video-empty-state p {
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 24px;
+}
+
 .video-description {
     font-size: 14px;
     color: #555;
