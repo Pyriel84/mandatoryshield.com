@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var kb = {
     'tarief':    'Oneshot: €2.400 (eenmalig). Essential: €6.900/jaar (€575/maand). Professional: €14.900/jaar (€1.242/maand). Alle formules bevatten interventie ter plaatse met SHA-256-validatie en 7 regelgevende rapporten.',
     'prijs':     'Oneshot: €2.400 (eenmalig). Essential: €6.900/jaar (€575/maand). Professional: €14.900/jaar (€1.242/maand). Alle formules bevatten interventie ter plaatse met SHA-256-validatie en 7 regelgevende rapporten.',
-    'nis2':      'ADSecure koppelt alle 344 controles aan NIS2 (EU-richtlijn 2022/2555, verplicht sinds oktober 2024). Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors.',
+    'nis2':      'ShieldAD koppelt alle 344 controles aan NIS2 (EU-richtlijn 2022/2555, verplicht sinds oktober 2024). Het directierapport genereert automatisch een Art. 21 conformiteitsamenvatting klaar voor auditors.',
     'gegeven':   'Nul gegevensoverdracht. De scan draait 100% on-premise in alleen-lezen modus. Geen Active Directory-gegevens worden naar onze servers doorgestuurd — architecturaal gegarandeerd.',
     'demo':      'We bieden geen gratis proefversies aan, maar organiseren gepersonaliseerde afspraken. Contacteer ons op contact@mandatoryshield.com of vul het contactformulier in.',
     'default':   'Contacteer ons op contact@mandatoryshield.com. Onze experts reageren binnen 24 uur.'

@@ -12,7 +12,7 @@ document.querySelectorAll('.video-thumbnail').forEach(function(thumb) {
             '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId +
             '?autoplay=1&rel=0&modestbranding=1" ' +
             'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
-            'allowfullscreen title="ADSecure Video"></iframe>'
+            'allowfullscreen title="ShieldAD Video"></iframe>'
         );
     });
 });

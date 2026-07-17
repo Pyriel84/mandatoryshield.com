@@ -6,9 +6,9 @@
 
 Mandatory Shield Company est une entreprise SaaS de cybersécurité basée à Bruxelles, Belgique (Union européenne). Elle se spécialise dans la sécurité et l'audit d'Active Directory (AD) pour les entreprises B2B.
 
-## Produit principal : ADSecure Report™
+## Produit principal : ShieldAD Report™
 
-ADSecure Report™ est la première plateforme européenne d'audit Active Directory. À partir d'un seul scan, elle produit sept rapports réglementaires distincts.
+ShieldAD Report™ est la première plateforme européenne d'audit Active Directory. À partir d'un seul scan, elle produit sept rapports réglementaires distincts.
 
 ### Chiffres clés
 - 286 points de contrôle de sécurité
@@ -108,8 +108,8 @@ Connecteurs SIEM disponibles en v3.4 :
 
 ## FAQ
 
-### Q : Qu'est-ce qu'ADSecure Report™ ?
-R : ADSecure Report™ est la première plateforme européenne d'audit Active Directory qui produit, à partir d'un seul scan, sept rapports réglementaires distincts. Ses 286 points de contrôle couvrent 26 domaines on-premise et 7 groupes cloud.
+### Q : Qu'est-ce que ShieldAD Report™ ?
+R : ShieldAD Report™ est la première plateforme européenne d'audit Active Directory qui produit, à partir d'un seul scan, sept rapports réglementaires distincts. Ses 286 points de contrôle couvrent 26 domaines on-premise et 7 groupes cloud.
 
 ### Q : Les données quittent-elles l'infrastructure cliente ?
 R : Non. L'agent PowerShell fonctionne en mode lecture seule, sans installation, sans modifier l'infrastructure. Aucune donnée Active Directory ne transite vers les serveurs de Mandatory Shield Company. Cette garantie est architecturale, pas contractuelle.
@@ -120,13 +120,13 @@ R : La présence physique est un principe fondamental. La validation SHA-256 de 
 ### Q : Comment fonctionne l'attestation QR Code ?
 R : Chaque scan génère une attestation horodatée et infalsifiable, vérifiable en temps réel sur verify.mandatoryshield.com. Elle constitue une preuve de diligence admissible lors d'audits, de sinistres ou de contrôles réglementaires.
 
-### Q : ADSecure est-il conforme NIS2 et ISO 27001 ?
-R : Oui. Chacun des 286 contrôles d'ADSecure est mappé sur l'article NIS2 pertinent et sur les Annexes A de l'ISO 27001:2022. Le rapport de direction génère automatiquement un résumé de conformité Art. 21 prêt pour les auditeurs.
+### Q : ShieldAD est-il conforme NIS2 et ISO 27001 ?
+R : Oui. Chacun des 286 contrôles de ShieldAD est mappé sur l'article NIS2 pertinent et sur les Annexes A de l'ISO 27001:2022. Le rapport de direction génère automatiquement un résumé de conformité Art. 21 prêt pour les auditeurs.
 
 ### Q : Quel plan choisir ?
 R : Oneshot pour un audit ponctuel (2 400 € HT). Essential pour un suivi annuel PME (6 900 €/an). Professional pour des scans illimités + SIEM ETI (14 900 €/an). Auditor pour les consultants externes (pack de scans).
 
-### Q : ADSecure fonctionne-t-il avec Azure AD / Microsoft Entra ID ?
+### Q : ShieldAD fonctionne-t-il avec Azure AD / Microsoft Entra ID ?
 R : Oui, inclus dès le plan Essential. Le module cloud analyse l'environnement Microsoft 365, les synchronisations Azure AD Connect et les configurations de fédération.
 
 ### Q : Proposez-vous des démonstrations ou essais gratuits ?

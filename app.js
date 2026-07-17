@@ -151,12 +151,12 @@ const chatbotInput = document.getElementById('chatbotInput');
 const chatbotMessages = document.getElementById('chatbotMessages');
 
 const knowledgeBase = {
-    'prix':       'ADSecure propose trois offres : Essential à 6 900 €/an (4 audits/an), Professional à 14 900 €/an (audits illimités + Azure AD), et Enterprise sur devis.',
-    'tarif':      'ADSecure propose trois offres : Essential à 6 900 €/an, Professional à 14 900 €/an, et Enterprise sur devis.',
-    'nis2':       'Oui, ADSecure est entièrement conforme NIS2. Chaque contrôle est mappé aux articles de la directive NIS2 (UE 2022/2555, obligatoire depuis octobre 2024).',
-    'conformité': 'ADSecure couvre intégralement : NIS2 (Couvert), ISO 27001 (Aligné), CIS Controls v8 (Intégré), RGPD (Conforme), Cyfun/CCB (Aligné) et DORA (Couvert).',
-    'cloud':      'Non. ADSecure fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
-    'données':    'Non. ADSecure fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
+    'prix':       'ShieldAD propose trois offres : Essential à 6 900 €/an (4 audits/an), Professional à 14 900 €/an (audits illimités + Azure AD), et Enterprise sur devis.',
+    'tarif':      'ShieldAD propose trois offres : Essential à 6 900 €/an, Professional à 14 900 €/an, et Enterprise sur devis.',
+    'nis2':       'Oui, ShieldAD est entièrement conforme NIS2. Chaque contrôle est mappé aux articles de la directive NIS2 (UE 2022/2555, obligatoire depuis octobre 2024).',
+    'conformité': 'ShieldAD couvre intégralement : NIS2 (Couvert), ISO 27001 (Aligné), CIS Controls v8 (Intégré), RGPD (Conforme), Cyfun/CCB (Aligné) et DORA (Couvert).',
+    'cloud':      'Non. ShieldAD fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
+    'données':    'Non. ShieldAD fonctionne 100% on-premise. Aucune donnée Active Directory ne quitte votre environnement.',
     'démo':       'Nous ne proposons pas d\'essai gratuit. Cependant, nous organisons des rendez-vous personnalisés. Contactez-nous à contact@mandatoryshield.com',
     'contact':    'Vous pouvez nous contacter à contact@mandatoryshield.com. Nos experts vous répondent sous 24h.'
 };
@@ -166,13 +166,13 @@ const chatbotToggle = document.querySelector('[data-chat-toggle]');
 chatbotToggle.addEventListener('click', () => {
     const isOpen = chatbotWindow.classList.toggle('active');
     chatbotToggle.setAttribute('aria-expanded', isOpen);
-    chatbotToggle.setAttribute('aria-label', isOpen ? "Fermer l'assistant ADSecure" : "Ouvrir l'assistant ADSecure");
+    chatbotToggle.setAttribute('aria-label', isOpen ? "Fermer l'assistant ShieldAD" : "Ouvrir l'assistant ShieldAD");
 });
 
 document.querySelector('[data-chat-close]').addEventListener('click', () => {
     chatbotWindow.classList.remove('active');
     chatbotToggle.setAttribute('aria-expanded', 'false');
-    chatbotToggle.setAttribute('aria-label', "Ouvrir l'assistant ADSecure");
+    chatbotToggle.setAttribute('aria-label', "Ouvrir l'assistant ShieldAD");
 });
 
 function addMessage(text, sender) {

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var kb = {
     'price':    'Oneshot: €2,400 (one-time). Essential: €6,900/year (€575/month). Professional: €14,900/year (€1,242/month). All plans include on-site SHA-256 validated execution and 7 regulatory reports.',
-    'nis2':     'ADSecure maps all 344 controls to NIS2 (EU Directive 2022/2555, mandatory since Oct 2024). The management report generates an Art. 21 compliance summary ready for auditors.',
+    'nis2':     'ShieldAD maps all 344 controls to NIS2 (EU Directive 2022/2555, mandatory since Oct 2024). The management report generates an Art. 21 compliance summary ready for auditors.',
     'data':     'Zero data transmitted. The scan runs 100% on-premise in read-only mode. No AD data transits to our servers — guaranteed architecturally, not contractually.',
     'demo':     'We do not offer free trials. We organize personalized appointments. Contact us at contact@mandatoryshield.com or fill out the contact form.',
     'default':  'Contact us at contact@mandatoryshield.com. Our experts will respond within 24 hours.'

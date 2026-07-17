@@ -1,4 +1,4 @@
-# CLAUDE.md — Mandatory Shield Company · ADSecure Report™
+# CLAUDE.md — Mandatory Shield Company · ShieldAD Report™
 
 > Ce fichier configure le comportement de Claude Code pour ce projet.
 > Claude agit comme un expert senior en **développement web**, **SEO/GEO**, et **sécurité des applications web**.
@@ -21,7 +21,7 @@ Avant toute modification, tu évalues systématiquement l'impact sur : le SEO, l
 ## 🏢 Contexte du projet
 
 **Entreprise** : Mandatory Shield Company SRL  
-**Produit principal** : ADSecure Report™  
+**Produit principal** : ShieldAD Report™  
 **Domaine** : mandatoryshield.com  
 **Hébergement** : Scaleway (Europe)  
 **Localisation** : Bruxelles, Belgique (Union Européenne)  
@@ -182,10 +182,10 @@ if (mobileToggle && navLinks) {
 
 ---
 
-## 📦 Fiche produit ADSecure Report™ — Contenu de référence
+## 📦 Fiche produit ShieldAD Report™ — Contenu de référence
 
 ### Description officielle
-ADSecure Report™ est la **première plateforme européenne d'audit Active Directory** conçue pour les dirigeants, les équipes IT et les auditeurs de conformité. En un seul scan, sans installation, sans agent, sans connexion externe, elle génère **7 rapports réglementaires distincts** adaptés à chaque interlocuteur.
+ShieldAD Report™ est la **première plateforme européenne d'audit Active Directory** conçue pour les dirigeants, les équipes IT et les auditeurs de conformité. En un seul scan, sans installation, sans agent, sans connexion externe, elle génère **7 rapports réglementaires distincts** adaptés à chaque interlocuteur.
 
 ### Positionnement
 - **Cible** : PME, ETI, grandes entreprises, secteur public, cabinets d'audit
@@ -246,10 +246,10 @@ Accès distants, sessions interactives
 
 **index.html (FR) :**
 ```html
-<title>ADSecure Report™ | Mandatory Shield — Audit Sécurité Active Directory en Belgique</title>
+<title>ShieldAD Report™ | Mandatory Shield — Audit Sécurité Active Directory en Belgique</title>
 <meta name="description" content="Auditez votre Active Directory en un scan. 164 contrôles de sécurité, 7 rapports réglementaires distincts, conformité NIS2, ISO 27001 et RGPD. Solution 100% on-premise, développée en Belgique." />
 <meta name="keywords" content="audit Active Directory, sécurité AD, NIS2 conformité, ISO 27001, logiciel cybersécurité entreprise, protection infrastructure IT, SaaS sécurité B2B, RGPD Active Directory, CIS Controls, ANSSI, cybersécurité Belgique" />
-<meta property="og:title" content="ADSecure Report™ | Mandatory Shield — Audit Active Directory" />
+<meta property="og:title" content="ShieldAD Report™ | Mandatory Shield — Audit Active Directory" />
 <meta property="og:description" content="La première plateforme européenne d'audit Active Directory. 164 contrôles, 7 rapports réglementaires, conformité NIS2 & ISO 27001. 100% on-premise, développé en Belgique." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.mandatoryshield.com/" />
@@ -266,14 +266,14 @@ Accès distants, sessions interactives
 
 **index-nl.html (NL) :**
 ```html
-<title>ADSecure Report™ | Mandatory Shield — Actieve Directory Beveiligingsaudit</title>
+<title>ShieldAD Report™ | Mandatory Shield — Actieve Directory Beveiligingsaudit</title>
 <meta name="description" content="Audit uw Active Directory in één scan. 164 beveiligingscontroles, 7 regelgevingsrapporten, NIS2 & ISO 27001-conformiteit. 100% on-premise, ontwikkeld in België." />
 <link rel="canonical" href="https://www.mandatoryshield.com/nl" />
 ```
 
 **index-en.html (EN) :**
 ```html
-<title>ADSecure Report™ | Mandatory Shield — Active Directory Security Audit Platform</title>
+<title>ShieldAD Report™ | Mandatory Shield — Active Directory Security Audit Platform</title>
 <meta name="description" content="Audit your Active Directory in one scan. 164 security controls, 7 distinct regulatory reports, NIS2 & ISO 27001 compliance. 100% on-premise, made in Belgium." />
 <link rel="canonical" href="https://www.mandatoryshield.com/en" />
 ```
@@ -281,7 +281,7 @@ Accès distants, sessions interactives
 ### Hiérarchie des titres (obligatoire, ne pas modifier)
 ```
 H1 : Votre Active Directory. Aucun angle mort. (unique, dans le hero)
-  H2 : Pourquoi choisir ADSecure Report™ ?
+  H2 : Pourquoi choisir ShieldAD Report™ ?
     H3 : [Chaque fonctionnalité/différenciateur]
   H2 : Conformité réglementaire
     H3 : [Chaque standard : NIS2, ISO 27001, etc.]
@@ -300,7 +300,7 @@ H1 : Votre Active Directory. Aucun angle mort. (unique, dans le hero)
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "ADSecure Report™",
+  "name": "ShieldAD Report™",
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Windows Server 2016+",
   "description": "Plateforme européenne d'audit Active Directory. 164 contrôles de sécurité, 7 rapports réglementaires distincts, conformité NIS2, ISO 27001, RGPD et CIS Controls. 100% on-premise, zéro télémétrie.",
@@ -350,7 +350,7 @@ H1 : Votre Active Directory. Aucun angle mort. (unique, dans le hero)
   },
   "email": "contact@mandatoryshield.com",
   "sameAs": ["https://linkedin.com/company/the-mandatory-shield-company"],
-  "description": "Entreprise belge spécialisée dans les solutions SaaS de cybersécurité pour les entreprises. Créatrice d'ADSecure Report™, la première plateforme européenne d'audit Active Directory.",
+  "description": "Entreprise belge spécialisée dans les solutions SaaS de cybersécurité pour les entreprises. Créatrice de ShieldAD Report™, la première plateforme européenne d'audit Active Directory.",
   "knowsAbout": ["Active Directory Security", "NIS2 Compliance", "ISO 27001", "Cybersecurity SaaS", "B2B Software"]
 }
 ```
@@ -388,7 +388,7 @@ H1 : Votre Active Directory. Aucun angle mort. (unique, dans le hero)
 1. **Définitions explicites** — Chaque terme technique doit être défini à sa première occurrence (ex: "Active Directory (AD), l'annuaire central qui gère les identités et accès de votre entreprise")
 2. **Format questions/réponses** — La FAQ doit couvrir toutes les intentions de recherche probable
 3. **Résumés synthétiques** — Chaque section doit commencer par une phrase de synthèse de 1-2 lignes
-4. **Phrases directes** — Préférer "ADSecure génère 7 rapports" à "notre solution vous permet de générer..."
+4. **Phrases directes** — Préférer "ShieldAD génère 7 rapports" à "notre solution vous permet de générer..."
 5. **Chiffres concrets** — Toujours citer : 164 contrôles, 7 rapports, 20+ domaines, 6 900 €, 14 900 €
 6. **Autorité établie** — Mentionner : "première plateforme européenne", "développé en Belgique", "fondée par [noms]"
 
@@ -396,22 +396,22 @@ H1 : Votre Active Directory. Aucun angle mort. (unique, dans le hero)
 
 ```
 FR :
-- Qu'est-ce qu'ADSecure Report™ ?
-- ADSecure envoie-t-il des données dans le cloud ?
-- Quels sont les prérequis techniques d'ADSecure ?
-- ADSecure est-il conforme à la directive NIS2 ?
-- Combien coûte ADSecure Report™ ?
+- Qu'est-ce que ShieldAD Report™ ?
+- ShieldAD envoie-t-il des données dans le cloud ?
+- Quels sont les prérequis techniques de ShieldAD ?
+- ShieldAD est-il conforme à la directive NIS2 ?
+- Combien coûte ShieldAD Report™ ?
 - Quelle est la différence entre les offres Essential, Professional et Enterprise ?
-- ADSecure fonctionne-t-il avec Azure AD / Entra ID ?
-- Combien de temps dure un scan ADSecure ?
-- Qui peut lire les rapports ADSecure ?
-- ADSecure nécessite-t-il une connexion Internet ?
+- ShieldAD fonctionne-t-il avec Azure AD / Entra ID ?
+- Combien de temps dure un scan ShieldAD ?
+- Qui peut lire les rapports ShieldAD ?
+- ShieldAD nécessite-t-il une connexion Internet ?
 ```
 
 ### Section "Featured Snippet" — Texte de référence à conserver
 Dans le hero ou la première section produit, ce paragraphe doit exister (adapté par langue) :
 
-> **ADSecure Report™** est une plateforme d'audit de sécurité Active Directory développée en Belgique par Mandatory Shield Company. Elle analyse en un seul scan l'infrastructure Active Directory d'une entreprise et génère instantanément 7 rapports réglementaires distincts couvrant 164 points de contrôle répartis sur plus de 20 domaines. La solution fonctionne entièrement en mode on-premise, sans installation d'agent, sans connexion Internet, et garantit qu'aucune donnée ne quitte le réseau de l'entreprise. Elle est conforme aux référentiels NIS2, ISO/IEC 27001, CIS Controls v8, RGPD, ANSSI et DORA.
+> **ShieldAD Report™** est une plateforme d'audit de sécurité Active Directory développée en Belgique par Mandatory Shield Company. Elle analyse en un seul scan l'infrastructure Active Directory d'une entreprise et génère instantanément 7 rapports réglementaires distincts couvrant 164 points de contrôle répartis sur plus de 20 domaines. La solution fonctionne entièrement en mode on-premise, sans installation d'agent, sans connexion Internet, et garantit qu'aucune donnée ne quitte le réseau de l'entreprise. Elle est conforme aux référentiels NIS2, ISO/IEC 27001, CIS Controls v8, RGPD, ANSSI et DORA.
 
 ---
 
