@@ -252,52 +252,44 @@
                 <p>Uitgebreide rapportweergaven tonen in één oogopslag de beveiligingsscore, compliance-status, herstelwerklast en bewijs voor de directie.</p>
             </div>
 
-            <div class="product-console">
-                <div class="console-topbar">
-                    <div class="console-brand">ShieldAD<span>(tm)</span> <small>v3.6.0</small></div>
-                    <div class="console-actions"><span>Herstel</span><span>Compliance</span><span>Rapporten</span></div>
+            <div class="screenshot-tabs">
+                <input type="radio" name="shieldad-screen" id="screen-dashboard" class="visually-hidden" checked>
+                <input type="radio" name="shieldad-screen" id="screen-scan" class="visually-hidden">
+                <input type="radio" name="shieldad-screen" id="screen-graph" class="visually-hidden">
+                <input type="radio" name="shieldad-screen" id="screen-connect" class="visually-hidden">
+
+                <div class="screenshot-tablist" role="tablist" aria-label="ShieldAD productschermen">
+                    <label for="screen-dashboard" class="screenshot-tab"><i class="ri-dashboard-3-line" aria-hidden="true"></i> Dashboard</label>
+                    <label for="screen-scan" class="screenshot-tab"><i class="ri-radar-line" aria-hidden="true"></i> Scan</label>
+                    <label for="screen-graph" class="screenshot-tab"><i class="ri-node-tree" aria-hidden="true"></i> ShieldGraph</label>
+                    <label for="screen-connect" class="screenshot-tab"><i class="ri-plug-line" aria-hidden="true"></i> ShieldConnect</label>
                 </div>
-                <div class="console-context">
-                    <strong>AD verbonden</strong>
-                    <span>Alleen lezen</span>
-                    <em>Domein: TEST.COM</em>
-                </div>
-                <div class="console-kpis">
-                    <div><small>Score global</small><strong>7</strong><span>/ 100</span></div>
-                    <div><small>FAIL</small><strong>43</strong><span>Echecs</span></div>
-                    <div><small>WARN</small><strong>56</strong><span>Alertes</span></div>
-                    <div><small>PASS</small><strong>104</strong><span>Conformes</span></div>
-                    <div><small>INFO</small><strong>36</strong><span>Informatifs</span></div>
-                </div>
-                <div class="console-scan">
-                    <label><input type="checkbox"> Azure Entra ID / M365 opnemen - Hybride score</label>
-                    <button>Geschiedenis laden</button>
-                    <button class="primary">Active Directory-scan starten</button>
-                    <button class="graph">ShieldGraph</button>
-                </div>
-                <div class="console-workspace">
-                    <pre>[10:01:50] TIER-04 Comptes multi-tiers : 0 -> PASS
-[10:01:50] TIER-05 PAW/jumphost : 0 machines -> FAIL
-[10:01:51] HDC-03 Credential Guard : Running=False -> FAIL
-[10:01:51] LAPS : Present=0 Computer(s) -> FAIL
-[10:01:52] Rapport CEO OK
-[10:01:52] Rapport REM OK
-[10:01:52] Rapport IT OK
-[10:01:52] Scan termine - Score : 7/100</pre>
-                    <div class="module-panel">
-                        <strong>Modules d'analyse</strong>
-                        <span><i></i>Connexion AD / Domaine</span>
-                        <span><i></i>Comptes privilegies</span>
-                        <span><i></i>Kerberos / Auth</span>
-                        <span><i></i>GPO / Politiques</span>
-                        <span><i></i>DNS / Replication</span>
-                        <span><i></i>Generation rapports</span>
+
+                <div class="screenshot-frame">
+                    <div class="screenshot-panel" id="panel-dashboard">
+                        <picture>
+                            <source srcset="images/screenshots/dashboard.webp" type="image/webp">
+                            <img src="images/screenshots/dashboard.png" width="2000" height="1156" alt="ShieldAD-dashboard met de globale identiteitsbeveiligingsscore, FAIL/WARN/PASS-verdeling, meest blootgestelde domeinen en topprioritaire risico's" loading="lazy" decoding="async">
+                        </picture>
                     </div>
-                </div>
-                <div class="console-reports">
-                    <div><strong>Direction</strong><span>Rapport Direction (CEO)</span><span>Scoring detaille</span></div>
-                    <div><strong>Equipe IT</strong><span>Rapport IT Manager</span><span>Plan de remediation</span><span>Topologie FOREST</span></div>
-                    <div><strong>Conformite &amp; outils</strong><span>DPO / NIS2 / ISO</span><span>Azure</span><span>Tendance</span></div>
+                    <div class="screenshot-panel" id="panel-scan">
+                        <picture>
+                            <source srcset="images/screenshots/scan.webp" type="image/webp">
+                            <img src="images/screenshots/scan.png" width="2000" height="1154" alt="ShieldAD-scanscherm voor het starten van een on-premises Active Directory-scan en een Azure/Entra ID-scan, met IAM-toegangsinventaris" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="screenshot-panel" id="panel-graph">
+                        <picture>
+                            <source srcset="images/screenshots/shieldgraph.webp" type="image/webp">
+                            <img src="images/screenshots/shieldgraph.png" width="2000" height="1153" alt="ShieldGraph-visualisatie van aanvalspaden en kritieke knooppunten naar bevoorrechte groepen" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="screenshot-panel" id="panel-connect">
+                        <picture>
+                            <source srcset="images/screenshots/shieldconnect.webp" type="image/webp">
+                            <img src="images/screenshots/shieldconnect.png" width="2000" height="1153" alt="ShieldConnect-integratiescherm met SIEM/SOAR-connectoren: Microsoft Sentinel, Splunk, Elastic, Wazuh, Graylog, IBM QRadar, Teams en Slack" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                 </div>
             </div>
         </div>
