@@ -528,10 +528,10 @@
             <div class="pricing-info">
                 <p class="pricing-info-text">
                     ✓ All prices are ex-VAT — VAT applies as per applicable legislation<br>
-                    ✓ One-Shot payment: 10% deposit on signing — 50% on first report delivery + 50% on final reports<br>
+                    ✓ One-Shot payment: 10% deposit on signing — remaining balance split evenly: 50% on first report delivery + 50% on final reports<br>
                     ✓ Payment terms: 30 days end of month<br>
                     ✓ Essential &amp; Professional subscriptions billed quarterly<br>
-                    ✓ Auto-renewal with 30-day notice<br>
+                    ✓ Auto-renewal for successive 1-year terms unless notified 30 days in advance<br>
                     ✓ Custom quote within 48h<br>
                     ✓ Special conditions for public sector and associations
                 </p>
@@ -713,11 +713,13 @@
                     <div class="footer-brand">Mandatory Shield Company</div>
                     <p class="footer-desc">Essential SaaS Security — A pioneering European Active Directory audit platform designed for NIS2, ISO 27001 and GDPR compliance.</p>
                     <p class="footer-address">
-                        <i class="ri-map-pin-line"></i> Brussels, Belgium<br>
+                        <i class="ri-map-pin-line"></i> Chaussée d'Alsemberg 762, 1180 Brussels, Belgium<br>
                         <i class="ri-mail-line"></i> contact@mandatoryshield.com<br>
+                        <i class="ri-phone-line"></i> <a href="tel:+32492480062">+32 492 48 00 62</a><br>
                         <i class="ri-global-line"></i> www.mandatoryshield.com<br>
                         <i class="ri-linkedin-box-fill"></i> <a href="https://linkedin.com/company/the-mandatory-shield-company" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </p>
+                    <p class="footer-legal-info">Mandatory Shield Company SRL — BCE/VAT: BE 1040.680.732</p>
                 </div>
                 <div class="footer-col">
                     <h3>Product</h3>
@@ -729,7 +731,7 @@
                 </div>
                 <div class="footer-col">
                     <h3>Legal</h3>
-                    <ul><li><a href="legal-en.html#privacy">Privacy policy</a></li><li><a href="legal-en.html#cgu">Terms of use</a></li><li><a href="legal-en.html#cgv">GTC</a></li><li><a href="legal-en.html#mentions">Legal notice</a></li></ul>
+                    <ul><li><a href="legal-en.html#privacy">Privacy policy</a></li><li><a href="legal-en.html#cgu">Terms of use</a></li><li><a href="legal-en.html#cgv">GTC</a></li><li><a href="legal-en.html#mentions">Legal notice</a></li><li><button type="button" class="footer-link-btn" data-cookie-settings-toggle>Cookie settings</button></li></ul>
                 </div>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 Mandatory Shield Company. All rights reserved. · Built in Belgium 🇧🇪</p></div>
@@ -764,6 +766,43 @@
         </div>
         <button class="chatbot-toggle" data-chat-toggle aria-label="Open ShieldAD assistant" aria-expanded="false"><i class="ri-chat-3-line" aria-hidden="true"></i></button>
     </div>
+
+    <div class="cookie-modal-overlay" data-cookie-modal role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+        <div class="cookie-modal">
+            <div class="cookie-modal-header">
+                <h2 id="cookieModalTitle">Cookie settings</h2>
+                <button type="button" class="cookie-modal-close" data-cookie-modal-close aria-label="Close">&times;</button>
+            </div>
+            <p class="cookie-modal-intro">This site does not currently use any non-essential cookies. If analytics or marketing cookies are introduced in the future, the choice you make below will be respected.</p>
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <h3>Strictly necessary</h3>
+                    <p>Required for the site to function (e.g. remembering your consent choice). Cannot be disabled.</p>
+                </div>
+                <label class="cookie-switch">
+                    <input type="checkbox" checked disabled aria-label="Strictly necessary cookies (always on)">
+                    <span class="cookie-switch-track"></span>
+                </label>
+            </div>
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <h3>Analytics</h3>
+                    <p>Not currently in use. Your preference will apply if these cookies are activated in the future.</p>
+                </div>
+                <label class="cookie-switch">
+                    <input type="checkbox" data-cookie-category="analytics" aria-label="Analytics cookies">
+                    <span class="cookie-switch-track"></span>
+                </label>
+            </div>
+            <div class="cookie-modal-actions">
+                <button type="button" data-cookie-reject>Reject non-essential</button>
+                <button type="button" data-cookie-accept-all>Accept all</button>
+                <button type="button" data-cookie-save>Save preferences</button>
+            </div>
+            <p class="cookie-modal-footer-link"><a href="legal-en.html#p9">Read our Privacy Policy (Cookies)</a></p>
+        </div>
+    </div>
     <script src="app-en.js?v=3" defer></script>
+    <script src="cookies.js" defer></script>
 </body>
 </html>

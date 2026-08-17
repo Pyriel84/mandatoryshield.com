@@ -519,10 +519,10 @@
             <div class="pricing-info">
                 <p class="pricing-info-text">
                     ✓ Tous les tarifs sont HT — TVA applicable selon législation en vigueur<br>
-                    ✓ Oneshot : acompte 10 % à la signature — 50 % à la livraison des premiers rapports + 50 % à la livraison des rapports finaux<br>
+                    ✓ Oneshot : acompte 10 % à la signature — solde réparti à parts égales : 50 % à la livraison des premiers rapports + 50 % à la livraison des rapports finaux<br>
                     ✓ Délai de paiement : 30 jours fin de mois<br>
                     ✓ Abonnements Essential &amp; Professional facturés trimestriellement<br>
-                    ✓ Renouvellement tacite avec préavis de 30 jours<br>
+                    ✓ Renouvellement tacite pour des périodes successives d'1 an, sauf préavis de 30 jours<br>
                     ✓ Devis personnalisé sous 48h<br>
                     ✓ Conditions spéciales pour secteur public et associations
                 </p>
@@ -703,11 +703,13 @@
                     <div class="footer-brand">Mandatory Shield Company</div>
                     <p class="footer-desc">Essential SaaS Security — Une plateforme européenne pionnière d'audit Active Directory conçue pour la conformité NIS2, ISO 27001 et RGPD.</p>
                     <p class="footer-address">
-                        <i class="ri-map-pin-line"></i> Bruxelles, Belgique<br>
+                        <i class="ri-map-pin-line"></i> Chaussée d'Alsemberg 762, 1180 Bruxelles, Belgique<br>
                         <i class="ri-mail-line"></i> contact@mandatoryshield.com<br>
+                        <i class="ri-phone-line"></i> <a href="tel:+32492480062">+32 492 48 00 62</a><br>
                         <i class="ri-global-line"></i> www.mandatoryshield.com<br>
                         <i class="ri-linkedin-box-fill"></i> <a href="https://linkedin.com/company/the-mandatory-shield-company" target="_blank" rel="noopener">LinkedIn</a>
                     </p>
+                    <p class="footer-legal-info">Mandatory Shield Company SRL — TVA/BCE : BE 1040.680.732</p>
                 </div>
                 <div class="footer-col">
                     <h3>Produit</h3>
@@ -719,7 +721,7 @@
                 </div>
                 <div class="footer-col">
                     <h3>Légal</h3>
-                    <ul><li><a href="legal.html#privacy">Politique de confidentialité</a></li><li><a href="legal.html#cgu">Conditions d'utilisation</a></li><li><a href="legal.html#cgv">CGV</a></li><li><a href="legal.html#mentions">Mentions légales</a></li></ul>
+                    <ul><li><a href="legal.html#privacy">Politique de confidentialité</a></li><li><a href="legal.html#cgu">Conditions d'utilisation</a></li><li><a href="legal.html#cgv">CGV</a></li><li><a href="legal.html#mentions">Mentions légales</a></li><li><button type="button" class="footer-link-btn" data-cookie-settings-toggle>Paramètres des cookies</button></li></ul>
                 </div>
             </div>
             <div class="footer-bottom"><p>&copy; 2026 Mandatory Shield Company. Tous droits réservés. · Conçu en Belgique 🇧🇪</p></div>
@@ -754,6 +756,43 @@
         </div>
         <button class="chatbot-toggle" data-chat-toggle aria-label="Ouvrir l'assistant ShieldAD" aria-expanded="false"><i class="ri-chat-3-line" aria-hidden="true"></i></button>
     </div>
+
+    <div class="cookie-modal-overlay" data-cookie-modal role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+        <div class="cookie-modal">
+            <div class="cookie-modal-header">
+                <h2 id="cookieModalTitle">Paramètres des cookies</h2>
+                <button type="button" class="cookie-modal-close" data-cookie-modal-close aria-label="Fermer">&times;</button>
+            </div>
+            <p class="cookie-modal-intro">Ce site n'utilise actuellement aucun cookie non essentiel. Si des cookies analytiques ou marketing sont introduits à l'avenir, votre choix ci-dessous sera respecté.</p>
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <h3>Strictement nécessaires</h3>
+                    <p>Indispensables au fonctionnement du site (ex. mémorisation de votre choix de consentement). Ne peuvent pas être désactivés.</p>
+                </div>
+                <label class="cookie-switch">
+                    <input type="checkbox" checked disabled aria-label="Cookies strictement nécessaires (toujours actifs)">
+                    <span class="cookie-switch-track"></span>
+                </label>
+            </div>
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <h3>Analytiques</h3>
+                    <p>Non utilisés actuellement. Votre préférence sera appliquée si ces cookies sont activés à l'avenir.</p>
+                </div>
+                <label class="cookie-switch">
+                    <input type="checkbox" data-cookie-category="analytics" aria-label="Cookies analytiques">
+                    <span class="cookie-switch-track"></span>
+                </label>
+            </div>
+            <div class="cookie-modal-actions">
+                <button type="button" data-cookie-reject>Refuser les non essentiels</button>
+                <button type="button" data-cookie-accept-all>Tout accepter</button>
+                <button type="button" data-cookie-save>Enregistrer mes préférences</button>
+            </div>
+            <p class="cookie-modal-footer-link"><a href="legal.html#p9">Consulter notre Politique de confidentialité (Cookies)</a></p>
+        </div>
+    </div>
     <script src="app.js" defer></script>
+    <script src="cookies.js" defer></script>
 </body>
 </html>

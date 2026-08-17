@@ -1125,7 +1125,7 @@ Referrer-Policy: strict-origin-when-cross-origin
             <div class="container">
                 <div class="hero-content">
                     <h1>Beheers ShieldAD in Video</h1>
-                    <p class="hero-subtitle">Ontdek hoe u uw Active Directory beveiligd met onze tutorials, demonstraties en NIS2-nalevingsgidsen.</p>
+                    <p class="hero-subtitle">Ontdek hoe u uw Active Directory beveiligt met onze tutorials, demonstraties en NIS2-nalevingsgidsen.</p>
                     
                     <div class="hero-stats">
                         <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Video's</span></div>
