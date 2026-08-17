@@ -90,9 +90,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="64x64">
     <!-- Preload critical resources -->
-    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="style.css?v=2" as="style">
     <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <a href="#hoofdinhoud" class="skip-link">Naar hoofdinhoud</a>
@@ -271,24 +271,28 @@
                             <source srcset="images/screenshots/dashboard.webp" type="image/webp">
                             <img src="images/screenshots/dashboard.png" width="2000" height="1156" alt="ShieldAD-dashboard met de globale identiteitsbeveiligingsscore, FAIL/WARN/PASS-verdeling, meest blootgestelde domeinen en topprioritaire risico's" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>Dashboard</strong> — globale identiteitsbeveiligingsscore, FAIL/WARN/PASS-verdeling en topprioritaire risico's.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-scan">
                         <picture>
                             <source srcset="images/screenshots/scan.webp" type="image/webp">
                             <img src="images/screenshots/scan.png" width="2000" height="1154" alt="ShieldAD-scanscherm voor het starten van een on-premises Active Directory-scan en een Azure/Entra ID-scan, met IAM-toegangsinventaris" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>Scan</strong> — start een on-premises Active Directory-scan of een Azure/Entra ID-scan, met IAM-toegangsinventaris.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-graph">
                         <picture>
                             <source srcset="images/screenshots/shieldgraph.webp" type="image/webp">
                             <img src="images/screenshots/shieldgraph.png" width="2000" height="1153" alt="ShieldGraph-visualisatie van aanvalspaden en kritieke knooppunten naar bevoorrechte groepen" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>ShieldGraph</strong> — aanvalspadgrafiek met escalatieroutes en kritieke knooppunten naar Domain Admins.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-connect">
                         <picture>
                             <source srcset="images/screenshots/shieldconnect.webp" type="image/webp">
                             <img src="images/screenshots/shieldconnect.png" width="2000" height="1153" alt="ShieldConnect-integratiescherm met SIEM/SOAR-connectoren: Microsoft Sentinel, Splunk, Elastic, Wazuh, Graylog, IBM QRadar, Teams en Slack" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>ShieldConnect</strong> — SIEM/SOAR-connectoren: Microsoft Sentinel, Splunk, Elastic, Wazuh, Graylog, IBM QRadar, Teams en Slack.</p>
                     </div>
                 </div>
             </div>

@@ -90,9 +90,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" type="image/png" sizes="64x64">
     <!-- Preload critical resources -->
-    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="style.css?v=2" as="style">
     <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -275,24 +275,28 @@
                             <source srcset="images/screenshots/dashboard.webp" type="image/webp">
                             <img src="images/screenshots/dashboard.png" width="2000" height="1156" alt="ShieldAD dashboard showing the global Identity Security Score, FAIL/WARN/PASS control breakdown, most exposed domains and top prioritized risks" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>Dashboard</strong> — global Identity Security Score, FAIL/WARN/PASS breakdown and top prioritized risks.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-scan">
                         <picture>
                             <source srcset="images/screenshots/scan.webp" type="image/webp">
                             <img src="images/screenshots/scan.png" width="2000" height="1154" alt="ShieldAD scan screen launching an on-premises Active Directory scan and an Azure/Entra ID scan, plus IAM access inventory" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>Scan</strong> — launch an on-premises Active Directory scan or an Azure/Entra ID scan, plus IAM access inventory.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-graph">
                         <picture>
                             <source srcset="images/screenshots/shieldgraph.webp" type="image/webp">
                             <img src="images/screenshots/shieldgraph.png" width="2000" height="1153" alt="ShieldGraph attack path visualization showing privilege escalation paths and choke points toward Domain Admins" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>ShieldGraph</strong> — attack path graph showing privilege escalation routes and choke points toward Domain Admins.</p>
                     </div>
                     <div class="screenshot-panel" id="panel-connect">
                         <picture>
                             <source srcset="images/screenshots/shieldconnect.webp" type="image/webp">
                             <img src="images/screenshots/shieldconnect.png" width="2000" height="1153" alt="ShieldConnect SIEM/SOAR integration screen with connectors for Microsoft Sentinel, Splunk, Elastic, Wazuh, Graylog, IBM QRadar, Teams and Slack" loading="lazy" decoding="async">
                         </picture>
+                        <p class="screenshot-caption"><strong>ShieldConnect</strong> — SIEM/SOAR connectors: Microsoft Sentinel, Splunk, Elastic, Wazuh, Graylog, IBM QRadar, Teams and Slack.</p>
                     </div>
                 </div>
             </div>
