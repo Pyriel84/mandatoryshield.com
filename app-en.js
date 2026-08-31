@@ -149,6 +149,67 @@ document.addEventListener('DOMContentLoaded', function () {
   }());
 });
 
+// Screenshot lightbox — magnifier opens a fullscreen preview for Dashboard / Scan / ShieldGraph / ShieldConnect
+(function () {
+  var overlay = document.querySelector('[data-lightbox-overlay]');
+  if (!overlay) return;
+
+  var imgEl = overlay.querySelector('[data-lightbox-img]');
+  var captionEl = overlay.querySelector('[data-lightbox-caption]');
+  var closeBtn = overlay.querySelector('[data-lightbox-close]');
+  var prevBtn = overlay.querySelector('[data-lightbox-prev]');
+  var nextBtn = overlay.querySelector('[data-lightbox-next]');
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.screenshot-panel'));
+  if (!panels.length) return;
+
+  var lastFocused = null;
+  var currentIndex = 0;
+
+  function showIndex(i) {
+    currentIndex = (i + panels.length) % panels.length;
+    var panel = panels[currentIndex];
+    var img = panel.querySelector('img');
+    var caption = panel.querySelector('.screenshot-caption');
+    imgEl.src = img.currentSrc || img.src;
+    imgEl.alt = img.alt;
+    captionEl.innerHTML = caption ? caption.innerHTML : '';
+    var radio = document.getElementById(panel.id.replace('panel-', 'screen-'));
+    if (radio) radio.checked = true;
+  }
+
+  function openLightbox(index) {
+    lastFocused = document.activeElement;
+    showIndex(index);
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  panels.forEach(function (panel, index) {
+    var trigger = panel.querySelector('[data-lightbox-trigger]');
+    if (trigger) trigger.addEventListener('click', function () { openLightbox(index); });
+    var img = panel.querySelector('img');
+    if (img) img.addEventListener('click', function () { openLightbox(index); });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', function () { showIndex(currentIndex - 1); });
+  nextBtn.addEventListener('click', function () { showIndex(currentIndex + 1); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeLightbox(); });
+  document.addEventListener('keydown', function (e) {
+    if (!overlay.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showIndex(currentIndex - 1);
+    if (e.key === 'ArrowRight') showIndex(currentIndex + 1);
+  });
+}());
+
 // Contact form — real submission via Web3Forms
 const contactForm = document.querySelector('.contact-form-list');
 if (contactForm) {

@@ -223,14 +223,39 @@ header {
 #screen-graph:focus-visible ~ .screenshot-tablist label[for="screen-graph"],
 #screen-connect:focus-visible ~ .screenshot-tablist label[for="screen-connect"] { outline: 2px solid var(--primary); outline-offset: 2px; }
 .screenshot-frame { background: #f1f5f9; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-xl); overflow-x: auto; padding: 8px; }
-.screenshot-panel { display: none; }
+.screenshot-panel { display: none; position: relative; }
 #screen-dashboard:checked ~ .screenshot-frame #panel-dashboard,
 #screen-scan:checked ~ .screenshot-frame #panel-scan,
 #screen-graph:checked ~ .screenshot-frame #panel-graph,
 #screen-connect:checked ~ .screenshot-frame #panel-connect { display: block; }
-.screenshot-panel img { display: block; width: 100%; min-width: 640px; height: auto; border-radius: 6px; }
+.screenshot-panel img { display: block; width: 100%; height: auto; border-radius: 6px; cursor: zoom-in; }
 .screenshot-caption { margin: 10px 4px 2px; padding-top: 10px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5; }
 .screenshot-caption strong { color: var(--text-primary); }
+
+/* Magnifier button — opens the full-size lightbox for the current screen */
+.screenshot-zoom { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: rgba(15, 23, 42, 0.72); color: #fff; border: none; border-radius: 50%; cursor: zoom-in; font-size: 1.25rem; transition: background 0.2s ease, transform 0.2s ease; z-index: 2; }
+.screenshot-zoom:hover { background: var(--primary); transform: scale(1.06); }
+.screenshot-zoom:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+
+/* Screenshot lightbox — fullscreen preview shared by mobile and desktop */
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.94); z-index: 10060; display: none; align-items: center; justify-content: center; flex-direction: column; padding: 24px; }
+.lightbox-overlay.open { display: flex; }
+.lightbox-img { display: block; max-width: 100%; max-height: 76vh; width: auto; height: auto; border-radius: 8px; box-shadow: var(--shadow-xl); }
+.lightbox-caption { color: #E2E8F0; font-size: 0.9rem; text-align: center; max-width: 720px; margin-top: 18px; padding: 0 12px; }
+.lightbox-caption strong { color: #fff; }
+.lightbox-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+.lightbox-close:hover, .lightbox-close:focus-visible { background: rgba(255, 255, 255, 0.25); }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.12); color: #fff; font-size: 1.6rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+.lightbox-nav:hover, .lightbox-nav:focus-visible { background: rgba(255, 255, 255, 0.25); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+@media (max-width: 640px) {
+  .lightbox-nav { width: 44px; height: 44px; font-size: 1.4rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-close { top: 12px; right: 12px; }
+  .screenshot-zoom { top: 10px; right: 10px; }
+}
 .code-block code { display: block; padding: 14px; background: #0f172a; color: #ccfbf1; border-radius: 8px; font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6; white-space: normal; overflow-wrap: anywhere; }
 
 .remediation-card { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr); gap: 32px; background: white; border: 1px solid var(--border); border-radius: 12px; padding: 36px; box-shadow: var(--shadow-lg); }
@@ -585,6 +610,8 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     color: var(--text-muted);
     margin: 0;
 }
+.compliance-legal-note p a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.compliance-legal-note p a:hover { text-decoration: underline; }
 
 .pricing-badge-slate    { background: #475569; }
 .pricing-badge-primary  { background: var(--primary-dark); }
@@ -1154,6 +1181,72 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
 .video-thumbnail.is-playing .duration,
 .video-thumbnail.is-playing .play-button {
     display: none;
+}
+
+/* ========================================
+   SECURITY & COMPLIANCE PAGE
+   ======================================== */
+
+.disclosure-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 28px;
+    margin: 28px 0 12px;
+    padding: 0;
+    font-size: 14px;
+}
+
+.disclosure-list li { display: flex; align-items: center; gap: 6px; }
+.disclosure-list li::before { content: '\2713'; font-weight: 700; }
+
+.disclosure-note {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 8px;
+}
+
+.legal-disclaimer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.disclaimer-item {
+    display: flex;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 26px;
+}
+
+.disclaimer-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.disclaimer-item h3 { font-size: 1rem; color: var(--text-primary); margin-bottom: 6px; }
+.disclaimer-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+.disclaimer-item p + p { margin-top: 8px; }
+.disclaimer-item p a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.disclaimer-item p a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+    .disclaimer-item { flex-direction: column; gap: 10px; padding: 18px; }
 }
 
 /* PRINT */
