@@ -19,6 +19,13 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     --font-main: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+
+    /* Aliases used by hero-resources / cta-box / stats — kept in sync with --primary* and --text-primary above */
+    --teal: #0D9488;
+    --teal-dark: #0F766E;
+    --teal-light: #CCFBF1;
+    --navy: #0F172A;
+    --cream: #F8F7F4;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }

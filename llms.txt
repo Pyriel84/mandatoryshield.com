@@ -101,10 +101,21 @@ Connecteurs SIEM disponibles en v3.4 :
 - Accueil (EN) : https://mandatoryshield.com/
 - Accueil (FR) : https://mandatoryshield.com/index-fr.html
 - Accueil (NL) : https://mandatoryshield.com/index-nl.html
+- Sécurité & Conformité (FR) : https://mandatoryshield.com/security-compliance.html
+- Security & Compliance (EN) : https://mandatoryshield.com/security-compliance-en.html
+- Beveiliging & Compliance (NL) : https://mandatoryshield.com/security-compliance-nl.html
 - Mentions légales (FR) : https://mandatoryshield.com/legal.html
 - Mentions légales (EN) : https://mandatoryshield.com/legal-en.html
 - Mentions légales (NL) : https://mandatoryshield.com/legal-nl.html
 - Vérification QR Code : https://verify.mandatoryshield.com
+
+## Sécurité & divulgation responsable
+
+- Audits en lecture seule : aucune modification de l'Active Directory, scan 100 % passif.
+- Chiffrement AES-256 de bout en bout pour tous les rapports générés ; TLS 1.2+ pour les communications.
+- Zéro rétention de données : les rapports ne sont pas stockés par Mandatory Shield Company.
+- Code signé (PowerShell Authenticode) et intégrité vérifiable par hash SHA-256.
+- Signalement de vulnérabilité : contact@mandatoryshield.com (réponse sous 48h).
 
 ## FAQ
 
