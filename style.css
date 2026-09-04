@@ -1021,7 +1021,7 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     overflow: hidden;
 }
 
-.faq-item summary {
+details.faq-item summary {
     padding: 20px;
     background: #f8f9fa;
     cursor: pointer;
@@ -1032,32 +1032,32 @@ footer { background: var(--bg-primary); border-top: 1px solid var(--border); pad
     list-style: none;
 }
 
-.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::-webkit-details-marker { display: none; }
 
-.faq-item summary:hover {
+details.faq-item summary:hover {
     background: #f0f0f0;
     padding-left: 24px;
 }
 
-.faq-item[open] summary {
+details.faq-item[open] summary {
     background: #f0f0f0;
     border-bottom: 1px solid #e0e0e0;
 }
 
-.faq-item div {
+details.faq-item > div {
     padding: 20px;
     background: #ffffff;
     color: #555;
     line-height: 1.6;
 }
 
-.faq-item p {
+details.faq-item p {
     margin: 0;
 }
 
 @media (max-width: 768px) {
-    .faq-item summary,
-    .faq-item div {
+    details.faq-item summary,
+    details.faq-item > div {
         padding: 16px;
     }
 }
